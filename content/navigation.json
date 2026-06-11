@@ -185,6 +185,13 @@
         "fullSlug": "offers-guarantees-case-studies/strategy-value-props",
         "type": "page",
         "childCount": 0
+      },
+      {
+        "title": "What to Do if You Don't Have Case Studies",
+        "slug": "no-case-studies",
+        "fullSlug": "offers-guarantees-case-studies/no-case-studies",
+        "type": "page",
+        "childCount": 0
       }
     ]
   },
@@ -281,6 +288,13 @@
         "title": "Do You Have a Cold Traffic Offer?",
         "slug": "cold-traffic-offer-check",
         "fullSlug": "cold-email/cold-traffic-offer-check",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Deliverability Updates: What's Working Now",
+        "slug": "deliverability-updates",
+        "fullSlug": "cold-email/deliverability-updates",
         "type": "page",
         "childCount": 0
       }
