@@ -80,6 +80,69 @@
         "fullSlug": "your-offer-gtm/your-offer-gtm-overview",
         "type": "page",
         "childCount": 0
+      },
+      {
+        "title": "Creating Your Cold Traffic Offer",
+        "slug": "cold-traffic-offer",
+        "fullSlug": "your-offer-gtm/cold-traffic-offer",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Map Out Your ICP",
+        "slug": "map-out-icp",
+        "fullSlug": "your-offer-gtm/map-out-icp",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Your Service Model & Pricing",
+        "slug": "service-model-pricing",
+        "fullSlug": "your-offer-gtm/service-model-pricing",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Offers",
+        "slug": "offers",
+        "fullSlug": "your-offer-gtm/offers",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Guarantees",
+        "slug": "guarantees",
+        "fullSlug": "your-offer-gtm/guarantees",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Case Studies",
+        "slug": "case-studies",
+        "fullSlug": "your-offer-gtm/case-studies",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Collecting Testimonials",
+        "slug": "collecting-testimonials",
+        "fullSlug": "your-offer-gtm/collecting-testimonials",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Strategy & Value Propositions",
+        "slug": "strategy-value-props",
+        "fullSlug": "your-offer-gtm/strategy-value-props",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Do You Have a Cold Traffic Offer?",
+        "slug": "cold-traffic-offer-check",
+        "fullSlug": "your-offer-gtm/cold-traffic-offer-check",
+        "type": "page",
+        "childCount": 0
       }
     ]
   },
@@ -92,6 +155,41 @@
         "title": "System Build",
         "slug": "system-build-overview",
         "fullSlug": "system-build/system-build-overview",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Your Website / Landing Page",
+        "slug": "website-landing-page",
+        "fullSlug": "system-build/website-landing-page",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Create Your VSL",
+        "slug": "create-vsl",
+        "fullSlug": "system-build/create-vsl",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Get Calendly & Embed on Your Website",
+        "slug": "get-calendly",
+        "fullSlug": "system-build/get-calendly",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Set Up Payments",
+        "slug": "set-up-payments",
+        "fullSlug": "system-build/set-up-payments",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Create Your Agreement",
+        "slug": "create-agreement",
+        "fullSlug": "system-build/create-agreement",
         "type": "page",
         "childCount": 0
       }
@@ -108,6 +206,62 @@
         "fullSlug": "cold-email-execution/cold-email-execution-overview",
         "type": "page",
         "childCount": 0
+      },
+      {
+        "title": "Cold Email Set Up",
+        "slug": "cold-email-setup",
+        "fullSlug": "cold-email-execution/cold-email-setup",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Campaign Set Up",
+        "slug": "campaign-setup",
+        "fullSlug": "cold-email-execution/campaign-setup",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Manage Deliverability",
+        "slug": "manage-deliverability",
+        "fullSlug": "cold-email-execution/manage-deliverability",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "List Building",
+        "slug": "list-building",
+        "fullSlug": "cold-email-execution/list-building",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Writing Emails",
+        "slug": "writing-emails",
+        "fullSlug": "cold-email-execution/writing-emails",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Presenting Your Offer in a Cold Email",
+        "slug": "presenting-offer",
+        "fullSlug": "cold-email-execution/presenting-offer",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Running + Improving Campaigns",
+        "slug": "running-campaigns",
+        "fullSlug": "cold-email-execution/running-campaigns",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Campaign FAQs",
+        "slug": "campaign-faqs",
+        "fullSlug": "cold-email-execution/campaign-faqs",
+        "type": "page",
+        "childCount": 0
       }
     ]
   },
@@ -120,6 +274,20 @@
         "title": "Inbox + Pipeline Management",
         "slug": "inbox-pipeline-overview",
         "fullSlug": "inbox-pipeline/inbox-pipeline-overview",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Reply Management",
+        "slug": "reply-management",
+        "fullSlug": "inbox-pipeline/reply-management",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Lead Nurturing",
+        "slug": "lead-nurturing",
+        "fullSlug": "inbox-pipeline/lead-nurturing",
         "type": "page",
         "childCount": 0
       }
@@ -136,6 +304,111 @@
         "fullSlug": "sales/sales-overview",
         "type": "page",
         "childCount": 0
+      },
+      {
+        "title": "Warm Calling",
+        "slug": "warm-calling",
+        "fullSlug": "sales/warm-calling",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Sales Mindset",
+        "slug": "sales-mindset",
+        "fullSlug": "sales/sales-mindset",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Positioning",
+        "slug": "sales-positioning",
+        "fullSlug": "sales/sales-positioning",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Lead Magnets",
+        "slug": "lead-magnets",
+        "fullSlug": "sales/lead-magnets",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Sales Assets",
+        "slug": "sales-assets",
+        "fullSlug": "sales/sales-assets",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Qualifying Prospects",
+        "slug": "qualifying-prospects",
+        "fullSlug": "sales/qualifying-prospects",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Sales Process",
+        "slug": "sales-process",
+        "fullSlug": "sales/sales-process",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Call Show-Up Process",
+        "slug": "call-show-up",
+        "fullSlug": "sales/call-show-up",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Pre-Sell With A Pre-Call Guide",
+        "slug": "pre-sell-guide",
+        "fullSlug": "sales/pre-sell-guide",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Set The Frame + Own The Call",
+        "slug": "set-the-frame",
+        "fullSlug": "sales/set-the-frame",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Call Prep — Set Yourself Up to Win",
+        "slug": "call-prep",
+        "fullSlug": "sales/call-prep",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Sales Call Strategies",
+        "slug": "sales-call-strategies",
+        "fullSlug": "sales/sales-call-strategies",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Value Stacking",
+        "slug": "value-stacking",
+        "fullSlug": "sales/value-stacking",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Effective Closing Techniques",
+        "slug": "effective-closing",
+        "fullSlug": "sales/effective-closing",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Upselling",
+        "slug": "upselling",
+        "fullSlug": "sales/upselling",
+        "type": "page",
+        "childCount": 0
       }
     ]
   },
@@ -148,6 +421,34 @@
         "title": "Onboard Your New Clients",
         "slug": "onboard-clients-overview",
         "fullSlug": "onboard-clients/onboard-clients-overview",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Onboarding Workflow",
+        "slug": "onboarding-workflow",
+        "fullSlug": "onboard-clients/onboarding-workflow",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Onboarding Calls",
+        "slug": "onboarding-calls",
+        "fullSlug": "onboard-clients/onboarding-calls",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Client Onboarding Form",
+        "slug": "client-onboarding-form",
+        "fullSlug": "onboard-clients/client-onboarding-form",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "How to Conduct a Case Study Interview",
+        "slug": "case-study-interview",
+        "fullSlug": "onboard-clients/case-study-interview",
         "type": "page",
         "childCount": 0
       }
@@ -169,6 +470,76 @@
         "title": "Hiring",
         "slug": "hiring",
         "fullSlug": "scaling/hiring",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Hiring — General Info",
+        "slug": "hiring-general",
+        "fullSlug": "scaling/hiring-general",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Key Roles & Job Posting Tips",
+        "slug": "key-roles",
+        "fullSlug": "scaling/key-roles",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Hiring an Inbox Manager",
+        "slug": "hiring-inbox-manager",
+        "fullSlug": "scaling/hiring-inbox-manager",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Hiring a Go-To-Market Person",
+        "slug": "hiring-gtm",
+        "fullSlug": "scaling/hiring-gtm",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Hiring — Application Process",
+        "slug": "application-process",
+        "fullSlug": "scaling/application-process",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Employee Onboarding & Training",
+        "slug": "employee-onboarding",
+        "fullSlug": "scaling/employee-onboarding",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Social Media Hiring Funnels",
+        "slug": "social-hiring-funnels",
+        "fullSlug": "scaling/social-hiring-funnels",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Strategy & Planning",
+        "slug": "ops-strategy",
+        "fullSlug": "scaling/ops-strategy",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Creating SOPs",
+        "slug": "creating-sops",
+        "fullSlug": "scaling/creating-sops",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Vertical vs Horizontal Scaling",
+        "slug": "vertical-horizontal-scaling",
+        "fullSlug": "scaling/vertical-horizontal-scaling",
         "type": "page",
         "childCount": 0
       }

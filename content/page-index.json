@@ -1,17 +1,410 @@
 [
-  { "slug": "welcome/welcome-overview", "title": "Welcome to Closing Clients System", "isSection": false, "chunk": 100 },
-  { "slug": "ccs-install/module-1-pre-install", "title": "Module 1 — Pre-Install", "isSection": false, "chunk": 100 },
-  { "slug": "ccs-install/module-2-system-install", "title": "Module 2 — System Install (Days 1–14)", "isSection": false, "chunk": 100 },
-  { "slug": "ccs-install/module-3-campaign-launch", "title": "Module 3 — Campaign Launch (Week 3)", "isSection": false, "chunk": 100 },
-  { "slug": "ccs-install/module-4-run-optimise", "title": "Module 4 — Run + Optimise (Weeks 4–26)", "isSection": false, "chunk": 100 },
-  { "slug": "ccs-install/module-5-beyond-180-days", "title": "Module 5 — Beyond 180 Days (Scale-Up)", "isSection": false, "chunk": 100 },
-  { "slug": "key-resources/key-resources-overview", "title": "Key Resources", "isSection": false, "chunk": 100 },
-  { "slug": "your-offer-gtm/your-offer-gtm-overview", "title": "Your Offer & GTM", "isSection": false, "chunk": 100 },
-  { "slug": "system-build/system-build-overview", "title": "System Build", "isSection": false, "chunk": 100 },
-  { "slug": "cold-email-execution/cold-email-execution-overview", "title": "Cold Email Execution", "isSection": false, "chunk": 100 },
-  { "slug": "inbox-pipeline/inbox-pipeline-overview", "title": "Inbox + Pipeline Management", "isSection": false, "chunk": 100 },
-  { "slug": "sales/sales-overview", "title": "Sales", "isSection": false, "chunk": 100 },
-  { "slug": "onboard-clients/onboard-clients-overview", "title": "Onboard Your New Clients", "isSection": false, "chunk": 100 },
-  { "slug": "scaling/scaling-overview", "title": "Scaling", "isSection": false, "chunk": 100 },
-  { "slug": "scaling/hiring", "title": "Hiring", "isSection": false, "chunk": 100 }
+  {
+    "slug": "welcome/welcome-overview",
+    "title": "Welcome to Closing Clients System",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-1-pre-install",
+    "title": "Module 1 — Pre-Install",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-2-system-install",
+    "title": "Module 2 — System Install (Days 1–14)",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-3-campaign-launch",
+    "title": "Module 3 — Campaign Launch (Week 3)",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-4-run-optimise",
+    "title": "Module 4 — Run + Optimise (Weeks 4–26)",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-5-beyond-180-days",
+    "title": "Module 5 — Beyond 180 Days (Scale-Up)",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "key-resources/key-resources-overview",
+    "title": "Key Resources",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "your-offer-gtm/your-offer-gtm-overview",
+    "title": "Your Offer & GTM",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "system-build/system-build-overview",
+    "title": "System Build",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "cold-email-execution/cold-email-execution-overview",
+    "title": "Cold Email Execution",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "inbox-pipeline/inbox-pipeline-overview",
+    "title": "Inbox + Pipeline Management",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "sales/sales-overview",
+    "title": "Sales",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "onboard-clients/onboard-clients-overview",
+    "title": "Onboard Your New Clients",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "scaling/scaling-overview",
+    "title": "Scaling",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "scaling/hiring",
+    "title": "Hiring",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "your-offer-gtm/cold-traffic-offer",
+    "title": "Creating Your Cold Traffic Offer",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "your-offer-gtm/map-out-icp",
+    "title": "Map Out Your ICP",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "your-offer-gtm/service-model-pricing",
+    "title": "Your Service Model & Pricing",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "your-offer-gtm/offers",
+    "title": "Offers",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "your-offer-gtm/guarantees",
+    "title": "Guarantees",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "your-offer-gtm/case-studies",
+    "title": "Case Studies",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "your-offer-gtm/collecting-testimonials",
+    "title": "Collecting Testimonials",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "your-offer-gtm/strategy-value-props",
+    "title": "Strategy & Value Propositions",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "your-offer-gtm/cold-traffic-offer-check",
+    "title": "Do You Have a Cold Traffic Offer?",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "system-build/website-landing-page",
+    "title": "Your Website / Landing Page",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "system-build/create-vsl",
+    "title": "Create Your VSL",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "system-build/get-calendly",
+    "title": "Get Calendly & Embed on Your Website",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "system-build/set-up-payments",
+    "title": "Set Up Payments",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "system-build/create-agreement",
+    "title": "Create Your Agreement",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email-execution/cold-email-setup",
+    "title": "Cold Email Set Up",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email-execution/campaign-setup",
+    "title": "Campaign Set Up",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email-execution/manage-deliverability",
+    "title": "Manage Deliverability",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email-execution/list-building",
+    "title": "List Building",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email-execution/writing-emails",
+    "title": "Writing Emails",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email-execution/presenting-offer",
+    "title": "Presenting Your Offer in a Cold Email",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email-execution/running-campaigns",
+    "title": "Running + Improving Campaigns",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email-execution/campaign-faqs",
+    "title": "Campaign FAQs",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "inbox-pipeline/reply-management",
+    "title": "Reply Management",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "inbox-pipeline/lead-nurturing",
+    "title": "Lead Nurturing",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/warm-calling",
+    "title": "Warm Calling",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/sales-mindset",
+    "title": "Sales Mindset",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/sales-positioning",
+    "title": "Positioning",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/lead-magnets",
+    "title": "Lead Magnets",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/sales-assets",
+    "title": "Sales Assets",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/qualifying-prospects",
+    "title": "Qualifying Prospects",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/sales-process",
+    "title": "Sales Process",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/call-show-up",
+    "title": "Call Show-Up Process",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/pre-sell-guide",
+    "title": "Pre-Sell With A Pre-Call Guide",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/set-the-frame",
+    "title": "Set The Frame + Own The Call",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/call-prep",
+    "title": "Call Prep — Set Yourself Up to Win",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/sales-call-strategies",
+    "title": "Sales Call Strategies",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/value-stacking",
+    "title": "Value Stacking",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/effective-closing",
+    "title": "Effective Closing Techniques",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "sales/upselling",
+    "title": "Upselling",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "onboard-clients/onboarding-workflow",
+    "title": "Onboarding Workflow",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "onboard-clients/onboarding-calls",
+    "title": "Onboarding Calls",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "onboard-clients/client-onboarding-form",
+    "title": "Client Onboarding Form",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "onboard-clients/case-study-interview",
+    "title": "How to Conduct a Case Study Interview",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/hiring-general",
+    "title": "Hiring — General Info",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/key-roles",
+    "title": "Key Roles & Job Posting Tips",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/hiring-inbox-manager",
+    "title": "Hiring an Inbox Manager",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/hiring-gtm",
+    "title": "Hiring a Go-To-Market Person",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/application-process",
+    "title": "Hiring — Application Process",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/employee-onboarding",
+    "title": "Employee Onboarding & Training",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/social-hiring-funnels",
+    "title": "Social Media Hiring Funnels",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/ops-strategy",
+    "title": "Strategy & Planning",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/creating-sops",
+    "title": "Creating SOPs",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "scaling/vertical-horizontal-scaling",
+    "title": "Vertical vs Horizontal Scaling",
+    "isSection": false,
+    "chunk": 101
+  }
 ]
