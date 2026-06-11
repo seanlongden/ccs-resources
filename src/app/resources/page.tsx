@@ -35,40 +35,30 @@ interface SearchResult {
 const ORIENTATION_SLUGS = ['welcome'];
 const GUIDED_SLUGS = ['ccs-install'];
 
-// Clean line-icon set (Lucide-style, inline). 18×18 viewBox, currentColor.
+// Clean line-icon set (Lucide-style, inline). 24×24 viewBox, currentColor.
 const ICON_PATHS: Record<string, React.ReactNode> = {
   'welcome': (
-    <>
-      <path d="M3 9l9-6 9 6v9a2 2 0 01-2 2h-4v-7H9v7H5a2 2 0 01-2-2V9z" />
-    </>
+    <path d="M3 9l9-6 9 6v9a2 2 0 01-2 2h-4v-7H9v7H5a2 2 0 01-2-2V9z" />
   ),
   'key-resources': (
+    <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" />
+  ),
+  'set-up': (
     <>
-      <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
     </>
   ),
-  'your-offer-gtm': (
+  'offers-guarantees-case-studies': (
     <>
-      <circle cx="12" cy="12" r="9" />
-      <circle cx="12" cy="12" r="5" />
-      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+      <circle cx="12" cy="8" r="7" />
+      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
     </>
   ),
-  'system-build': (
-    <>
-      <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-    </>
-  ),
-  'cold-email-execution': (
+  'cold-email': (
     <>
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
       <polyline points="22,6 12,13 2,6" />
-    </>
-  ),
-  'inbox-pipeline': (
-    <>
-      <polyline points="22,12 16,12 14,15 10,15 8,12 2,12" />
-      <path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z" />
     </>
   ),
   'sales': (
@@ -78,7 +68,7 @@ const ICON_PATHS: Record<string, React.ReactNode> = {
       <polyline points="17 11 19 13 23 9" />
     </>
   ),
-  'onboard-clients': (
+  'onboarding': (
     <>
       <polyline points="20 12 20 22 4 22 4 12" />
       <rect x="2" y="7" width="20" height="5" />
@@ -87,7 +77,15 @@ const ICON_PATHS: Record<string, React.ReactNode> = {
       <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" />
     </>
   ),
-  'scaling': (
+  'hiring-team': (
+    <>
+      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 00-3-3.87" />
+      <path d="M16 3.13a4 4 0 010 7.75" />
+    </>
+  ),
+  'operations-scaling': (
     <>
       <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
       <polyline points="17 6 23 6 23 12" />

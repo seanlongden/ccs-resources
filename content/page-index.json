@@ -42,202 +42,178 @@
     "chunk": 100
   },
   {
-    "slug": "your-offer-gtm/your-offer-gtm-overview",
-    "title": "Your Offer & GTM",
+    "slug": "set-up/set-up-overview",
+    "title": "Set Up",
     "isSection": false,
     "chunk": 100
   },
   {
-    "slug": "system-build/system-build-overview",
-    "title": "System Build",
+    "slug": "set-up/cold-traffic-offer",
+    "title": "Creating Your Cold Traffic Offer",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "set-up/map-out-icp",
+    "title": "Map Out Your ICP",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "set-up/service-model-pricing",
+    "title": "Your Service Model & Pricing",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "set-up/website-landing-page",
+    "title": "Your Website / Landing Page",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "set-up/create-vsl",
+    "title": "Create Your VSL",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "set-up/get-calendly",
+    "title": "Get Calendly & Embed on Your Website",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "set-up/set-up-payments",
+    "title": "Set Up Payments",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "set-up/create-agreement",
+    "title": "Create Your Agreement",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "offers-guarantees-case-studies/offers-guarantees-case-studies-overview",
+    "title": "Offers, Guarantees & Case Studies",
     "isSection": false,
     "chunk": 100
   },
   {
-    "slug": "cold-email-execution/cold-email-execution-overview",
-    "title": "Cold Email Execution",
+    "slug": "offers-guarantees-case-studies/offers",
+    "title": "Offers",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "offers-guarantees-case-studies/guarantees",
+    "title": "Guarantees",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "offers-guarantees-case-studies/case-studies",
+    "title": "Case Studies",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "offers-guarantees-case-studies/collecting-testimonials",
+    "title": "Collecting Testimonials",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "offers-guarantees-case-studies/strategy-value-props",
+    "title": "Strategy & Value Propositions",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/cold-email-overview",
+    "title": "Cold Email",
     "isSection": false,
     "chunk": 100
   },
   {
-    "slug": "inbox-pipeline/inbox-pipeline-overview",
-    "title": "Inbox + Pipeline Management",
+    "slug": "cold-email/cold-email-setup",
+    "title": "Cold Email Set Up",
     "isSection": false,
-    "chunk": 100
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/campaign-setup",
+    "title": "Campaign Set Up",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/manage-deliverability",
+    "title": "Manage Deliverability",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/list-building",
+    "title": "List Building",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/writing-emails",
+    "title": "Writing Emails",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/presenting-offer",
+    "title": "Presenting Your Offer in a Cold Email",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/reply-management",
+    "title": "Reply Management",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/running-campaigns",
+    "title": "Running + Improving Campaigns",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/campaign-faqs",
+    "title": "Campaign FAQs",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/lead-nurturing",
+    "title": "Lead Nurturing",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/warm-calling",
+    "title": "Warm Calling",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "cold-email/cold-traffic-offer-check",
+    "title": "Do You Have a Cold Traffic Offer?",
+    "isSection": false,
+    "chunk": 101
   },
   {
     "slug": "sales/sales-overview",
     "title": "Sales",
     "isSection": false,
     "chunk": 100
-  },
-  {
-    "slug": "onboard-clients/onboard-clients-overview",
-    "title": "Onboard Your New Clients",
-    "isSection": false,
-    "chunk": 100
-  },
-  {
-    "slug": "scaling/scaling-overview",
-    "title": "Scaling",
-    "isSection": false,
-    "chunk": 100
-  },
-  {
-    "slug": "scaling/hiring",
-    "title": "Hiring",
-    "isSection": false,
-    "chunk": 100
-  },
-  {
-    "slug": "your-offer-gtm/cold-traffic-offer",
-    "title": "Creating Your Cold Traffic Offer",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "your-offer-gtm/map-out-icp",
-    "title": "Map Out Your ICP",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "your-offer-gtm/service-model-pricing",
-    "title": "Your Service Model & Pricing",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "your-offer-gtm/offers",
-    "title": "Offers",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "your-offer-gtm/guarantees",
-    "title": "Guarantees",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "your-offer-gtm/case-studies",
-    "title": "Case Studies",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "your-offer-gtm/collecting-testimonials",
-    "title": "Collecting Testimonials",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "your-offer-gtm/strategy-value-props",
-    "title": "Strategy & Value Propositions",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "your-offer-gtm/cold-traffic-offer-check",
-    "title": "Do You Have a Cold Traffic Offer?",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "system-build/website-landing-page",
-    "title": "Your Website / Landing Page",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "system-build/create-vsl",
-    "title": "Create Your VSL",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "system-build/get-calendly",
-    "title": "Get Calendly & Embed on Your Website",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "system-build/set-up-payments",
-    "title": "Set Up Payments",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "system-build/create-agreement",
-    "title": "Create Your Agreement",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "cold-email-execution/cold-email-setup",
-    "title": "Cold Email Set Up",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "cold-email-execution/campaign-setup",
-    "title": "Campaign Set Up",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "cold-email-execution/manage-deliverability",
-    "title": "Manage Deliverability",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "cold-email-execution/list-building",
-    "title": "List Building",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "cold-email-execution/writing-emails",
-    "title": "Writing Emails",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "cold-email-execution/presenting-offer",
-    "title": "Presenting Your Offer in a Cold Email",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "cold-email-execution/running-campaigns",
-    "title": "Running + Improving Campaigns",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "cold-email-execution/campaign-faqs",
-    "title": "Campaign FAQs",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "inbox-pipeline/reply-management",
-    "title": "Reply Management",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "inbox-pipeline/lead-nurturing",
-    "title": "Lead Nurturing",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "sales/warm-calling",
-    "title": "Warm Calling",
-    "isSection": false,
-    "chunk": 101
   },
   {
     "slug": "sales/sales-mindset",
@@ -324,86 +300,104 @@
     "chunk": 101
   },
   {
-    "slug": "onboard-clients/onboarding-workflow",
+    "slug": "onboarding/onboarding-overview",
+    "title": "Onboarding",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "onboarding/onboarding-workflow",
     "title": "Onboarding Workflow",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "onboard-clients/onboarding-calls",
+    "slug": "onboarding/onboarding-calls",
     "title": "Onboarding Calls",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "onboard-clients/client-onboarding-form",
+    "slug": "onboarding/client-onboarding-form",
     "title": "Client Onboarding Form",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "onboard-clients/case-study-interview",
-    "title": "How to Conduct a Case Study Interview",
+    "slug": "hiring-team/hiring-team-overview",
+    "title": "Hiring & Team",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "hiring-team/hiring-general",
+    "title": "General Info",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "scaling/hiring-general",
-    "title": "Hiring — General Info",
-    "isSection": false,
-    "chunk": 101
-  },
-  {
-    "slug": "scaling/key-roles",
+    "slug": "hiring-team/key-roles",
     "title": "Key Roles & Job Posting Tips",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "scaling/hiring-inbox-manager",
+    "slug": "hiring-team/hiring-inbox-manager",
     "title": "Hiring an Inbox Manager",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "scaling/hiring-gtm",
+    "slug": "hiring-team/hiring-gtm",
     "title": "Hiring a Go-To-Market Person",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "scaling/application-process",
-    "title": "Hiring — Application Process",
+    "slug": "hiring-team/application-process",
+    "title": "Application Process",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "scaling/employee-onboarding",
+    "slug": "hiring-team/employee-onboarding",
     "title": "Employee Onboarding & Training",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "scaling/social-hiring-funnels",
+    "slug": "hiring-team/social-hiring-funnels",
     "title": "Social Media Hiring Funnels",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "scaling/ops-strategy",
+    "slug": "operations-scaling/operations-scaling-overview",
+    "title": "Operations & Scaling",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "operations-scaling/ops-strategy",
     "title": "Strategy & Planning",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "scaling/creating-sops",
+    "slug": "operations-scaling/creating-sops",
     "title": "Creating SOPs",
     "isSection": false,
     "chunk": 101
   },
   {
-    "slug": "scaling/vertical-horizontal-scaling",
+    "slug": "operations-scaling/vertical-horizontal-scaling",
     "title": "Vertical vs Horizontal Scaling",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "operations-scaling/case-study-interview",
+    "title": "How to Conduct a Case Study Interview",
     "isSection": false,
     "chunk": 101
   }
