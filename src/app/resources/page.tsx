@@ -167,24 +167,20 @@ export default function ResourcesPage() {
           <span className="font-semibold text-sm tracking-tight">Closing Clients System</span>
         </div>
 
-        <nav className="flex-1 py-2 overflow-y-auto">
-          {orientation.length > 0 && (
-            <>
-              <SectionLabel>Get Oriented</SectionLabel>
-              {orientation.map(s => <SidebarLink key={s.slug} section={s} />)}
-            </>
-          )}
+        <nav className="flex-1 py-3 overflow-y-auto">
+          {orientation.length > 0 && orientation.map(s => <SidebarLink key={s.slug} section={s} />)}
 
           {guided.length > 0 && (
             <>
-              <SectionLabel>Your Guided Path</SectionLabel>
+              <div className="my-3 mx-5 border-t border-white/10"></div>
               {guided.map(s => <SidebarLink key={s.slug} section={s} accent />)}
             </>
           )}
 
           {reference.length > 0 && (
             <>
-              <SectionLabel>Reference Library</SectionLabel>
+              <div className="my-3 mx-5 border-t border-white/10"></div>
+              <SectionLabel>Browse</SectionLabel>
               {reference.map(s => <SidebarLink key={s.slug} section={s} />)}
             </>
           )}
@@ -250,103 +246,72 @@ export default function ResourcesPage() {
         )}
 
         {/* Main Content */}
-        <main className="px-8 py-10 max-w-6xl">
-          <div className="mb-8">
-            <h1 className="text-2xl font-bold text-gray-900">Closing Clients System</h1>
-            <p className="text-gray-500 mt-1">Your guided path + reference library.</p>
+        <main className="px-8 py-12 max-w-4xl">
+          <div className="mb-10">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Start here</div>
+            <h1 className="text-3xl font-bold text-gray-900">Install your Closing Clients System</h1>
+            <p className="text-gray-500 mt-2 max-w-2xl">Work through the 5 modules in order. Each module unlocks what you need for the next phase. Tick steps off as you complete them.</p>
           </div>
 
           {/* CCS INSTALL — Featured guided track card */}
-          {guided.length > 0 && (
-            <div className="mb-10">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-gray-500 mb-3">Your Guided Path</div>
-              {guided.map((section) => (
-                <Link
-                  key={section.slug}
-                  href={`/resources/${section.slug}`}
-                  className="block group relative bg-white rounded-2xl border-2 border-[#5eea8d] p-7 hover:shadow-lg transition-all duration-150"
-                  style={{
-                    backgroundImage: 'linear-gradient(135deg, rgba(94,234,141,0.04) 0%, rgba(75,171,245,0.04) 100%)'
-                  }}
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#5eea8d] to-[#4babf5] flex items-center justify-center text-2xl shadow-md">
-                        {SECTION_ICONS[section.slug]}
-                      </div>
-                      <div>
-                        <div className="text-[10.5px] font-bold uppercase tracking-[0.15em] text-emerald-700 mb-0.5">Guided Track</div>
-                        <h2 className="text-xl font-bold text-gray-900">{section.title}</h2>
-                      </div>
-                    </div>
-                    <span className="text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-3 py-1">
-                      {section.children?.length ?? 0} modules
-                    </span>
+          {guided.length > 0 && guided.map((section) => (
+            <Link
+              key={section.slug}
+              href={`/resources/${section.slug}`}
+              className="block group relative bg-white rounded-2xl border-2 border-[#5eea8d] p-8 hover:shadow-xl transition-all duration-150"
+              style={{
+                backgroundImage: 'linear-gradient(135deg, rgba(94,234,141,0.05) 0%, rgba(75,171,245,0.05) 100%)'
+              }}
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
+                    <img src="/icon.png" alt="CCS" className="w-10 h-10 object-contain" />
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-3 max-w-2xl">
-                    {section.description}
-                  </p>
-                  <div className="flex items-center text-sm font-semibold text-emerald-700 group-hover:text-emerald-800">
-                    Start the Install
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                  <div>
+                    <div className="text-[10.5px] font-bold uppercase tracking-[0.15em] text-emerald-700 mb-1">Guided Track</div>
+                    <h2 className="text-2xl font-bold text-gray-900">{section.title}</h2>
                   </div>
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {/* Welcome — small banner */}
-          {orientation.length > 0 && orientation.map((section) => (
-            <div key={section.slug} className="mb-10">
-              <Link
-                href={`/resources/${section.slug}`}
-                className="group flex items-center gap-4 bg-white rounded-xl border border-gray-200 p-4 hover:border-[#0D1F35] hover:shadow-sm transition-all"
-              >
-                <span className="text-2xl">{SECTION_ICONS[section.slug] || '📄'}</span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <span className="text-sm font-semibold text-gray-900">{section.title}</span>
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">Get Oriented</span>
-                  </div>
-                  <p className="text-xs text-gray-500">{section.description}</p>
                 </div>
-                <svg className="w-4 h-4 text-gray-400 group-hover:text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-3 py-1">
+                  {section.children?.length ?? 0} modules
+                </span>
+              </div>
+
+              <p className="text-sm text-gray-600 leading-relaxed mb-5 max-w-2xl">
+                {section.description}
+              </p>
+
+              {/* Module preview — 5 step indicators */}
+              {section.children && section.children.length > 0 && (
+                <div className="mb-6 space-y-2">
+                  {section.children.map((module, i) => (
+                    <div key={module.slug} className="flex items-center gap-3 text-sm">
+                      <div className="w-5 h-5 rounded-full border-2 border-gray-300 bg-white flex-shrink-0 flex items-center justify-center text-[10px] text-gray-400 font-semibold">
+                        {i + 1}
+                      </div>
+                      <span className="text-gray-700">{module.title}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="inline-flex items-center gap-2 bg-emerald-700 group-hover:bg-emerald-800 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+                Start the Install
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
 
-          {/* Reference Library grid */}
-          {reference.length > 0 && (
-            <>
-              <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-gray-500 mb-3">Reference Library</div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {reference.map((section) => (
-                  <Link
-                    key={section.slug}
-                    href={`/resources/${section.slug}`}
-                    className="group bg-white rounded-xl border border-gray-200 p-5 hover:border-[#0D1F35] hover:shadow-md transition-all duration-150"
-                  >
-                    <div className="flex items-start justify-between mb-3">
-                      <span className="text-2xl">{SECTION_ICONS[section.slug] || '📄'}</span>
-                      <span className="text-xs font-medium text-gray-400 bg-gray-100 rounded-full px-2.5 py-1">
-                        {section.children?.length ?? 0} {(section.children?.length === 1) ? 'page' : 'pages'}
-                      </span>
-                    </div>
-                    <h2 className="text-base font-semibold text-gray-900 group-hover:text-[#0D1F35] mb-1">
-                      {section.title}
-                    </h2>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                      {section.description}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </>
-          )}
+          {/* Subtle hint to sidebar for reference content */}
+          <div className="mt-12 flex items-center gap-2 text-sm text-gray-400">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Looking for a specific topic? Browse the reference library in the sidebar.</span>
+          </div>
         </main>
       </div>
     </div>
