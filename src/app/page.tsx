@@ -86,11 +86,11 @@ export default function LoginPage() {
       <div className="w-full max-w-md relative z-10 animate-fade-in">
         {/* Logo */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-1.5">
+          <div className="inline-flex items-center gap-0">
             <img
               src="/icon.png"
               alt="CCS"
-              className="w-12 h-12 object-contain"
+              className="w-12 h-12 object-contain -mr-1"
             />
             <span className="text-white text-2xl font-bold tracking-tight">CLOSING CLIENTS SYSTEM</span>
           </div>
@@ -136,7 +136,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading || !email}
-              className="w-full bg-[#0D1F35] text-white py-3.5 px-4 rounded-xl font-medium hover:bg-[#1a3a5c] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full bg-[#0D1F35] text-white py-3.5 px-4 rounded-xl font-medium hover:bg-[#1a3a5c] disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {loading ? (
                 <>
@@ -159,9 +159,9 @@ export default function LoginPage() {
 
           <div className="mt-6 pt-6 border-t border-gray-100">
             <p className="text-center text-gray-500 text-sm">
-              Want the System installed?{' '}
+              Want the System?{' '}
               <a
-                href="https://closingclientssystem.com"
+                href="https://vsl.closingclientssystem.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#0D1F35] font-medium hover:underline"
