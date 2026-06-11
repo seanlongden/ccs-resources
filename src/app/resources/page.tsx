@@ -32,21 +32,88 @@ interface SearchResult {
   chunk: number;
 }
 
-const SECTION_ICONS: Record<string, string> = {
-  'welcome': '👋',
-  'ccs-install': '🚀',
-  'key-resources': '⭐',
-  'your-offer-gtm': '🎯',
-  'system-build': '🔨',
-  'cold-email-execution': '📬',
-  'inbox-pipeline': '📥',
-  'sales': '🤝',
-  'onboard-clients': '🎁',
-  'scaling': '📈',
-};
-
 const ORIENTATION_SLUGS = ['welcome'];
 const GUIDED_SLUGS = ['ccs-install'];
+
+// Clean line-icon set (Lucide-style, inline). 18×18 viewBox, currentColor.
+const ICON_PATHS: Record<string, React.ReactNode> = {
+  'welcome': (
+    <>
+      <path d="M3 9l9-6 9 6v9a2 2 0 01-2 2h-4v-7H9v7H5a2 2 0 01-2-2V9z" />
+    </>
+  ),
+  'key-resources': (
+    <>
+      <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" />
+    </>
+  ),
+  'your-offer-gtm': (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    </>
+  ),
+  'system-build': (
+    <>
+      <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+    </>
+  ),
+  'cold-email-execution': (
+    <>
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+      <polyline points="22,6 12,13 2,6" />
+    </>
+  ),
+  'inbox-pipeline': (
+    <>
+      <polyline points="22,12 16,12 14,15 10,15 8,12 2,12" />
+      <path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z" />
+    </>
+  ),
+  'sales': (
+    <>
+      <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+      <circle cx="8.5" cy="7" r="4" />
+      <polyline points="17 11 19 13 23 9" />
+    </>
+  ),
+  'onboard-clients': (
+    <>
+      <polyline points="20 12 20 22 4 22 4 12" />
+      <rect x="2" y="7" width="20" height="5" />
+      <line x1="12" y1="22" x2="12" y2="7" />
+      <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z" />
+      <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" />
+    </>
+  ),
+  'scaling': (
+    <>
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+      <polyline points="17 6 23 6 23 12" />
+    </>
+  ),
+};
+
+function SectionIcon({ slug, className }: { slug: string; className?: string }) {
+  // CCS Install uses the actual brand mark (PNG) instead of a line icon
+  if (slug === 'ccs-install') {
+    return <img src="/icon.png" alt="" className={className} />;
+  }
+  const paths = ICON_PATHS[slug];
+  if (!paths) {
+    return (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="9" />
+      </svg>
+    );
+  }
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      {paths}
+    </svg>
+  );
+}
 
 export default function ResourcesPage() {
   const [auth, setAuth] = useState<AuthData | null>(null);
@@ -145,8 +212,15 @@ export default function ResourcesPage() {
           : 'text-white/65 hover:text-white hover:bg-white/[0.04] border-l-2 border-transparent'
       }`}
     >
-      <span className="flex items-center gap-2.5 min-w-0">
-        <span className="text-base flex-shrink-0">{SECTION_ICONS[section.slug] || '📄'}</span>
+      <span className="flex items-center gap-3 min-w-0">
+        <SectionIcon
+          slug={section.slug}
+          className={
+            section.slug === 'ccs-install'
+              ? 'w-[18px] h-[18px] object-contain flex-shrink-0'
+              : 'w-[18px] h-[18px] flex-shrink-0 opacity-70'
+          }
+        />
         <span className="truncate">{section.title}</span>
       </span>
     </Link>
