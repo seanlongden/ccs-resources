@@ -5,6 +5,13 @@ let cachedMembers: Set<string> | null = null;
 let lastFetchTime = 0;
 
 async function fetchLifetimeMembers(): Promise<Set<string>> {
+  // No Google Sheet configured — skip lifetime check entirely.
+  // Use case: deployments (e.g. CCS resources) where every member is paid
+  // via Stripe and there is no separate lifetime allowlist.
+  if (!SHEET_ID) {
+    return new Set();
+  }
+
   const now = Date.now();
 
   // Return cached data if still valid
