@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CCG Resources",
-  description: "Closing Clients Group Resource Library",
+  title: "Closing Clients System",
+  description: "Closing Clients System — Member Resource Library",
   icons: {
     icon: '/icon.png',
     shortcut: '/icon.png',

@@ -162,7 +162,7 @@ export default function ResourcePage() {
           <div className="flex items-center justify-between h-14">
             <div className="flex items-center gap-2 min-w-0">
               <Link href="/resources">
-                <img src="/icon.png" alt="CCG" className="w-8 h-8 shrink-0" />
+                <img src="/icon.png" alt="CCS" className="w-8 h-8 shrink-0" />
               </Link>
               <div className="flex items-center gap-1.5 text-sm min-w-0">
                 <Link href="/resources" className="text-white/50 hover:text-white shrink-0">Resources</Link>

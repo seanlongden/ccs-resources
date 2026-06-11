@@ -89,10 +89,10 @@ export default function LoginPage() {
           <div className="inline-flex items-center gap-3 mb-4">
             <img
               src="/icon.png"
-              alt="CCG"
+              alt="CCS"
               className="w-12 h-12 rounded-xl object-cover"
             />
-            <span className="text-white text-2xl font-bold tracking-tight">CLOSING CLIENTS</span>
+            <span className="text-white text-2xl font-bold tracking-tight">CLOSING CLIENTS SYSTEM</span>
           </div>
           <p className="text-gray-400">Member Resource Library</p>
         </div>
@@ -103,7 +103,7 @@ export default function LoginPage() {
             Access Your Resources
           </h2>
           <p className="text-gray-500 text-sm mb-6">
-            Enter the email associated with your CCG membership
+            Enter the email associated with your CCS membership
           </p>
 
           <form onSubmit={handleSubmit}>
@@ -162,12 +162,12 @@ export default function LoginPage() {
             <p className="text-center text-gray-500 text-sm">
               Not a member yet?{' '}
               <a
-                href="https://closingclientsgroup.com"
+                href="https://closingclientssystem.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#0D1F35] font-medium hover:underline"
               >
-                Join CCG →
+                Get CCS →
               </a>
             </p>
           </div>
@@ -175,7 +175,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <p className="text-gray-500 text-xs text-center mt-8">
-          By accessing, you agree to the CCG terms of service
+          By accessing, you agree to the Closing Clients System terms of service
         </p>
       </div>
     </div>
