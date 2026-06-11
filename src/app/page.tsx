@@ -85,15 +85,13 @@ export default function LoginPage() {
 
       <div className="w-full max-w-md relative z-10 animate-fade-in">
         {/* Logo */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-0">
-            <img
-              src="/icon.png"
-              alt="CCS"
-              className="w-12 h-12 object-contain -mr-1"
-            />
-            <span className="text-white text-2xl font-bold tracking-tight">CLOSING CLIENTS SYSTEM</span>
-          </div>
+        <div className="flex items-center justify-center gap-2 mb-10">
+          <img
+            src="/icon.png"
+            alt="CCS"
+            className="w-12 h-12 object-contain"
+          />
+          <span className="text-white text-2xl font-bold tracking-tight">CLOSING CLIENTS SYSTEM</span>
         </div>
 
         {/* Login Card */}
