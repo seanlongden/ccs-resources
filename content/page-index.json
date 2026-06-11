@@ -408,8 +408,14 @@
     "chunk": 101
   },
   {
-    "slug": "cold-email/deliverability-updates",
+    "slug": "key-resources/deliverability-updates",
     "title": "Deliverability Updates: What's Working Now",
+    "isSection": false,
+    "chunk": 101
+  },
+  {
+    "slug": "key-resources/templates-downloads",
+    "title": "Templates & Downloads",
     "isSection": false,
     "chunk": 101
   }

@@ -66,6 +66,20 @@
         "fullSlug": "key-resources/key-resources-overview",
         "type": "page",
         "childCount": 0
+      },
+      {
+        "title": "Deliverability Updates: What's Working Now",
+        "slug": "deliverability-updates",
+        "fullSlug": "key-resources/deliverability-updates",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Templates & Downloads",
+        "slug": "templates-downloads",
+        "fullSlug": "key-resources/templates-downloads",
+        "type": "page",
+        "childCount": 0
       }
     ]
   },
@@ -288,13 +302,6 @@
         "title": "Do You Have a Cold Traffic Offer?",
         "slug": "cold-traffic-offer-check",
         "fullSlug": "cold-email/cold-traffic-offer-check",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Deliverability Updates: What's Working Now",
-        "slug": "deliverability-updates",
-        "fullSlug": "cold-email/deliverability-updates",
         "type": "page",
         "childCount": 0
       }
