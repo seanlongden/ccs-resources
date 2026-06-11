@@ -85,22 +85,21 @@ export default function LoginPage() {
 
       <div className="w-full max-w-md relative z-10 animate-fade-in">
         {/* Logo */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-3 mb-4">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-1.5">
             <img
               src="/icon.png"
               alt="CCS"
-              className="w-12 h-12 rounded-xl object-cover"
+              className="w-12 h-12 object-contain"
             />
             <span className="text-white text-2xl font-bold tracking-tight">CLOSING CLIENTS SYSTEM</span>
           </div>
-          <p className="text-gray-400">Member Resource Library</p>
         </div>
 
         {/* Login Card */}
         <div className="bg-white rounded-2xl p-8 shadow-2xl shadow-black/20">
           <h2 className="text-[#0D1F35] text-xl font-semibold mb-2">
-            Access Your Resources
+            Access Closing Clients System
           </h2>
           <p className="text-gray-500 text-sm mb-6">
             Enter the email associated with your CCS membership
@@ -149,7 +148,7 @@ export default function LoginPage() {
                 </>
               ) : (
                 <>
-                  Access Resources
+                  Access System
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -160,7 +159,7 @@ export default function LoginPage() {
 
           <div className="mt-6 pt-6 border-t border-gray-100">
             <p className="text-center text-gray-500 text-sm">
-              Not a member yet?{' '}
+              Want the System installed?{' '}
               <a
                 href="https://closingclientssystem.com"
                 target="_blank"

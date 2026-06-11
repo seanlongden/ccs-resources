@@ -160,9 +160,9 @@ export default function ResourcePage() {
       <header className="bg-[#0D1F35] text-white sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-14">
-            <div className="flex items-center gap-2 min-w-0">
+            <div className="flex items-center gap-1 min-w-0">
               <Link href="/resources">
-                <img src="/icon.png" alt="CCS" className="w-8 h-8 shrink-0" />
+                <img src="/icon.png" alt="CCS" className="w-8 h-8 shrink-0 object-contain" />
               </Link>
               <div className="flex items-center gap-1.5 text-sm min-w-0">
                 <Link href="/resources" className="text-white/50 hover:text-white shrink-0">Resources</Link>
