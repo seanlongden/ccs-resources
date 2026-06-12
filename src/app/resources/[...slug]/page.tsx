@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 import { renderContent } from '@/lib/content-renderer';
+import navigationData from '../../../../content/navigation.json';
 
 type AccessLevel = 'free' | 'trial' | 'active' | 'lifetime';
 type UserStatus = 'active' | 'trialing' | 'canceled_with_access' | 'lifetime' | 'no_subscription';
@@ -45,7 +46,7 @@ interface NavSection {
   children?: NavChild[];
 }
 
-const TOP_LEVEL_SLUGS = new Set(['key-resources', 'get-started', 'outreach', 'sales', 'fulfillment', 'scale']);
+const TOP_LEVEL_SLUGS = new Set((navigationData as NavSection[]).map(s => s.slug));
 
 function hasAccess(userStatus: UserStatus | undefined, requiredLevel: AccessLevel): boolean {
   if (requiredLevel === 'free') return true;

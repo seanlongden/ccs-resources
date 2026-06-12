@@ -377,13 +377,42 @@ export default function ResourcesPage() {
             </Link>
           ))}
 
-          {/* Subtle hint to sidebar for reference content */}
-          <div className="mt-12 flex items-center gap-2 text-sm text-gray-400">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            <span>Looking for a specific topic? Browse the reference library in the sidebar.</span>
-          </div>
+          {/* Reference library — all real-content sections */}
+          {reference.length > 0 && (
+            <div className="mt-14">
+              <div className="mb-5">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Reference library</div>
+                <h2 className="text-xl font-bold text-gray-900">Browse by topic</h2>
+                <p className="text-gray-500 mt-1 text-sm max-w-2xl">Everything Matt has published. Jump straight to the section you need.</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {reference.map((section) => {
+                  const pageCount = section.children?.length ?? 0;
+                  return (
+                    <Link
+                      key={section.slug}
+                      href={`/resources/${section.slug}`}
+                      className="group block bg-white rounded-xl border border-gray-200 p-5 hover:border-gray-300 hover:shadow-md transition-all"
+                    >
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-700 group-hover:bg-[#0D1F35] group-hover:text-white group-hover:border-[#0D1F35] transition-colors">
+                          <SectionIcon slug={section.slug} className="w-5 h-5" />
+                        </div>
+                        <span className="text-[11px] font-semibold text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-0.5">
+                          {pageCount} {pageCount === 1 ? 'page' : 'pages'}
+                        </span>
+                      </div>
+                      <h3 className="text-sm font-semibold text-gray-900 leading-snug mb-1">{section.title}</h3>
+                      {section.description && (
+                        <p className="text-xs text-gray-500 leading-relaxed">{section.description}</p>
+                      )}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </main>
       </div>
     </div>
