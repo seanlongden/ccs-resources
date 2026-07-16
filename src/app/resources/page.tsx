@@ -117,6 +117,13 @@ export default function ResourcesPage() {
 
   if (!auth?.authenticated) return null;
 
+  // After Phase 1 killed the ccs-install / welcome sections, the tri-bucket
+  // filter (orientation / guided / reference) is dead. The new 6-step
+  // structure is a single flat sequence — every section is a step, no
+  // featured guided track. All navigation items render as equal-weight
+  // cards below.
+  const reference = navigation;
+
   return (
     <div className="min-h-screen bg-gray-50 flex">
       <Sidebar navigation={navigation} email={auth.email} onLogout={handleLogout} />
@@ -180,59 +187,12 @@ export default function ResourcesPage() {
             <p className="text-gray-500 mt-2 max-w-2xl">Work through the 5 modules in order. Each module unlocks what you need for the next phase. Tick steps off as you complete them.</p>
           </div>
 
-          {/* CCS INSTALL — Featured guided track card */}
-          {guided.length > 0 && guided.map((section) => (
-            <Link
-              key={section.slug}
-              href={`/resources/${section.slug}`}
-              className="block group relative bg-white rounded-2xl border-2 border-[#5eea8d] p-8 hover:shadow-xl transition-all duration-150"
-              style={{
-                backgroundImage: 'linear-gradient(135deg, rgba(94,234,141,0.05) 0%, rgba(75,171,245,0.05) 100%)'
-              }}
-            >
-              <div className="flex items-start justify-between mb-5">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-sm overflow-hidden">
-                    <img src="/icon.png" alt="CCS" className="w-10 h-10 object-contain" />
-                  </div>
-                  <div>
-                    <div className="text-[10.5px] font-bold uppercase tracking-[0.15em] text-emerald-700 mb-1">Guided Track</div>
-                    <h2 className="text-2xl font-bold text-gray-900">{section.title}</h2>
-                  </div>
-                </div>
-                <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-3 py-1">
-                  {section.children?.length ?? 0} modules
-                </span>
-              </div>
+          {/* Featured "CCS INSTALL" guided-track card lived here — removed
+              in Phase 1 hotfix because it referenced the old 'ccs-install'
+              slug which no longer exists. If we want a featured card for
+              Step 1 (Start Here) later, re-introduce here. */}
 
-              <p className="text-sm text-gray-600 leading-relaxed mb-5 max-w-2xl">
-                {section.description}
-              </p>
-
-              {/* Module preview — 5 step indicators */}
-              {section.children && section.children.length > 0 && (
-                <div className="mb-6 space-y-2">
-                  {section.children.map((module, i) => (
-                    <div key={module.slug} className="flex items-center gap-3 text-sm">
-                      <div className="w-5 h-5 rounded-full border-2 border-gray-300 bg-white flex-shrink-0 flex items-center justify-center text-[10px] text-gray-400 font-semibold">
-                        {i + 1}
-                      </div>
-                      <span className="text-gray-700">{module.title}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              <div className="inline-flex items-center gap-2 bg-emerald-700 group-hover:bg-emerald-800 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors">
-                Start the Install
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </div>
-            </Link>
-          ))}
-
-          {/* Reference library — all real-content sections */}
+          {/* All 6 steps rendered as equal-weight cards */}
           {reference.length > 0 && (
             <div className="mt-14">
               <div className="mb-5">
