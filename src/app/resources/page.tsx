@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Sidebar, { SectionIcon } from '@/components/Sidebar';
 
 interface AuthData {
   authenticated: boolean;
@@ -30,87 +31,6 @@ interface SearchResult {
   title: string;
   isSection: boolean;
   chunk: number;
-}
-
-const ORIENTATION_SLUGS = ['welcome'];
-const GUIDED_SLUGS = ['ccs-install'];
-
-// Clean line-icon set (Lucide-style, inline). 24×24 viewBox, currentColor.
-const ICON_PATHS: Record<string, React.ReactNode> = {
-  'welcome': (
-    <path d="M3 9l9-6 9 6v9a2 2 0 01-2 2h-4v-7H9v7H5a2 2 0 01-2-2V9z" />
-  ),
-  'key-resources': (
-    <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" />
-  ),
-  'set-up': (
-    <>
-      <circle cx="12" cy="12" r="3" />
-      <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
-    </>
-  ),
-  'offers-guarantees-case-studies': (
-    <>
-      <circle cx="12" cy="8" r="7" />
-      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-    </>
-  ),
-  'cold-email': (
-    <>
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-      <polyline points="22,6 12,13 2,6" />
-    </>
-  ),
-  'sales': (
-    <>
-      <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-      <circle cx="8.5" cy="7" r="4" />
-      <polyline points="17 11 19 13 23 9" />
-    </>
-  ),
-  'onboarding': (
-    <>
-      <polyline points="20 12 20 22 4 22 4 12" />
-      <rect x="2" y="7" width="20" height="5" />
-      <line x1="12" y1="22" x2="12" y2="7" />
-      <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z" />
-      <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" />
-    </>
-  ),
-  'hiring-team': (
-    <>
-      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M23 21v-2a4 4 0 00-3-3.87" />
-      <path d="M16 3.13a4 4 0 010 7.75" />
-    </>
-  ),
-  'operations-scaling': (
-    <>
-      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-      <polyline points="17 6 23 6 23 12" />
-    </>
-  ),
-};
-
-function SectionIcon({ slug, className }: { slug: string; className?: string }) {
-  // CCS Install uses the actual brand mark (PNG) instead of a line icon
-  if (slug === 'ccs-install') {
-    return <img src="/icon.png" alt="" className={className} />;
-  }
-  const paths = ICON_PATHS[slug];
-  if (!paths) {
-    return (
-      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="9" />
-      </svg>
-    );
-  }
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-      {paths}
-    </svg>
-  );
 }
 
 export default function ResourcesPage() {
@@ -197,74 +117,9 @@ export default function ResourcesPage() {
 
   if (!auth?.authenticated) return null;
 
-  const orientation = navigation.filter(s => ORIENTATION_SLUGS.includes(s.slug));
-  const guided = navigation.filter(s => GUIDED_SLUGS.includes(s.slug));
-  const reference = navigation.filter(s => !ORIENTATION_SLUGS.includes(s.slug) && !GUIDED_SLUGS.includes(s.slug));
-
-  const SidebarLink = ({ section, accent }: { section: NavSection; accent?: boolean }) => (
-    <Link
-      href={`/resources/${section.slug}`}
-      className={`flex items-center justify-between px-5 py-2.5 text-sm transition-colors ${
-        accent
-          ? 'text-white font-semibold bg-gradient-to-r from-[#5eea8d]/10 to-[#4babf5]/10 border-l-2 border-[#5eea8d] hover:from-[#5eea8d]/15 hover:to-[#4babf5]/15'
-          : 'text-white/65 hover:text-white hover:bg-white/[0.04] border-l-2 border-transparent'
-      }`}
-    >
-      <span className="flex items-center gap-3 min-w-0">
-        <SectionIcon
-          slug={section.slug}
-          className={
-            section.slug === 'ccs-install'
-              ? 'w-[18px] h-[18px] object-contain flex-shrink-0'
-              : 'w-[18px] h-[18px] flex-shrink-0 opacity-70'
-          }
-        />
-        <span className="truncate">{section.title}</span>
-      </span>
-    </Link>
-  );
-
-  const SectionLabel = ({ children }: { children: React.ReactNode }) => (
-    <div className="px-5 pt-5 pb-2 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-white/35">
-      {children}
-    </div>
-  );
-
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      {/* Sidebar */}
-      <aside className="w-64 bg-[#0D1F35] text-white sticky top-0 h-screen overflow-y-auto flex-shrink-0 flex flex-col">
-        <div className="p-5 border-b border-white/10 flex items-center gap-2 flex-shrink-0">
-          <img src="/icon.png" alt="CCS" className="w-7 h-7 object-contain" />
-          <span className="font-semibold text-sm tracking-tight">Closing Clients System</span>
-        </div>
-
-        <nav className="flex-1 py-3 overflow-y-auto">
-          {orientation.length > 0 && orientation.map(s => <SidebarLink key={s.slug} section={s} />)}
-
-          {guided.length > 0 && (
-            <>
-              <div className="my-3 mx-5 border-t border-white/10"></div>
-              {guided.map(s => <SidebarLink key={s.slug} section={s} accent />)}
-            </>
-          )}
-
-          {reference.length > 0 && (
-            <>
-              <div className="my-3 mx-5 border-t border-white/10"></div>
-              <SectionLabel>Browse</SectionLabel>
-              {reference.map(s => <SidebarLink key={s.slug} section={s} />)}
-            </>
-          )}
-        </nav>
-
-        <div className="p-4 border-t border-white/10 flex-shrink-0">
-          <div className="text-xs text-white/40 truncate">{auth.email}</div>
-          <button onClick={handleLogout} className="text-xs text-white/60 hover:text-white mt-1.5">
-            Logout
-          </button>
-        </div>
-      </aside>
+      <Sidebar navigation={navigation} email={auth.email} onLogout={handleLogout} />
 
       {/* Main */}
       <div className="flex-1 min-w-0">
