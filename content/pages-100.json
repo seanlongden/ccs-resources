@@ -1,86 +1,32 @@
 {
-  "welcome/welcome-overview": {
-    "title": "Welcome to Closing Clients System",
-    "slug": "welcome/welcome-overview",
-    "fullSlug": "welcome/welcome-overview",
-    "content": "# Welcome to Closing Clients System\n\n**Content launching soon.**\n\nYou've got access to the CCS Resources library.\n\n**What'll be inside:**\n\n- How to use this platform\n- Where to start: CCS INSTALL → Module 1\n- Where to find ongoing intel: Key Resources\n- How to get help\n\n---\n\nFilling in content section by section."
+  "start-here/start-here-overview": {
+    "slug": "start-here/start-here-overview",
+    "title": "Start Here — Overview",
+    "content": "# Welcome to the Closing Clients System\n\nEverything you need to run an outbound engine that books qualified sales calls, in six sequential steps. Follow them in order.\n\n---\n\n## The six steps\n\n1. **Start Here** — you're on it. A 5-minute overview of the whole system so you know what you're building.\n2. **Set Up Your Tech Stack** — buy and configure Instantly, leads, inboxes, warm-up. If we're doing your setup for you as part of DFY, this step is reference only — skim it if you want to understand what we built.\n3. **Write Your Offer + Cold Email** — craft the offer, write the email, get both reviewed.\n4. **Launch & Handle Replies** — send campaigns, manage inboxes, handle every reply type.\n5. **Close & Onboard** — sales call playbook, contracts, onboarding new clients.\n6. **Scale** — hire, systemise, and grow beyond what you can run yourself.\n\n---\n\n> **This step is a placeholder.** Real content is being migrated in — check back soon.\n"
   },
-  "ccs-install/module-1-pre-install": {
-    "title": "Module 1 — Pre-Install",
-    "slug": "ccs-install/module-1-pre-install",
-    "fullSlug": "ccs-install/module-1-pre-install",
-    "content": "# Module 1 — Pre-Install\n\n**Content launching soon.**\n\nWhat to have ready before Day 1.\n\n**What'll be inside:**\n\n- What you need before we start\n- Niche / offer thinking\n- Booking your Day 1 Kickoff Call\n\n---\n\nFilling in content section by section."
+  "setup/setup-overview": {
+    "slug": "setup/setup-overview",
+    "title": "Set Up — Overview",
+    "content": "# Set Up Your Tech Stack\n\nBuy and configure the infrastructure your campaigns need. Text-only — no video required per step.\n\n**Done for you already?** If we set up your tech stack as part of your DFY package, this step is reference — skim it to understand what we built, then move to Step 3.\n\n---\n\n> **Placeholder.** Real setup content — Instantly, lead sources, inbox provisioning, warm-up, CRM wiring — will land here in the next content pass.\n"
   },
-  "ccs-install/module-2-system-install": {
-    "title": "Module 2 — System Install (Days 1–14)",
-    "slug": "ccs-install/module-2-system-install",
-    "fullSlug": "ccs-install/module-2-system-install",
-    "content": "# Module 2 — System Install (Days 1–14)\n\n**Content launching soon.**\n\nThe two-week build phase.\n\n**What'll be inside:**\n\n- Day 1: Kickoff Call\n- Days 2–3: Offer + Infrastructure\n- Days 5–7: Training\n- Days 10–12: Campaigns Built\n- Days 13–14: Final Approval\n\n---\n\nFilling in content section by section."
+  "offer-and-email/offer-and-email-overview": {
+    "slug": "offer-and-email/offer-and-email-overview",
+    "title": "Offer & Email — Overview",
+    "content": "# Write Your Offer + Cold Email\n\nYour offer is the single most important thing. This step walks you through crafting an offer strong enough to book calls from cold, then writing the email that gets it in front of the right people.\n\n---\n\n> **Placeholder.** Content — offer frameworks, copy templates, embedded videos, AI System files for offer + copy generation, and a Book-review-call CTA — will land here in the next content pass.\n"
   },
-  "ccs-install/module-3-campaign-launch": {
-    "title": "Module 3 — Campaign Launch (Week 3)",
-    "slug": "ccs-install/module-3-campaign-launch",
-    "fullSlug": "ccs-install/module-3-campaign-launch",
-    "content": "# Module 3 — Campaign Launch (Week 3)\n\n**Content launching soon.**\n\nCampaigns go live. First positive replies.\n\n**What'll be inside:**\n\n- Going live: launch checklist\n- First-positive-reply handling\n- Booking your first calls\n\n---\n\nFilling in content section by section."
+  "launch-and-replies/launch-and-replies-overview": {
+    "slug": "launch-and-replies/launch-and-replies-overview",
+    "title": "Launch & Replies — Overview",
+    "content": "# Launch & Handle Replies\n\nSend your campaigns, manage the inbox, and handle every reply type — from hot leads to hard passes.\n\n---\n\n> **Placeholder.** Content — sending schedules, inbox management SOPs, reply-handling AI System files, response templates — will land here in the next content pass.\n"
   },
-  "ccs-install/module-4-run-optimise": {
-    "title": "Module 4 — Run + Optimise (Weeks 4–26)",
-    "slug": "ccs-install/module-4-run-optimise",
-    "fullSlug": "ccs-install/module-4-run-optimise",
-    "content": "# Module 4 — Run + Optimise (Weeks 4–26)\n\n**Content launching soon.**\n\nYour ~4 hours/week ongoing.\n\n**What'll be inside:**\n\n- Daily: reply management\n- Weekly: new leads\n- Sales calls\n- Hitting 5–15 clients milestone\n\n---\n\nFilling in content section by section."
+  "close-and-onboard/close-and-onboard-overview": {
+    "slug": "close-and-onboard/close-and-onboard-overview",
+    "title": "Close & Onboard — Overview",
+    "content": "# Close & Onboard\n\nThe sales call playbook, contracts, and getting new clients set up so they get results fast.\n\n---\n\n> **Placeholder.** Content — sales-call framework, contract templates, onboarding checklists — will land here in the next content pass.\n"
   },
-  "ccs-install/module-5-beyond-180-days": {
-    "title": "Module 5 — Beyond 180 Days (Scale-Up)",
-    "slug": "ccs-install/module-5-beyond-180-days",
-    "fullSlug": "ccs-install/module-5-beyond-180-days",
-    "content": "# Module 5 — Beyond 180 Days (Scale-Up)\n\n**Content launching soon.**\n\nWhat changes after the guarantee window.\n\n**What'll be inside:**\n\n- Hiring inflection points\n- Adding channels / niches\n- Founder → Owner transition\n\n---\n\nFilling in content section by section."
-  },
-  "key-resources/key-resources-overview": {
-    "title": "Key Resources",
-    "slug": "key-resources/key-resources-overview",
-    "fullSlug": "key-resources/key-resources-overview",
-    "content": "# Key Resources\n\n**Content launching soon.**\n\nOngoing intel layer. Updates, FAQs, payment, what's working now.\n\n**What'll be inside:**\n\n- Ongoing intel layer. Updates, FAQs, payment, what's working now.\n\n---\n\nFilling in content section by section."
-  },
-  "set-up/set-up-overview": {
-    "title": "Set Up",
-    "slug": "set-up/set-up-overview",
-    "fullSlug": "set-up/set-up-overview",
-    "content": "# Set Up\n\n**Content launching soon.**\n\nICP, offer, website, VSL, calendar, payments, agreements.\n\n**What'll be inside:**\n\n- Creating Your Cold Traffic Offer\n- Map Out Your ICP\n- Your Service Model & Pricing\n- Your Website / Landing Page\n- Create Your VSL\n- Get Calendly & Embed on Your Website\n- Set Up Payments\n- Create Your Agreement\n\n---\n\nFilling in content section by section."
-  },
-  "offers-guarantees-case-studies/offers-guarantees-case-studies-overview": {
-    "title": "Offers, Guarantees & Case Studies",
-    "slug": "offers-guarantees-case-studies/offers-guarantees-case-studies-overview",
-    "fullSlug": "offers-guarantees-case-studies/offers-guarantees-case-studies-overview",
-    "content": "# Offers, Guarantees & Case Studies\n\n**Content launching soon.**\n\nOffer design, risk reversal, proof, testimonials.\n\n**What'll be inside:**\n\n- Offers\n- Guarantees\n- Case Studies\n- Collecting Testimonials\n- Strategy & Value Propositions\n\n---\n\nFilling in content section by section."
-  },
-  "cold-email/cold-email-overview": {
-    "title": "Cold Email",
-    "slug": "cold-email/cold-email-overview",
-    "fullSlug": "cold-email/cold-email-overview",
-    "content": "# Cold Email\n\n**Content launching soon.**\n\nSetup, campaigns, deliverability, copy, list building, replies.\n\n**What'll be inside:**\n\n- Cold Email Set Up\n- Campaign Set Up\n- Manage Deliverability\n- List Building\n- Writing Emails\n- Presenting Your Offer in a Cold Email\n- Reply Management\n- Running + Improving Campaigns\n- Campaign FAQs\n- Lead Nurturing\n- Warm Calling\n- Do You Have a Cold Traffic Offer?\n\n---\n\nFilling in content section by section."
-  },
-  "sales/sales-overview": {
-    "title": "Sales",
-    "slug": "sales/sales-overview",
-    "fullSlug": "sales/sales-overview",
-    "content": "# Sales\n\n**Content launching soon.**\n\nProcess, calls, frame, closing, upsells.\n\n**What'll be inside:**\n\n- Sales Mindset\n- Positioning\n- Lead Magnets\n- Sales Assets\n- Qualifying Prospects\n- Sales Process\n- Call Show-Up Process\n- Pre-Sell With A Pre-Call Guide\n- Set The Frame + Own The Call\n- Call Prep — Set Yourself Up to Win\n- Sales Call Strategies\n- Value Stacking\n- Effective Closing Techniques\n- Upselling\n\n---\n\nFilling in content section by section."
-  },
-  "onboarding/onboarding-overview": {
-    "title": "Onboarding",
-    "slug": "onboarding/onboarding-overview",
-    "fullSlug": "onboarding/onboarding-overview",
-    "content": "# Onboarding\n\n**Content launching soon.**\n\nOnboarding new clients post-close.\n\n**What'll be inside:**\n\n- Onboarding Workflow\n- Onboarding Calls\n- Client Onboarding Form\n\n---\n\nFilling in content section by section."
-  },
-  "hiring-team/hiring-team-overview": {
-    "title": "Hiring & Team",
-    "slug": "hiring-team/hiring-team-overview",
-    "fullSlug": "hiring-team/hiring-team-overview",
-    "content": "# Hiring & Team\n\n**Content launching soon.**\n\nHiring inbox managers, GTM people, employee training.\n\n**What'll be inside:**\n\n- General Info\n- Key Roles & Job Posting Tips\n- Hiring an Inbox Manager\n- Hiring a Go-To-Market Person\n- Application Process\n- Employee Onboarding & Training\n- Social Media Hiring Funnels\n\n---\n\nFilling in content section by section."
-  },
-  "operations-scaling/operations-scaling-overview": {
-    "title": "Operations & Scaling",
-    "slug": "operations-scaling/operations-scaling-overview",
-    "fullSlug": "operations-scaling/operations-scaling-overview",
-    "content": "# Operations & Scaling\n\n**Content launching soon.**\n\nStrategy, SOPs, vertical vs horizontal scale.\n\n**What'll be inside:**\n\n- Strategy & Planning\n- Creating SOPs\n- Vertical vs Horizontal Scaling\n- How to Conduct a Case Study Interview\n\n---\n\nFilling in content section by section."
+  "scale/scale-overview": {
+    "slug": "scale/scale-overview",
+    "title": "Scale — Overview",
+    "content": "# Scale\n\nHire, systemise, and grow beyond what you can run yourself.\n\n---\n\n> **Placeholder.** Content — hiring frameworks, ops SOPs, team structures, scaling playbooks — will land here in the next content pass.\n"
   }
 }
