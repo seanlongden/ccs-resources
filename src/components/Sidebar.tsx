@@ -159,6 +159,38 @@ export default function Sidebar({ navigation, email, onLogout }: SidebarProps) {
             {!collapsed && <span className="truncate flex-1">{s.title}</span>}
           </Link>
         ))}
+
+        {/* External: CCS Tools hub (tools.closingclientssystem.com). Renders
+            below the 6 sequential steps. Small ↗ arrow shows it opens in a
+            new tab. Kept as a hardcoded item (not in navigation.json) because
+            the schema only supports internal /resources/* slugs and adding
+            external-link support would touch the router + section-card grid
+            too. Cross-tool link, not a resource — belongs outside the data. */}
+        <a
+          href="https://tools.closingclientssystem.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title={collapsed ? 'CCS Tools' : undefined}
+          className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md text-white/85 hover:bg-white/10 hover:text-white`}
+        >
+          {/* Toolbox / grid icon */}
+          <svg className="w-4 h-4 text-white/60 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+          </svg>
+          {!collapsed && (
+            <>
+              <span className="truncate flex-1">CCS Tools</span>
+              {/* External-link arrow */}
+              <svg className="w-3 h-3 text-white/40 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17L17 7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </>
+          )}
+        </a>
       </nav>
 
       {/* User + Logout */}
