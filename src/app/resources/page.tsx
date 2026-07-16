@@ -125,7 +125,7 @@ export default function ResourcesPage() {
   const reference = navigation;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 flex flex-col md:flex-row">
       <Sidebar navigation={navigation} email={auth.email} onLogout={handleLogout} />
 
       {/* Main */}
@@ -182,9 +182,9 @@ export default function ResourcesPage() {
         {/* Main Content */}
         <main className="px-8 py-12 max-w-4xl">
           <div className="mb-10">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Start here</div>
-            <h1 className="text-3xl font-bold text-gray-900">Install your Closing Clients System</h1>
-            <p className="text-gray-500 mt-2 max-w-2xl">Work through the 5 modules in order. Each module unlocks what you need for the next phase. Tick steps off as you complete them.</p>
+            <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The System</div>
+            <h1 className="text-3xl font-bold text-gray-900">Get set up in 6 steps</h1>
+            <p className="text-gray-500 mt-2 max-w-2xl">Everything you need to run an outbound engine that books qualified sales calls. Follow the steps in order — tick each one off as you finish it.</p>
           </div>
 
           {/* Featured "CCS INSTALL" guided-track card lived here — removed
@@ -196,8 +196,8 @@ export default function ResourcesPage() {
           {reference.length > 0 && (
             <div className="mt-14">
               <div className="mb-5">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Reference library</div>
-                <h2 className="text-xl font-bold text-gray-900">Browse by topic</h2>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The 6 steps</div>
+                <h2 className="text-xl font-bold text-gray-900">Pick up where you left off</h2>
                 <p className="text-gray-500 mt-1 text-sm max-w-2xl">Everything Matt has published. Jump straight to the section you need.</p>
               </div>
 
