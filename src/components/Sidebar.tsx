@@ -136,8 +136,14 @@ export default function Sidebar({ navigation, email, onLogout }: SidebarProps) {
         <button
           onClick={toggle}
           aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-          style={collapsed ? { position: 'absolute', right: -12, top: 20, zIndex: 10 } : undefined}
-          className={`p-1.5 rounded-md text-white/50 hover:text-white hover:bg-white/10 shrink-0 ${collapsed ? 'bg-[#0D1F35] border border-white/10 shadow' : ''}`}
+          style={collapsed ? {
+            position: 'absolute',
+            right: -12,
+            top: 20,
+            zIndex: 10,
+            backgroundColor: '#0D1F35',
+          } : undefined}
+          className={`p-1.5 rounded-md text-white/50 hover:text-white shrink-0 ${collapsed ? 'border border-white/10 shadow' : 'hover:bg-white/10'}`}
         >
           {collapsed ? (
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
