@@ -34,7 +34,11 @@ interface NavChild {
   children?: NavChild[];
 }
 
-interface NavSection extends NavItem {
+interface NavSection {
+  title: string;
+  slug: string;
+  fullSlug?: string;
+  description?: string;
   children?: NavChild[];
 }
 
@@ -168,7 +172,7 @@ export default function ResourcePage() {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       <Sidebar
-        navigation={navigationData as NavSection[]}
+        navigation={navigationData as unknown as NavItem[]}
         auth={auth}
         onLogout={handleLogout}
         collapsed={sidebarCollapsed}
