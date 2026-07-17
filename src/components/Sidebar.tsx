@@ -108,7 +108,7 @@ export default function Sidebar({ navigation, email, onLogout }: SidebarProps) {
 
   return (
     <aside
-      className={`${widthClass} bg-[#0D1F35] text-white sticky top-0 h-screen flex-shrink-0 flex flex-col transition-[width] duration-150`}
+      className={`${widthClass} bg-[#0D1F35] text-white border-r border-black/20 relative sticky top-0 h-screen flex-shrink-0 flex flex-col transition-[width] duration-150`}
     >
       {/* Brand + collapse toggle. Same layout at every screen width —
           collapsed mode centres the CCS icon, expanded shows the full
