@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
+import Sidebar from '@/components/Sidebar';
 import Link from 'next/link';
 import { renderContent } from '@/lib/content-renderer';
 import navigationData from '../../../../content/navigation.json';
@@ -156,36 +157,36 @@ export default function ResourcePage() {
   if (!auth?.authenticated) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-[#0D1F35] text-white sticky top-0 z-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-14">
-            <div className="flex items-center gap-1 min-w-0">
-              <Link href="/resources">
-                <img src="/icon.png" alt="CCS" className="w-8 h-8 shrink-0 object-contain" />
-              </Link>
-              <div className="flex items-center gap-1.5 text-sm min-w-0">
-                <Link href="/resources" className="text-white/50 hover:text-white shrink-0">Resources</Link>
-                <svg className="w-3.5 h-3.5 text-white/30 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                <span className="text-white truncate">
-                  {section?.title || page?.title || '...'}
-                </span>
-              </div>
-            </div>
-            <button
-              onClick={handleLogout}
-              className="text-sm text-white/50 hover:text-white shrink-0 ml-4"
-            >
-              Logout
-            </button>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gray-50 flex">
+      {/* Same persistent sidebar as the /resources landing — matches
+          ccg-resources' pattern of one nav that lives across every
+          resource page. Uses the navigation.json constant imported at
+          the top so we don't need another API round-trip. */}
+      <Sidebar
+        navigation={navigationData as NavSection[]}
+        email={auth.email}
+        onLogout={handleLogout}
+      />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      <div className="flex-1 min-w-0">
+        {/* Slim breadcrumb bar at the top of the content column. The
+            main navigation lives in the sidebar now; this just gives
+            the reader a "Resources › {section}" anchor + back button. */}
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+          <div className="px-6 h-14 flex items-center justify-between">
+            <nav className="flex items-center gap-1.5 text-xs text-gray-500 min-w-0">
+              <Link href="/resources" className="hover:text-gray-900 shrink-0">Resources</Link>
+              <svg className="w-3 h-3 text-gray-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+              <span className="text-gray-900 truncate font-medium">
+                {section?.title || page?.title || '...'}
+              </span>
+            </nav>
+          </div>
+        </header>
+
+        <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
         {/* Back button */}
         <Link
           href="/resources"
@@ -232,7 +233,8 @@ export default function ResourcePage() {
             </Link>
           </div>
         )}
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
