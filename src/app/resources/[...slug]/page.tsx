@@ -1,20 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import Sidebar from '@/components/Sidebar';
 import Link from 'next/link';
+import { Sidebar, type NavItem, type AuthData } from '@/components/Sidebar';
 import { renderContent } from '@/lib/content-renderer';
 import navigationData from '../../../../content/navigation.json';
 
 type AccessLevel = 'free' | 'trial' | 'active' | 'lifetime';
 type UserStatus = 'active' | 'trialing' | 'canceled_with_access' | 'lifetime' | 'no_subscription';
-
-interface AuthData {
-  authenticated: boolean;
-  email?: string;
-  status?: UserStatus;
-}
 
 interface GatingInfo {
   requiredLevel: AccessLevel;
@@ -43,11 +37,13 @@ interface NavChild {
 interface NavSection {
   title: string;
   slug: string;
+  fullSlug?: string;
   description?: string;
   children?: NavChild[];
 }
 
 const TOP_LEVEL_SLUGS = new Set((navigationData as NavSection[]).map(s => s.slug));
+const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
 
 function hasAccess(userStatus: UserStatus | undefined, requiredLevel: AccessLevel): boolean {
   if (requiredLevel === 'free') return true;
@@ -75,12 +71,31 @@ export default function ResourcePage() {
   const [section, setSection] = useState<NavSection | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const router = useRouter();
   const params = useParams();
 
   const slugParts = params.slug as string[];
   const fullSlug = slugParts ? slugParts.join('/') : '';
   const isTopLevelSection = TOP_LEVEL_SLUGS.has(fullSlug);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const collapsed = window.localStorage.getItem(SIDEBAR_KEY) === '1';
+      setSidebarCollapsed(collapsed);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const toggleSidebar = useCallback(() => {
+    setSidebarCollapsed(v => {
+      const next = !v;
+      try { window.localStorage.setItem(SIDEBAR_KEY, next ? '1' : '0'); } catch { /* ignore */ }
+      return next;
+    });
+  }, []);
 
   useEffect(() => {
     async function init() {
@@ -99,7 +114,6 @@ export default function ResourcePage() {
       }
 
       if (isTopLevelSection) {
-        // Load navigation to find this section
         try {
           const navRes = await fetch('/api/content/navigation');
           const navData: NavSection[] = await navRes.json();
@@ -114,7 +128,6 @@ export default function ResourcePage() {
           setError('Failed to load section');
         }
       } else {
-        // Load page content
         try {
           const pageRes = await fetch(`/api/content/page?slug=${encodeURIComponent(fullSlug)}`);
           if (!pageRes.ok) {
@@ -158,20 +171,15 @@ export default function ResourcePage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      {/* Same persistent sidebar as the /resources landing — matches
-          ccg-resources' pattern of one nav that lives across every
-          resource page. Uses the navigation.json constant imported at
-          the top so we don't need another API round-trip. */}
       <Sidebar
-        navigation={navigationData as NavSection[]}
-        email={auth.email}
+        navigation={navigationData as unknown as NavItem[]}
+        auth={auth}
         onLogout={handleLogout}
+        collapsed={sidebarCollapsed}
+        onToggleCollapse={toggleSidebar}
       />
 
       <div className="flex-1 min-w-0">
-        {/* Slim breadcrumb bar at the top of the content column. The
-            main navigation lives in the sidebar now; this just gives
-            the reader a "Resources › {section}" anchor + back button. */}
         <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
           <div className="px-6 h-14 flex items-center justify-between">
             <nav className="flex items-center gap-1.5 text-xs text-gray-500 min-w-0">
@@ -187,7 +195,6 @@ export default function ResourcePage() {
         </header>
 
         <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
-        {/* Back button */}
         <Link
           href="/resources"
           className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#0D1F35] mb-6 group"
@@ -200,7 +207,6 @@ export default function ResourcePage() {
           Back to Resources
         </Link>
 
-        {/* Section Overview (one of the 6 top-level sections) */}
         {section && !error && (
           <div>
             <div className="mb-8">
@@ -213,12 +219,10 @@ export default function ResourcePage() {
           </div>
         )}
 
-        {/* Content Page */}
         {page && !error && (
           <ContentPage page={page} auth={auth} />
         )}
 
-        {/* Error */}
         {error && (
           <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 text-center py-16">
             <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
@@ -271,7 +275,6 @@ function SectionChildren({ items }: { items: NavChild[] }) {
     );
   }
 
-  // Flat list with optional dividers
   const segments: Array<{ dividerTitle?: string; items: NavChild[] }> = [];
   let currentSegment: NavChild[] = [];
 
@@ -281,7 +284,6 @@ function SectionChildren({ items }: { items: NavChild[] }) {
         segments.push({ items: currentSegment });
         currentSegment = [];
       }
-      // Start new segment with divider label (strip the dashes)
       const label = child.title?.replace(/^---\s*/, '').replace(/\s*---$/, '').trim();
       segments.push({ dividerTitle: label, items: [] });
     } else {
@@ -329,7 +331,7 @@ function SectionChildren({ items }: { items: NavChild[] }) {
 }
 
 function ContentPage({ page, auth }: { page: PageData; auth: AuthData }) {
-  if (page.gating && !hasAccess(auth?.status, page.gating.requiredLevel)) {
+  if (page.gating && !hasAccess(auth?.status as UserStatus | undefined, page.gating.requiredLevel)) {
     return (
       <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 text-center py-16">
         <div className="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
@@ -427,4 +429,3 @@ function ContentPage({ page, auth }: { page: PageData; auth: AuthData }) {
     </div>
   );
 }
-

@@ -1,118 +1,199 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import {
+  Home, Settings, Mail, Send, Handshake, TrendingUp,
+  ChevronsLeft, ChevronsRight,
+  LogOut, FileText, Folder, ExternalLink, Wrench,
+  Search, X, Loader2,
+  type LucideIcon,
+} from 'lucide-react';
 
-interface NavSection {
+interface SidebarSearchResult {
+  pageSlug: string;
+  anchor: string;
+  heading: string;
+  snippet: string;
+  breadcrumb: string[];
+  pageTitle: string;
+}
+
+export interface NavItem {
   title: string;
   slug: string;
+  fullSlug?: string;
+  group?: 'main-modules';
+  icon?: string;
+  order?: number;
   description?: string;
+  children?: NavItem[];
+}
+
+export const ICON_MAP: Record<string, LucideIcon> = {
+  home: Home, settings: Settings, mail: Mail, send: Send,
+  handshake: Handshake, trending: TrendingUp, folder: Folder,
+};
+
+export interface AuthData {
+  authenticated: boolean;
+  email?: string;
+  status?: string;
+}
+
+export type GroupKey = 'main-modules';
+
+export const SECTION_META: Record<string, {
+  group: GroupKey;
+  icon: LucideIcon;
+  description: string;
+  order: number;
+}> = {
+  'start-here': { group: 'main-modules', icon: Home, order: 1, description: "A 5-minute overview of the Closing Clients System so you know what you're building." },
+  'setup': { group: 'main-modules', icon: Settings, order: 2, description: 'Buy and configure Instantly, leads, inboxes, warm-up. Text-only — no video needed per step.' },
+  'offer-and-email': { group: 'main-modules', icon: Mail, order: 3, description: 'Craft the offer, write the email, get both reviewed before you launch.' },
+  'launch-and-replies': { group: 'main-modules', icon: Send, order: 4, description: 'Send campaigns, manage inboxes, handle every reply type.' },
+  'close-and-onboard': { group: 'main-modules', icon: Handshake, order: 5, description: 'Sales call playbook, contracts, onboarding new clients.' },
+  'scale': { group: 'main-modules', icon: TrendingUp, order: 6, description: 'Hire, systemise, and grow beyond what you can run yourself.' },
+};
+
+export const LEGACY_SLUGS = new Set<string>([]);
+
+export const GROUP_LABELS: Record<GroupKey, string> = {
+  'main-modules': 'The 6 Steps',
+};
+
+export function resolveSectionGroup(s: NavItem): GroupKey | 'legacy' | undefined {
+  if (s.group) return s.group;
+  const meta = SECTION_META[s.slug];
+  if (meta) return meta.group;
+  if (LEGACY_SLUGS.has(s.slug)) return 'legacy';
+  return undefined;
+}
+
+export function resolveSectionIcon(s: NavItem): LucideIcon {
+  if (s.icon && ICON_MAP[s.icon]) return ICON_MAP[s.icon];
+  const meta = SECTION_META[s.slug];
+  if (meta) return meta.icon;
+  return Folder;
+}
+
+export function resolveSectionOrder(s: NavItem): number {
+  if (s.order !== undefined) return s.order;
+  return SECTION_META[s.slug]?.order ?? 99;
+}
+
+export function resolveSectionDescription(s: NavItem): string {
+  if (s.description) return s.description;
+  return SECTION_META[s.slug]?.description ?? '';
+}
+
+// Re-exported so pages can render the section icon in cards without
+// duplicating the resolveSectionIcon lookup.
+export function SectionIcon({ slug, className }: { slug: string; className?: string }) {
+  const meta = SECTION_META[slug];
+  const Icon = meta?.icon ?? Folder;
+  return <Icon className={className} strokeWidth={1.75} />;
+}
+
+export function useNavGrouped(navigation: NavItem[]) {
+  return useMemo(() => {
+    const grouped: Record<GroupKey, NavItem[]> = { 'main-modules': [] };
+    const legacy: NavItem[] = [];
+    for (const s of navigation) {
+      const g = resolveSectionGroup(s);
+      if (g === 'main-modules') grouped[g].push(s);
+      else if (g === 'legacy') legacy.push(s);
+    }
+    (Object.keys(grouped) as GroupKey[]).forEach(k => {
+      grouped[k].sort((a, b) => resolveSectionOrder(a) - resolveSectionOrder(b));
+    });
+    return { newGrouped: grouped, legacy };
+  }, [navigation]);
 }
 
 interface SidebarProps {
-  navigation: NavSection[];
-  email?: string;
+  navigation: NavItem[];
+  auth: AuthData;
   onLogout: () => void;
+  collapsed: boolean;
+  onToggleCollapse: () => void;
 }
 
-// Lucide-style inline SVG paths for the 6 new step slugs. Unknown
-// slugs fall back to a generic circle in <SectionIcon>.
-const ICON_PATHS: Record<string, React.ReactNode> = {
-  'start-here': (
-    <path d="M3 9l9-6 9 6v9a2 2 0 01-2 2h-4v-7H9v7H5a2 2 0 01-2-2V9z" />
-  ),
-  'setup': (
-    <>
-      <circle cx="12" cy="12" r="3" />
-      <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
-    </>
-  ),
-  'offer-and-email': (
-    <>
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-      <polyline points="22,6 12,13 2,6" />
-    </>
-  ),
-  'launch-and-replies': (
-    <>
-      <line x1="22" y1="2" x2="11" y2="13" />
-      <polygon points="22 2 15 22 11 13 2 9 22 2" />
-    </>
-  ),
-  'close-and-onboard': (
-    <>
-      <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-      <circle cx="8.5" cy="7" r="4" />
-      <polyline points="17 11 19 13 23 9" />
-    </>
-  ),
-  'scale': (
-    <>
-      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-      <polyline points="17 6 23 6 23 12" />
-    </>
-  ),
-};
+export function Sidebar({
+  navigation, auth, onLogout, collapsed, onToggleCollapse,
+}: SidebarProps) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const { newGrouped } = useNavGrouped(navigation);
 
-export function SectionIcon({ slug, className }: { slug: string; className?: string }) {
-  const paths = ICON_PATHS[slug];
-  if (!paths) {
-    return (
-      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="9" />
-      </svg>
-    );
-  }
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-      {paths}
-    </svg>
-  );
-}
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<SidebarSearchResult[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
 
-const STORAGE_KEY = 'ccs.sidebar.collapsed';
-
-/**
- * Persistent sidebar. Same behavior on all screen sizes — matches the
- * pattern in ccg-resources. No mobile drawer, no hamburger. Users
- * collapse the sidebar to a 64px icons-only strip on smaller screens
- * via the chevron toggle; the collapse state is remembered per browser.
- */
-export default function Sidebar({ navigation, email, onLogout }: SidebarProps) {
-  const [collapsed, setCollapsed] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved === 'true') setCollapsed(true);
-    } catch {
-      /* localStorage unavailable — default to expanded */
+  const performSearch = useCallback(async (query: string) => {
+    if (!query.trim()) {
+      setSearchResults([]);
+      setIsSearching(false);
+      return;
     }
-    setHydrated(true);
+    setIsSearching(true);
+    try {
+      const res = await fetch(`/api/content/page?search=${encodeURIComponent(query)}`);
+      const results = await res.json();
+      setSearchResults(Array.isArray(results) ? results : []);
+    } catch (e) {
+      console.error('Sidebar search failed:', e);
+      setSearchResults([]);
+    }
+    setIsSearching(false);
   }, []);
 
-  function toggle() {
-    setCollapsed((prev) => {
-      const next = !prev;
-      try {
-        window.localStorage.setItem(STORAGE_KEY, String(next));
-      } catch {
-        /* ignore */
+  useEffect(() => {
+    const t = setTimeout(() => performSearch(searchQuery), 250);
+    return () => clearTimeout(t);
+  }, [searchQuery, performSearch]);
+
+  useEffect(() => {
+    setSearchQuery('');
+    setSearchResults([]);
+    setSearchOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!searchOpen) return;
+    function onDocClick(e: MouseEvent) {
+      if (!searchContainerRef.current) return;
+      if (!searchContainerRef.current.contains(e.target as Node)) {
+        setSearchOpen(false);
       }
-      return next;
-    });
+    }
+    document.addEventListener('mousedown', onDocClick);
+    return () => document.removeEventListener('mousedown', onDocClick);
+  }, [searchOpen]);
+
+  const handleResultClick = useCallback((pageSlug: string, anchor: string) => {
+    setSearchQuery('');
+    setSearchResults([]);
+    setSearchOpen(false);
+    router.push(`/resources/${pageSlug}${anchor ? '#' + anchor : ''}`);
+  }, [router]);
+
+  const activeSlug = pathname?.startsWith('/resources/') ? pathname.slice('/resources/'.length) : '';
+
+  function isActive(fullSlug: string | undefined) {
+    if (!activeSlug || !fullSlug) return false;
+    return activeSlug === fullSlug || activeSlug.startsWith(fullSlug + '/');
   }
 
-  const widthClass = collapsed ? 'w-16' : 'w-64';
+  const widthClass = collapsed ? 'w-16' : 'w-72';
 
   return (
-    <aside
-      className={`${widthClass} bg-[#0D1F35] text-white border-r border-black/20 relative sticky top-0 h-screen flex-shrink-0 flex flex-col transition-[width] duration-150`}
-    >
-      {/* Brand + collapse toggle. Same layout at every screen width —
-          collapsed mode centres the CCS icon, expanded shows the full
-          brand label + chevron. */}
+    <aside className={`${widthClass} bg-[#0D1F35] text-white border-r border-black/20 flex flex-col h-screen sticky top-0 transition-[width] duration-150`}>
+      {/* Brand + collapse toggle */}
       <div className="px-3 pt-4 pb-3 border-b border-white/10 flex items-center justify-between">
         {!collapsed ? (
           <Link href="/resources" className="flex items-center gap-2.5 min-w-0 flex-1 px-2">
@@ -127,90 +208,152 @@ export default function Sidebar({ navigation, email, onLogout }: SidebarProps) {
             <img src="/icon.png" alt="Closing Clients System" className="w-8 h-8 object-contain" />
           </Link>
         )}
-        {/* Collapse/expand toggle. When collapsed we use INLINE styles for
-            positioning (bypasses any Tailwind JIT/purge issues that were
-            leaving the button visually orphaned outside the sidebar in
-            Sean's browser) and drop the border+shadow so the button reads
-            as subtle — matches ccg-resources' quiet look, not a prominent
-            floating pill. */}
         <button
-          onClick={toggle}
+          onClick={onToggleCollapse}
           aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-          style={collapsed ? {
-            position: 'absolute',
-            right: -12,
-            top: 20,
-            zIndex: 10,
-            backgroundColor: '#0D1F35',
-          } : undefined}
-          className={`p-1.5 rounded-md text-white/50 hover:text-white shrink-0 ${collapsed ? 'border border-white/10 shadow' : 'hover:bg-white/10'}`}
+          className={`p-1.5 rounded-md text-white/50 hover:text-white hover:bg-white/10 shrink-0 ${collapsed ? 'absolute -right-3 top-5 bg-[#0D1F35] border border-white/10 shadow' : ''}`}
         >
-          {collapsed ? (
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="13 17 18 12 13 7" />
-              <polyline points="6 17 11 12 6 7" />
-            </svg>
-          ) : (
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="11 17 6 12 11 7" />
-              <polyline points="18 17 13 12 18 7" />
-            </svg>
-          )}
+          {collapsed ? <ChevronsRight className="w-4 h-4" /> : <ChevronsLeft className="w-4 h-4" />}
         </button>
       </div>
 
-      {/* Nav — flat list, order from navigation.json */}
-      <nav className={`flex-1 overflow-y-auto py-4 ${collapsed ? 'px-2 space-y-1' : 'px-3 space-y-0.5'}`}>
-        {hydrated && navigation.map((s) => (
-          <Link
-            key={s.slug}
-            href={`/resources/${s.slug}`}
-            title={collapsed ? s.title : undefined}
-            className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md text-white/85 hover:bg-white/10 hover:text-white`}
-          >
-            <SectionIcon slug={s.slug} className="w-4 h-4 text-white/60 shrink-0" />
-            {!collapsed && <span className="truncate flex-1">{s.title}</span>}
-          </Link>
+      {/* Library search (only visible when sidebar expanded). */}
+      {!collapsed && (
+        <div ref={searchContainerRef} className="relative px-3 pt-3 pb-1">
+          <Search className="absolute left-[22px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50" strokeWidth={1.75} />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => { setSearchQuery(e.target.value); setSearchOpen(true); }}
+            onFocus={() => setSearchOpen(true)}
+            placeholder="Search resources..."
+            aria-label="Search resources"
+            className="w-full pl-8 pr-8 py-1.5 text-xs bg-white/5 border border-white/10 rounded-md text-white placeholder-white/40 focus:outline-none focus:bg-white/10 focus:border-white/25"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => { setSearchQuery(''); setSearchResults([]); }}
+              aria-label="Clear search"
+              className="absolute right-[18px] top-1/2 -translate-y-1/2 p-0.5 text-white/40 hover:text-white"
+            >
+              <X className="w-3.5 h-3.5" strokeWidth={1.75} />
+            </button>
+          )}
+          {searchOpen && searchQuery.trim() && (
+            <div className="absolute left-3 right-3 top-full mt-1 z-20 bg-white text-slate-900 rounded-md shadow-lg border border-slate-200 max-h-80 overflow-y-auto">
+              {isSearching ? (
+                <div className="flex justify-center py-4">
+                  <Loader2 className="w-4 h-4 text-slate-400 animate-spin" />
+                </div>
+              ) : searchResults.length === 0 ? (
+                <div className="px-3 py-3 text-xs text-slate-500">No matches.</div>
+              ) : (
+                <ul className="divide-y divide-slate-100">
+                  {searchResults.slice(0, 12).map((r, idx) => (
+                    <li key={`${r.pageSlug}-${r.anchor}-${idx}`}>
+                      <button
+                        type="button"
+                        onClick={() => handleResultClick(r.pageSlug, r.anchor)}
+                        className="w-full flex items-start gap-2 px-3 py-2 text-left hover:bg-slate-50"
+                      >
+                        <FileText className="w-3.5 h-3.5 text-slate-400 mt-0.5 shrink-0" strokeWidth={1.5} />
+                        <div className="min-w-0 flex-1">
+                          <div className="text-xs font-medium text-slate-900 truncate">{r.heading}</div>
+                          <div className="text-[10px] text-slate-500 truncate">
+                            {r.breadcrumb.join(' › ')}
+                          </div>
+                          {r.snippet && (
+                            <div
+                              className="text-[10px] text-slate-600 mt-1 line-clamp-3 leading-snug ccg-search-snippet"
+                              dangerouslySetInnerHTML={{ __html: r.snippet }}
+                            />
+                          )}
+                        </div>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Nav groups */}
+      <nav className={`flex-1 overflow-y-auto py-4 ${collapsed ? 'px-2 space-y-2' : 'px-3 space-y-5'}`}>
+        {(['main-modules'] as GroupKey[]).map((g) => (
+          newGrouped[g].length > 0 && (
+            <div key={g}>
+              {!collapsed && (
+                <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
+                  {GROUP_LABELS[g]}
+                </div>
+              )}
+              <div className="space-y-0.5">
+                {newGrouped[g].map((s) => {
+                  const Icon = resolveSectionIcon(s);
+                  const active = isActive(s.fullSlug || s.slug);
+                  return (
+                    <Link
+                      key={s.slug}
+                      href={`/resources/${s.fullSlug || s.slug}`}
+                      title={collapsed ? s.title : undefined}
+                      className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
+                        active ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
+                      }`}
+                    >
+                      <Icon className={`w-4 h-4 ${active ? 'text-white' : 'text-white/60'} shrink-0`} strokeWidth={1.75} />
+                      {!collapsed && <span className="truncate flex-1">{s.title}</span>}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )
         ))}
 
-        {/* External: CCS Tools hub (tools.closingclientssystem.com). Renders
-            below the 6 sequential steps. Small ↗ arrow shows it opens in a
-            new tab. Kept as a hardcoded item (not in navigation.json) because
-            the schema only supports internal /resources/* slugs and adding
-            external-link support would touch the router + section-card grid
-            too. Cross-tool link, not a resource — belongs outside the data. */}
-        <a
-          href="https://tools.closingclientssystem.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          title={collapsed ? 'CCS Tools' : undefined}
-          className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md text-white/85 hover:bg-white/10 hover:text-white`}
-        >
-          {/* Toolbox / grid icon */}
-          <svg className="w-4 h-4 text-white/60 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="3" width="7" height="7" />
-            <rect x="14" y="3" width="7" height="7" />
-            <rect x="14" y="14" width="7" height="7" />
-            <rect x="3" y="14" width="7" height="7" />
-          </svg>
+        {/* External: CCS Tools hub (tools.closingclientssystem.com). */}
+        <div>
           {!collapsed && (
-            <>
-              <span className="truncate flex-1">CCS Tools</span>
-              {/* External-link arrow */}
-              <svg className="w-3 h-3 text-white/40 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M7 17L17 7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </>
+            <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
+              Tools
+            </div>
           )}
-        </a>
+          <a
+            href="https://tools.closingclientssystem.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={collapsed ? 'CCS Tools' : undefined}
+            className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md text-white/85 hover:bg-white/10 hover:text-white`}
+          >
+            <Wrench className="w-4 h-4 text-white/60 shrink-0" strokeWidth={1.75} />
+            {!collapsed && (
+              <>
+                <span className="truncate flex-1">CCS Tools</span>
+                <ExternalLink className="w-3 h-3 text-white/40 shrink-0" strokeWidth={2} />
+              </>
+            )}
+          </a>
+        </div>
       </nav>
 
       {/* User + Logout */}
       <div className="border-t border-white/10 px-3 py-3 space-y-2">
         {!collapsed && (
           <div className="px-1">
-            <div className="text-xs font-medium text-white/85 truncate">{email}</div>
+            <div className="text-xs font-medium text-white/85 truncate">{auth.email}</div>
+            <div className="mt-0.5">
+              <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${
+                auth.status === 'lifetime' ? 'bg-purple-400/20 text-purple-200' :
+                auth.status === 'trialing' ? 'bg-blue-400/20 text-blue-200' :
+                auth.status === 'active' ? 'bg-emerald-400/20 text-emerald-200' :
+                'bg-white/10 text-white/60'
+              }`}>
+                {auth.status === 'lifetime' ? 'Lifetime' :
+                 auth.status === 'trialing' ? 'Trial' :
+                 auth.status === 'active' ? 'Active' : 'Member'}
+              </span>
+            </div>
           </div>
         )}
         <button
@@ -218,14 +361,13 @@ export default function Sidebar({ navigation, email, onLogout }: SidebarProps) {
           title={collapsed ? 'Logout' : undefined}
           className={`w-full flex items-center gap-2 py-1.5 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-md ${collapsed ? 'justify-center px-2' : 'px-2'}`}
         >
-          <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
-            <polyline points="16 17 21 12 16 7" />
-            <line x1="21" y1="12" x2="9" y2="12" />
-          </svg>
+          <LogOut className="w-4 h-4" strokeWidth={1.75} />
           {!collapsed && <span>Logout</span>}
         </button>
       </div>
     </aside>
   );
 }
+
+// Default export for backwards-compat with existing imports.
+export default Sidebar;
