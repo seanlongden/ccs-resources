@@ -23,7 +23,7 @@ interface SidebarSearchResult {
 export interface NavItem {
   title: string;
   slug: string;
-  fullSlug: string;
+  fullSlug?: string;
   group?: 'main-modules';
   icon?: string;
   order?: number;
@@ -184,8 +184,8 @@ export function Sidebar({
 
   const activeSlug = pathname?.startsWith('/resources/') ? pathname.slice('/resources/'.length) : '';
 
-  function isActive(fullSlug: string) {
-    if (!activeSlug) return false;
+  function isActive(fullSlug: string | undefined) {
+    if (!activeSlug || !fullSlug) return false;
     return activeSlug === fullSlug || activeSlug.startsWith(fullSlug + '/');
   }
 
@@ -292,11 +292,11 @@ export function Sidebar({
               <div className="space-y-0.5">
                 {newGrouped[g].map((s) => {
                   const Icon = resolveSectionIcon(s);
-                  const active = isActive(s.fullSlug);
+                  const active = isActive(s.fullSlug || s.slug);
                   return (
                     <Link
                       key={s.slug}
-                      href={`/resources/${s.fullSlug}`}
+                      href={`/resources/${s.fullSlug || s.slug}`}
                       title={collapsed ? s.title : undefined}
                       className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
                         active ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
