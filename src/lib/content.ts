@@ -7,7 +7,7 @@ const CONTENT_DIR = path.join(process.cwd(), 'content');
 export interface NavItem {
   title: string;
   slug: string;
-  fullSlug: string;
+  fullSlug?: string;
   group?: 'main-modules';
   icon?: string;
   order?: number;
@@ -20,7 +20,7 @@ export interface NavItem {
 export interface PageData {
   title: string;
   slug: string;
-  fullSlug: string;
+  fullSlug?: string;
   content: string;
   isSection?: boolean;
   children?: NavItem[];
