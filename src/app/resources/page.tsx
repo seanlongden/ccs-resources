@@ -3,69 +3,38 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Sidebar, { SectionIcon } from '@/components/Sidebar';
+import { Sidebar, SectionIcon, type NavItem, type AuthData } from '@/components/Sidebar';
 
-interface AuthData {
-  authenticated: boolean;
-  email?: string;
-  status?: string;
-}
-
-interface NavSection {
-  title: string;
-  slug: string;
-  description?: string;
+interface NavSection extends NavItem {
   itemCount?: number;
-  children?: NavItem[];
 }
 
-interface NavItem {
-  title: string;
-  slug: string;
-  fullSlug: string;
-  type?: string;
-}
-
-interface SearchResult {
-  slug: string;
-  title: string;
-  isSection: boolean;
-  chunk: number;
-}
+const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
 
 export default function ResourcesPage() {
   const [auth, setAuth] = useState<AuthData | null>(null);
   const [navigation, setNavigation] = useState<NavSection[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
-  const [isSearching, setIsSearching] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const router = useRouter();
 
-  const performSearch = useCallback(async (query: string) => {
-    if (!query.trim()) {
-      setSearchResults([]);
-      setIsSearching(false);
-      return;
-    }
-    setIsSearching(true);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
     try {
-      const res = await fetch(`/api/content/page?search=${encodeURIComponent(query)}`);
-      const results = await res.json();
-      setSearchResults(results);
-    } catch (e) {
-      console.error('Search failed:', e);
-      setSearchResults([]);
+      const collapsed = window.localStorage.getItem(SIDEBAR_KEY) === '1';
+      setSidebarCollapsed(collapsed);
+    } catch {
+      /* ignore */
     }
-    setIsSearching(false);
   }, []);
 
-  useEffect(() => {
-    const debounceTimer = setTimeout(() => {
-      performSearch(searchQuery);
-    }, 300);
-    return () => clearTimeout(debounceTimer);
-  }, [searchQuery, performSearch]);
+  const toggleSidebar = useCallback(() => {
+    setSidebarCollapsed(v => {
+      const next = !v;
+      try { window.localStorage.setItem(SIDEBAR_KEY, next ? '1' : '0'); } catch { /* ignore */ }
+      return next;
+    });
+  }, []);
 
   useEffect(() => {
     async function init() {
@@ -117,69 +86,17 @@ export default function ResourcesPage() {
 
   if (!auth?.authenticated) return null;
 
-  // After Phase 1 killed the ccs-install / welcome sections, the tri-bucket
-  // filter (orientation / guided / reference) is dead. The new 6-step
-  // structure is a single flat sequence — every section is a step, no
-  // featured guided track. All navigation items render as equal-weight
-  // cards below.
-  const reference = navigation;
-
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      <Sidebar navigation={navigation} email={auth.email} onLogout={handleLogout} />
+      <Sidebar
+        navigation={navigation}
+        auth={auth}
+        onLogout={handleLogout}
+        collapsed={sidebarCollapsed}
+        onToggleCollapse={toggleSidebar}
+      />
 
-      {/* Main */}
       <div className="flex-1 min-w-0">
-        {/* Top bar (search only — logo is in sidebar) */}
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
-          <div className="px-8 h-14 flex items-center">
-            <div className="flex-1 max-w-xl">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search resources..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#0D1F35] focus:border-transparent"
-                />
-                <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* Search Results Overlay */}
-        {searchQuery && (
-          <div className="fixed inset-0 z-40 bg-black/50 pt-14" onClick={() => setSearchQuery('')}>
-            <div className="max-w-2xl mx-auto mt-4 px-4" onClick={e => e.stopPropagation()}>
-              <div className="bg-white rounded-lg shadow-xl overflow-hidden max-h-[70vh] overflow-y-auto">
-                {isSearching ? (
-                  <div className="p-6 text-center text-gray-500">Searching...</div>
-                ) : searchResults.length > 0 ? (
-                  <div className="divide-y divide-gray-100">
-                    {searchResults.slice(0, 10).map((result) => (
-                      <Link
-                        key={result.slug}
-                        href={`/resources/${result.slug}`}
-                        className="block px-4 py-3 hover:bg-gray-50"
-                        onClick={() => setSearchQuery('')}
-                      >
-                        <p className="font-medium text-gray-900">{result.title}</p>
-                        <p className="text-sm text-gray-400 mt-0.5 truncate">{result.slug}</p>
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="p-6 text-center text-gray-500">No results found for &quot;{searchQuery}&quot;</div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Main Content */}
         <main className="px-8 py-12 max-w-4xl">
           <div className="mb-10">
             <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The System</div>
@@ -187,13 +104,7 @@ export default function ResourcesPage() {
             <p className="text-gray-500 mt-2 max-w-2xl">Everything you need to run an outbound engine that books qualified sales calls. Follow the steps in order — tick each one off as you finish it.</p>
           </div>
 
-          {/* Featured "CCS INSTALL" guided-track card lived here — removed
-              in Phase 1 hotfix because it referenced the old 'ccs-install'
-              slug which no longer exists. If we want a featured card for
-              Step 1 (Start Here) later, re-introduce here. */}
-
-          {/* All 6 steps rendered as equal-weight cards */}
-          {reference.length > 0 && (
+          {navigation.length > 0 && (
             <div className="mt-14">
               <div className="mb-5">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The 6 steps</div>
@@ -202,7 +113,7 @@ export default function ResourcesPage() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {reference.map((section) => {
+                {navigation.map((section) => {
                   const pageCount = section.children?.length ?? 0;
                   return (
                     <Link
