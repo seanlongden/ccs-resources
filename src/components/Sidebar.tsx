@@ -127,10 +127,17 @@ export default function Sidebar({ navigation, email, onLogout }: SidebarProps) {
             <img src="/icon.png" alt="Closing Clients System" className="w-8 h-8 object-contain" />
           </Link>
         )}
+        {/* Collapse/expand toggle. When collapsed we use INLINE styles for
+            positioning (bypasses any Tailwind JIT/purge issues that were
+            leaving the button visually orphaned outside the sidebar in
+            Sean's browser) and drop the border+shadow so the button reads
+            as subtle — matches ccg-resources' quiet look, not a prominent
+            floating pill. */}
         <button
           onClick={toggle}
           aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-          className={`p-1.5 rounded-md text-white/50 hover:text-white hover:bg-white/10 shrink-0 ${collapsed ? 'absolute -right-3 top-5 bg-[#0D1F35] border border-white/10 shadow' : ''}`}
+          style={collapsed ? { position: 'absolute', right: -12, top: 20, zIndex: 10 } : undefined}
+          className={`p-1.5 rounded-md text-white/50 hover:text-white hover:bg-white/10 shrink-0 ${collapsed ? 'bg-[#0D1F35] border border-white/10 shadow' : ''}`}
         >
           {collapsed ? (
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
