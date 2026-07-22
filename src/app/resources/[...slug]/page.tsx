@@ -389,6 +389,7 @@ function ContentPage({ page, auth }: { page: PageData; auth: AuthData }) {
             prose-li:my-1
             prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono
             prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-xl
+            [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:rounded-none [&_pre_code]:text-inherit
             prose-img:rounded-xl prose-img:shadow-lg
             prose-hr:border-gray-200
             prose-strong:text-gray-900
