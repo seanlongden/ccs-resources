@@ -1,5 +1,53 @@
 [
   {
+    "slug": "welcome/welcome-overview",
+    "title": "Welcome to Closing Clients System",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-1-pre-install",
+    "title": "Module 1 — Pre-Install",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-2-system-install",
+    "title": "Module 2 — System Install (Days 1–14)",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-3-campaign-launch",
+    "title": "Module 3 — Campaign Launch (Week 3)",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-4-run-optimise",
+    "title": "Module 4 — Run + Optimise (Weeks 4–26)",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "ccs-install/module-5-beyond-180-days",
+    "title": "Module 5 — Beyond 180 Days (Scale-Up)",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "key-resources/key-resources-overview",
+    "title": "Key Resources",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
+    "slug": "set-up/set-up-overview",
+    "title": "Set Up",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
     "slug": "set-up/cold-traffic-offer",
     "title": "Creating Your Cold Traffic Offer",
     "isSection": false,
@@ -48,6 +96,12 @@
     "chunk": 101
   },
   {
+    "slug": "offers-guarantees-case-studies/offers-guarantees-case-studies-overview",
+    "title": "Offers, Guarantees & Case Studies",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
     "slug": "offers-guarantees-case-studies/offers",
     "title": "Offers",
     "isSection": false,
@@ -76,6 +130,12 @@
     "title": "Strategy & Value Propositions",
     "isSection": false,
     "chunk": 101
+  },
+  {
+    "slug": "cold-email/cold-email-overview",
+    "title": "Cold Email",
+    "isSection": false,
+    "chunk": 100
   },
   {
     "slug": "cold-email/cold-email-setup",
@@ -150,6 +210,12 @@
     "chunk": 101
   },
   {
+    "slug": "sales/sales-overview",
+    "title": "Sales",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
     "slug": "sales/sales-mindset",
     "title": "Sales Mindset",
     "isSection": false,
@@ -205,7 +271,7 @@
   },
   {
     "slug": "sales/call-prep",
-    "title": "Call Prep \u2014 Set Yourself Up to Win",
+    "title": "Call Prep — Set Yourself Up to Win",
     "isSection": false,
     "chunk": 101
   },
@@ -234,6 +300,12 @@
     "chunk": 101
   },
   {
+    "slug": "onboarding/onboarding-overview",
+    "title": "Onboarding",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
     "slug": "onboarding/onboarding-workflow",
     "title": "Onboarding Workflow",
     "isSection": false,
@@ -250,6 +322,12 @@
     "title": "Client Onboarding Form",
     "isSection": false,
     "chunk": 101
+  },
+  {
+    "slug": "hiring-team/hiring-team-overview",
+    "title": "Hiring & Team",
+    "isSection": false,
+    "chunk": 100
   },
   {
     "slug": "hiring-team/hiring-general",
@@ -294,6 +372,12 @@
     "chunk": 101
   },
   {
+    "slug": "operations-scaling/operations-scaling-overview",
+    "title": "Operations & Scaling",
+    "isSection": false,
+    "chunk": 100
+  },
+  {
     "slug": "operations-scaling/ops-strategy",
     "title": "Strategy & Planning",
     "isSection": false,
@@ -334,41 +418,5 @@
     "title": "Templates & Downloads",
     "isSection": false,
     "chunk": 101
-  },
-  {
-    "slug": "start-here/start-here-overview",
-    "title": "Start Here \u2014 Overview",
-    "isSection": false,
-    "chunk": 100
-  },
-  {
-    "slug": "setup/setup-overview",
-    "title": "Set Up \u2014 Overview",
-    "isSection": false,
-    "chunk": 100
-  },
-  {
-    "slug": "offer-and-email/offer-and-email-overview",
-    "title": "Offer & Email \u2014 Overview",
-    "isSection": false,
-    "chunk": 100
-  },
-  {
-    "slug": "launch-and-replies/launch-and-replies-overview",
-    "title": "Launch & Replies \u2014 Overview",
-    "isSection": false,
-    "chunk": 100
-  },
-  {
-    "slug": "close-and-onboard/close-and-onboard-overview",
-    "title": "Close & Onboard \u2014 Overview",
-    "isSection": false,
-    "chunk": 100
-  },
-  {
-    "slug": "scale/scale-overview",
-    "title": "Scale \u2014 Overview",
-    "isSection": false,
-    "chunk": 100
   }
 ]
