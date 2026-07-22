@@ -119,6 +119,11 @@ export default function ResourcePage() {
           const navData: NavSection[] = await navRes.json();
           const found = navData.find(s => s.slug === fullSlug);
           if (found) {
+            const onlyChild = found.children?.length === 1 ? found.children[0] : null;
+            if (onlyChild?.fullSlug) {
+              router.replace(`/resources/${onlyChild.fullSlug}`);
+              return;
+            }
             setSection(found);
           } else {
             setError('Section not found');

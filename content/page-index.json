@@ -420,26 +420,8 @@
     "chunk": 101
   },
   {
-    "slug": "video-modules/module-1",
-    "title": "Module 1",
-    "isSection": false,
-    "chunk": 102
-  },
-  {
-    "slug": "video-modules/module-2",
-    "title": "Module 2",
-    "isSection": false,
-    "chunk": 102
-  },
-  {
-    "slug": "video-modules/module-3",
-    "title": "Module 3",
-    "isSection": false,
-    "chunk": 102
-  },
-  {
-    "slug": "video-modules/module-4",
-    "title": "Module 4",
+    "slug": "video-modules/video-modules-overview",
+    "title": "Video Modules",
     "isSection": false,
     "chunk": 102
   }
