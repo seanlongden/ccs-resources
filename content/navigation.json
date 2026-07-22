@@ -558,5 +558,40 @@
         "childCount": 0
       }
     ]
+  },
+  {
+    "title": "Video Modules",
+    "slug": "video-modules",
+    "description": "Matt's video walkthroughs of the Closing Clients System.",
+    "children": [
+      {
+        "title": "Module 1",
+        "slug": "module-1",
+        "fullSlug": "video-modules/module-1",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Module 2",
+        "slug": "module-2",
+        "fullSlug": "video-modules/module-2",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Module 3",
+        "slug": "module-3",
+        "fullSlug": "video-modules/module-3",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Module 4",
+        "slug": "module-4",
+        "fullSlug": "video-modules/module-4",
+        "type": "page",
+        "childCount": 0
+      }
+    ]
   }
 ]

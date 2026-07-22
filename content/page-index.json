@@ -418,5 +418,29 @@
     "title": "Templates & Downloads",
     "isSection": false,
     "chunk": 101
+  },
+  {
+    "slug": "video-modules/module-1",
+    "title": "Module 1",
+    "isSection": false,
+    "chunk": 102
+  },
+  {
+    "slug": "video-modules/module-2",
+    "title": "Module 2",
+    "isSection": false,
+    "chunk": 102
+  },
+  {
+    "slug": "video-modules/module-3",
+    "title": "Module 3",
+    "isSection": false,
+    "chunk": 102
+  },
+  {
+    "slug": "video-modules/module-4",
+    "title": "Module 4",
+    "isSection": false,
+    "chunk": 102
   }
 ]

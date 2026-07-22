@@ -7,7 +7,7 @@ import {
   Home, Settings, Mail, Send, Handshake, TrendingUp,
   ChevronsLeft, ChevronsRight,
   LogOut, FileText, Folder, ExternalLink, Wrench,
-  Search, X, Loader2, Shield, UserPlus, Users,
+  Search, X, Loader2, Shield, UserPlus, Users, Video,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -60,6 +60,7 @@ export const SECTION_META: Record<string, {
   'onboarding': { group: 'main-modules', icon: UserPlus, order: 8, description: 'Onboarding new clients post-close.' },
   'hiring-team': { group: 'main-modules', icon: Users, order: 9, description: 'Hiring inbox managers, GTM people, employee training.' },
   'operations-scaling': { group: 'main-modules', icon: TrendingUp, order: 10, description: 'Strategy, SOPs, vertical vs horizontal scale.' },
+  'video-modules': { group: 'main-modules', icon: Video, order: 11, description: "Matt's video walkthroughs of the Closing Clients System." },
 };
 
 export const LEGACY_SLUGS = new Set<string>([]);
