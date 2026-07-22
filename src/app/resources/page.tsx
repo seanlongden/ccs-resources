@@ -100,14 +100,14 @@ export default function ResourcesPage() {
         <main className="px-8 py-12 max-w-4xl">
           <div className="mb-10">
             <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The System</div>
-            <h1 className="text-3xl font-bold text-gray-900">Get set up in 6 steps</h1>
-            <p className="text-gray-500 mt-2 max-w-2xl">Everything you need to run an outbound engine that books qualified sales calls. Follow the steps in order — tick each one off as you finish it.</p>
+            <h1 className="text-3xl font-bold text-gray-900">Closing Clients System Resources</h1>
+            <p className="text-gray-500 mt-2 max-w-2xl">Everything you need to run an outbound engine that books qualified sales calls — organized by topic so you can jump straight to what you need.</p>
           </div>
 
           {navigation.length > 0 && (
             <div className="mt-14">
               <div className="mb-5">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The 6 steps</div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Browse by topic</div>
                 <h2 className="text-xl font-bold text-gray-900">Pick up where you left off</h2>
                 <p className="text-gray-500 mt-1 text-sm max-w-2xl">Everything Matt has published. Jump straight to the section you need.</p>
               </div>

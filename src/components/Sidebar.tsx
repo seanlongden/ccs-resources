@@ -7,7 +7,7 @@ import {
   Home, Settings, Mail, Send, Handshake, TrendingUp,
   ChevronsLeft, ChevronsRight,
   LogOut, FileText, Folder, ExternalLink, Wrench,
-  Search, X, Loader2,
+  Search, X, Loader2, Shield, UserPlus, Users,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -50,18 +50,22 @@ export const SECTION_META: Record<string, {
   description: string;
   order: number;
 }> = {
-  'start-here': { group: 'main-modules', icon: Home, order: 1, description: "A 5-minute overview of the Closing Clients System so you know what you're building." },
-  'setup': { group: 'main-modules', icon: Settings, order: 2, description: 'Buy and configure Instantly, leads, inboxes, warm-up. Text-only — no video needed per step.' },
-  'offer-and-email': { group: 'main-modules', icon: Mail, order: 3, description: 'Craft the offer, write the email, get both reviewed before you launch.' },
-  'launch-and-replies': { group: 'main-modules', icon: Send, order: 4, description: 'Send campaigns, manage inboxes, handle every reply type.' },
-  'close-and-onboard': { group: 'main-modules', icon: Handshake, order: 5, description: 'Sales call playbook, contracts, onboarding new clients.' },
-  'scale': { group: 'main-modules', icon: TrendingUp, order: 6, description: 'Hire, systemise, and grow beyond what you can run yourself.' },
+  'welcome': { group: 'main-modules', icon: Home, order: 1, description: 'Get oriented. Start here.' },
+  'ccs-install': { group: 'main-modules', icon: Wrench, order: 2, description: 'Your guided 180-day install. Trackable, step-by-step.' },
+  'key-resources': { group: 'main-modules', icon: FileText, order: 3, description: "Ongoing intel layer. Updates, FAQs, payment, what's working now." },
+  'set-up': { group: 'main-modules', icon: Settings, order: 4, description: 'ICP, offer, website, VSL, calendar, payments, agreements.' },
+  'offers-guarantees-case-studies': { group: 'main-modules', icon: Shield, order: 5, description: 'Offer design, risk reversal, proof, testimonials.' },
+  'cold-email': { group: 'main-modules', icon: Mail, order: 6, description: 'Setup, campaigns, deliverability, copy, list building, replies.' },
+  'sales': { group: 'main-modules', icon: Handshake, order: 7, description: 'Process, calls, frame, closing, upsells.' },
+  'onboarding': { group: 'main-modules', icon: UserPlus, order: 8, description: 'Onboarding new clients post-close.' },
+  'hiring-team': { group: 'main-modules', icon: Users, order: 9, description: 'Hiring inbox managers, GTM people, employee training.' },
+  'operations-scaling': { group: 'main-modules', icon: TrendingUp, order: 10, description: 'Strategy, SOPs, vertical vs horizontal scale.' },
 };
 
 export const LEGACY_SLUGS = new Set<string>([]);
 
 export const GROUP_LABELS: Record<GroupKey, string> = {
-  'main-modules': 'The 6 Steps',
+  'main-modules': 'Resources',
 };
 
 export function resolveSectionGroup(s: NavItem): GroupKey | 'legacy' | undefined {
