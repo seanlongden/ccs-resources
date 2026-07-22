@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Sidebar, SectionIcon, type NavItem, type AuthData } from '@/components/Sidebar';
+import { useTrack, DFY_LINKS } from '@/lib/track';
 
 interface NavSection extends NavItem {
   itemCount?: number;
@@ -17,6 +18,7 @@ export default function ResourcesPage() {
   const [loading, setLoading] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const router = useRouter();
+  const { track, setTrack, loaded: trackLoaded } = useTrack();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -86,6 +88,8 @@ export default function ResourcesPage() {
 
   if (!auth?.authenticated) return null;
 
+  const showPicker = trackLoaded && track === null;
+
   return (
     <div className="min-h-screen bg-gray-50 flex">
       <Sidebar
@@ -104,7 +108,35 @@ export default function ResourcesPage() {
             <p className="text-gray-500 mt-2 max-w-2xl">Everything you need to run an outbound engine that books qualified sales calls — organized by topic so you can jump straight to what you need.</p>
           </div>
 
-          {navigation.length > 0 && (
+          {track === 'dfy' && (
+            <div className="mt-14 max-w-2xl">
+              <div className="mb-5">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Your Resources</div>
+                <h2 className="text-xl font-bold text-gray-900">Everything you need, in order</h2>
+                <p className="text-gray-500 mt-1 text-sm max-w-2xl">We&apos;re running your campaigns. Here&apos;s what you need on your end.</p>
+              </div>
+
+              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                {DFY_LINKS.map((item, i) => (
+                  <Link
+                    key={item.fullSlug}
+                    href={`/resources/${item.fullSlug}`}
+                    className={`flex items-center gap-3 px-5 py-4 hover:bg-gray-50 group ${i > 0 ? 'border-t border-gray-100' : ''}`}
+                  >
+                    <div className="min-w-0 flex-1">
+                      <div className="text-sm font-semibold text-gray-900">{item.title}</div>
+                      <div className="text-xs text-gray-500 mt-0.5">{item.description}</div>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-300 group-hover:text-[#0D1F35] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {track !== 'dfy' && navigation.length > 0 && (
             <div className="mt-14">
               <div className="mb-5">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Browse by topic</div>
@@ -141,6 +173,32 @@ export default function ResourcesPage() {
           )}
         </main>
       </div>
+
+      {showPicker && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0D1F35]/85 backdrop-blur-sm px-4">
+          <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 text-center">
+            <h2 className="text-xl font-bold text-gray-900 mb-2">How are you using this?</h2>
+            <p className="text-sm text-gray-500 mb-6">Pick the option that fits, so we can show you the right resources.</p>
+            <div className="space-y-3">
+              <button
+                type="button"
+                onClick={() => setTrack('dfy')}
+                className="w-full px-5 py-3 bg-[#0D1F35] text-white rounded-xl font-medium text-sm hover:bg-[#1a3a5c] transition-colors"
+              >
+                We&apos;re running this for you
+              </button>
+              <button
+                type="button"
+                onClick={() => setTrack('full')}
+                className="w-full px-5 py-3 bg-white border border-gray-300 text-gray-900 rounded-xl font-medium text-sm hover:bg-gray-50 transition-colors"
+              >
+                You&apos;re setting it up and running it yourself
+              </button>
+            </div>
+            <p className="text-xs text-gray-400 mt-5">You can change this anytime.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

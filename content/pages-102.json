@@ -1,26 +1,8 @@
 {
-  "video-modules/module-1": {
-    "title": "Module 1",
-    "slug": "video-modules/module-1",
-    "fullSlug": "video-modules/module-1",
-    "content": "# Module 1\n\nWalkthrough of the Closing Clients System.\n\nhttps://www.loom.com/share/031070e699ef49f6967b4e1a8829f9bc\n"
-  },
-  "video-modules/module-2": {
-    "title": "Module 2",
-    "slug": "video-modules/module-2",
-    "fullSlug": "video-modules/module-2",
-    "content": "# Module 2\n\nWalkthrough of the Closing Clients System.\n\nhttps://www.loom.com/share/711cea42866041e482f8c7e0f0f13172\n"
-  },
-  "video-modules/module-3": {
-    "title": "Module 3",
-    "slug": "video-modules/module-3",
-    "fullSlug": "video-modules/module-3",
-    "content": "# Module 3\n\nWalkthrough of the Closing Clients System.\n\nhttps://www.loom.com/share/0ea8ec0bcd2e4d7f8a98d20f5f7b97c7\n"
-  },
-  "video-modules/module-4": {
-    "title": "Module 4",
-    "slug": "video-modules/module-4",
-    "fullSlug": "video-modules/module-4",
-    "content": "# Module 4\n\nWalkthrough of the Closing Clients System.\n\nhttps://www.loom.com/share/8c32123d6f6f4fc38c00ca82d68d5632\n"
+  "video-modules/video-modules-overview": {
+    "title": "Video Modules",
+    "slug": "video-modules/video-modules-overview",
+    "fullSlug": "video-modules/video-modules-overview",
+    "content": "# Video Modules\n\nWalkthroughs of the Closing Clients System.\n\n---\n\n## Module 1\n\nhttps://www.loom.com/share/031070e699ef49f6967b4e1a8829f9bc\n\n---\n\n## Module 2\n\nhttps://www.loom.com/share/711cea42866041e482f8c7e0f0f13172\n\n---\n\n## Module 3\n\nhttps://www.loom.com/share/0ea8ec0bcd2e4d7f8a98d20f5f7b97c7\n\n---\n\n## Module 4\n\nhttps://www.loom.com/share/8c32123d6f6f4fc38c00ca82d68d5632\n"
   }
 }

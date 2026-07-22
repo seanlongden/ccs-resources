@@ -1,0 +1,26 @@
+{
+  "ccs-install/welcome": {
+    "title": "Welcome to CCS Install",
+    "slug": "ccs-install/welcome",
+    "fullSlug": "ccs-install/welcome",
+    "content": "# Welcome to CCS Install\n\nThis is the fastest path to your first campaign. Three steps:\n\n1. **Get Instantly + Your Inboxes** - the tool your cold email sends from.\n2. **Get AI Ark** - the tool that builds your lead lists.\n3. **Install Your Claude Skills** - the AI tooling we use to build offers, write copy, and clean lists. Skip this one if we're running your campaigns for you.\n\nWork through them in order. Once you're set up, head over to CCS Training for the full playbook on offers, copy, and campaigns."
+  },
+  "ccs-install/get-instantly": {
+    "title": "Get Instantly + Your Inboxes",
+    "slug": "ccs-install/get-instantly",
+    "fullSlug": "ccs-install/get-instantly",
+    "content": "# Get Instantly + Your Inboxes\n\nInstantly is the tool your cold email actually sends from. Everyone needs this set up, whether we're running it for you or you're running it yourself.\n\n---\n\n## 1. Create Your Instantly Account\n\nSign up at [instantly.ai](https://instantly.ai) and pick a plan that covers the number of inboxes you'll be sending from.\n\n---\n\n## 2. Buy Your Domains\n\nBuy your sending domains from [Porkbun](https://porkbun.com). Use **lookalike domains** — variations of your main business domain, not your actual website domain. This protects your primary domain's reputation.\n\n💡 **Tip:** Can't come up with lookalike domains? Paste your primary domain into Claude or ChatGPT and ask it to generate lookalike domain ideas.\n\n---\n\n## 3. Set Up Your Inboxes\n\nWe have an exclusive partnership with Scaled Mail for Closing Clients System members.\n\n👉 **Use this link to get started:** [ccs.scaledmail.com](https://ccs.scaledmail.com)  \n**Discount code:** CSS10 (10% off)\n\nScaled Mail handles the full inbox setup and warm-up for you — you don't need to touch DNS records or configure warming manually. Just give them your Instantly account details and they connect everything directly.\n\n---\n\n## If We're Running This For You\n\n⚠️ **Add us as an admin on your Instantly account** so our team can build and run your campaigns. Go to Instantly → Settings → Team, invite **matt@avaero.io** and **seanlongden@icloud.com**, and set the role to Admin.\n\nThat's it on your end for this step — once we're in, we handle the rest of the tech setup.\n"
+  },
+  "ccs-install/get-ai-ark": {
+    "title": "Get AI Ark",
+    "slug": "ccs-install/get-ai-ark",
+    "fullSlug": "ccs-install/get-ai-ark",
+    "content": "# Get AI Ark\n\nAI Ark is what we use to build lead lists — it finds companies that match your ICP and verifies their emails automatically.\n\n---\n\n## Sign Up\n\nCreate an account at [ai-ark.com](https://ai-ark.com).\n\n---\n\n## Why AI Ark\n\n- **Built-in email verification** — every export is verified in real time, including catch-all addresses.\n- **Personal lead database** — the first export of a lead costs 1 credit, re-exporting the same lead later only costs 0.1 credits. Meaningful savings if you're cycling through the same contacts every few months.\n\n---\n\n## If We're Running This For You\n\nJust get the account set up and add us as a collaborator — our team handles list building, scoring, and cleaning from there. You don't need Lead Formatter or anything else, that's on us.\n\n## If You're Running This Yourself\n\nHead to **List Building** in CCS Training for the full walkthrough on building and scoring lists, including how we use Lead Formatter and Claude to clean and qualify leads before they go into a sequence.\n"
+  },
+  "ccs-install/claude-skills": {
+    "title": "Install Your Claude Skills",
+    "slug": "ccs-install/claude-skills",
+    "fullSlug": "ccs-install/claude-skills",
+    "content": "# Install Your Claude Skills\n\nThe Closing Clients System skill pack for Claude Code — the same AI tooling we use internally to build offers, write copy, and clean lead lists. This step is for anyone running the system themselves. If we're running it for you, you can skip this one, it's handled on our end.\n\n---\n\n## Watch These First\n\nFour walkthroughs covering the system end to end — watch these before you start using the skills day to day.\n\n---\n\n## Module 1\n\nhttps://www.loom.com/share/031070e699ef49f6967b4e1a8829f9bc\n\n---\n\n## Module 2\n\nhttps://www.loom.com/share/711cea42866041e482f8c7e0f0f13172\n\n---\n\n## Module 3\n\nhttps://www.loom.com/share/0ea8ec0bcd2e4d7f8a98d20f5f7b97c7\n\n---\n\n## Module 4\n\nhttps://www.loom.com/share/8c32123d6f6f4fc38c00ca82d68d5632\n"
+  }
+}

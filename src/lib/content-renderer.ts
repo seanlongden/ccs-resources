@@ -46,8 +46,8 @@ function preprocess(markdown: string, pageTitle?: string): { cleaned: string; pr
 
   text = text.replace(/!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g, '');
 
-  text = text.replace(/\[?(https:\/\/www\.loom\.com\/share\/([a-zA-Z0-9]+)[^\s\])<]*)\]?\(?[^)]*\)?/g, (_match, _url, videoId) => {
-    return `\n\n%%LOOM_EMBED:${videoId}%%\n\n`;
+  text = text.replace(/\[[^\]]*\]\(\s*https:\/\/www\.loom\.com\/share\/([a-zA-Z0-9]+)\s*\)|https:\/\/www\.loom\.com\/share\/([a-zA-Z0-9]+)\b/g, (_match, linkedId, bareId) => {
+    return `\n\n%%LOOM_EMBED:${linkedId || bareId}%%\n\n`;
   });
 
   text = text.replace(/<div\s+class="callout">([\s\S]*?)<\/div>/g, (_match, inner) => {
