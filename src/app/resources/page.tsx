@@ -109,7 +109,7 @@ export default function ResourcesPage() {
               <div className="mb-5">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Browse by topic</div>
                 <h2 className="text-xl font-bold text-gray-900">Pick up where you left off</h2>
-                <p className="text-gray-500 mt-1 text-sm max-w-2xl">Everything Matt has published. Jump straight to the section you need.</p>
+                <p className="text-gray-500 mt-1 text-sm max-w-2xl">Jump straight to the section you need.</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
