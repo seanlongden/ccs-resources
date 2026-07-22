@@ -420,9 +420,27 @@
     "chunk": 101
   },
   {
-    "slug": "video-modules/video-modules-overview",
-    "title": "Video Modules",
+    "slug": "ccs-install/welcome",
+    "title": "Welcome to CCS Install",
     "isSection": false,
-    "chunk": 102
+    "chunk": 103
+  },
+  {
+    "slug": "ccs-install/get-instantly",
+    "title": "Get Instantly + Your Inboxes",
+    "isSection": false,
+    "chunk": 103
+  },
+  {
+    "slug": "ccs-install/get-ai-ark",
+    "title": "Get AI Ark",
+    "isSection": false,
+    "chunk": 103
+  },
+  {
+    "slug": "ccs-install/claude-skills",
+    "title": "Install Your Claude Skills",
+    "isSection": false,
+    "chunk": 103
   }
 ]

@@ -1,100 +1,44 @@
 [
   {
-    "title": "Welcome",
-    "slug": "welcome",
-    "description": "Get oriented. Start here.",
-    "children": [
-      {
-        "title": "Welcome to Closing Clients System",
-        "slug": "welcome-overview",
-        "fullSlug": "welcome/welcome-overview",
-        "type": "page",
-        "childCount": 0
-      }
-    ]
-  },
-  {
-    "title": "CCS INSTALL",
+    "title": "CCS Install",
     "slug": "ccs-install",
-    "description": "Your guided 180-day install. Trackable, step-by-step.",
+    "description": "Get your tools set up. The fastest path to your first campaign.",
     "children": [
       {
-        "title": "Module 1 — Pre-Install",
-        "slug": "module-1-pre-install",
-        "fullSlug": "ccs-install/module-1-pre-install",
+        "title": "Welcome to CCS Install",
+        "slug": "welcome",
+        "fullSlug": "ccs-install/welcome",
         "type": "page",
         "childCount": 0
       },
       {
-        "title": "Module 2 — System Install (Days 1–14)",
-        "slug": "module-2-system-install",
-        "fullSlug": "ccs-install/module-2-system-install",
+        "title": "Get Instantly + Your Inboxes",
+        "slug": "get-instantly",
+        "fullSlug": "ccs-install/get-instantly",
         "type": "page",
         "childCount": 0
       },
       {
-        "title": "Module 3 — Campaign Launch (Week 3)",
-        "slug": "module-3-campaign-launch",
-        "fullSlug": "ccs-install/module-3-campaign-launch",
+        "title": "Get AI Ark",
+        "slug": "get-ai-ark",
+        "fullSlug": "ccs-install/get-ai-ark",
         "type": "page",
         "childCount": 0
       },
       {
-        "title": "Module 4 — Run + Optimise (Weeks 4–26)",
-        "slug": "module-4-run-optimise",
-        "fullSlug": "ccs-install/module-4-run-optimise",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Module 5 — Beyond 180 Days (Scale-Up)",
-        "slug": "module-5-beyond-180-days",
-        "fullSlug": "ccs-install/module-5-beyond-180-days",
+        "title": "Install Your Claude Skills",
+        "slug": "claude-skills",
+        "fullSlug": "ccs-install/claude-skills",
         "type": "page",
         "childCount": 0
       }
     ]
   },
   {
-    "title": "Key Resources",
-    "slug": "key-resources",
-    "description": "Ongoing intel layer. Updates, FAQs, payment, what's working now.",
+    "title": "CCS Training",
+    "slug": "ccs-training",
+    "description": "The theory and frameworks for offer creation, cold email copy, campaigns, and the sales process that closes what you book.",
     "children": [
-      {
-        "title": "Key Resources",
-        "slug": "key-resources-overview",
-        "fullSlug": "key-resources/key-resources-overview",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Deliverability Updates: What's Working Now",
-        "slug": "deliverability-updates",
-        "fullSlug": "key-resources/deliverability-updates",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Templates & Downloads",
-        "slug": "templates-downloads",
-        "fullSlug": "key-resources/templates-downloads",
-        "type": "page",
-        "childCount": 0
-      }
-    ]
-  },
-  {
-    "title": "Set Up",
-    "slug": "set-up",
-    "description": "ICP, offer, website, VSL, calendar, payments, agreements.",
-    "children": [
-      {
-        "title": "Set Up",
-        "slug": "set-up-overview",
-        "fullSlug": "set-up/set-up-overview",
-        "type": "page",
-        "childCount": 0
-      },
       {
         "title": "Creating Your Cold Traffic Offer",
         "slug": "cold-traffic-offer",
@@ -113,111 +57,6 @@
         "title": "Your Service Model & Pricing",
         "slug": "service-model-pricing",
         "fullSlug": "set-up/service-model-pricing",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Your Website / Landing Page",
-        "slug": "website-landing-page",
-        "fullSlug": "set-up/website-landing-page",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Create Your VSL",
-        "slug": "create-vsl",
-        "fullSlug": "set-up/create-vsl",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Get Calendly & Embed on Your Website",
-        "slug": "get-calendly",
-        "fullSlug": "set-up/get-calendly",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Set Up Payments",
-        "slug": "set-up-payments",
-        "fullSlug": "set-up/set-up-payments",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Create Your Agreement",
-        "slug": "create-agreement",
-        "fullSlug": "set-up/create-agreement",
-        "type": "page",
-        "childCount": 0
-      }
-    ]
-  },
-  {
-    "title": "Offers, Guarantees & Case Studies",
-    "slug": "offers-guarantees-case-studies",
-    "description": "Offer design, risk reversal, proof, testimonials.",
-    "children": [
-      {
-        "title": "Offers, Guarantees & Case Studies",
-        "slug": "offers-guarantees-case-studies-overview",
-        "fullSlug": "offers-guarantees-case-studies/offers-guarantees-case-studies-overview",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Offers",
-        "slug": "offers",
-        "fullSlug": "offers-guarantees-case-studies/offers",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Guarantees",
-        "slug": "guarantees",
-        "fullSlug": "offers-guarantees-case-studies/guarantees",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Case Studies",
-        "slug": "case-studies",
-        "fullSlug": "offers-guarantees-case-studies/case-studies",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Collecting Testimonials",
-        "slug": "collecting-testimonials",
-        "fullSlug": "offers-guarantees-case-studies/collecting-testimonials",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Strategy & Value Propositions",
-        "slug": "strategy-value-props",
-        "fullSlug": "offers-guarantees-case-studies/strategy-value-props",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "What to Do if You Don't Have Case Studies",
-        "slug": "no-case-studies",
-        "fullSlug": "offers-guarantees-case-studies/no-case-studies",
-        "type": "page",
-        "childCount": 0
-      }
-    ]
-  },
-  {
-    "title": "Cold Email",
-    "slug": "cold-email",
-    "description": "Setup, campaigns, deliverability, copy, list building, replies.",
-    "children": [
-      {
-        "title": "Cold Email",
-        "slug": "cold-email-overview",
-        "fullSlug": "cold-email/cold-email-overview",
         "type": "page",
         "childCount": 0
       },
@@ -304,18 +143,60 @@
         "fullSlug": "cold-email/cold-traffic-offer-check",
         "type": "page",
         "childCount": 0
-      }
-    ]
-  },
-  {
-    "title": "Sales",
-    "slug": "sales",
-    "description": "Process, calls, frame, closing, upsells.",
-    "children": [
+      },
       {
-        "title": "Sales",
-        "slug": "sales-overview",
-        "fullSlug": "sales/sales-overview",
+        "title": "Offers",
+        "slug": "offers",
+        "fullSlug": "offers-guarantees-case-studies/offers",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Guarantees",
+        "slug": "guarantees",
+        "fullSlug": "offers-guarantees-case-studies/guarantees",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Case Studies",
+        "slug": "case-studies",
+        "fullSlug": "offers-guarantees-case-studies/case-studies",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Collecting Testimonials",
+        "slug": "collecting-testimonials",
+        "fullSlug": "offers-guarantees-case-studies/collecting-testimonials",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Strategy & Value Propositions",
+        "slug": "strategy-value-props",
+        "fullSlug": "offers-guarantees-case-studies/strategy-value-props",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "What to Do if You Don't Have Case Studies",
+        "slug": "no-case-studies",
+        "fullSlug": "offers-guarantees-case-studies/no-case-studies",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Deliverability Updates: What's Working Now",
+        "slug": "deliverability-updates",
+        "fullSlug": "key-resources/deliverability-updates",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Templates & Downloads",
+        "slug": "templates-downloads",
+        "fullSlug": "key-resources/templates-downloads",
         "type": "page",
         "childCount": 0
       },
@@ -330,20 +211,6 @@
         "title": "Positioning",
         "slug": "sales-positioning",
         "fullSlug": "sales/sales-positioning",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Lead Magnets",
-        "slug": "lead-magnets",
-        "fullSlug": "sales/lead-magnets",
-        "type": "page",
-        "childCount": 0
-      },
-      {
-        "title": "Sales Assets",
-        "slug": "sales-assets",
-        "fullSlug": "sales/sales-assets",
         "type": "page",
         "childCount": 0
       },
@@ -420,14 +287,56 @@
     ]
   },
   {
-    "title": "Onboarding",
-    "slug": "onboarding",
-    "description": "Onboarding new clients post-close.",
+    "title": "Sales & Scaling Resources",
+    "slug": "sales-scaling",
+    "description": "For building and growing your own agency: client assets, onboarding, hiring, and scaling.",
     "children": [
       {
-        "title": "Onboarding",
-        "slug": "onboarding-overview",
-        "fullSlug": "onboarding/onboarding-overview",
+        "title": "Your Website / Landing Page",
+        "slug": "website-landing-page",
+        "fullSlug": "set-up/website-landing-page",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Create Your VSL",
+        "slug": "create-vsl",
+        "fullSlug": "set-up/create-vsl",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Get Calendly & Embed on Your Website",
+        "slug": "get-calendly",
+        "fullSlug": "set-up/get-calendly",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Set Up Payments",
+        "slug": "set-up-payments",
+        "fullSlug": "set-up/set-up-payments",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Create Your Agreement",
+        "slug": "create-agreement",
+        "fullSlug": "set-up/create-agreement",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Lead Magnets",
+        "slug": "lead-magnets",
+        "fullSlug": "sales/lead-magnets",
+        "type": "page",
+        "childCount": 0
+      },
+      {
+        "title": "Sales Assets",
+        "slug": "sales-assets",
+        "fullSlug": "sales/sales-assets",
         "type": "page",
         "childCount": 0
       },
@@ -449,20 +358,6 @@
         "title": "Client Onboarding Form",
         "slug": "client-onboarding-form",
         "fullSlug": "onboarding/client-onboarding-form",
-        "type": "page",
-        "childCount": 0
-      }
-    ]
-  },
-  {
-    "title": "Hiring & Team",
-    "slug": "hiring-team",
-    "description": "Hiring inbox managers, GTM people, employee training.",
-    "children": [
-      {
-        "title": "Hiring & Team",
-        "slug": "hiring-team-overview",
-        "fullSlug": "hiring-team/hiring-team-overview",
         "type": "page",
         "childCount": 0
       },
@@ -514,20 +409,6 @@
         "fullSlug": "hiring-team/social-hiring-funnels",
         "type": "page",
         "childCount": 0
-      }
-    ]
-  },
-  {
-    "title": "Operations & Scaling",
-    "slug": "operations-scaling",
-    "description": "Strategy, SOPs, vertical vs horizontal scale.",
-    "children": [
-      {
-        "title": "Operations & Scaling",
-        "slug": "operations-scaling-overview",
-        "fullSlug": "operations-scaling/operations-scaling-overview",
-        "type": "page",
-        "childCount": 0
       },
       {
         "title": "Strategy & Planning",
@@ -554,20 +435,6 @@
         "title": "How to Conduct a Case Study Interview",
         "slug": "case-study-interview",
         "fullSlug": "operations-scaling/case-study-interview",
-        "type": "page",
-        "childCount": 0
-      }
-    ]
-  },
-  {
-    "title": "Video Modules",
-    "slug": "video-modules",
-    "description": "Matt's video walkthroughs of the Closing Clients System.",
-    "children": [
-      {
-        "title": "Video Modules",
-        "slug": "video-modules-overview",
-        "fullSlug": "video-modules/video-modules-overview",
         "type": "page",
         "childCount": 0
       }
