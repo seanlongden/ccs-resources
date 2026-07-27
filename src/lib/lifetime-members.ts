@@ -30,11 +30,18 @@ export async function isLifetimeMember(email: string): Promise<boolean> {
       // Fresh fetch every login (matches ai-ark-list-builder) so
       // additions land instantly for members trying to log in.
       cache: 'no-store',
-      // If the sheet were ever set back to private, Google issues a
-      // 302 to a login URL. Treat any non-200 as "no match" — the
-      // downstream Stripe check still runs.
-      redirect: 'manual',
+      // Google's CSV export returns a 307 redirect to their
+      // googleusercontent.com CDN — that's normal and must be followed.
+      // If the sheet were ever set back to private, Google redirects
+      // to accounts.google.com (login page). We catch that below.
+      redirect: 'follow',
     });
+    // Private sheet → Google redirects to the login page. Bail so the
+    // downstream Stripe check still runs.
+    if (res.url.includes('accounts.google.com')) {
+      console.warn('[sheet-allowlist] sheet appears private (redirected to login)');
+      return false;
+    }
     if (res.status !== 200) {
       console.warn(`[sheet-allowlist] non-200 response: ${res.status}`);
       return false;
