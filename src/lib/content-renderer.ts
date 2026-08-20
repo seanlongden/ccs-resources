@@ -138,6 +138,7 @@ function postprocess(html: string): string {
             frameborder="0"
             allowfullscreen
             allow="autoplay; fullscreen"
+            loading="lazy"
           ></iframe>
         </div>
       </div>`;
