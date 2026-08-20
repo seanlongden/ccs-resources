@@ -11,6 +11,34 @@ interface NavSection extends NavItem {
 
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
 
+const DFY_LINKS = [
+  {
+    title: 'Get Instantly + Your Inboxes',
+    fullSlug: 'ccs-install/get-instantly',
+    description: 'Set up the tool your cold email sends from.',
+  },
+  {
+    title: 'Get AI Ark',
+    fullSlug: 'ccs-install/get-ai-ark',
+    description: 'Set up the tool we use to build your lead lists.',
+  },
+  {
+    title: 'Reply Management',
+    fullSlug: 'cold-email/reply-management',
+    description: 'How to handle replies as they come in.',
+  },
+  {
+    title: 'Sales Assets',
+    fullSlug: 'sales/sales-assets',
+    description: 'Assets to help you close what gets booked.',
+  },
+  {
+    title: 'Lead Magnets',
+    fullSlug: 'sales/lead-magnets',
+    description: 'Lead magnets to support your sales process.',
+  },
+];
+
 export default function DoneForYouPage() {
   const [auth, setAuth] = useState<AuthData | null>(null);
   const [navigation, setNavigation] = useState<NavSection[]>([]);
@@ -97,17 +125,37 @@ export default function DoneForYouPage() {
       />
 
       <div className="flex-1 min-w-0">
-        <main className="px-8 py-12 max-w-4xl">
+        <main className="px-8 py-12 max-w-3xl">
           <div className="mb-10">
             <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Done For You</div>
-            <h1 className="text-3xl font-bold text-gray-900">Your Done For You setup</h1>
-            <p className="text-gray-500 mt-2 max-w-2xl">Everything you need on your side while we run the system for you. Placeholder for now &mdash; Matt will walk you through this on the onboarding call.</p>
+            <h1 className="text-3xl font-bold text-gray-900">Everything you need, in order.</h1>
+            <p className="text-gray-500 mt-2 max-w-2xl">We&apos;re running your campaigns. Here&apos;s what you need on your end &mdash; the tools to get set up, and the assets to close what gets booked.</p>
           </div>
 
-          <div className="rounded-xl border border-dashed border-gray-300 bg-white p-10 text-center">
-            <div className="text-sm text-gray-500">Content coming soon.</div>
-            <Link href="/resources/get-started" className="mt-4 inline-block text-sm text-[#0D1F35] underline">
-              Back to Get Started
+          <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            {DFY_LINKS.map((item, i) => (
+              <Link
+                key={item.fullSlug}
+                href={`/resources/${item.fullSlug}`}
+                className={`flex items-start gap-3 px-6 py-5 hover:bg-gray-50 group ${i > 0 ? 'border-t border-gray-100' : ''}`}
+              >
+                <div className="w-9 h-9 rounded-lg bg-gray-100 text-gray-500 flex items-center justify-center shrink-0 group-hover:bg-[#0D1F35] group-hover:text-white transition-colors text-sm font-semibold tabular-nums">
+                  {i + 1}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="text-base font-semibold text-gray-900">{item.title}</div>
+                  <div className="text-sm text-gray-500 mt-1">{item.description}</div>
+                </div>
+                <svg className="w-5 h-5 text-gray-300 group-hover:text-[#0D1F35] shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 pt-8 border-t border-gray-200">
+            <Link href="/welcome" className="text-sm text-gray-500 hover:text-[#0D1F35]">
+              &larr; Back to Welcome
             </Link>
           </div>
         </main>
