@@ -6,6 +6,7 @@ export interface SessionData {
   status?: 'active' | 'trialing' | 'canceled_with_access' | 'lifetime' | 'no_subscription';
   currentPeriodEnd?: string;
   lastVerified?: number; // timestamp
+  welcomeSeen?: boolean; // Cached from DB. Once true, skip the Postgres roundtrip on every /api/auth GET.
 }
 
 export const sessionOptions: SessionOptions = {

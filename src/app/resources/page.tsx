@@ -3,28 +3,40 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Sidebar, SectionIcon, type NavItem, type AuthData } from '@/components/Sidebar';
-import { useTrack, DFY_LINKS } from '@/lib/track';
+import { Sidebar, type NavItem, type AuthData } from '@/components/Sidebar';
 
 interface NavSection extends NavItem {
   itemCount?: number;
 }
 
+interface RecentItem {
+  slug: string;
+  title: string;
+  ts: number;
+  href?: string; // Optional absolute path override — used by pages not under /resources/*
+}
+
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
+const RECENTS_KEY = 'ccs_recently_viewed';
 
 export default function ResourcesPage() {
   const [auth, setAuth] = useState<AuthData | null>(null);
   const [navigation, setNavigation] = useState<NavSection[]>([]);
   const [loading, setLoading] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [recents, setRecents] = useState<RecentItem[]>([]);
   const router = useRouter();
-  const { track, setTrack, loaded: trackLoaded } = useTrack();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     try {
       const collapsed = window.localStorage.getItem(SIDEBAR_KEY) === '1';
       setSidebarCollapsed(collapsed);
+      const raw = window.localStorage.getItem(RECENTS_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw) as RecentItem[];
+        if (Array.isArray(parsed)) setRecents(parsed.slice(0, 5));
+      }
     } catch {
       /* ignore */
     }
@@ -88,8 +100,6 @@ export default function ResourcesPage() {
 
   if (!auth?.authenticated) return null;
 
-  const showPicker = trackLoaded && track === null;
-
   return (
     <div className="min-h-screen bg-gray-50 flex">
       <Sidebar
@@ -101,104 +111,50 @@ export default function ResourcesPage() {
       />
 
       <div className="flex-1 min-w-0">
-        <main className="px-8 py-12 max-w-4xl">
+        <main className="px-8 py-12 max-w-3xl">
           <div className="mb-10">
             <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The System</div>
             <h1 className="text-3xl font-bold text-gray-900">Closing Clients System Resources</h1>
-            <p className="text-gray-500 mt-2 max-w-2xl">Everything you need to run an outbound engine that books qualified sales calls — organized by topic so you can jump straight to what you need.</p>
+            <p className="text-gray-500 mt-2 max-w-2xl">Pick up where you left off, or use the sidebar to browse.</p>
           </div>
 
-          {track === 'dfy' && (
-            <div className="mt-14 max-w-2xl">
-              <div className="mb-5">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Your Resources</div>
-                <h2 className="text-xl font-bold text-gray-900">Everything you need, in order</h2>
-                <p className="text-gray-500 mt-1 text-sm max-w-2xl">We&apos;re running your campaigns. Here&apos;s what you need on your end.</p>
+          {recents.length > 0 ? (
+            <div>
+              <div className="flex items-center gap-2 mb-3 text-xs font-semibold tracking-wider text-gray-500 uppercase">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Recently viewed
               </div>
-
-              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-                {DFY_LINKS.map((item, i) => (
+              <div className="bg-white border border-gray-200 rounded-xl divide-y divide-gray-100">
+                {recents.map((r) => (
                   <Link
-                    key={item.fullSlug}
-                    href={`/resources/${item.fullSlug}`}
-                    className={`flex items-center gap-3 px-5 py-4 hover:bg-gray-50 group ${i > 0 ? 'border-t border-gray-100' : ''}`}
+                    key={r.slug}
+                    href={r.href ?? `/resources/${r.slug}`}
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 group"
                   >
-                    <div className="min-w-0 flex-1">
-                      <div className="text-sm font-semibold text-gray-900">{item.title}</div>
-                      <div className="text-xs text-gray-500 mt-0.5">{item.description}</div>
+                    <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-medium text-gray-900 truncate">{r.title}</div>
                     </div>
-                    <svg className="w-4 h-4 text-gray-300 group-hover:text-[#0D1F35] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
                 ))}
               </div>
             </div>
-          )}
-
-          {track !== 'dfy' && navigation.length > 0 && (
-            <div className="mt-14">
-              <div className="mb-5">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Browse by topic</div>
-                <h2 className="text-xl font-bold text-gray-900">Pick up where you left off</h2>
-                <p className="text-gray-500 mt-1 text-sm max-w-2xl">Jump straight to the section you need.</p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {navigation.map((section) => {
-                  const pageCount = section.children?.length ?? 0;
-                  return (
-                    <Link
-                      key={section.slug}
-                      href={`/resources/${section.slug}`}
-                      className="group block bg-white rounded-xl border border-gray-200 p-5 hover:border-gray-300 hover:shadow-md transition-all"
-                    >
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-700 group-hover:bg-[#0D1F35] group-hover:text-white group-hover:border-[#0D1F35] transition-colors">
-                          <SectionIcon slug={section.slug} className="w-5 h-5" />
-                        </div>
-                        <span className="text-[11px] font-semibold text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-0.5">
-                          {pageCount} {pageCount === 1 ? 'page' : 'pages'}
-                        </span>
-                      </div>
-                      <h3 className="text-sm font-semibold text-gray-900 leading-snug mb-1">{section.title}</h3>
-                      {section.description && (
-                        <p className="text-xs text-gray-500 leading-relaxed">{section.description}</p>
-                      )}
-                    </Link>
-                  );
-                })}
-              </div>
+          ) : (
+            <div className="text-sm text-gray-500">
+              You haven&apos;t opened anything yet. Head to{' '}
+              <Link href="/welcome" className="text-[#0D1F35] font-medium underline">Get Started</Link>{' '}
+              or use the sidebar to browse.
             </div>
           )}
         </main>
       </div>
-
-      {showPicker && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0D1F35]/85 backdrop-blur-sm px-4">
-          <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 text-center">
-            <h2 className="text-xl font-bold text-gray-900 mb-2">How are you using this?</h2>
-            <p className="text-sm text-gray-500 mb-6">Pick the option that fits, so we can show you the right resources.</p>
-            <div className="space-y-3">
-              <button
-                type="button"
-                onClick={() => setTrack('dfy')}
-                className="w-full px-5 py-3 bg-[#0D1F35] text-white rounded-xl font-medium text-sm hover:bg-[#1a3a5c] transition-colors"
-              >
-                We&apos;re running this for you
-              </button>
-              <button
-                type="button"
-                onClick={() => setTrack('full')}
-                className="w-full px-5 py-3 bg-white border border-gray-300 text-gray-900 rounded-xl font-medium text-sm hover:bg-gray-50 transition-colors"
-              >
-                You&apos;re setting it up and running it yourself
-              </button>
-            </div>
-            <p className="text-xs text-gray-400 mt-5">You can change this anytime.</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

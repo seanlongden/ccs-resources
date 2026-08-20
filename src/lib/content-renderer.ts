@@ -126,6 +126,12 @@ const markedInstance = new Marked({
 
 function postprocess(html: string): string {
   html = html.replace(/(<p>)?\s*%%LOOM_EMBED:([a-zA-Z0-9]+)%%\s*(<\/p>)?/g, (_match, _p1, videoId: string) => {
+    const id = escapeAttr(videoId);
+    // Facade pattern: render a lightweight poster button. Real Loom
+    // iframe (with ~500KB of player JS/CSS) only loads on click. Cuts
+    // 2-5s off pages with multiple videos.
+    // The onclick swaps the button for a real iframe with autoplay=1
+    // so the click both starts the load AND immediately plays.
     return `
       <div class="ccg-video-embed">
         <div class="ccg-video-label">
@@ -133,12 +139,15 @@ function postprocess(html: string): string {
           Video Tutorial
         </div>
         <div class="ccg-video-wrapper">
-          <iframe
-            src="https://www.loom.com/embed/${escapeAttr(videoId)}"
-            frameborder="0"
-            allowfullscreen
-            allow="autoplay; fullscreen"
-          ></iframe>
+          <button
+            type="button"
+            class="ccs-loom-facade"
+            aria-label="Play video"
+            style="background-image:url('https://cdn.loom.com/sessions/thumbnails/${id}-00001.jpg');"
+            onclick="var i=document.createElement('iframe');i.src='https://www.loom.com/embed/${id}?autoplay=1';i.setAttribute('allowfullscreen','');i.setAttribute('allow','autoplay; fullscreen; picture-in-picture');i.setAttribute('frameborder','0');this.parentNode.replaceChild(i,this);"
+          >
+            <span class="ccs-loom-play"></span>
+          </button>
         </div>
       </div>`;
   });
@@ -181,4 +190,83 @@ export function renderContent(markdown: string, pageTitle?: string): ProcessedCo
   html = postprocess(html);
 
   return { html, prevLink, nextLink };
+}
+
+// ============================================================
+// Sibling navigation (ported from ccg-resources for prev/next + breadcrumb)
+// ============================================================
+
+export interface NavLite {
+  title: string;
+  slug: string;
+  fullSlug: string;
+  children?: NavLite[];
+}
+
+export function findSiblings(
+  nav: NavLite[],
+  targetFullSlug: string,
+): {
+  prev?: { title: string; fullSlug: string };
+  next?: { title: string; fullSlug: string };
+  parent?: { title: string; fullSlug: string };
+  parents: { title: string; fullSlug: string }[];
+} {
+  type Entry = { node: NavLite; parent?: NavLite };
+  const flat: Entry[] = [];
+  function walk(items: NavLite[], parent?: NavLite) {
+    for (const item of items) {
+      flat.push({ node: item, parent });
+      if (item.children && item.children.length) walk(item.children, item);
+    }
+  }
+  walk(nav);
+
+  // CCS top-level nav items only carry `slug`, not `fullSlug`. Fall back
+  // so breadcrumb parent links resolve correctly instead of /resources/undefined.
+  const slugOf = (n: NavLite): string => n.fullSlug || n.slug;
+
+  const idx = flat.findIndex((e) => slugOf(e.node) === targetFullSlug);
+  if (idx < 0) return { parents: [] };
+  const here = flat[idx];
+
+  const parents: { title: string; fullSlug: string }[] = [];
+  let p = here.parent;
+  while (p) {
+    parents.unshift({ title: p.title, fullSlug: slugOf(p) });
+    const grandparent = flat.find((e) => e.node === p)?.parent;
+    p = grandparent;
+  }
+
+  function siblingsOf(node: NavLite, parent?: NavLite): NavLite[] {
+    if (!parent) return flat.filter((e) => !e.parent).map((e) => e.node);
+    return flat.filter((e) => e.parent === parent).map((e) => e.node);
+  }
+
+  const siblings = siblingsOf(here.node, here.parent);
+  const sIdx = siblings.findIndex((s) => slugOf(s) === targetFullSlug);
+  let prev = sIdx > 0 ? siblings[sIdx - 1] : undefined;
+  let next = sIdx >= 0 && sIdx < siblings.length - 1 ? siblings[sIdx + 1] : undefined;
+
+  if (!prev && here.parent) prev = here.parent;
+  if (!next) {
+    let ancParent: NavLite | undefined = here.parent;
+    while (ancParent) {
+      const ancSibs = siblingsOf(ancParent, flat.find((e) => e.node === ancParent)?.parent);
+      const ai = ancSibs.findIndex((s) => s === ancParent);
+      if (ai >= 0 && ai < ancSibs.length - 1) {
+        next = ancSibs[ai + 1];
+        break;
+      }
+      ancParent = flat.find((e) => e.node === ancParent)?.parent;
+    }
+  }
+
+  const immediateParent = parents[parents.length - 1];
+  return {
+    prev: prev ? { title: prev.title, fullSlug: slugOf(prev) } : undefined,
+    next: next ? { title: next.title, fullSlug: slugOf(next) } : undefined,
+    parent: immediateParent,
+    parents,
+  };
 }

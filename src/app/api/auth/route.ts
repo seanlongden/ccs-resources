@@ -3,6 +3,7 @@ import { getIronSession } from 'iron-session';
 import { cookies } from 'next/headers';
 import { sessionOptions, SessionData, needsRevalidation } from '@/lib/session';
 import { checkAccess } from '@/lib/auth';
+import { ensureUser, hasSeenWelcome } from '@/lib/db';
 
 // POST /api/auth - Login with email
 export async function POST(request: NextRequest) {
@@ -52,6 +53,19 @@ export async function POST(request: NextRequest) {
     }
     session.lastVerified = Date.now();
 
+    // Insert row if new, then read welcome flag so the login page can route
+    // first-time visitors to /welcome. Graceful if DATABASE_URL unset (both
+    // calls no-op and hasSeenWelcome returns true). Result is CACHED on the
+    // session so GET /api/auth doesn't hit the DB on every page navigation.
+    let welcomeSeen = true;
+    try {
+      await ensureUser(session.email);
+      welcomeSeen = await hasSeenWelcome(session.email);
+    } catch (e) {
+      console.error('welcome-flag lookup failed (non-fatal):', e);
+    }
+    session.welcomeSeen = welcomeSeen;
+
     await session.save();
 
     return NextResponse.json({
@@ -59,6 +73,7 @@ export async function POST(request: NextRequest) {
       email: session.email,
       status: accessStatus.status,
       currentPeriodEnd: accessStatus.currentPeriodEnd,
+      hasSeenWelcome: welcomeSeen,
     });
   } catch (error) {
     console.error('Auth error:', error);
@@ -102,11 +117,31 @@ export async function GET() {
       await session.save();
     }
 
+    // Return hasSeenWelcome so the login page can route already-authed
+    // users to /welcome if they closed the tab before finishing onboarding.
+    // Use the cached session flag when true (skips the DB roundtrip on every
+    // page nav). Only DB-check when unknown/false — a false result means
+    // the user hasn't yet visited /welcome so we still need fresh data.
+    let welcomeSeen = session.welcomeSeen ?? false;
+    if (!welcomeSeen) {
+      try {
+        welcomeSeen = await hasSeenWelcome(session.email);
+        if (welcomeSeen) {
+          session.welcomeSeen = true;
+          await session.save();
+        }
+      } catch (e) {
+        console.error('welcome-flag lookup failed (non-fatal):', e);
+        welcomeSeen = true; // safe default: skip walkthrough
+      }
+    }
+
     return NextResponse.json({
       authenticated: true,
       email: session.email,
       status: session.status,
       currentPeriodEnd: session.currentPeriodEnd,
+      hasSeenWelcome: welcomeSeen,
     });
   } catch (error) {
     console.error('Session check error:', error);

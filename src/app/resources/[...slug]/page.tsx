@@ -1,10 +1,12 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
+import { Home, ChevronRight, ArrowLeft, ArrowRight, FileText } from 'lucide-react';
 import { Sidebar, type NavItem, type AuthData } from '@/components/Sidebar';
-import { renderContent } from '@/lib/content-renderer';
+import { renderContent, findSiblings, type NavLite } from '@/lib/content-renderer';
+import LessonView from '@/components/LessonView';
 import navigationData from '../../../../content/navigation.json';
 
 type AccessLevel = 'free' | 'trial' | 'active' | 'lifetime';
@@ -31,6 +33,7 @@ interface NavChild {
   fullSlug?: string;
   type?: string;
   childCount?: number;
+  description?: string;
   children?: NavChild[];
 }
 
@@ -42,8 +45,35 @@ interface NavSection {
   children?: NavChild[];
 }
 
+// Any nav node with children is a section landing (no content page —
+// renders a card list of its children). Walk the full tree so nested
+// segments like `ccs-resources/funnel` count, not just top-level slugs.
+function collectSectionSlugs(items: NavChild[], acc: Set<string>): void {
+  for (const item of items) {
+    const kids = item.children ?? [];
+    if (kids.length > 0) {
+      acc.add(item.fullSlug || item.slug);
+      collectSectionSlugs(kids, acc);
+    }
+  }
+}
+const SECTION_SLUGS = (() => {
+  const s = new Set<string>();
+  collectSectionSlugs(navigationData as unknown as NavChild[], s);
+  return s;
+})();
 const TOP_LEVEL_SLUGS = new Set((navigationData as NavSection[]).map(s => s.slug));
+
+function findNavNode(items: NavChild[], fullSlug: string): NavChild | null {
+  for (const item of items) {
+    if ((item.fullSlug || item.slug) === fullSlug) return item;
+    const found = item.children ? findNavNode(item.children, fullSlug) : null;
+    if (found) return found;
+  }
+  return null;
+}
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
+const RECENTS_KEY = 'ccs_recently_viewed';
 
 function hasAccess(userStatus: UserStatus | undefined, requiredLevel: AccessLevel): boolean {
   if (requiredLevel === 'free') return true;
@@ -78,15 +108,14 @@ export default function ResourcePage() {
   const slugParts = params.slug as string[];
   const fullSlug = slugParts ? slugParts.join('/') : '';
   const isTopLevelSection = TOP_LEVEL_SLUGS.has(fullSlug);
+  const isNestedSection = !isTopLevelSection && SECTION_SLUGS.has(fullSlug);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     try {
       const collapsed = window.localStorage.getItem(SIDEBAR_KEY) === '1';
       setSidebarCollapsed(collapsed);
-    } catch {
-      /* ignore */
-    }
+    } catch { /* ignore */ }
   }, []);
 
   const toggleSidebar = useCallback(() => {
@@ -113,18 +142,20 @@ export default function ResourcePage() {
         return;
       }
 
-      if (isTopLevelSection) {
+      if (isTopLevelSection || isNestedSection) {
         try {
           const navRes = await fetch('/api/content/navigation');
           const navData: NavSection[] = await navRes.json();
-          const found = navData.find(s => s.slug === fullSlug);
+          const found = isTopLevelSection
+            ? navData.find(s => s.slug === fullSlug)
+            : findNavNode(navData as unknown as NavChild[], fullSlug);
           if (found) {
             const onlyChild = found.children?.length === 1 ? found.children[0] : null;
             if (onlyChild?.fullSlug) {
               router.replace(`/resources/${onlyChild.fullSlug}`);
               return;
             }
-            setSection(found);
+            setSection(found as NavSection);
           } else {
             setError('Section not found');
           }
@@ -151,12 +182,33 @@ export default function ResourcePage() {
       setLoading(false);
     }
     init();
-  }, [router, fullSlug, isTopLevelSection]);
+  }, [router, fullSlug, isTopLevelSection, isNestedSection]);
+
+  // Track visit in recents (localStorage)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (error || !fullSlug) return;
+    const title = page?.title ?? section?.title;
+    if (!title) return;
+    try {
+      const raw = window.localStorage.getItem(RECENTS_KEY);
+      const current = raw ? (JSON.parse(raw) as { slug: string; title: string; ts: number }[]) : [];
+      const filtered = current.filter((r) => r.slug !== fullSlug);
+      const next = [{ slug: fullSlug, title, ts: Date.now() }, ...filtered].slice(0, 5);
+      window.localStorage.setItem(RECENTS_KEY, JSON.stringify(next));
+    } catch { /* ignore */ }
+  }, [page, section, error, fullSlug]);
 
   const handleLogout = async () => {
     await fetch('/api/auth', { method: 'DELETE' });
     router.push('/');
   };
+
+  // Ancestor breadcrumb + prev/next siblings (CCG pattern)
+  const siblings = useMemo(() => {
+    if (!fullSlug) return { parents: [] };
+    return findSiblings(navigationData as unknown as NavLite[], fullSlug);
+  }, [fullSlug]);
 
   if (loading) {
     return (
@@ -174,8 +226,10 @@ export default function ResourcePage() {
 
   if (!auth?.authenticated) return null;
 
+  const currentTitle = section?.title ?? page?.title;
+
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-slate-50 flex">
       <Sidebar
         navigation={navigationData as unknown as NavItem[]}
         auth={auth}
@@ -184,67 +238,118 @@ export default function ResourcePage() {
         onToggleCollapse={toggleSidebar}
       />
 
-      <div className="flex-1 min-w-0">
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
-          <div className="px-6 h-14 flex items-center justify-between">
-            <nav className="flex items-center gap-1.5 text-xs text-gray-500 min-w-0">
-              <Link href="/resources" className="hover:text-gray-900 shrink-0">Resources</Link>
-              <svg className="w-3 h-3 text-gray-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-              <span className="text-gray-900 truncate font-medium">
-                {section?.title || page?.title || '...'}
-              </span>
-            </nav>
-          </div>
-        </header>
-
-        <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
-        <Link
-          href="/resources"
-          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#0D1F35] mb-6 group"
-        >
-          <div className="w-7 h-7 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-[#0D1F35] group-hover:text-white transition-colors">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </div>
-          Back to Resources
-        </Link>
-
-        {section && !error && (
-          <div>
-            <div className="mb-8">
-              <h1 className="text-2xl font-bold text-gray-900">{section.title}</h1>
-              {section.description && (
-                <p className="text-gray-500 mt-1">{section.description}</p>
-              )}
-            </div>
-            <SectionChildren items={section.children || []} />
-          </div>
-        )}
-
-        {page && !error && (
-          <ContentPage page={page} auth={auth} />
-        )}
-
-        {error && (
-          <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 text-center py-16">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
-              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Page Not Found</h3>
-            <p className="text-gray-500 mb-6">The resource you are looking for does not exist or has been moved.</p>
-            <Link href="/resources" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D1F35] text-white rounded-xl hover:bg-[#1a3a5c] font-medium text-sm">
-              Back to Resources
+      <main className="flex-1 overflow-y-auto">
+        <div className="mx-auto max-w-5xl px-8 pt-8 pb-12">
+          {/* Breadcrumb — Home + ancestor chain + current title.
+              Home icon anchors to the current top-level section (CCS Training,
+              CCS Install, etc.) rather than the /resources hub, so "back" lands
+              somewhere useful. On section landings themselves, Home falls back
+              to /resources. */}
+          {(() => {
+            const parents = siblings.parents ?? [];
+            const [topAncestor, ...restAncestors] = parents;
+            const homeHref = topAncestor ? `/resources/${topAncestor.fullSlug}` : '/resources';
+            const homeLabel = topAncestor ? topAncestor.title : 'Resources';
+            return (
+          <nav className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 mb-8" aria-label="Breadcrumb">
+            <Link href={homeHref} className="flex items-center gap-1 hover:text-slate-900">
+              <Home className="w-3.5 h-3.5" strokeWidth={1.75} />
+              <span className="truncate max-w-[180px]">{homeLabel}</span>
             </Link>
-          </div>
-        )}
-        </main>
-      </div>
+            {restAncestors.map((p) => (
+              <span key={p.fullSlug} className="flex items-center gap-1.5 min-w-0">
+                <ChevronRight className="w-3.5 h-3.5 text-slate-300" strokeWidth={1.75} />
+                <Link href={`/resources/${p.fullSlug}`} className="hover:text-slate-900 truncate max-w-[180px]">
+                  {p.title}
+                </Link>
+              </span>
+            ))}
+            {currentTitle && (
+              <>
+                <ChevronRight className="w-3.5 h-3.5 text-slate-300" strokeWidth={1.75} />
+                <span className="text-slate-900 font-medium truncate max-w-[280px]">{currentTitle}</span>
+              </>
+            )}
+          </nav>
+            );
+          })()}
+
+          {section && !error && (
+            <SectionLanding section={section} />
+          )}
+
+          {page && !error && (
+            <ContentPage page={page} auth={auth} />
+          )}
+
+          {error && (
+            <div className="bg-white rounded-2xl p-12 text-center border border-slate-200">
+              <div className="w-16 h-16 mx-auto mb-4 bg-slate-100 rounded-full flex items-center justify-center">
+                <FileText className="w-8 h-8 text-slate-400" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">Page not found</h3>
+              <p className="text-sm text-slate-500 mb-6">The resource you are looking for does not exist or has been moved.</p>
+              <Link href="/resources" className="inline-flex items-center gap-2 px-4 py-2 bg-[#0D1F35] text-white rounded-lg hover:bg-[#1a3a5c] text-sm font-medium">
+                <ArrowLeft className="w-4 h-4" strokeWidth={1.75} />
+                Back to Resources
+              </Link>
+            </div>
+          )}
+
+          {/* Ancestor-based Prev/Next (only on content pages, not section landings) */}
+          {page && !error && (siblings.prev || siblings.next) && (
+            <nav className="mt-12 pt-6 border-t border-slate-200 grid grid-cols-2 gap-3">
+              {siblings.prev ? (
+                <Link
+                  href={`/resources/${siblings.prev.fullSlug}`}
+                  className="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-lg hover:border-slate-400 group"
+                >
+                  <ArrowLeft className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" strokeWidth={1.75} />
+                  <div className="min-w-0">
+                    <div className="text-[10px] tracking-wider text-slate-400 uppercase">Previous</div>
+                    <div className="text-sm font-medium text-slate-900 truncate">{siblings.prev.title}</div>
+                  </div>
+                </Link>
+              ) : <div />}
+              {siblings.next ? (
+                <Link
+                  href={`/resources/${siblings.next.fullSlug}`}
+                  className="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-lg hover:border-slate-400 group text-right justify-end"
+                >
+                  <div className="min-w-0">
+                    <div className="text-[10px] tracking-wider text-slate-400 uppercase">Next</div>
+                    <div className="text-sm font-medium text-slate-900 truncate">{siblings.next.title}</div>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" strokeWidth={1.75} />
+                </Link>
+              ) : <div />}
+            </nav>
+          )}
+        </div>
+      </main>
     </div>
+  );
+}
+
+function SectionLanding({ section }: { section: NavSection }) {
+  return (
+    <article>
+      <header className="border-b border-slate-200" style={{ paddingBottom: '22px', marginBottom: '24px' }}>
+        <h1
+          className="text-slate-900 m-0"
+          style={{ fontSize: '32px', fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: '10px' }}
+        >
+          {section.title}
+        </h1>
+        {section.description && (
+          <p className="text-slate-500 m-0" style={{ fontSize: '14px', maxWidth: '580px' }}>
+            {section.description}
+          </p>
+        )}
+      </header>
+
+      <SectionChildren items={section.children || []} />
+    </article>
   );
 }
 
@@ -256,30 +361,18 @@ function SectionChildren({ items }: { items: NavChild[] }) {
       <div className="space-y-8">
         {items.filter(c => c.type === 'group').map((group) => (
           <div key={group.slug}>
-            <h2 className="text-base font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <h2 className="text-base font-semibold text-slate-900 mb-3 flex items-center gap-2">
               <span className="w-1 h-5 bg-[#0D1F35] rounded-full inline-block"></span>
               {group.title}
             </h2>
-            <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-              {(group.children || []).map((item, i) => (
-                <Link
-                  key={item.fullSlug || item.slug}
-                  href={`/resources/${item.fullSlug || item.slug}`}
-                  className={`flex items-center gap-3 px-4 py-3 hover:bg-gray-50 group ${i > 0 ? 'border-t border-gray-100' : ''}`}
-                >
-                  <svg className="w-4 h-4 text-gray-300 group-hover:text-[#0D1F35] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  <span className="text-gray-700 group-hover:text-gray-900 text-sm">{item.title}</span>
-                </Link>
-              ))}
-            </div>
+            <NumberedCardList items={group.children || []} />
           </div>
         ))}
       </div>
     );
   }
 
+  // Handle dividers as segments
   const segments: Array<{ dividerTitle?: string; items: NavChild[] }> = [];
   let currentSegment: NavChild[] = [];
 
@@ -301,36 +394,69 @@ function SectionChildren({ items }: { items: NavChild[] }) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {segments.filter(s => s.items.length > 0 || s.dividerTitle).map((seg, si) => (
         <div key={si}>
           {seg.dividerTitle && (
-            <h2 className="text-base font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <h2 className="text-base font-semibold text-slate-900 mb-3 flex items-center gap-2">
               <span className="w-1 h-5 bg-[#0D1F35] rounded-full inline-block"></span>
               {seg.dividerTitle}
             </h2>
           )}
-          {seg.items.length > 0 && (
-            <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-              {seg.items.map((item, i) => (
-                <Link
-                  key={item.fullSlug || item.slug}
-                  href={`/resources/${item.fullSlug || item.slug}`}
-                  className={`flex items-center gap-3 px-4 py-3 hover:bg-gray-50 group ${i > 0 ? 'border-t border-gray-100' : ''}`}
-                >
-                  <svg className="w-4 h-4 text-gray-300 group-hover:text-[#0D1F35] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  <span className="text-gray-700 group-hover:text-gray-900 text-sm">{item.title}</span>
-                  {item.type === 'section' && item.childCount ? (
-                    <span className="ml-auto text-xs text-gray-400">{item.childCount} pages</span>
-                  ) : null}
-                </Link>
-              ))}
-            </div>
-          )}
+          {seg.items.length > 0 && <NumberedCardList items={seg.items} />}
         </div>
       ))}
+    </div>
+  );
+}
+
+/** ModuleLanding-style numbered card list. Matches CCG's .ccg-ml-row spec + mockup. */
+function NumberedCardList({ items }: { items: NavChild[] }) {
+  return (
+    <div className="flex flex-col gap-2">
+      {items.map((item, i) => {
+        const num = String(i + 1).padStart(2, '0');
+        const isSection = item.type === 'section' && !!item.childCount;
+        return (
+          <Link
+            key={item.fullSlug || item.slug}
+            href={`/resources/${item.fullSlug || item.slug}`}
+            className="group grid items-center bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] hover:-translate-y-px transition-all no-underline"
+            style={{ gridTemplateColumns: '56px 1fr auto', gap: '18px', padding: '16px 22px 16px 18px' }}
+          >
+            <div
+              className="text-center border-r border-slate-200 py-1.5 text-slate-400"
+              style={{ fontFamily: "'SF Mono', Monaco, Menlo, monospace", fontSize: '13px', fontWeight: 800, letterSpacing: '0.04em' }}
+            >
+              {num}
+            </div>
+            <div className="min-w-0">
+              <h3
+                className="text-slate-900 m-0"
+                style={{ fontSize: '15px', fontWeight: 700, marginBottom: item.description ? '3px' : 0 }}
+              >
+                {item.title}
+              </h3>
+              {item.description && (
+                <p className="text-slate-500 m-0" style={{ fontSize: '12.5px', lineHeight: 1.5 }}>
+                  {item.description}
+                </p>
+              )}
+            </div>
+            <div className="flex items-center gap-3">
+              {isSection && (
+                <span
+                  className="text-blue-700 bg-blue-50 rounded-full shrink-0 whitespace-nowrap"
+                  style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', padding: '3px 10px' }}
+                >
+                  {item.childCount} lessons
+                </span>
+              )}
+              <span className="text-slate-300 group-hover:text-slate-700 shrink-0" style={{ fontSize: '14px' }}>→</span>
+            </div>
+          </Link>
+        );
+      })}
     </div>
   );
 }
@@ -338,100 +464,33 @@ function SectionChildren({ items }: { items: NavChild[] }) {
 function ContentPage({ page, auth }: { page: PageData; auth: AuthData }) {
   if (page.gating && !hasAccess(auth?.status as UserStatus | undefined, page.gating.requiredLevel)) {
     return (
-      <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 text-center py-16">
+      <div className="bg-white rounded-2xl p-12 text-center border border-slate-200">
         <div className="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
           <svg className="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
           </svg>
         </div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">{page.title}</h3>
-        <p className="text-gray-500 mb-4">{page.gating.reason || getLockedMessage(page.gating.requiredLevel)}</p>
-        <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-50 text-amber-700 rounded-xl text-sm font-medium">
-          Requires: {page.gating.requiredLevel === 'active' ? 'Active Membership' : page.gating.requiredLevel === 'lifetime' ? 'Lifetime Membership' : 'Login'}
-        </span>
+        <h3 className="text-lg font-semibold text-slate-900 mb-2">{page.title}</h3>
+        <p className="text-sm text-slate-500 max-w-md mx-auto">{page.gating.reason || getLockedMessage(page.gating.requiredLevel)}</p>
       </div>
     );
   }
 
-  const { html, prevLink, nextLink } = renderContent(page.content, page.title);
+  const { html } = renderContent(page.content, page.title);
 
-  return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-      <div className="border-b border-gray-100 px-6 sm:px-8 py-6">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{page.title}</h1>
-      </div>
+  if (page.isSection && page.children && page.children.length > 0) {
+    return (
+      <article>
+        <header className="mb-8 pb-6 border-b border-slate-200">
+          <h1 className="text-3xl font-bold text-slate-900">{page.title}</h1>
+        </header>
+        <section className="mb-10">
+          <div className="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-3">In this section</div>
+          <NumberedCardList items={page.children.map((c) => ({ title: c.title, slug: c.fullSlug, fullSlug: c.fullSlug }))} />
+        </section>
+      </article>
+    );
+  }
 
-      <div className="px-6 sm:px-8 py-8">
-        {page.isSection && page.children && page.children.length > 0 && (
-          <div className="mb-8 pb-8 border-b border-gray-100">
-            <h2 className="text-base font-semibold text-gray-900 mb-4">In this section</h2>
-            <div className="space-y-1">
-              {page.children.map((child) => (
-                <Link
-                  key={child.fullSlug}
-                  href={`/resources/${child.fullSlug}`}
-                  className="flex items-center gap-3 px-4 py-3 rounded-lg border border-gray-100 hover:border-[#0D1F35] hover:bg-gray-50 group"
-                >
-                  <svg className="w-4 h-4 text-gray-300 group-hover:text-[#0D1F35]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  <span className="text-gray-700 group-hover:text-gray-900 text-sm font-medium">{child.title}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div
-          className="prose prose-gray max-w-none
-            prose-headings:text-gray-900
-            prose-h1:text-2xl prose-h1:font-bold prose-h1:mb-4
-            prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-8 prose-h2:mb-4
-            prose-h3:text-lg prose-h3:font-medium prose-h3:mt-6 prose-h3:mb-3
-            prose-p:text-gray-600 prose-p:leading-relaxed
-            prose-a:text-blue-600 prose-a:font-medium hover:prose-a:text-blue-800
-            prose-ul:text-gray-600 prose-ol:text-gray-600
-            prose-li:my-1
-            prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono
-            prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-xl
-            [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:rounded-none [&_pre_code]:text-inherit
-            prose-img:rounded-xl prose-img:shadow-lg
-            prose-hr:border-gray-200
-            prose-strong:text-gray-900
-          "
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
-
-      {(prevLink || nextLink) && (
-        <div className="border-t border-gray-100 px-6 sm:px-8 py-5 bg-gray-50/50">
-          <div className="ccg-nav-footer">
-            {prevLink ? (
-              <Link href={prevLink.href} className="ccg-nav-btn">
-                <span className="ccg-nav-btn-label">← Previous</span>
-                <span className="ccg-nav-btn-title">{prevLink.label}</span>
-              </Link>
-            ) : <div />}
-            {nextLink ? (
-              <Link href={nextLink.href} className="ccg-nav-btn ccg-nav-next">
-                <span className="ccg-nav-btn-label">Next →</span>
-                <span className="ccg-nav-btn-title">{nextLink.label}</span>
-              </Link>
-            ) : <div />}
-          </div>
-        </div>
-      )}
-
-      {!prevLink && !nextLink && (
-        <div className="border-t border-gray-100 px-6 sm:px-8 py-4 bg-gray-50/50">
-          <Link href="/resources" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#0D1F35]">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Resource Library
-          </Link>
-        </div>
-      )}
-    </div>
-  );
+  return <LessonView title={page.title} html={html} />;
 }

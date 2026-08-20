@@ -8,11 +8,9 @@ import {
   ChevronsLeft, ChevronsRight,
   LogOut, FileText, Folder, ExternalLink, Wrench,
   Search, X, Loader2,
-  GraduationCap, ArrowLeftRight,
+  GraduationCap, BookOpen,
   type LucideIcon,
 } from 'lucide-react';
-import { useTrack, DFY_LINKS } from '@/lib/track';
-
 interface SidebarSearchResult {
   pageSlug: string;
   anchor: string;
@@ -52,9 +50,10 @@ export const SECTION_META: Record<string, {
   description: string;
   order: number;
 }> = {
+  'get-started': { group: 'main-modules', icon: Home, order: 0, description: 'How to use this site plus your setup path.' },
   'ccs-install': { group: 'main-modules', icon: Wrench, order: 1, description: 'Get your tools set up. The fastest path to your first campaign.' },
-  'ccs-training': { group: 'main-modules', icon: GraduationCap, order: 2, description: 'The theory and frameworks for offer creation, cold email copy, campaigns, and the sales process that closes what you book.' },
-  'sales-scaling': { group: 'main-modules', icon: TrendingUp, order: 3, description: 'For building and growing your own agency: client assets, onboarding, hiring, and scaling.' },
+  'ccs-training': { group: 'main-modules', icon: GraduationCap, order: 2, description: 'The operator manual for running the system we set up for you.' },
+  'ccs-resources': { group: 'main-modules', icon: BookOpen, order: 3, description: 'Browse the full CCS knowledge base — offer, sales, funnel assets, hiring, ops.' },
 };
 
 export const LEGACY_SLUGS = new Set<string>([]);
@@ -126,12 +125,6 @@ export function Sidebar({
   const pathname = usePathname();
   const router = useRouter();
   const { newGrouped } = useNavGrouped(navigation);
-  const { track, clearTrack } = useTrack();
-
-  const handleSwitchView = useCallback(() => {
-    clearTrack();
-    router.push('/resources');
-  }, [clearTrack, router]);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<SidebarSearchResult[]>([]);
@@ -286,71 +279,71 @@ export function Sidebar({
 
       {/* Nav groups */}
       <nav className={`flex-1 overflow-y-auto py-4 ${collapsed ? 'px-2 space-y-2' : 'px-3 space-y-5'}`}>
-        {track === 'dfy' ? (
-          <div>
-            {!collapsed && (
-              <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
-                Your Resources
-              </div>
-            )}
-            <div className="space-y-0.5">
-              {DFY_LINKS.map((item) => {
-                const active = isActive(item.fullSlug);
-                return (
-                  <Link
-                    key={item.fullSlug}
-                    href={`/resources/${item.fullSlug}`}
-                    title={collapsed ? item.title : undefined}
-                    className={`flex items-start gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-2 text-sm rounded-md ${
-                      active ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
-                    }`}
-                  >
-                    <FileText className={`w-4 h-4 mt-0.5 ${active ? 'text-white' : 'text-white/60'} shrink-0`} strokeWidth={1.75} />
-                    {!collapsed && (
-                      <span className="min-w-0 flex-1">
-                        <span className="block truncate">{item.title}</span>
-                        <span className="block text-xs text-white/50 truncate">{item.description}</span>
-                      </span>
-                    )}
-                  </Link>
-                );
-              })}
+        {/* Start Here — standalone at the top, above the Resources group. */}
+        <div>
+          {!collapsed && (
+            <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
+              Start Here
             </div>
-          </div>
-        ) : (
-          (['main-modules'] as GroupKey[]).map((g) => (
-            newGrouped[g].length > 0 && (
-              <div key={g}>
-                {!collapsed && (
-                  <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
-                    {GROUP_LABELS[g]}
-                  </div>
-                )}
-                <div className="space-y-0.5">
-                  {newGrouped[g].map((s) => {
-                    const Icon = resolveSectionIcon(s);
-                    const active = isActive(s.fullSlug || s.slug);
-                    return (
-                      <Link
-                        key={s.slug}
-                        href={`/resources/${s.fullSlug || s.slug}`}
-                        title={collapsed ? s.title : undefined}
-                        className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
-                          active ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
-                        }`}
-                      >
-                        <Icon className={`w-4 h-4 ${active ? 'text-white' : 'text-white/60'} shrink-0`} strokeWidth={1.75} />
-                        {!collapsed && <span className="truncate flex-1">{s.title}</span>}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            )
-          ))
-        )}
+          )}
+          <Link
+            href="/welcome"
+            title={collapsed ? 'Get Started' : undefined}
+            className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
+              isActive('welcome') ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
+            }`}
+          >
+            <Home className={`w-4 h-4 ${isActive('welcome') ? 'text-white' : 'text-white/60'} shrink-0`} strokeWidth={1.75} />
+            {!collapsed && <span className="truncate flex-1">Get Started</span>}
+          </Link>
+        </div>
 
-        {/* External: CCS Tools hub (tools.closingclientssystem.com). */}
+        {(['main-modules'] as GroupKey[]).map((g) => (
+          newGrouped[g].length > 0 && (
+            <div key={g}>
+              {!collapsed && (
+                <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
+                  {GROUP_LABELS[g]}
+                </div>
+              )}
+              <div className="space-y-0.5">
+                {newGrouped[g].map((s) => {
+                  const Icon = resolveSectionIcon(s);
+                  const active = isActive(s.fullSlug || s.slug);
+                  const isEmpty = !s.children || s.children.length === 0;
+                  return (
+                    <Link
+                      key={s.slug}
+                      href={`/resources/${s.fullSlug || s.slug}`}
+                      title={collapsed ? (isEmpty ? `${s.title} — coming soon` : s.title) : undefined}
+                      className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
+                        active ? 'bg-white/15 text-white' :
+                        isEmpty ? 'text-white/40 hover:bg-white/5 hover:text-white/55' :
+                        'text-white/85 hover:bg-white/10 hover:text-white'
+                      }`}
+                    >
+                      <Icon className={`w-4 h-4 shrink-0 ${
+                        active ? 'text-white' : isEmpty ? 'text-white/30' : 'text-white/60'
+                      }`} strokeWidth={1.75} />
+                      {!collapsed && (
+                        <>
+                          <span className="truncate flex-1">{s.title}</span>
+                          {isEmpty && (
+                            <span className="text-[9px] font-semibold tracking-wider uppercase text-white/40 bg-white/5 border border-white/10 rounded-sm px-1.5 py-[1px] whitespace-nowrap">
+                              Coming Soon
+                            </span>
+                          )}
+                        </>
+                      )}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )
+        ))}
+
+        {/* Tools: external CCS Tools hub. */}
         <div>
           {!collapsed && (
             <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
@@ -394,14 +387,6 @@ export function Sidebar({
             </div>
           </div>
         )}
-        <button
-          onClick={handleSwitchView}
-          title={collapsed ? 'Switch view' : undefined}
-          className={`w-full flex items-center gap-2 py-1.5 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-md ${collapsed ? 'justify-center px-2' : 'px-2'}`}
-        >
-          <ArrowLeftRight className="w-4 h-4" strokeWidth={1.75} />
-          {!collapsed && <span>Switch view</span>}
-        </button>
         <button
           onClick={onLogout}
           title={collapsed ? 'Logout' : undefined}
