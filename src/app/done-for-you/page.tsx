@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Sidebar, SectionIcon, type NavItem, type AuthData } from '@/components/Sidebar';
+import { Sidebar, type NavItem, type AuthData } from '@/components/Sidebar';
 
 interface NavSection extends NavItem {
   itemCount?: number;
@@ -11,7 +11,7 @@ interface NavSection extends NavItem {
 
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
 
-export default function ResourcesPage() {
+export default function DoneForYouPage() {
   const [auth, setAuth] = useState<AuthData | null>(null);
   const [navigation, setNavigation] = useState<NavSection[]>([]);
   const [loading, setLoading] = useState(true);
@@ -99,48 +99,17 @@ export default function ResourcesPage() {
       <div className="flex-1 min-w-0">
         <main className="px-8 py-12 max-w-4xl">
           <div className="mb-10">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The System</div>
-            <h1 className="text-3xl font-bold text-gray-900">Closing Clients System Resources</h1>
-            <p className="text-gray-500 mt-2 max-w-2xl">Everything you need to run an outbound engine that books qualified sales calls — organized by topic so you can jump straight to what you need.</p>
+            <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Done For You</div>
+            <h1 className="text-3xl font-bold text-gray-900">Your Done For You setup</h1>
+            <p className="text-gray-500 mt-2 max-w-2xl">Everything you need on your side while we run the system for you. Placeholder for now &mdash; Matt will walk you through this on the onboarding call.</p>
           </div>
 
-          {navigation.length > 0 && (
-            <div className="mt-14">
-              <div className="mb-5">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Browse by topic</div>
-                <h2 className="text-xl font-bold text-gray-900">Pick up where you left off</h2>
-                <p className="text-gray-500 mt-1 text-sm max-w-2xl">Jump straight to the section you need.</p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {navigation.map((section) => {
-                  const pageCount = section.children?.length ?? 0;
-                  return (
-                    <Link
-                      key={section.slug}
-                      href={`/resources/${section.slug}`}
-                      className="group block bg-white rounded-xl border border-gray-200 p-5 hover:border-gray-300 hover:shadow-md transition-all"
-                    >
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-700 group-hover:bg-[#0D1F35] group-hover:text-white group-hover:border-[#0D1F35] transition-colors">
-                          <SectionIcon slug={section.slug} className="w-5 h-5" />
-                        </div>
-                        {pageCount > 0 && (
-                          <span className="text-[11px] font-semibold text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-0.5">
-                            {pageCount} {pageCount === 1 ? 'page' : 'pages'}
-                          </span>
-                        )}
-                      </div>
-                      <h3 className="text-sm font-semibold text-gray-900 leading-snug mb-1">{section.title}</h3>
-                      {section.description && (
-                        <p className="text-xs text-gray-500 leading-relaxed">{section.description}</p>
-                      )}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+          <div className="rounded-xl border border-dashed border-gray-300 bg-white p-10 text-center">
+            <div className="text-sm text-gray-500">Content coming soon.</div>
+            <Link href="/resources/get-started" className="mt-4 inline-block text-sm text-[#0D1F35] underline">
+              Back to Get Started
+            </Link>
+          </div>
         </main>
       </div>
     </div>

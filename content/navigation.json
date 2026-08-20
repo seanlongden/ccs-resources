@@ -1,5 +1,12 @@
 [
   {
+    "title": "Get Started",
+    "slug": "get-started",
+    "fullSlug": "get-started",
+    "description": "How to use this site plus your setup path.",
+    "children": []
+  },
+  {
     "title": "CCS Install",
     "slug": "ccs-install",
     "description": "Get your tools set up. The fastest path to your first campaign.",
@@ -250,7 +257,7 @@
         "childCount": 0
       },
       {
-        "title": "Call Prep — Set Yourself Up to Win",
+        "title": "Call Prep \u2014 Set Yourself Up to Win",
         "slug": "call-prep",
         "fullSlug": "sales/call-prep",
         "type": "page",
@@ -283,14 +290,7 @@
         "fullSlug": "sales/upselling",
         "type": "page",
         "childCount": 0
-      }
-    ]
-  },
-  {
-    "title": "Sales & Scaling Resources",
-    "slug": "sales-scaling",
-    "description": "For building and growing your own agency: client assets, onboarding, hiring, and scaling.",
-    "children": [
+      },
       {
         "title": "Your Website / Landing Page",
         "slug": "website-landing-page",
