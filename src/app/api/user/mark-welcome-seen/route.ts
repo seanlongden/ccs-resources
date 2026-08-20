@@ -16,6 +16,10 @@ export async function POST() {
     }
 
     await markWelcomeSeen(session.email);
+    // Cache the flag on the session so subsequent /api/auth GETs skip the
+    // Postgres roundtrip (saves ~30-100ms per page navigation).
+    session.welcomeSeen = true;
+    await session.save();
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('mark-welcome-seen error:', error);

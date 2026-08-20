@@ -182,6 +182,61 @@ body {
   border: 0;
 }
 
+/* Facade pattern: click-to-load Loom video poster. Replaces the ~500KB
+   Loom iframe on first paint with a static thumbnail + play button.
+   Click swaps in the real iframe with autoplay=1. */
+.ccs-loom-facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background-color: #0f172a;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 200ms ease;
+}
+.ccs-loom-facade:hover {
+  filter: brightness(1.1);
+}
+.ccs-loom-facade:hover .ccs-loom-play {
+  transform: scale(1.08);
+  background: rgba(13, 31, 53, 0.9);
+}
+.ccs-loom-facade:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 4px;
+}
+.ccs-loom-play {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  position: relative;
+  transition: transform 200ms ease, background 200ms ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.ccs-loom-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 22px solid white;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+}
+
 /* Callout boxes */
 .ccg-callout {
   display: flex;

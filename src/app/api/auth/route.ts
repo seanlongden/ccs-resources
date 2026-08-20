@@ -53,11 +53,10 @@ export async function POST(request: NextRequest) {
     }
     session.lastVerified = Date.now();
 
-    await session.save();
-
     // Insert row if new, then read welcome flag so the login page can route
     // first-time visitors to /welcome. Graceful if DATABASE_URL unset (both
-    // calls no-op and hasSeenWelcome returns true).
+    // calls no-op and hasSeenWelcome returns true). Result is CACHED on the
+    // session so GET /api/auth doesn't hit the DB on every page navigation.
     let welcomeSeen = true;
     try {
       await ensureUser(session.email);
@@ -65,6 +64,9 @@ export async function POST(request: NextRequest) {
     } catch (e) {
       console.error('welcome-flag lookup failed (non-fatal):', e);
     }
+    session.welcomeSeen = welcomeSeen;
+
+    await session.save();
 
     return NextResponse.json({
       success: true,
@@ -117,11 +119,21 @@ export async function GET() {
 
     // Return hasSeenWelcome so the login page can route already-authed
     // users to /welcome if they closed the tab before finishing onboarding.
-    let welcomeSeen = true;
-    try {
-      welcomeSeen = await hasSeenWelcome(session.email);
-    } catch (e) {
-      console.error('welcome-flag lookup failed (non-fatal):', e);
+    // Use the cached session flag when true (skips the DB roundtrip on every
+    // page nav). Only DB-check when unknown/false — a false result means
+    // the user hasn't yet visited /welcome so we still need fresh data.
+    let welcomeSeen = session.welcomeSeen ?? false;
+    if (!welcomeSeen) {
+      try {
+        welcomeSeen = await hasSeenWelcome(session.email);
+        if (welcomeSeen) {
+          session.welcomeSeen = true;
+          await session.save();
+        }
+      } catch (e) {
+        console.error('welcome-flag lookup failed (non-fatal):', e);
+        welcomeSeen = true; // safe default: skip walkthrough
+      }
     }
 
     return NextResponse.json({
