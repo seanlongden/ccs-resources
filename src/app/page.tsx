@@ -17,7 +17,7 @@ export default function LoginPage() {
         const res = await fetch('/api/auth');
         const data = await res.json();
         if (data.authenticated) {
-          router.push('/resources');
+          router.push(data.hasSeenWelcome === false ? '/welcome' : '/resources');
         }
       } catch (e) {
         console.error('Auth check failed:', e);
@@ -44,15 +44,16 @@ export default function LoginPage() {
 
       if (!res.ok) {
         if (res.status === 403) {
-          setError('No active subscription found for this email. Please check your email or subscribe at closingclientsgroup.com');
+          setError('No active subscription found for this email. Please check your email or subscribe at closingclientssystem.com');
         } else {
           setError(data.error || 'Authentication failed');
         }
         return;
       }
 
-      // Success - redirect to resources
-      router.push('/resources');
+      // First-time visitors get walked through /welcome. Returning visitors
+      // skip straight to the resources dashboard.
+      router.push(data.hasSeenWelcome === false ? '/welcome' : '/resources');
     } catch (e) {
       console.error('Login error:', e);
       setError('Something went wrong. Please try again.');

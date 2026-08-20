@@ -1,12 +1,5 @@
 [
   {
-    "title": "Get Started",
-    "slug": "get-started",
-    "fullSlug": "get-started",
-    "description": "How to use this site plus your setup path.",
-    "children": []
-  },
-  {
     "title": "CCS Install",
     "slug": "ccs-install",
     "description": "Get your tools set up. The fastest path to your first campaign.",

@@ -11,7 +11,7 @@ interface NavSection extends NavItem {
 
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
 
-export default function GetStartedPage() {
+export default function WelcomePage() {
   const [auth, setAuth] = useState<AuthData | null>(null);
   const [navigation, setNavigation] = useState<NavSection[]>([]);
   const [loading, setLoading] = useState(true);
@@ -60,6 +60,14 @@ export default function GetStartedPage() {
         console.error('Failed to load navigation:', e);
       }
 
+      // Fire-and-forget: mark this user as having seen the welcome page.
+      // Any subsequent login will skip straight to /resources.
+      try {
+        await fetch('/api/user/mark-welcome-seen', { method: 'POST' });
+      } catch (e) {
+        console.error('mark-welcome-seen failed (non-fatal):', e);
+      }
+
       setLoading(false);
     }
     init();
@@ -99,8 +107,8 @@ export default function GetStartedPage() {
       <div className="flex-1 min-w-0">
         <main className="px-8 py-12 max-w-4xl">
           <div className="mb-10">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Start Here</div>
-            <h1 className="text-3xl font-bold text-gray-900">Get Started</h1>
+            <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Welcome</div>
+            <h1 className="text-3xl font-bold text-gray-900">Welcome to Closing Clients System</h1>
             <p className="text-gray-500 mt-2 max-w-2xl">A quick walkthrough of what&apos;s inside and how to use it. Then pick your path below.</p>
           </div>
 
@@ -115,32 +123,34 @@ export default function GetStartedPage() {
             </div>
           </div>
 
-          {/* Done For You card */}
-          <div className="mb-6">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">If we&apos;re running this for you</div>
-            <h2 className="text-xl font-bold text-gray-900">Done For You setup path</h2>
-            <p className="text-gray-500 mt-1 text-sm max-w-2xl">Everything you need on your end when we&apos;re running the system for you. Matt will walk you through this on your onboarding call.</p>
-          </div>
-
-          <Link
-            href="/done-for-you"
-            className="group block bg-white rounded-xl border border-gray-200 p-6 hover:border-[#0D1F35] hover:shadow-md transition-all mb-10"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-lg bg-[#0D1F35] text-white flex items-center justify-center shrink-0">
+          {/* Two cards: DFY + Access Resources */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link
+              href="/done-for-you"
+              className="group block bg-white rounded-xl border border-gray-200 p-6 hover:border-[#0D1F35] hover:shadow-md transition-all"
+            >
+              <div className="w-12 h-12 rounded-lg bg-[#0D1F35] text-white flex items-center justify-center mb-4">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-base font-bold text-gray-900">Go to your Done For You setup</h3>
-                <p className="text-sm text-gray-500 mt-0.5">Tools to install, accounts to create, everything you need on your side.</p>
+              <h3 className="text-base font-bold text-gray-900 mb-1">Go to Done For You</h3>
+              <p className="text-sm text-gray-500">Everything you need on your side when we&apos;re running the system for you.</p>
+            </Link>
+
+            <Link
+              href="/resources"
+              className="group block bg-white rounded-xl border border-gray-200 p-6 hover:border-[#0D1F35] hover:shadow-md transition-all"
+            >
+              <div className="w-12 h-12 rounded-lg bg-gray-100 text-[#0D1F35] flex items-center justify-center mb-4 group-hover:bg-[#0D1F35] group-hover:text-white transition-colors">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
               </div>
-              <svg className="w-5 h-5 text-gray-300 group-hover:text-[#0D1F35] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </Link>
+              <h3 className="text-base font-bold text-gray-900 mb-1">Access the resources</h3>
+              <p className="text-sm text-gray-500">Browse CCS Install and CCS Training. Everything you need to learn and set up yourself.</p>
+            </Link>
+          </div>
         </main>
       </div>
     </div>

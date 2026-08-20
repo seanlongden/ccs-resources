@@ -309,13 +309,21 @@ export function Sidebar({
           )
         ))}
 
-        {/* External: CCS Tools hub (tools.closingclientssystem.com). */}
+        {/* More: Get Started (welcome walkthrough) + external CCS Tools hub. */}
         <div>
           {!collapsed && (
             <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
-              Tools
+              More
             </div>
           )}
+          <Link
+            href="/welcome"
+            title={collapsed ? 'Get Started' : undefined}
+            className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md text-white/85 hover:bg-white/10 hover:text-white`}
+          >
+            <Home className="w-4 h-4 text-white/60 shrink-0" strokeWidth={1.75} />
+            {!collapsed && <span className="truncate flex-1">Get Started</span>}
+          </Link>
           <a
             href="https://tools.closingclientssystem.com"
             target="_blank"
