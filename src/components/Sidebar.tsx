@@ -310,17 +310,31 @@ export function Sidebar({
                 {newGrouped[g].map((s) => {
                   const Icon = resolveSectionIcon(s);
                   const active = isActive(s.fullSlug || s.slug);
+                  const isEmpty = !s.children || s.children.length === 0;
                   return (
                     <Link
                       key={s.slug}
                       href={`/resources/${s.fullSlug || s.slug}`}
-                      title={collapsed ? s.title : undefined}
+                      title={collapsed ? (isEmpty ? `${s.title} — coming soon` : s.title) : undefined}
                       className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
-                        active ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
+                        active ? 'bg-white/15 text-white' :
+                        isEmpty ? 'text-white/40 hover:bg-white/5 hover:text-white/55' :
+                        'text-white/85 hover:bg-white/10 hover:text-white'
                       }`}
                     >
-                      <Icon className={`w-4 h-4 ${active ? 'text-white' : 'text-white/60'} shrink-0`} strokeWidth={1.75} />
-                      {!collapsed && <span className="truncate flex-1">{s.title}</span>}
+                      <Icon className={`w-4 h-4 shrink-0 ${
+                        active ? 'text-white' : isEmpty ? 'text-white/30' : 'text-white/60'
+                      }`} strokeWidth={1.75} />
+                      {!collapsed && (
+                        <>
+                          <span className="truncate flex-1">{s.title}</span>
+                          {isEmpty && (
+                            <span className="text-[9px] font-semibold tracking-wider uppercase text-white/40 bg-white/5 border border-white/10 rounded-sm px-1.5 py-[1px]">
+                              Soon
+                            </span>
+                          )}
+                        </>
+                      )}
                     </Link>
                   );
                 })}
