@@ -182,61 +182,6 @@ body {
   border: 0;
 }
 
-/* Facade pattern: click-to-load Loom video poster. Replaces the ~500KB
-   Loom iframe on first paint with a static thumbnail + play button.
-   Click swaps in the real iframe with autoplay=1. */
-.ccs-loom-facade {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  background-color: #0f172a;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: filter 200ms ease;
-}
-.ccs-loom-facade:hover {
-  filter: brightness(1.1);
-}
-.ccs-loom-facade:hover .ccs-loom-play {
-  transform: scale(1.08);
-  background: rgba(13, 31, 53, 0.9);
-}
-.ccs-loom-facade:focus-visible {
-  outline: 3px solid #3b82f6;
-  outline-offset: 4px;
-}
-.ccs-loom-play {
-  display: block;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.65);
-  position: relative;
-  transition: transform 200ms ease, background 200ms ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-.ccs-loom-play::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-30%, -50%);
-  width: 0;
-  height: 0;
-  border-left: 22px solid white;
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-}
-
 /* Callout boxes */
 .ccg-callout {
   display: flex;
@@ -491,3 +436,322 @@ body {
   color: #94a3b8;
   margin-top: 8px;
 }
+/* ============================================================
+   LESSON (.ccg-ln-*) — Option B, locked 2026-06-23
+   ============================================================ */
+.ccg-ln { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; color: #0f172a; }
+.ccg-ln-hero {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px 30px;
+  margin-bottom: 14px;
+}
+.ccg-ln-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; margin-bottom: 8px; }
+.ccg-ln-subtitle { font-size: 17px; color: #334155; margin: 8px 0 0; font-weight: 500; line-height: 1.4; }
+.ccg-ln-title { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin: 0; line-height: 1.15; color: #0f172a; }
+
+.ccg-ln-layout { display: grid; grid-template-columns: 1fr 240px; gap: 36px; }
+@media (max-width: 980px) { .ccg-ln-layout { grid-template-columns: 1fr; gap: 24px; } }
+
+.ccg-ln-main { font-size: 15px; line-height: 1.7; color: #334155; min-width: 0; }
+
+/* RULE 1 (revised): each H2 + body wrapped in a white section card. */
+.ccg-ln-section-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px 28px 26px;
+  margin-bottom: 14px;
+}
+.ccg-ln-section-card:last-child { margin-bottom: 0; }
+.ccg-ln-section-card > h2:first-child { margin-top: 0; padding-top: 0; }
+/* Locked rendering rules — see references/templates/lesson.md */
+
+/* RULE 1: section structure. H2 = section header with border-bottom + generous top margin.
+   Acts as a natural divider — no <hr> needed. */
+.ccg-ln-main h1, .ccg-ln-main h2 { font-weight: 800; color: #0f172a; letter-spacing: -0.015em; line-height: 1.25; }
+.ccg-ln-main h1 { font-size: 26px; margin: 36px 0 12px; }
+.ccg-ln-main h2 {
+  font-size: 22px;
+  margin: 44px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+  scroll-margin-top: 80px;
+}
+.ccg-ln-main h2:first-child, .ccg-ln-main h1:first-child { margin-top: 4px; }
+.ccg-ln-main h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 44px 0 12px;
+  padding-bottom: 6px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e2e8f0;
+  /* V12 final: H3 divider goes FULL WIDTH of its containing card.
+   * V17: bumped margin-top to 44px so parallel H3 sections breathe. */
+}
+/* V17 — First H3 inside a card / sub-card / h2 sibling doesn't need the
+ * big top margin; the H2 divider or card edge above already separates. */
+.ccg-ln-section-card > h3:first-child,
+.ccg-ln-section-card > h2 + h3,
+.ccg-h3-card > h3:first-child,
+.ccg-h3-card-body > h3:first-child { margin-top: 0; }
+
+/* V13 — Boxed sub-section. Wraps an H3 (or a pure-bold label paragraph) + its
+ * body so labelled content blocks are visually contained inside the H2 section
+ * card. Variant A: light-gray fill, no border, rounded corners. */
+.ccg-ln-main .ccg-h3-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 18px 0;
+}
+.ccg-ln-main .ccg-h3-card > h3 {
+  margin-top: 0;
+}
+.ccg-ln-main .ccg-h3-card .ccg-box-label {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e2e8f0;
+}
+.ccg-ln-main .ccg-h3-card-body > :last-child {
+  margin-bottom: 0;
+}
+
+/* V16 — When a boxed-section is NESTED inside another boxed-section, flip
+ * the background to white with a slate border so the inner sub-unit reads
+ * as distinct from its gray parent. Same shape, opposite fill.
+ * Same treatment for blockquotes nested inside a boxed-section (the
+ * "info-aside in a gray box" case Sean flagged on Play #1: Category Reframe). */
+.ccg-ln-main .ccg-h3-card .ccg-h3-card {
+  background: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e2e8f0;
+}
+.ccg-ln-main .ccg-h3-card blockquote {
+  background: #ffffff;
+  border-left-color: #94a3b8;
+}
+/* V16 — Tables inside a gray box flip to white cells so the table doesn't
+ * blend into the gray background. */
+.ccg-ln-main .ccg-h3-card .ccg-table-wrap,
+.ccg-ln-main .ccg-h3-card table {
+  background: #ffffff;
+  border-radius: 8px;
+}
+.ccg-ln-main .ccg-h3-card table th,
+.ccg-ln-main .ccg-h3-card table td {
+  background: #ffffff;
+}
+
+/* C20 — AI prompt block. White card, no italic, no left border. Reads as a
+ * copy-paste-able instruction-to-machine, distinct from a regular quote. */
+.ccg-ln-main .ccg-ai-prompt {
+  background: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbd5e1;
+  border-radius: 10px;
+  padding: 16px 22px;
+  margin: 18px 0;
+  max-width: none;
+  font-style: normal;
+  color: #0f172a;
+}
+.ccg-ln-main .ccg-ai-prompt-label {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin: 0 0 8px;
+}
+.ccg-ln-main .ccg-ai-prompt-body p {
+  margin: 0 0 10px;
+  font-style: normal;
+  color: #0f172a;
+}
+.ccg-ln-main .ccg-ai-prompt-body p:last-child {
+  margin-bottom: 0;
+}
+.ccg-ln-main .ccg-ai-prompt-body ul {
+  margin: 0;
+  padding-left: 22px;
+}
+.ccg-ln-main .ccg-ai-prompt-body li {
+  font-style: normal;
+}
+
+.ccg-ln-main p { margin: 0 0 14px; }
+
+/* RULE 5: emphasis hierarchy. bold = terms, italic = examples, bold-italic = key emphasis. */
+.ccg-ln-main strong { color: #0f172a; font-weight: 700; }
+.ccg-ln-main em { color: #334155; }
+.ccg-ln-main strong em, .ccg-ln-main em strong { color: #0f172a; font-weight: 700; }
+
+/* RULE 2: lists ALWAYS show bullets/numbers (override Tailwind's reset). */
+.ccg-ln-main ul {
+  list-style-type: disc;
+  margin: 0 0 18px;
+  padding-left: 22px;
+}
+.ccg-ln-main ol {
+  list-style-type: decimal;
+  margin: 0 0 18px;
+  padding-left: 24px;
+}
+.ccg-ln-main li { margin-bottom: 7px; padding-left: 4px; }
+.ccg-ln-main li::marker { color: #94a3b8; }
+.ccg-ln-main ul ul, .ccg-ln-main ol ol, .ccg-ln-main ul ol, .ccg-ln-main ol ul { margin: 8px 0 0; }
+
+/* Checklist: lists where every item starts with ✅ render without bullet
+   markers (the ✅ IS the marker). Used in "What This Page Will Help You Do"
+   sections per Sean's rule. */
+.ccg-ln-main ul.ccg-checklist {
+  list-style: none;
+  padding-left: 0;
+}
+.ccg-ln-main ul.ccg-checklist li {
+  padding-left: 0;
+  margin-bottom: 8px;
+}
+
+.ccg-ln-main a { color: #1d4ed8; text-decoration: underline; text-decoration-color: #e2e8f0; text-underline-offset: 2px; }
+.ccg-ln-main a:hover { text-decoration-color: #1d4ed8; }
+.ccg-ln-main hr { border: 0; border-top: 1px solid #e2e8f0; margin: 32px 0; }
+
+/* RULE 6: blockquotes/asides — F-shape readability. Narrow max-width so
+   long paragraphs don't sprawl. Paragraph spacing inside (each <p> is its
+   own thought, not a wall). Comfortable line-height. */
+.ccg-ln-main blockquote {
+  margin: 18px 0 32px; padding: 18px 22px;
+  background: #ffffff;
+  border-left: 3px solid #cbd5e1;
+  font-style: italic; color: #334155;
+  border-radius: 0 8px 8px 0;
+  max-width: 65ch;
+  line-height: 1.7;
+}
+.ccg-ln-main blockquote p { margin: 0 0 12px; }
+.ccg-ln-main blockquote p:last-child { margin-bottom: 0; }
+
+/* V17 — Bold lead-in label paragraphs (e.g. "Bad:", "Good:", "Your LinkedIn
+ * says:") are paragraphs whose entire content is one <strong>. Give them
+ * extra top margin so each labelled chunk reads as its own unit. */
+.ccg-ln-main p:has(> strong:only-child) { margin-top: 24px; }
+.ccg-ln-section-card > p:first-child:has(> strong:only-child),
+.ccg-h3-card-body > p:first-child:has(> strong:only-child) { margin-top: 0; }
+.ccg-ln-main .ccg-numbered-callout { margin: 14px 0; }
+.ccg-ln-main .ccg-toggle { margin: 6px 0; }
+.ccg-ln-main .ccg-callout { margin: 18px 0; }
+
+/* Numbered callout block */
+.ccg-numbered-callout {
+  display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start;
+  background: #fbfafe;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 10px 0;
+  color: #334155;
+}
+.ccg-numbered-callout-num {
+  background: #7e22ce; color: white;
+  font-family: 'SF Mono', Monaco, Menlo, monospace;
+  font-size: 13px; font-weight: 800;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.ccg-numbered-callout-body { font-size: 14px; line-height: 1.55; }
+.ccg-numbered-callout-body strong { color: #0f172a; }
+.ccg-numbered-callout-body p { margin: 0; }
+
+/* Toggle block */
+.ccg-toggle {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: white;
+}
+.ccg-toggle summary {
+  cursor: pointer; list-style: none;
+  font-weight: 600; color: #0f172a;
+  display: flex; align-items: center; gap: 8px;
+}
+.ccg-toggle summary::-webkit-details-marker { display: none; }
+.ccg-toggle summary::before {
+  content: '▸'; color: #94a3b8; font-size: 11px; transition: transform .15s ease;
+  display: inline-block;
+}
+.ccg-toggle[open] summary::before { transform: rotate(90deg); }
+.ccg-toggle-body { padding: 8px 0 4px 18px; font-size: 13.5px; color: #475569; line-height: 1.6; }
+.ccg-toggle-body p { margin: 0 0 6px; }
+.ccg-toggle-body ul { margin: 6px 0 0; padding-left: 20px; }
+
+/* Image block */
+.ccg-image { margin: 18px 0; }
+.ccg-image img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0; }
+.ccg-image figcaption { font-size: 12px; color: #64748b; margin-top: 6px; text-align: center; font-style: italic; }
+
+/* Right rail */
+.ccg-ln-rail {
+  position: sticky; top: 24px; align-self: start;
+  border-left: 1px solid #e2e8f0;
+  padding-left: 20px;
+}
+@media (max-width: 980px) {
+  .ccg-ln-rail { position: static; border-left: 0; padding-left: 0; padding-top: 18px; border-top: 1px solid #e2e8f0; }
+}
+.ccg-ln-rail-section { margin-bottom: 24px; }
+.ccg-ln-rail-section:last-child { margin-bottom: 0; }
+.ccg-ln-rail-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; margin-bottom: 12px; }
+.ccg-ln-rail-nav { display: flex; flex-direction: column; gap: 8px; }
+.ccg-ln-rail-nav a {
+  font-size: 13px; color: #64748b; text-decoration: none; line-height: 1.4;
+  padding: 2px 0;
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+  margin-left: -12px;
+  transition: color .15s ease, border-color .15s ease;
+}
+.ccg-ln-rail-nav a:hover { color: #0f172a; }
+.ccg-ln-rail-nav a.active { color: #0f172a; font-weight: 600; border-left-color: #0f172a; }
+.ccg-ln-rail-ext { color: #94a3b8; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; margin-left: 4px; }
+
+/* Tables in lessons. Tailwind preflight sets `* { border-width: 0 }` which
+   kills table borders unless we explicitly override the longhand on th/td. */
+.ccg-ln-main .ccg-table-wrap { overflow-x: auto; margin: 18px 0; }
+.ccg-ln-main table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+.ccg-ln-main th,
+.ccg-ln-main td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e2e8f0;
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.55;
+}
+.ccg-ln-main th {
+  background: #f8fafc;
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+.ccg-ln-main td { color: #334155; }
+.ccg-ln-main tbody tr:nth-child(even) { background: #fbfcfd; }

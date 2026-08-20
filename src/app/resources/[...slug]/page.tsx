@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Home, ChevronRight, ArrowLeft, ArrowRight, FileText } from 'lucide-react';
 import { Sidebar, type NavItem, type AuthData } from '@/components/Sidebar';
 import { renderContent, findSiblings, type NavLite } from '@/lib/content-renderer';
+import LessonView from '@/components/LessonView';
 import navigationData from '../../../../content/navigation.json';
 
 type AccessLevel = 'free' | 'trial' | 'active' | 'lifetime';
@@ -209,7 +210,7 @@ export default function ResourcePage() {
       />
 
       <main className="flex-1 overflow-y-auto">
-        <div className="mx-auto max-w-3xl px-8 pt-8 pb-12">
+        <div className="mx-auto max-w-5xl px-8 pt-8 pb-12">
           {/* Breadcrumb — Home + ancestor chain + current title */}
           <nav className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 mb-8" aria-label="Breadcrumb">
             <Link href="/resources" className="flex items-center gap-1 hover:text-slate-900">
@@ -436,38 +437,19 @@ function ContentPage({ page, auth }: { page: PageData; auth: AuthData }) {
 
   const { html } = renderContent(page.content, page.title);
 
-  return (
-    <article>
-      <header className="mb-8 pb-6 border-b border-slate-200">
-        <h1 className="text-3xl font-bold text-slate-900">{page.title}</h1>
-      </header>
-
-      {page.isSection && page.children && page.children.length > 0 && (
+  if (page.isSection && page.children && page.children.length > 0) {
+    return (
+      <article>
+        <header className="mb-8 pb-6 border-b border-slate-200">
+          <h1 className="text-3xl font-bold text-slate-900">{page.title}</h1>
+        </header>
         <section className="mb-10">
           <div className="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-3">In this section</div>
           <NumberedCardList items={page.children.map((c) => ({ title: c.title, slug: c.fullSlug, fullSlug: c.fullSlug }))} />
         </section>
-      )}
+      </article>
+    );
+  }
 
-      <div
-        className="prose prose-slate max-w-none
-          prose-headings:text-slate-900
-          prose-h1:text-3xl prose-h1:font-bold prose-h1:mb-4
-          prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-8 prose-h2:mb-4
-          prose-h3:text-lg prose-h3:font-medium prose-h3:mt-6 prose-h3:mb-3
-          prose-p:text-slate-700 prose-p:leading-relaxed
-          prose-a:text-blue-600 prose-a:font-medium hover:prose-a:text-blue-800
-          prose-ul:text-slate-700 prose-ol:text-slate-700
-          prose-li:my-1
-          prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono
-          prose-pre:bg-slate-900 prose-pre:text-slate-100 prose-pre:rounded-xl
-          [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:rounded-none [&_pre_code]:text-inherit
-          prose-img:rounded-xl prose-img:shadow-lg
-          prose-hr:border-slate-200
-          prose-strong:text-slate-900
-        "
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-    </article>
-  );
+  return <LessonView title={page.title} html={html} />;
 }
