@@ -44,6 +44,7 @@ interface NavSection {
 
 const TOP_LEVEL_SLUGS = new Set((navigationData as NavSection[]).map(s => s.slug));
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
+const RECENTS_KEY = 'ccs_recently_viewed';
 
 function hasAccess(userStatus: UserStatus | undefined, requiredLevel: AccessLevel): boolean {
   if (requiredLevel === 'free') return true;
@@ -152,6 +153,22 @@ export default function ResourcePage() {
     }
     init();
   }, [router, fullSlug, isTopLevelSection]);
+
+  // Track this visit in localStorage so /resources can show a "Recently
+  // viewed" list. Runs after page/section successfully loads.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (error || !fullSlug) return;
+    const title = page?.title ?? section?.title;
+    if (!title) return;
+    try {
+      const raw = window.localStorage.getItem(RECENTS_KEY);
+      const current = raw ? (JSON.parse(raw) as { slug: string; title: string; ts: number }[]) : [];
+      const filtered = current.filter((r) => r.slug !== fullSlug);
+      const next = [{ slug: fullSlug, title, ts: Date.now() }, ...filtered].slice(0, 5);
+      window.localStorage.setItem(RECENTS_KEY, JSON.stringify(next));
+    } catch { /* ignore */ }
+  }, [page, section, error, fullSlug]);
 
   const handleLogout = async () => {
     await fetch('/api/auth', { method: 'DELETE' });

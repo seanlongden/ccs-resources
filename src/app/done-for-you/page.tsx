@@ -10,6 +10,7 @@ interface NavSection extends NavItem {
 }
 
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
+const RECENTS_KEY = 'ccs_recently_viewed';
 
 const DFY_LINKS = [
   {
@@ -91,6 +92,19 @@ export default function DoneForYouPage() {
       setLoading(false);
     }
     init();
+
+    // Track this page in "recently viewed" so /resources can surface it
+    // when the user comes back. Special-case href because this page lives
+    // at root, not under /resources/.
+    if (typeof window !== 'undefined') {
+      try {
+        const raw = window.localStorage.getItem(RECENTS_KEY);
+        const current = raw ? (JSON.parse(raw) as { slug: string; title: string; ts: number; href?: string }[]) : [];
+        const filtered = current.filter((r) => r.slug !== 'done-for-you');
+        const next = [{ slug: 'done-for-you', title: 'Done For You setup', ts: Date.now(), href: '/done-for-you' }, ...filtered].slice(0, 5);
+        window.localStorage.setItem(RECENTS_KEY, JSON.stringify(next));
+      } catch { /* ignore */ }
+    }
   }, [router]);
 
   const handleLogout = async () => {

@@ -3,19 +3,28 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Sidebar, SectionIcon, type NavItem, type AuthData } from '@/components/Sidebar';
+import { Sidebar, type NavItem, type AuthData } from '@/components/Sidebar';
 
 interface NavSection extends NavItem {
   itemCount?: number;
 }
 
+interface RecentItem {
+  slug: string;
+  title: string;
+  ts: number;
+  href?: string; // Optional absolute path override — used by pages not under /resources/*
+}
+
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
+const RECENTS_KEY = 'ccs_recently_viewed';
 
 export default function ResourcesPage() {
   const [auth, setAuth] = useState<AuthData | null>(null);
   const [navigation, setNavigation] = useState<NavSection[]>([]);
   const [loading, setLoading] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [recents, setRecents] = useState<RecentItem[]>([]);
   const router = useRouter();
 
   useEffect(() => {
@@ -23,6 +32,11 @@ export default function ResourcesPage() {
     try {
       const collapsed = window.localStorage.getItem(SIDEBAR_KEY) === '1';
       setSidebarCollapsed(collapsed);
+      const raw = window.localStorage.getItem(RECENTS_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw) as RecentItem[];
+        if (Array.isArray(parsed)) setRecents(parsed.slice(0, 5));
+      }
     } catch {
       /* ignore */
     }
@@ -97,48 +111,46 @@ export default function ResourcesPage() {
       />
 
       <div className="flex-1 min-w-0">
-        <main className="px-8 py-12 max-w-4xl">
+        <main className="px-8 py-12 max-w-3xl">
           <div className="mb-10">
             <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The System</div>
             <h1 className="text-3xl font-bold text-gray-900">Closing Clients System Resources</h1>
-            <p className="text-gray-500 mt-2 max-w-2xl">Everything you need to run an outbound engine that books qualified sales calls — organized by topic so you can jump straight to what you need.</p>
+            <p className="text-gray-500 mt-2 max-w-2xl">Pick up where you left off, or use the sidebar to browse.</p>
           </div>
 
-          {navigation.length > 0 && (
-            <div className="mt-14">
-              <div className="mb-5">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Browse by topic</div>
-                <h2 className="text-xl font-bold text-gray-900">Pick up where you left off</h2>
-                <p className="text-gray-500 mt-1 text-sm max-w-2xl">Jump straight to the section you need.</p>
+          {recents.length > 0 ? (
+            <div>
+              <div className="flex items-center gap-2 mb-3 text-xs font-semibold tracking-wider text-gray-500 uppercase">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Recently viewed
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {navigation.map((section) => {
-                  const pageCount = section.children?.length ?? 0;
-                  return (
-                    <Link
-                      key={section.slug}
-                      href={`/resources/${section.slug}`}
-                      className="group block bg-white rounded-xl border border-gray-200 p-5 hover:border-gray-300 hover:shadow-md transition-all"
-                    >
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-700 group-hover:bg-[#0D1F35] group-hover:text-white group-hover:border-[#0D1F35] transition-colors">
-                          <SectionIcon slug={section.slug} className="w-5 h-5" />
-                        </div>
-                        {pageCount > 0 && (
-                          <span className="text-[11px] font-semibold text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-0.5">
-                            {pageCount} {pageCount === 1 ? 'page' : 'pages'}
-                          </span>
-                        )}
-                      </div>
-                      <h3 className="text-sm font-semibold text-gray-900 leading-snug mb-1">{section.title}</h3>
-                      {section.description && (
-                        <p className="text-xs text-gray-500 leading-relaxed">{section.description}</p>
-                      )}
-                    </Link>
-                  );
-                })}
+              <div className="bg-white border border-gray-200 rounded-xl divide-y divide-gray-100">
+                {recents.map((r) => (
+                  <Link
+                    key={r.slug}
+                    href={r.href ?? `/resources/${r.slug}`}
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 group"
+                  >
+                    <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-medium text-gray-900 truncate">{r.title}</div>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                ))}
               </div>
+            </div>
+          ) : (
+            <div className="text-sm text-gray-500">
+              You haven&apos;t opened anything yet. Head to{' '}
+              <Link href="/welcome" className="text-[#0D1F35] font-medium underline">Get Started</Link>{' '}
+              or use the sidebar to browse.
             </div>
           )}
         </main>
