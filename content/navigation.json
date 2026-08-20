@@ -41,7 +41,13 @@
   {
     "title": "CCS Training",
     "slug": "ccs-training",
-    "description": "The theory and frameworks for offer creation, cold email copy, campaigns, and the sales process that closes what you book.",
+    "description": "Coming soon \u2014 the operator manual for running your Closing Clients System.",
+    "children": []
+  },
+  {
+    "title": "CCS Resources",
+    "slug": "ccs-resources",
+    "description": "Browse the full CCS knowledge base \u2014 offer, sales, funnel assets, hiring, ops.",
     "children": [
       {
         "title": "Creating Your Cold Traffic Offer",
