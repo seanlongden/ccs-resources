@@ -222,14 +222,18 @@ export function findSiblings(
   }
   walk(nav);
 
-  const idx = flat.findIndex((e) => e.node.fullSlug === targetFullSlug);
+  // CCS top-level nav items only carry `slug`, not `fullSlug`. Fall back
+  // so breadcrumb parent links resolve correctly instead of /resources/undefined.
+  const slugOf = (n: NavLite): string => n.fullSlug || n.slug;
+
+  const idx = flat.findIndex((e) => slugOf(e.node) === targetFullSlug);
   if (idx < 0) return { parents: [] };
   const here = flat[idx];
 
   const parents: { title: string; fullSlug: string }[] = [];
   let p = here.parent;
   while (p) {
-    parents.unshift({ title: p.title, fullSlug: p.fullSlug });
+    parents.unshift({ title: p.title, fullSlug: slugOf(p) });
     const grandparent = flat.find((e) => e.node === p)?.parent;
     p = grandparent;
   }
@@ -240,7 +244,7 @@ export function findSiblings(
   }
 
   const siblings = siblingsOf(here.node, here.parent);
-  const sIdx = siblings.findIndex((s) => s.fullSlug === targetFullSlug);
+  const sIdx = siblings.findIndex((s) => slugOf(s) === targetFullSlug);
   let prev = sIdx > 0 ? siblings[sIdx - 1] : undefined;
   let next = sIdx >= 0 && sIdx < siblings.length - 1 ? siblings[sIdx + 1] : undefined;
 
@@ -260,8 +264,8 @@ export function findSiblings(
 
   const immediateParent = parents[parents.length - 1];
   return {
-    prev: prev ? { title: prev.title, fullSlug: prev.fullSlug } : undefined,
-    next: next ? { title: next.title, fullSlug: next.fullSlug } : undefined,
+    prev: prev ? { title: prev.title, fullSlug: slugOf(prev) } : undefined,
+    next: next ? { title: next.title, fullSlug: slugOf(next) } : undefined,
     parent: immediateParent,
     parents,
   };
