@@ -329,8 +329,8 @@ export function Sidebar({
                         <>
                           <span className="truncate flex-1">{s.title}</span>
                           {isEmpty && (
-                            <span className="text-[9px] font-semibold tracking-wider uppercase text-white/40 bg-white/5 border border-white/10 rounded-sm px-1.5 py-[1px]">
-                              Soon
+                            <span className="text-[9px] font-semibold tracking-wider uppercase text-white/40 bg-white/5 border border-white/10 rounded-sm px-1.5 py-[1px] whitespace-nowrap">
+                              Coming Soon
                             </span>
                           )}
                         </>
