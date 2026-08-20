@@ -32,6 +32,7 @@ interface NavChild {
   fullSlug?: string;
   type?: string;
   childCount?: number;
+  description?: string;
   children?: NavChild[];
 }
 
@@ -291,10 +292,17 @@ export default function ResourcePage() {
 function SectionLanding({ section }: { section: NavSection }) {
   return (
     <article>
-      <header className="mb-10 pb-6 border-b border-slate-200">
-        <h1 className="text-3xl font-bold text-slate-900">{section.title}</h1>
+      <header className="border-b border-slate-200" style={{ paddingBottom: '22px', marginBottom: '24px' }}>
+        <h1
+          className="text-slate-900 m-0"
+          style={{ fontSize: '32px', fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: '10px' }}
+        >
+          {section.title}
+        </h1>
         {section.description && (
-          <p className="mt-3 text-slate-500 leading-relaxed max-w-2xl">{section.description}</p>
+          <p className="text-slate-500 m-0" style={{ fontSize: '14px', maxWidth: '580px' }}>
+            {section.description}
+          </p>
         )}
       </header>
 
@@ -360,10 +368,10 @@ function SectionChildren({ items }: { items: NavChild[] }) {
   );
 }
 
-/** ModuleLanding-style numbered card list. Matches CCG's .ccg-ml-row spec. */
+/** ModuleLanding-style numbered card list. Matches CCG's .ccg-ml-row spec + mockup. */
 function NumberedCardList({ items }: { items: NavChild[] }) {
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       {items.map((item, i) => {
         const num = String(i + 1).padStart(2, '0');
         const isSection = item.type === 'section' && !!item.childCount;
@@ -371,33 +379,38 @@ function NumberedCardList({ items }: { items: NavChild[] }) {
           <Link
             key={item.fullSlug || item.slug}
             href={`/resources/${item.fullSlug || item.slug}`}
-            className="group grid items-center bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-sm hover:-translate-y-px transition-all"
+            className="group grid items-center bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] hover:-translate-y-px transition-all no-underline"
             style={{ gridTemplateColumns: '56px 1fr auto', gap: '18px', padding: '16px 22px 16px 18px' }}
           >
             <div
-              className="text-center border-r border-slate-200 py-1.5 text-slate-400 tabular-nums"
+              className="text-center border-r border-slate-200 py-1.5 text-slate-400"
               style={{ fontFamily: "'SF Mono', Monaco, Menlo, monospace", fontSize: '13px', fontWeight: 800, letterSpacing: '0.04em' }}
             >
               {num}
             </div>
             <div className="min-w-0">
-              <div
-                className="text-slate-900 group-hover:text-[#0D1F35]"
-                style={{ fontSize: '15px', fontWeight: 700, letterSpacing: '-0.005em', lineHeight: 1.35 }}
+              <h3
+                className="text-slate-900 m-0"
+                style={{ fontSize: '15px', fontWeight: 700, marginBottom: item.description ? '3px' : 0 }}
               >
                 {item.title}
-              </div>
+              </h3>
+              {item.description && (
+                <p className="text-slate-500 m-0" style={{ fontSize: '12.5px', lineHeight: 1.5 }}>
+                  {item.description}
+                </p>
+              )}
             </div>
             <div className="flex items-center gap-3">
               {isSection && (
                 <span
-                  className="text-blue-700 bg-blue-50 rounded-full shrink-0"
-                  style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', padding: '4px 10px' }}
+                  className="text-blue-700 bg-blue-50 rounded-full shrink-0 whitespace-nowrap"
+                  style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', padding: '3px 10px' }}
                 >
-                  {item.childCount} pages
+                  {item.childCount} lessons
                 </span>
               )}
-              <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-slate-700 shrink-0" strokeWidth={1.75} />
+              <span className="text-slate-300 group-hover:text-slate-700 shrink-0" style={{ fontSize: '14px' }}>→</span>
             </div>
           </Link>
         );
