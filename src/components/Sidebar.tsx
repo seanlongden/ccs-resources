@@ -278,6 +278,20 @@ export function Sidebar({
 
       {/* Nav groups */}
       <nav className={`flex-1 overflow-y-auto py-4 ${collapsed ? 'px-2 space-y-2' : 'px-3 space-y-5'}`}>
+        {/* Get Started — standalone at the top, above the Resources group. */}
+        <div>
+          <Link
+            href="/welcome"
+            title={collapsed ? 'Get Started' : undefined}
+            className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
+              isActive('welcome') ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
+            }`}
+          >
+            <Home className={`w-4 h-4 ${isActive('welcome') ? 'text-white' : 'text-white/60'} shrink-0`} strokeWidth={1.75} />
+            {!collapsed && <span className="truncate flex-1">Get Started</span>}
+          </Link>
+        </div>
+
         {(['main-modules'] as GroupKey[]).map((g) => (
           newGrouped[g].length > 0 && (
             <div key={g}>
@@ -309,7 +323,7 @@ export function Sidebar({
           )
         ))}
 
-        {/* More: external CCS Tools hub + Get Started (welcome walkthrough). */}
+        {/* More: external CCS Tools hub. Get Started now lives at the top of the sidebar. */}
         <div>
           {!collapsed && (
             <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
@@ -331,14 +345,6 @@ export function Sidebar({
               </>
             )}
           </a>
-          <Link
-            href="/welcome"
-            title={collapsed ? 'Get Started' : undefined}
-            className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md text-white/85 hover:bg-white/10 hover:text-white`}
-          >
-            <Home className="w-4 h-4 text-white/60 shrink-0" strokeWidth={1.75} />
-            {!collapsed && <span className="truncate flex-1">Get Started</span>}
-          </Link>
         </div>
       </nav>
 
