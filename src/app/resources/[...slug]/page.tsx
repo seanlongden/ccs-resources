@@ -45,7 +45,33 @@ interface NavSection {
   children?: NavChild[];
 }
 
+// Any nav node with children is a section landing (no content page —
+// renders a card list of its children). Walk the full tree so nested
+// segments like `ccs-resources/funnel` count, not just top-level slugs.
+function collectSectionSlugs(items: NavChild[], acc: Set<string>): void {
+  for (const item of items) {
+    const kids = item.children ?? [];
+    if (kids.length > 0) {
+      acc.add(item.fullSlug || item.slug);
+      collectSectionSlugs(kids, acc);
+    }
+  }
+}
+const SECTION_SLUGS = (() => {
+  const s = new Set<string>();
+  collectSectionSlugs(navigationData as unknown as NavChild[], s);
+  return s;
+})();
 const TOP_LEVEL_SLUGS = new Set((navigationData as NavSection[]).map(s => s.slug));
+
+function findNavNode(items: NavChild[], fullSlug: string): NavChild | null {
+  for (const item of items) {
+    if ((item.fullSlug || item.slug) === fullSlug) return item;
+    const found = item.children ? findNavNode(item.children, fullSlug) : null;
+    if (found) return found;
+  }
+  return null;
+}
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
 const RECENTS_KEY = 'ccs_recently_viewed';
 
@@ -82,6 +108,7 @@ export default function ResourcePage() {
   const slugParts = params.slug as string[];
   const fullSlug = slugParts ? slugParts.join('/') : '';
   const isTopLevelSection = TOP_LEVEL_SLUGS.has(fullSlug);
+  const isNestedSection = !isTopLevelSection && SECTION_SLUGS.has(fullSlug);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -115,18 +142,20 @@ export default function ResourcePage() {
         return;
       }
 
-      if (isTopLevelSection) {
+      if (isTopLevelSection || isNestedSection) {
         try {
           const navRes = await fetch('/api/content/navigation');
           const navData: NavSection[] = await navRes.json();
-          const found = navData.find(s => s.slug === fullSlug);
+          const found = isTopLevelSection
+            ? navData.find(s => s.slug === fullSlug)
+            : findNavNode(navData as unknown as NavChild[], fullSlug);
           if (found) {
             const onlyChild = found.children?.length === 1 ? found.children[0] : null;
             if (onlyChild?.fullSlug) {
               router.replace(`/resources/${onlyChild.fullSlug}`);
               return;
             }
-            setSection(found);
+            setSection(found as NavSection);
           } else {
             setError('Section not found');
           }
@@ -153,7 +182,7 @@ export default function ResourcePage() {
       setLoading(false);
     }
     init();
-  }, [router, fullSlug, isTopLevelSection]);
+  }, [router, fullSlug, isTopLevelSection, isNestedSection]);
 
   // Track visit in recents (localStorage)
   useEffect(() => {
