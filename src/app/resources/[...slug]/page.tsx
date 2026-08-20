@@ -360,7 +360,7 @@ function SectionChildren({ items }: { items: NavChild[] }) {
   );
 }
 
-/** ModuleLanding-style numbered card list. Ported from CCG's ModuleLandingTemplate. */
+/** ModuleLanding-style numbered card list. Matches CCG's .ccg-ml-row spec. */
 function NumberedCardList({ items }: { items: NavChild[] }) {
   return (
     <div className="space-y-2">
@@ -371,20 +371,33 @@ function NumberedCardList({ items }: { items: NavChild[] }) {
           <Link
             key={item.fullSlug || item.slug}
             href={`/resources/${item.fullSlug || item.slug}`}
-            className="group flex items-stretch gap-0 bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-sm transition-all"
+            className="group grid items-center bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-sm hover:-translate-y-px transition-all"
+            style={{ gridTemplateColumns: '56px 1fr auto', gap: '18px', padding: '16px 22px 16px 18px' }}
           >
-            <div className="flex items-center justify-center px-6 py-6 text-2xl font-light text-slate-400 tabular-nums w-20 shrink-0">
+            <div
+              className="text-center border-r border-slate-200 py-1.5 text-slate-400 tabular-nums"
+              style={{ fontFamily: "'SF Mono', Monaco, Menlo, monospace", fontSize: '13px', fontWeight: 800, letterSpacing: '0.04em' }}
+            >
               {num}
             </div>
-            <div className="w-px bg-slate-100 my-4"></div>
-            <div className="flex-1 min-w-0 py-6 px-6">
-              <div className="text-base font-bold text-slate-900 group-hover:text-[#0D1F35]">{item.title}</div>
+            <div className="min-w-0">
+              <div
+                className="text-slate-900 group-hover:text-[#0D1F35]"
+                style={{ fontSize: '15px', fontWeight: 700, letterSpacing: '-0.005em', lineHeight: 1.35 }}
+              >
+                {item.title}
+              </div>
             </div>
-            <div className="flex items-center gap-3 pr-6">
+            <div className="flex items-center gap-3">
               {isSection && (
-                <span className="text-xs text-slate-400 shrink-0">{item.childCount} pages</span>
+                <span
+                  className="text-blue-700 bg-blue-50 rounded-full shrink-0"
+                  style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', padding: '4px 10px' }}
+                >
+                  {item.childCount} pages
+                </span>
               )}
-              <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-slate-700 shrink-0" strokeWidth={1.75} />
+              <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-slate-700 shrink-0" strokeWidth={1.75} />
             </div>
           </Link>
         );
