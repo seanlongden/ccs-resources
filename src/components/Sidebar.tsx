@@ -8,7 +8,7 @@ import {
   ChevronsLeft, ChevronsRight,
   LogOut, FileText, Folder, ExternalLink, Wrench,
   Search, X, Loader2,
-  GraduationCap,
+  GraduationCap, BookOpen,
   type LucideIcon,
 } from 'lucide-react';
 interface SidebarSearchResult {
@@ -52,7 +52,8 @@ export const SECTION_META: Record<string, {
 }> = {
   'get-started': { group: 'main-modules', icon: Home, order: 0, description: 'How to use this site plus your setup path.' },
   'ccs-install': { group: 'main-modules', icon: Wrench, order: 1, description: 'Get your tools set up. The fastest path to your first campaign.' },
-  'ccs-training': { group: 'main-modules', icon: GraduationCap, order: 2, description: 'The theory and frameworks for offer creation, cold email copy, campaigns, and the sales process that closes what you book.' },
+  'ccs-training': { group: 'main-modules', icon: GraduationCap, order: 2, description: 'The operator manual for running the system we set up for you.' },
+  'ccs-resources': { group: 'main-modules', icon: BookOpen, order: 3, description: 'Browse the full CCS knowledge base — offer, sales, funnel assets, hiring, ops.' },
 };
 
 export const LEGACY_SLUGS = new Set<string>([]);
@@ -278,8 +279,13 @@ export function Sidebar({
 
       {/* Nav groups */}
       <nav className={`flex-1 overflow-y-auto py-4 ${collapsed ? 'px-2 space-y-2' : 'px-3 space-y-5'}`}>
-        {/* Get Started — standalone at the top, above the Resources group. */}
+        {/* Start Here — standalone at the top, above the Resources group. */}
         <div>
+          {!collapsed && (
+            <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
+              Start Here
+            </div>
+          )}
           <Link
             href="/welcome"
             title={collapsed ? 'Get Started' : undefined}
@@ -323,11 +329,11 @@ export function Sidebar({
           )
         ))}
 
-        {/* More: external CCS Tools hub. Get Started now lives at the top of the sidebar. */}
+        {/* Tools: external CCS Tools hub. */}
         <div>
           {!collapsed && (
             <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
-              More
+              Tools
             </div>
           )}
           <a
