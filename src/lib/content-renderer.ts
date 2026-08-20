@@ -191,3 +191,78 @@ export function renderContent(markdown: string, pageTitle?: string): ProcessedCo
 
   return { html, prevLink, nextLink };
 }
+
+// ============================================================
+// Sibling navigation (ported from ccg-resources for prev/next + breadcrumb)
+// ============================================================
+
+export interface NavLite {
+  title: string;
+  slug: string;
+  fullSlug: string;
+  children?: NavLite[];
+}
+
+export function findSiblings(
+  nav: NavLite[],
+  targetFullSlug: string,
+): {
+  prev?: { title: string; fullSlug: string };
+  next?: { title: string; fullSlug: string };
+  parent?: { title: string; fullSlug: string };
+  parents: { title: string; fullSlug: string }[];
+} {
+  type Entry = { node: NavLite; parent?: NavLite };
+  const flat: Entry[] = [];
+  function walk(items: NavLite[], parent?: NavLite) {
+    for (const item of items) {
+      flat.push({ node: item, parent });
+      if (item.children && item.children.length) walk(item.children, item);
+    }
+  }
+  walk(nav);
+
+  const idx = flat.findIndex((e) => e.node.fullSlug === targetFullSlug);
+  if (idx < 0) return { parents: [] };
+  const here = flat[idx];
+
+  const parents: { title: string; fullSlug: string }[] = [];
+  let p = here.parent;
+  while (p) {
+    parents.unshift({ title: p.title, fullSlug: p.fullSlug });
+    const grandparent = flat.find((e) => e.node === p)?.parent;
+    p = grandparent;
+  }
+
+  function siblingsOf(node: NavLite, parent?: NavLite): NavLite[] {
+    if (!parent) return flat.filter((e) => !e.parent).map((e) => e.node);
+    return flat.filter((e) => e.parent === parent).map((e) => e.node);
+  }
+
+  const siblings = siblingsOf(here.node, here.parent);
+  const sIdx = siblings.findIndex((s) => s.fullSlug === targetFullSlug);
+  let prev = sIdx > 0 ? siblings[sIdx - 1] : undefined;
+  let next = sIdx >= 0 && sIdx < siblings.length - 1 ? siblings[sIdx + 1] : undefined;
+
+  if (!prev && here.parent) prev = here.parent;
+  if (!next) {
+    let ancParent: NavLite | undefined = here.parent;
+    while (ancParent) {
+      const ancSibs = siblingsOf(ancParent, flat.find((e) => e.node === ancParent)?.parent);
+      const ai = ancSibs.findIndex((s) => s === ancParent);
+      if (ai >= 0 && ai < ancSibs.length - 1) {
+        next = ancSibs[ai + 1];
+        break;
+      }
+      ancParent = flat.find((e) => e.node === ancParent)?.parent;
+    }
+  }
+
+  const immediateParent = parents[parents.length - 1];
+  return {
+    prev: prev ? { title: prev.title, fullSlug: prev.fullSlug } : undefined,
+    next: next ? { title: next.title, fullSlug: next.fullSlug } : undefined,
+    parent: immediateParent,
+    parents,
+  };
+}
