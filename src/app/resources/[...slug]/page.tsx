@@ -211,13 +211,23 @@ export default function ResourcePage() {
 
       <main className="flex-1 overflow-y-auto">
         <div className="mx-auto max-w-5xl px-8 pt-8 pb-12">
-          {/* Breadcrumb — Home + ancestor chain + current title */}
+          {/* Breadcrumb — Home + ancestor chain + current title.
+              Home icon anchors to the current top-level section (CCS Training,
+              CCS Install, etc.) rather than the /resources hub, so "back" lands
+              somewhere useful. On section landings themselves, Home falls back
+              to /resources. */}
+          {(() => {
+            const parents = siblings.parents ?? [];
+            const [topAncestor, ...restAncestors] = parents;
+            const homeHref = topAncestor ? `/resources/${topAncestor.fullSlug}` : '/resources';
+            const homeLabel = topAncestor ? topAncestor.title : 'Resources';
+            return (
           <nav className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 mb-8" aria-label="Breadcrumb">
-            <Link href="/resources" className="flex items-center gap-1 hover:text-slate-900">
+            <Link href={homeHref} className="flex items-center gap-1 hover:text-slate-900">
               <Home className="w-3.5 h-3.5" strokeWidth={1.75} />
-              <span>Resources</span>
+              <span className="truncate max-w-[180px]">{homeLabel}</span>
             </Link>
-            {(siblings.parents ?? []).map((p) => (
+            {restAncestors.map((p) => (
               <span key={p.fullSlug} className="flex items-center gap-1.5 min-w-0">
                 <ChevronRight className="w-3.5 h-3.5 text-slate-300" strokeWidth={1.75} />
                 <Link href={`/resources/${p.fullSlug}`} className="hover:text-slate-900 truncate max-w-[180px]">
@@ -232,6 +242,8 @@ export default function ResourcePage() {
               </>
             )}
           </nav>
+            );
+          })()}
 
           {section && !error && (
             <SectionLanding section={section} />
