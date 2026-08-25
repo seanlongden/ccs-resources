@@ -127,11 +127,9 @@ const markedInstance = new Marked({
 function postprocess(html: string): string {
   html = html.replace(/(<p>)?\s*%%LOOM_EMBED:([a-zA-Z0-9]+)%%\s*(<\/p>)?/g, (_match, _p1, videoId: string) => {
     const id = escapeAttr(videoId);
-    // Facade pattern: render a lightweight poster button. Real Loom
-    // iframe (with ~500KB of player JS/CSS) only loads on click. Cuts
-    // 2-5s off pages with multiple videos.
-    // The onclick swaps the button for a real iframe with autoplay=1
-    // so the click both starts the load AND immediately plays.
+    // Direct iframe — the facade pattern relied on Loom's thumbnail CDN
+    // which returns 403 for external requests, leaving a blank-looking
+    // button. Ship the real player so videos actually appear.
     return `
       <div class="ccg-video-embed">
         <div class="ccg-video-label">
@@ -139,15 +137,13 @@ function postprocess(html: string): string {
           Video Tutorial
         </div>
         <div class="ccg-video-wrapper">
-          <button
-            type="button"
-            class="ccs-loom-facade"
-            aria-label="Play video"
-            style="background-image:url('https://cdn.loom.com/sessions/thumbnails/${id}-00001.jpg');"
-            onclick="var i=document.createElement('iframe');i.src='https://www.loom.com/embed/${id}?autoplay=1';i.setAttribute('allowfullscreen','');i.setAttribute('allow','autoplay; fullscreen; picture-in-picture');i.setAttribute('frameborder','0');this.parentNode.replaceChild(i,this);"
-          >
-            <span class="ccs-loom-play"></span>
-          </button>
+          <iframe
+            src="https://www.loom.com/embed/${id}"
+            loading="lazy"
+            allowfullscreen
+            allow="autoplay; fullscreen; picture-in-picture"
+            frameborder="0"
+          ></iframe>
         </div>
       </div>`;
   });
