@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
+    "@octokit/auth-app": "^8.2.0",
+    "@octokit/rest": "^22.0.1",
     "@tailwindcss/typography": "^0.5.19",
     "iron-session": "^8.0.4",
     "lucide-react": "^1.21.0",
