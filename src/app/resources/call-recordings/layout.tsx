@@ -12,7 +12,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { Sidebar, type NavItem, type AuthData } from '@/components/Sidebar';
-import navigationData from '../../../../../content/navigation.json';
+import navigationData from '../../../../content/navigation.json';
 
 const SIDEBAR_KEY = 'ccs_sidebar_collapsed';
 
