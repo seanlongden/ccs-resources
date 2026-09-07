@@ -15,9 +15,9 @@ export default async function CallRecordingsCategoryPage({ params }: Props) {
   if (!cat) notFound();
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-10">
+    <div className="mx-auto max-w-6xl px-8 pt-8 pb-12">
       <nav className="mb-4 text-xs text-slate-500">
-        <Link href="/call-recordings" className="hover:underline">
+        <Link href="/resources/call-recordings" className="hover:underline">
           Call Recordings
         </Link>{' '}
         &rarr; <span className="text-slate-900">{cat.title}</span>
@@ -77,6 +77,6 @@ export default async function CallRecordingsCategoryPage({ params }: Props) {
           ))}
         </div>
       )}
-    </main>
+    </div>
   );
 }

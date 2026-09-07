@@ -45,6 +45,21 @@
     "children": []
   },
   {
+    "title": "Call Recordings",
+    "slug": "call-recordings",
+    "description": "Recordings from our weekly coaching calls with Sean and Matt.",
+    "children": [
+      {
+        "title": "Coaching Calls",
+        "slug": "coaching-calls",
+        "fullSlug": "call-recordings/coaching-calls",
+        "type": "page",
+        "childCount": 0,
+        "description": "Recordings from weekly coaching calls."
+      }
+    ]
+  },
+  {
     "title": "CCS Resources",
     "slug": "ccs-resources",
     "description": "Browse the full CCS knowledge base \u2014 offer, sales, funnel assets, hiring, ops.",

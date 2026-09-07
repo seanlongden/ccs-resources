@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       ok: true,
       branchName,
-      categoryUrl: `/call-recordings/${categorySlug}`,
+      categoryUrl: `/resources/call-recordings/${categorySlug}`,
       youtubeId,
       title,
     });

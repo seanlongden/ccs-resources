@@ -7,7 +7,7 @@ export default function CallRecordingsHubPage() {
   const file = readLocalRecordings();
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-8 pt-8 pb-12">
       <header className="mb-8 space-y-2">
         <h1 className="text-3xl font-bold text-slate-900">Call Recordings</h1>
         <p className="text-sm text-slate-600">
@@ -19,7 +19,7 @@ export default function CallRecordingsHubPage() {
         {file.categories.map((cat) => (
           <Link
             key={cat.slug}
-            href={`/call-recordings/${cat.slug}`}
+            href={`/resources/call-recordings/${cat.slug}`}
             className="group block rounded-xl border border-slate-200 bg-white p-6 transition-colors hover:border-slate-900"
           >
             <h2 className="text-lg font-semibold text-slate-900 group-hover:underline">
@@ -35,6 +35,6 @@ export default function CallRecordingsHubPage() {
           </Link>
         ))}
       </div>
-    </main>
+    </div>
   );
 }
