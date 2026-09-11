@@ -52,9 +52,9 @@ export const SECTION_META: Record<string, {
 }> = {
   'get-started': { group: 'main-modules', icon: Home, order: 0, description: 'How to use this site plus your setup path.' },
   'ccs-install': { group: 'main-modules', icon: Wrench, order: 1, description: 'Get your tools set up. The fastest path to your first campaign.' },
-  'ccs-training': { group: 'main-modules', icon: GraduationCap, order: 2, description: 'The operator manual for running the system we set up for you.' },
-  'call-recordings': { group: 'main-modules', icon: Video, order: 3, description: 'Recordings from our weekly coaching calls with Sean and Matt.' },
-  'ccs-resources': { group: 'main-modules', icon: BookOpen, order: 4, description: 'Browse the full CCS knowledge base — offer, sales, funnel assets, hiring, ops.' },
+  'ccs-resources': { group: 'main-modules', icon: BookOpen, order: 2, description: 'Browse the full CCS knowledge base — offer, sales, funnel assets, hiring, ops.' },
+  'ccs-training': { group: 'main-modules', icon: GraduationCap, order: 3, description: 'The operator manual for running the system we set up for you.' },
+  'call-recordings': { group: 'main-modules', icon: Video, order: 4, description: 'Recordings from our weekly coaching calls with Sean and Matt.' },
 };
 
 export const LEGACY_SLUGS = new Set<string>([]);
