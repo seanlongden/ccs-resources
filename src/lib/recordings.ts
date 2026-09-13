@@ -11,10 +11,16 @@ import { sql, ensureSchema } from './db';
  */
 
 export interface Recording {
+  id?: number;
   title: string;
   youtubeId: string;
   date?: string;
   slideDeckUrl?: string;
+}
+
+export interface AdminRecording extends Recording {
+  id: number;
+  categorySlug: string;
 }
 
 export interface RecordingCategory {
@@ -90,9 +96,10 @@ export async function getRecordingsFile(): Promise<RecordingsFile> {
   try {
     await ensureSchema();
     const rows = (await sql`
-      SELECT category_slug, title, youtube_id, recorded_on, slide_deck_url
+      SELECT id, category_slug, title, youtube_id, recorded_on, slide_deck_url
       FROM call_recordings
     `) as Array<{
+      id: number;
       category_slug: string;
       title: string;
       youtube_id: string;
@@ -103,6 +110,7 @@ export async function getRecordingsFile(): Promise<RecordingsFile> {
     const byCat = new Map<string, Recording[]>();
     for (const row of rows) {
       const item: Recording = {
+        id: row.id,
         title: row.title,
         youtubeId: row.youtube_id,
         date: dateToIso(row.recorded_on) || undefined,
@@ -143,4 +151,70 @@ export async function insertRecording(input: {
       ${input.createdBy}
     )
   `;
+}
+
+export async function listAdminRecordings(): Promise<AdminRecording[]> {
+  await ensureSchema();
+  const rows = (await sql`
+    SELECT id, category_slug, title, youtube_id, recorded_on, slide_deck_url
+    FROM call_recordings
+    ORDER BY recorded_on DESC, id DESC
+  `) as Array<{
+    id: number;
+    category_slug: string;
+    title: string;
+    youtube_id: string;
+    recorded_on: unknown;
+    slide_deck_url: string | null;
+  }>;
+
+  return rows.map((row) => {
+    const item: AdminRecording = {
+      id: row.id,
+      categorySlug: row.category_slug,
+      title: row.title,
+      youtubeId: row.youtube_id,
+      date: dateToIso(row.recorded_on) || undefined,
+    };
+    if (row.slide_deck_url) item.slideDeckUrl = row.slide_deck_url;
+    return item;
+  });
+}
+
+export async function updateRecording(
+  id: number,
+  patch: {
+    categorySlug?: string;
+    title?: string;
+    date?: string;
+    slideDeckUrl?: string | null;
+  },
+): Promise<boolean> {
+  await ensureSchema();
+  const existing = (await sql`
+    SELECT id FROM call_recordings WHERE id = ${id} LIMIT 1
+  `) as Array<{ id: number }>;
+  if (existing.length === 0) return false;
+
+  if (patch.categorySlug !== undefined) {
+    await sql`UPDATE call_recordings SET category_slug = ${patch.categorySlug} WHERE id = ${id}`;
+  }
+  if (patch.title !== undefined) {
+    await sql`UPDATE call_recordings SET title = ${patch.title} WHERE id = ${id}`;
+  }
+  if (patch.date !== undefined) {
+    await sql`UPDATE call_recordings SET recorded_on = ${patch.date} WHERE id = ${id}`;
+  }
+  if (patch.slideDeckUrl !== undefined) {
+    await sql`UPDATE call_recordings SET slide_deck_url = ${patch.slideDeckUrl} WHERE id = ${id}`;
+  }
+  return true;
+}
+
+export async function deleteRecording(id: number): Promise<boolean> {
+  await ensureSchema();
+  const rows = (await sql`
+    DELETE FROM call_recordings WHERE id = ${id} RETURNING id
+  `) as Array<{ id: number }>;
+  return rows.length > 0;
 }

@@ -93,7 +93,7 @@ ccg-resources/
 
 ## Call Recordings
 
-Separate from the content chunks. Category names live in `content/recordings.json`. Published recordings live in the `call_recordings` Postgres table. Public URLs live under `/resources/call-recordings`.
+Separate from the content chunks. Category names live in `content/recordings.json`. Published recordings live in the `call_recordings` Postgres table. Public URLs live under `/resources/call-recordings`. Andrea manages them at `/admin/call-recordings` (add, edit, move, remove).
 
 | Category | Slug |
 |---|---|

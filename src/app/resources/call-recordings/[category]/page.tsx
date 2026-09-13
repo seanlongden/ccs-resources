@@ -47,7 +47,7 @@ export default async function CallRecordingsCategoryPage({ params }: Props) {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {sortRecordingsNewestFirst(cat.recordings).map((r, i) => (
             <a
-              key={i}
+              key={r.id ?? i}
               href={`https://youtu.be/${r.youtubeId}`}
               target="_blank"
               rel="noopener noreferrer"

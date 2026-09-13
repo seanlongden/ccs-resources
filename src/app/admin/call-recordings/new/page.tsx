@@ -117,6 +117,9 @@ export default function NewRecordingPage() {
         <p className="text-sm text-slate-600">
           Paste a YouTube URL. The recording appears on the member page straight away.
         </p>
+        <a href="/admin/call-recordings" className="inline-block text-sm text-slate-600 underline">
+          Manage existing recordings
+        </a>
       </header>
 
       <section className="space-y-2">

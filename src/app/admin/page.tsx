@@ -140,6 +140,12 @@ export default function AdminPage() {
             </div>
             <div className="flex items-center gap-4">
               <Link
+                href="/admin/call-recordings"
+                className="text-sm text-gray-300 hover:text-white"
+              >
+                Manage recordings
+              </Link>
+              <Link
                 href="/admin/call-recordings/new"
                 className="text-sm text-gray-300 hover:text-white"
               >
