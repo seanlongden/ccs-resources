@@ -91,6 +91,19 @@ ccg-resources/
 
 **Total**: 56 real pages (chunk 101) + 14 placeholders (chunk 100) = 70 pages in `page-index.json`.
 
+## Call Recordings
+
+Separate from the content chunks. The store is `content/recordings.json`. Public URLs live under `/resources/call-recordings`.
+
+| Category | Slug |
+|---|---|
+| Weekly Coaching | `weekly-coaching` |
+| Sales Training | `sales-training` |
+
+Do not split categories by host. Put Sean or Matt in the card title. The old slug `coaching-calls` redirects to `weekly-coaching`.
+
+When adding a category, update all three: `content/recordings.json`, `content/navigation.json`, and `src/lib/recording-categories.ts`.
+
 ## Deploy pipeline
 
 ```

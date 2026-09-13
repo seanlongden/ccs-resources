@@ -2,13 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react';
-
-// MVP: one category. Add new entries here + in ALLOWED_CATEGORIES on the
-// POST route (src/app/api/admin/call-recordings/route.ts) + in
-// content/recordings.json when new categories are launched.
-const CATEGORIES = [
-  { slug: 'coaching-calls', name: 'Coaching Calls' },
-];
+import { RECORDING_CATEGORIES } from '@/lib/recording-categories';
 
 interface Preview {
   youtubeId: string;
@@ -23,7 +17,7 @@ export default function NewRecordingPage() {
   const [previewLoading, setPreviewLoading] = useState(false);
 
   const [title, setTitle] = useState('');
-  const [categorySlug, setCategorySlug] = useState('coaching-calls');
+  const [categorySlug, setCategorySlug] = useState(RECORDING_CATEGORIES[0].slug);
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
   const [slideDeckUrl, setSlideDeckUrl] = useState('');
 
@@ -161,8 +155,11 @@ export default function NewRecordingPage() {
           className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Auto-filled from YouTube; override if needed."
+          placeholder="Weekly Coaching - Sean, 10 Aug 2026"
         />
+        <p className="text-xs text-slate-500">
+          Put the host in the title. Sean and Matt stay in the same list.
+        </p>
       </section>
 
       <section className="space-y-2">
@@ -172,7 +169,7 @@ export default function NewRecordingPage() {
           value={categorySlug}
           onChange={(e) => setCategorySlug(e.target.value)}
         >
-          {CATEGORIES.map((c) => (
+          {RECORDING_CATEGORIES.map((c) => (
             <option key={c.slug} value={c.slug}>
               {c.name}
             </option>

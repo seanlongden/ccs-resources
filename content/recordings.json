@@ -1,9 +1,15 @@
 {
   "categories": [
     {
-      "slug": "coaching-calls",
-      "title": "Coaching Calls",
-      "description": "Recordings from weekly coaching calls with Sean and Matt. Newest at the top.",
+      "slug": "weekly-coaching",
+      "title": "Weekly Coaching",
+      "description": "Weekly CCS coaching calls with Sean and Matt. Newest at the top.",
+      "recordings": []
+    },
+    {
+      "slug": "sales-training",
+      "title": "Sales Training",
+      "description": "Sales call training recordings. Newest at the top.",
       "recordings": []
     }
   ]

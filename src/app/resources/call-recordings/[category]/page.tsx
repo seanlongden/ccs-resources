@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { readLocalRecordings, findCategory } from '@/lib/recordings';
+import { LEGACY_CATEGORY_REDIRECTS } from '@/lib/recording-categories';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,6 +11,10 @@ interface Props {
 
 export default async function CallRecordingsCategoryPage({ params }: Props) {
   const { category } = await params;
+  const legacyTarget = LEGACY_CATEGORY_REDIRECTS[category];
+  if (legacyTarget) {
+    redirect(`/resources/call-recordings/${legacyTarget}`);
+  }
   const file = readLocalRecordings();
   const cat = findCategory(file, category);
   if (!cat) notFound();

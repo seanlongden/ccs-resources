@@ -593,15 +593,23 @@
     "slug": "call-recordings",
     "group": "main-modules",
     "order": 4,
-    "description": "Recordings from our weekly coaching calls with Sean and Matt.",
+    "description": "Weekly coaching and sales training recordings.",
     "children": [
       {
-        "title": "Coaching Calls",
-        "slug": "coaching-calls",
-        "fullSlug": "call-recordings/coaching-calls",
+        "title": "Weekly Coaching",
+        "slug": "weekly-coaching",
+        "fullSlug": "call-recordings/weekly-coaching",
         "type": "page",
         "childCount": 0,
-        "description": "Recordings from weekly coaching calls."
+        "description": "Weekly CCS coaching calls with Sean and Matt."
+      },
+      {
+        "title": "Sales Training",
+        "slug": "sales-training",
+        "fullSlug": "call-recordings/sales-training",
+        "type": "page",
+        "childCount": 0,
+        "description": "Sales call training recordings."
       }
     ]
   }

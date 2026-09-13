@@ -5,14 +5,9 @@ import { generateBranchName, previewUrlFor } from '@/lib/admin-tools';
 import { sql, ensureSchema } from '@/lib/db';
 import { extractYouTubeId, fetchOEmbed } from '@/lib/youtube';
 import { RECORDINGS_FILE, type RecordingsFile, type Recording } from '@/lib/recordings';
+import { ALLOWED_CATEGORY_SLUGS } from '@/lib/recording-categories';
 
 export const dynamic = 'force-dynamic';
-
-// MVP: one category, ordered by upload recency inside each category.
-// Add more slugs here as new categories are introduced.
-const ALLOWED_CATEGORIES = new Set([
-  'coaching-calls',
-]);
 
 export async function POST(req: NextRequest) {
   try {
@@ -37,7 +32,7 @@ export async function POST(req: NextRequest) {
     if (!youtubeUrl) {
       return NextResponse.json({ error: 'YouTube URL is required.' }, { status: 400 });
     }
-    if (!categorySlug || !ALLOWED_CATEGORIES.has(categorySlug)) {
+    if (!categorySlug || !ALLOWED_CATEGORY_SLUGS.has(categorySlug)) {
       return NextResponse.json({ error: 'Invalid category.' }, { status: 400 });
     }
 
