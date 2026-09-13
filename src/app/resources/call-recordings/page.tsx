@@ -11,7 +11,7 @@ export default function CallRecordingsHubPage() {
       <header className="mb-8 space-y-2">
         <h1 className="text-3xl font-bold text-slate-900">Call Recordings</h1>
         <p className="text-sm text-slate-600">
-          Weekly coaching and sales training recordings. Newest at the top of each list.
+          Weekly coaching and sales training recordings.
         </p>
       </header>
 
