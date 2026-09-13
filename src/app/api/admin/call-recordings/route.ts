@@ -4,7 +4,7 @@ import * as gh from '@/lib/github-app';
 import { generateBranchName, previewUrlFor } from '@/lib/admin-tools';
 import { sql, ensureSchema } from '@/lib/db';
 import { extractYouTubeId, fetchOEmbed } from '@/lib/youtube';
-import { RECORDINGS_FILE, type RecordingsFile, type Recording } from '@/lib/recordings';
+import { RECORDINGS_FILE, sortRecordingsNewestFirst, type RecordingsFile, type Recording } from '@/lib/recordings';
 import { ALLOWED_CATEGORY_SLUGS } from '@/lib/recording-categories';
 
 export const dynamic = 'force-dynamic';
@@ -77,6 +77,7 @@ export async function POST(req: NextRequest) {
     if (slideDeckUrl) newItem.slideDeckUrl = slideDeckUrl;
 
     category.recordings.unshift(newItem);
+    category.recordings = sortRecordingsNewestFirst(category.recordings);
 
     const newContent = JSON.stringify(file, null, 2) + '\n';
     await gh.writeFile(

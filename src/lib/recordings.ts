@@ -51,3 +51,17 @@ export function findCategory(
 ): RecordingCategory | null {
   return file.categories.find((c) => c.slug === slug) ?? null;
 }
+
+/** Newest recorded date first. Calls with no date sit at the bottom. */
+export function sortRecordingsNewestFirst<T extends { date?: string }>(
+  recordings: T[],
+): T[] {
+  return [...recordings].sort((a, b) => {
+    const aDate = a.date && /^\d{4}-\d{2}-\d{2}$/.test(a.date) ? a.date : '';
+    const bDate = b.date && /^\d{4}-\d{2}-\d{2}$/.test(b.date) ? b.date : '';
+    if (!aDate && !bDate) return 0;
+    if (!aDate) return 1;
+    if (!bDate) return -1;
+    return bDate.localeCompare(aDate);
+  });
+}

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { readLocalRecordings } from '@/lib/recordings';
+import { readLocalRecordings, sortRecordingsNewestFirst } from '@/lib/recordings';
 
 interface IndexedRecording {
   title: string;
@@ -26,8 +26,7 @@ function buildIndex(): IndexedRecording[] {
       });
     }
   }
-  out.sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
-  cache = out;
+  cache = sortRecordingsNewestFirst(out);
   return out;
 }
 
