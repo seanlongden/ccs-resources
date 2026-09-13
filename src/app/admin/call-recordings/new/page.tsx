@@ -17,7 +17,7 @@ export default function NewRecordingPage() {
   const [previewLoading, setPreviewLoading] = useState(false);
 
   const [title, setTitle] = useState('');
-  const [categorySlug, setCategorySlug] = useState(RECORDING_CATEGORIES[0].slug);
+  const [categorySlug, setCategorySlug] = useState<string>(RECORDING_CATEGORIES[0].slug);
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
   const [slideDeckUrl, setSlideDeckUrl] = useState('');
 
