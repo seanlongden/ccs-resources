@@ -3,12 +3,17 @@ import { getIronSession } from 'iron-session';
 import { sessionOptions, SessionData } from './session';
 import { sql, ensureSchema } from './db';
 import { encrypt, decrypt } from './crypto';
+import { RECORDINGS_EDITOR_EMAILS } from './admin';
 
-// Only seanlongden0@gmail.com is a hardcoded super-admin. Anyone else with
-// admin access must be invited via /admin/admins (super-admin only flow).
+// Only seanlongden0@gmail.com is a hardcoded super-admin. Recordings
+// editors are bootstrapped from RECORDINGS_EDITOR_EMAILS on first login.
 const SUPER_ADMIN_EMAILS = new Set([
   'seanlongden0@gmail.com',
 ]);
+
+const RECORDINGS_EDITORS = new Set(
+  RECORDINGS_EDITOR_EMAILS.map((e) => e.toLowerCase()),
+);
 
 export type AdminPermissions = {
   edit_content?: boolean;
@@ -48,6 +53,24 @@ export async function getCurrentAdmin(): Promise<AdminRecord | null> {
           delete_page: true, edit_admins: true, edit_system_prompt: true,
           manage_recordings: true,
         })}::jsonb)
+        ON CONFLICT (email) DO NOTHING
+      `;
+    }
+  }
+
+  // Bootstrap recordings editors if missing. Role stays editor so the
+  // schema cleanup that removes extra super_admins does not delete them.
+  if (RECORDINGS_EDITORS.has(email)) {
+    const existing = await sql`SELECT id FROM admins WHERE lower(email) = ${email}`;
+    if (existing.length === 0) {
+      await sql`
+        INSERT INTO admins (email, role, permissions, invited_by)
+        VALUES (
+          ${email},
+          'editor',
+          ${JSON.stringify({ manage_recordings: true })}::jsonb,
+          'hardcoded'
+        )
         ON CONFLICT (email) DO NOTHING
       `;
     }

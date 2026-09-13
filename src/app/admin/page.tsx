@@ -134,9 +134,17 @@ export default function AdminPage() {
               <h1 className="text-xl font-bold">Admin Dashboard</h1>
               <p className="text-sm text-gray-400">{data.admin}</p>
             </div>
-            <Link href="/resources" className="text-sm text-gray-300 hover:text-white">
-              Back to Resources
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/admin/call-recordings/new"
+                className="text-sm text-gray-300 hover:text-white"
+              >
+                Add a call recording
+              </Link>
+              <Link href="/resources" className="text-sm text-gray-300 hover:text-white">
+                Back to Resources
+              </Link>
+            </div>
           </div>
         </div>
       </header>

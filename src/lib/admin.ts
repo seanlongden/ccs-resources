@@ -12,6 +12,12 @@
 const ADMIN_EMAILS = [
   'seanlongden0@gmail.com',
   'mattcerasia@gmail.com',
+  'andreaestifano@gmail.com',
+];
+
+/** Editors who can publish Call Recordings. Bootstrapped on first admin login. */
+export const RECORDINGS_EDITOR_EMAILS = [
+  'andreaestifano@gmail.com',
 ];
 
 export function isAdmin(email: string | undefined): boolean {
