@@ -2,6 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { safeNextPath } from '@/lib/safe-next';
+
+function readNextPath(): string | null {
+  if (typeof window === 'undefined') return null;
+  return safeNextPath(new URLSearchParams(window.location.search).get('next'));
+}
+
+function afterLoginPath(hasSeenWelcome: boolean, next: string | null): string {
+  if (next?.startsWith('/admin')) return next;
+  if (hasSeenWelcome === false) return '/welcome';
+  return next || '/resources';
+}
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -17,7 +29,7 @@ export default function LoginPage() {
         const res = await fetch('/api/auth');
         const data = await res.json();
         if (data.authenticated) {
-          router.push(data.hasSeenWelcome === false ? '/welcome' : '/resources');
+          router.push(afterLoginPath(data.hasSeenWelcome !== false, readNextPath()));
         }
       } catch (e) {
         console.error('Auth check failed:', e);
@@ -51,9 +63,7 @@ export default function LoginPage() {
         return;
       }
 
-      // First-time visitors get walked through /welcome. Returning visitors
-      // skip straight to the resources dashboard.
-      router.push(data.hasSeenWelcome === false ? '/welcome' : '/resources');
+      router.push(afterLoginPath(data.hasSeenWelcome !== false, readNextPath()));
     } catch (e) {
       console.error('Login error:', e);
       setError('Something went wrong. Please try again.');

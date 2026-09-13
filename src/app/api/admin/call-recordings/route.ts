@@ -115,6 +115,12 @@ export async function POST(req: NextRequest) {
     const msg = e instanceof Error ? e.message : String(e);
     console.error('Recording upload failed:', msg);
     const status = msg === 'UNAUTHORIZED' ? 401 : msg === 'FORBIDDEN' ? 403 : 500;
-    return NextResponse.json({ error: msg }, { status });
+    const error =
+      msg === 'UNAUTHORIZED'
+        ? 'Please log in as an admin to add recordings.'
+        : msg === 'FORBIDDEN'
+          ? 'Not permitted to add recordings.'
+          : msg;
+    return NextResponse.json({ error }, { status });
   }
 }

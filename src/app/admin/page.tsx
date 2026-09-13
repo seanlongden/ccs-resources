@@ -39,6 +39,10 @@ export default function AdminPage() {
     async function loadAdmin() {
       try {
         const res = await fetch('/api/admin');
+        if (res.status === 401) {
+          router.push('/?next=/admin');
+          return;
+        }
         if (res.status === 403) {
           router.push('/resources');
           return;

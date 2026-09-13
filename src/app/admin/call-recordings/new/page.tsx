@@ -41,6 +41,10 @@ export default function NewRecordingPage() {
           `/api/admin/call-recordings/preview?url=${encodeURIComponent(trimmed)}`,
         );
         const data = await res.json();
+        if (res.status === 401) {
+          window.location.href = `/?next=${encodeURIComponent('/admin/call-recordings/new')}`;
+          return;
+        }
         if (!res.ok) {
           setPreview(null);
           setPreviewError(data.error || 'Could not load preview.');
@@ -85,6 +89,10 @@ export default function NewRecordingPage() {
         }),
       });
       const data = await res.json();
+      if (res.status === 401) {
+        window.location.href = `/?next=${encodeURIComponent('/admin/call-recordings/new')}`;
+        return;
+      }
       if (!res.ok) {
         setSubmitError(data.error || 'Upload failed.');
       } else {

@@ -12,7 +12,10 @@ export async function GET() {
     const cookieStore = await cookies();
     const session = await getIronSession<SessionData>(cookieStore, sessionOptions);
 
-    if (!session.email || !isAdmin(session.email)) {
+    if (!session.email || !session.hasAccess) {
+      return NextResponse.json({ error: 'Please log in.' }, { status: 401 });
+    }
+    if (!isAdmin(session.email)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }
 
@@ -49,7 +52,10 @@ export async function POST(request: NextRequest) {
     const cookieStore = await cookies();
     const session = await getIronSession<SessionData>(cookieStore, sessionOptions);
 
-    if (!session.email || !isAdmin(session.email)) {
+    if (!session.email || !session.hasAccess) {
+      return NextResponse.json({ error: 'Please log in.' }, { status: 401 });
+    }
+    if (!isAdmin(session.email)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });
     }
 

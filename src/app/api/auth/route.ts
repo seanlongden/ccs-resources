@@ -3,6 +3,8 @@ import { getIronSession } from 'iron-session';
 import { cookies } from 'next/headers';
 import { sessionOptions, SessionData, needsRevalidation } from '@/lib/session';
 import { checkAccess } from '@/lib/auth';
+import { isAdmin } from '@/lib/admin';
+import { getCurrentAdmin } from '@/lib/admin-auth';
 import { ensureUser, hasSeenWelcome } from '@/lib/db';
 
 // POST /api/auth - Login with email
@@ -67,6 +69,14 @@ export async function POST(request: NextRequest) {
     session.welcomeSeen = welcomeSeen;
 
     await session.save();
+
+    if (isAdmin(session.email)) {
+      try {
+        await getCurrentAdmin();
+      } catch (e) {
+        console.error('admin bootstrap failed (non-fatal):', e);
+      }
+    }
 
     return NextResponse.json({
       success: true,
