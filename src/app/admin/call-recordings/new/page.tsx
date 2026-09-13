@@ -18,7 +18,7 @@ export default function NewRecordingPage() {
 
   const [title, setTitle] = useState('');
   const [categorySlug, setCategorySlug] = useState<string>(RECORDING_CATEGORIES[0].slug);
-  const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
+  const [date, setDate] = useState('');
   const [slideDeckUrl, setSlideDeckUrl] = useState('');
 
   const [submitting, setSubmitting] = useState(false);
@@ -63,9 +63,10 @@ export default function NewRecordingPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [youtubeUrl]);
 
+  const dateOk = /^\d{4}-\d{2}-\d{2}$/.test(date.trim());
   const canSubmit = useMemo(() => {
-    return !!preview && !!title.trim() && !!categorySlug && !submitting;
-  }, [preview, title, categorySlug, submitting]);
+    return !!preview && !!title.trim() && !!categorySlug && dateOk && !submitting;
+  }, [preview, title, categorySlug, dateOk, submitting]);
 
   async function submit() {
     setSubmitting(true);
@@ -79,7 +80,7 @@ export default function NewRecordingPage() {
           youtubeUrl: youtubeUrl.trim(),
           categorySlug,
           title: title.trim(),
-          date: date.trim() || undefined,
+          date: date.trim(),
           slideDeckUrl: slideDeckUrl.trim() || undefined,
         }),
       });
@@ -91,6 +92,7 @@ export default function NewRecordingPage() {
         setYoutubeUrl('');
         setPreview(null);
         setTitle('');
+        setDate('');
         setSlideDeckUrl('');
       }
     } catch (e: unknown) {
@@ -182,10 +184,14 @@ export default function NewRecordingPage() {
           <label className="block text-sm font-medium text-slate-900">Date recorded</label>
           <input
             type="date"
+            required
             className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
+          {!dateOk && (
+            <p className="text-xs text-slate-500">Required. This is what puts the newest call at the top.</p>
+          )}
         </div>
         <div className="space-y-2">
           <label className="block text-sm font-medium text-slate-900">
