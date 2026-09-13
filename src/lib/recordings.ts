@@ -48,6 +48,19 @@ export function findCategory(
   return file.categories.find((c) => c.slug === slug) ?? null;
 }
 
+/** Display as 24 August 2026. Stored value stays YYYY-MM-DD for sorting. */
+export function formatRecordingDate(iso: string): string {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return iso;
+  const [year, month, day] = iso.split('-').map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
 /** Newest recorded date first. Calls with no date sit at the bottom. */
 export function sortRecordingsNewestFirst<T extends { date?: string }>(
   recordings: T[],

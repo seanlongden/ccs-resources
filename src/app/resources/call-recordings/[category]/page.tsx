@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
-import { getRecordingsFile, findCategory, sortRecordingsNewestFirst } from '@/lib/recordings';
+import { getRecordingsFile, findCategory, sortRecordingsNewestFirst, formatRecordingDate } from '@/lib/recordings';
 import { LEGACY_CATEGORY_REDIRECTS } from '@/lib/recording-categories';
 
 export const dynamic = 'force-dynamic';
@@ -64,7 +64,7 @@ export default async function CallRecordingsCategoryPage({ params }: Props) {
                   {r.title}
                 </div>
                 {r.date && (
-                  <div className="mt-1 text-xs text-slate-500">{r.date}</div>
+                  <div className="mt-1 text-xs text-slate-500">{formatRecordingDate(r.date)}</div>
                 )}
                 {r.slideDeckUrl && (
                   <a
