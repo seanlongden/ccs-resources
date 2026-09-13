@@ -115,8 +115,7 @@ export default function NewRecordingPage() {
       <header className="space-y-1">
         <h1 className="text-2xl font-bold text-slate-900">Add a Call Recording</h1>
         <p className="text-sm text-slate-600">
-          Paste a YouTube URL. The recording appears on the public page as soon as the
-          site rebuilds (~60&ndash;90s).
+          Paste a YouTube URL. The recording appears on the member page straight away.
         </p>
       </header>
 
@@ -251,7 +250,7 @@ export default function NewRecordingPage() {
               View the category page &rarr;
             </a>
             <div className="mt-1 text-xs text-emerald-700">
-              The site will rebuild in ~60&ndash;90s and the recording will appear.
+              It is live now. Hard refresh the category page if you do not see it yet.
             </div>
           </div>
         </div>

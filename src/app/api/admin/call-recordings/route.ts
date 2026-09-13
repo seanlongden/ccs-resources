@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/admin-auth';
-import * as gh from '@/lib/github-app';
-import { generateBranchName, previewUrlFor } from '@/lib/admin-tools';
-import { sql, ensureSchema } from '@/lib/db';
 import { extractYouTubeId, fetchOEmbed } from '@/lib/youtube';
-import { RECORDINGS_FILE, sortRecordingsNewestFirst, type RecordingsFile, type Recording } from '@/lib/recordings';
+import { findCategory, insertRecording, readLocalRecordings } from '@/lib/recordings';
 import { ALLOWED_CATEGORY_SLUGS } from '@/lib/recording-categories';
 
 export const dynamic = 'force-dynamic';
@@ -35,6 +32,9 @@ export async function POST(req: NextRequest) {
     if (!categorySlug || !ALLOWED_CATEGORY_SLUGS.has(categorySlug)) {
       return NextResponse.json({ error: 'Invalid category.' }, { status: 400 });
     }
+    if (!findCategory(readLocalRecordings(), categorySlug)) {
+      return NextResponse.json({ error: 'Category not found.' }, { status: 400 });
+    }
 
     const youtubeId = extractYouTubeId(youtubeUrl);
     if (!youtubeId) {
@@ -54,59 +54,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Date must be YYYY-MM-DD.' }, { status: 400 });
     }
 
-    await ensureSchema();
-
-    const branchName = generateBranchName();
-    const baseSha = await gh.createBranch(branchName, 'main');
-    await sql`
-      INSERT INTO ai_branches (branch_name, base_sha, created_by, preview_url, seed_slug, status)
-      VALUES (${branchName}, ${baseSha}, ${admin.email}, ${previewUrlFor(branchName)}, ${'call-recordings/' + categorySlug}, 'open')
-    `;
-
-    const { content, sha } = await gh.readFile(RECORDINGS_FILE, branchName);
-    const file = JSON.parse(content) as RecordingsFile;
-
-    const category = file.categories.find((c) => c.slug === categorySlug);
-    if (!category) {
-      return NextResponse.json(
-        { error: `Category not found in recordings.json: ${categorySlug}` },
-        { status: 500 },
-      );
-    }
-    if (!Array.isArray(category.recordings)) category.recordings = [];
-
-    const newItem: Recording = { title, youtubeId, date };
-    if (slideDeckUrl) newItem.slideDeckUrl = slideDeckUrl;
-
-    category.recordings.unshift(newItem);
-    category.recordings = sortRecordingsNewestFirst(category.recordings);
-
-    const newContent = JSON.stringify(file, null, 2) + '\n';
-    await gh.writeFile(
-      branchName,
-      RECORDINGS_FILE,
-      newContent,
-      `Add recording: ${title} (${categorySlug})`,
-      sha,
-    );
-
-    await sql`
-      UPDATE ai_branches
-      SET files_touched = ${JSON.stringify([RECORDINGS_FILE])}::jsonb
-      WHERE branch_name = ${branchName}
-    `;
-
-    // Auto-merge to main so uploads go live immediately.
-    await gh.mergeBranch(branchName, 'main');
-    await sql`
-      UPDATE ai_branches
-      SET status = 'merged', merged_at = NOW()
-      WHERE branch_name = ${branchName}
-    `;
+    await insertRecording({
+      categorySlug,
+      title,
+      youtubeId,
+      date,
+      slideDeckUrl: slideDeckUrl || undefined,
+      createdBy: admin.email,
+    });
 
     return NextResponse.json({
       ok: true,
-      branchName,
       categoryUrl: `/resources/call-recordings/${categorySlug}`,
       youtubeId,
       title,

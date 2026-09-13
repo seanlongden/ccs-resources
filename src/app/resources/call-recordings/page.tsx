@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { readLocalRecordings } from '@/lib/recordings';
+import { getRecordingsFile } from '@/lib/recordings';
 
 export const dynamic = 'force-dynamic';
 
-export default function CallRecordingsHubPage() {
-  const file = readLocalRecordings();
+export default async function CallRecordingsHubPage() {
+  const file = await getRecordingsFile();
 
   return (
     <div className="mx-auto max-w-5xl px-8 pt-8 pb-12">

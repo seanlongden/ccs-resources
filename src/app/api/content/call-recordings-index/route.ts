@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { readLocalRecordings, sortRecordingsNewestFirst } from '@/lib/recordings';
+import { getRecordingsFile, sortRecordingsNewestFirst } from '@/lib/recordings';
 
 interface IndexedRecording {
   title: string;
@@ -9,11 +9,10 @@ interface IndexedRecording {
   date?: string;
 }
 
-let cache: IndexedRecording[] | null = null;
+export const dynamic = 'force-dynamic';
 
-function buildIndex(): IndexedRecording[] {
-  if (cache) return cache;
-  const file = readLocalRecordings();
+export async function GET() {
+  const file = await getRecordingsFile();
   const out: IndexedRecording[] = [];
   for (const cat of file.categories) {
     for (const r of cat.recordings ?? []) {
@@ -26,10 +25,5 @@ function buildIndex(): IndexedRecording[] {
       });
     }
   }
-  cache = sortRecordingsNewestFirst(out);
-  return out;
-}
-
-export async function GET() {
-  return NextResponse.json({ recordings: buildIndex() });
+  return NextResponse.json({ recordings: sortRecordingsNewestFirst(out) });
 }

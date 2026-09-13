@@ -102,6 +102,20 @@ export async function ensureSchema(): Promise<void> {
   await s`CREATE INDEX IF NOT EXISTS ai_messages_branch_idx ON ai_messages (branch_name)`;
 
   await s`
+    CREATE TABLE IF NOT EXISTS call_recordings (
+      id SERIAL PRIMARY KEY,
+      category_slug TEXT NOT NULL,
+      title TEXT NOT NULL,
+      youtube_id TEXT NOT NULL,
+      recorded_on DATE NOT NULL,
+      slide_deck_url TEXT,
+      created_by TEXT,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    )
+  `;
+  await s`CREATE INDEX IF NOT EXISTS call_recordings_category_idx ON call_recordings (category_slug, recorded_on DESC)`;
+
+  await s`
     DELETE FROM admins
     WHERE role = 'super_admin'
       AND lower(email) <> 'seanlongden0@gmail.com'
