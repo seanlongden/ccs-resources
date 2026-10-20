@@ -157,8 +157,10 @@ A polite compliment is not the same as a buying decision. One rejection does not
 
 **Your finished brief should let another person explain:** who this is for, what they get, why it is preferable for that buyer, what supports the claim and what each side must do.
 
-- [Open the complete worked example](/resources/sales/positioning-worked-example)
-- [Download your editable positioning workbook](/downloads/positioning/CCS-Positioning-Workbook.docx)
-- [Watch Ben's value-proposition lesson](/resources/offers-guarantees-case-studies/strategy-value-props) to connect buyer goals and pains to the offer. Return here to choose, substantiate and explain the difference.
+[Open the complete worked example](/resources/sales/positioning-worked-example)
+
+[Download your editable positioning workbook](/downloads/positioning/CCS-Positioning-Workbook.docx)
+
+[Watch Ben's value-proposition lesson](/resources/offers-guarantees-case-studies/strategy-value-props) to connect buyer goals and pains to the offer. Return here to choose, substantiate and explain the difference.
 
 <details class="ccg-toggle"><summary>Research Behind This Resource</summary><div class="ccg-toggle-body"><p>This lesson combines questions raised in CCS coaching with offer-design and positioning principles. Hormozi's value and offer checklists inform the obstacle and delivery exercises. April Dunford's positioning work informs comparison with real alternatives. The agency example is an original teaching scenario, not a reported client success.</p><p><a href="https://www.acquisition.com/files/offer-creation-checklist.pdf" target="_blank" rel="noopener noreferrer">Hormozi: Offer Creation Checklist</a> · <a href="https://www.acquisition.com/files/pricing-value-checklist.pdf" target="_blank" rel="noopener noreferrer">Hormozi: Pricing and Value Checklist</a> · <a href="https://aprildunford.substack.com/p/the-no-differentiation-illusion" target="_blank" rel="noopener noreferrer">Dunford: The No Differentiation Illusion</a></p><p>These are practical frameworks. The exact CCS exercise has not yet been validated through member use.</p></div></details>
