@@ -410,12 +410,20 @@
             "description": "The prep routine that stacks the odds before every call."
           },
           {
-            "title": "Positioning",
+            "title": "Differentiation & Positioning",
             "slug": "sales-positioning",
             "fullSlug": "sales/sales-positioning",
             "type": "page",
             "childCount": 0,
-            "description": "How to position yourself on a call so the prospect sees you as the expert."
+            "description": "Give the right buyer a reason to choose you. Includes a worked example and editable workbook."
+          },
+          {
+            "title": "Worked Positioning Example",
+            "slug": "positioning-worked-example",
+            "fullSlug": "sales/positioning-worked-example",
+            "type": "page",
+            "childCount": 0,
+            "description": "Follow one agency from a cheaper-provider objection to a defensible offer."
           },
           {
             "title": "Sales Call Strategies",

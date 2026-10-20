@@ -223,7 +223,7 @@
   },
   {
     "slug": "sales/sales-positioning",
-    "title": "Positioning",
+    "title": "Why Should a Client Choose You Over Another Agency?",
     "isSection": false,
     "chunk": 101
   },
@@ -442,5 +442,11 @@
     "title": "Install Your Claude Skills",
     "isSection": false,
     "chunk": 103
+  },
+  {
+    "slug": "sales/positioning-worked-example",
+    "title": "Worked Example: When Another Agency Charges Less",
+    "isSection": false,
+    "chunk": 101
   }
 ]
