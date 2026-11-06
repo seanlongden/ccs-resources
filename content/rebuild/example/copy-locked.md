@@ -1,5 +1,5 @@
 # Illustrative locked-copy fixture
-Pack: 0.2.0-preview. Synthetic demonstration, no sending authorised.
+Pack: 1.0.0. Synthetic demonstration, no sending authorised.
 
 Context: agency-acquisition. Proof: NONE APPROVED. Subject: {{first_name}}
 

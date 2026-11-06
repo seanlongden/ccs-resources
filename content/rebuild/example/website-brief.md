@@ -1,5 +1,5 @@
 # Completed Website Copy Example
-Pack: 0.2.0-preview. Illustrative agency, no published site or video.
+Pack: 1.0.0. Illustrative agency, no published site or video.
 
 ## Headline
 Put Your Maintenance Team In Front Of Manufacturing Sites With Work To Discuss

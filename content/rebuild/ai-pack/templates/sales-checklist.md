@@ -1,5 +1,5 @@
 # Sales Call Checklist
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 
 ## Before Call One
 Business and source:

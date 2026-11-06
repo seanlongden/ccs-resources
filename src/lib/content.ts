@@ -104,7 +104,7 @@ export function getPage(slug: string): PageData | null {
   }
 
   const index = getPageIndex();
-  let entry = index.find(e => e.slug === slug);
+  const entry = index.find(e => e.slug === slug);
 
   if (!entry) {
     const findSection = (items: NavItem[]): NavItem | undefined => {

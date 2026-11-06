@@ -1,5 +1,5 @@
 # Sales Assets By Stage
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 | Stage | Asset | What it should contain |
 |---|---|---|

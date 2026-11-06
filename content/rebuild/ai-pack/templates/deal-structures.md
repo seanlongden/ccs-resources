@@ -1,5 +1,5 @@
 # Seven Deal Structures
-Pack: 0.2.0-preview. These are choices to assess, not seven recommended promises.
+Pack: 1.0.0. These are choices to assess, not seven recommended promises.
 
 | Structure | Collect For | Main Question |
 |---|---|---|

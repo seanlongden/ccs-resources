@@ -1,5 +1,5 @@
 # Completed Settings
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 mode: PREVIEW
 external_writes: DISABLED
 context: agency-acquisition

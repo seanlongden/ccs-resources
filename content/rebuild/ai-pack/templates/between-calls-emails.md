@@ -1,5 +1,5 @@
 # Five Emails Between Discovery And Decision
-Pack: 0.2.0-preview. Adapted from CCS S3. Templates only, no sending authorised.
+Pack: 1.0.0. Adapted from CCS S3. Templates only, no sending authorised.
 
 ## 1. Same-day Continuity
 Subject: Next steps

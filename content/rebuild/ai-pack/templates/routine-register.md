@@ -1,5 +1,5 @@
 # Routine Register
-Pack: 0.2.0-preview. All entries start DRAFT, none are created by this file.
+Pack: 1.0.0. All entries start DRAFT, none are created by this file.
 
 Name:
 Purpose:

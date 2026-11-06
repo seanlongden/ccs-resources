@@ -1,5 +1,5 @@
 # Completed Offer
-Pack: 0.2.0-preview. Illustrative commercial design for teaching.
+Pack: 1.0.0. Illustrative commercial design for teaching.
 
 We build and run a cold-email campaign that introduces an Ohio maintenance company to manufacturing sites with a maintenance need worth discussing.
 

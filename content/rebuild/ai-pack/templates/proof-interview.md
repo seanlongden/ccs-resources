@@ -1,5 +1,5 @@
 # Proof Interview And Permission
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 
 1. What was happening before the work?
 2. What had you already tried?

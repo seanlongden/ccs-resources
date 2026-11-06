@@ -1,5 +1,5 @@
 # Optional LinkedIn Instructions
-Pack: 0.2.0-preview. These four source-derived skills are optional and separate from the sixteen core email skills. Save each by its exact name, then inspect it in Private Skills. Choose an activity window and role rules with CCS first; L1 uses 30 days and the pack uses 60. Manual LinkedIn action only.
+Pack: 1.0.0. These four source-derived skills are optional and separate from the sixteen core email skills. Save each by its exact name, then inspect it in Private Skills. Choose an activity window and role rules with CCS first; L1 uses 30 days and the pack uses 60. Manual LinkedIn action only.
 
 ## 1. Linkedin-signal-prospecting
 

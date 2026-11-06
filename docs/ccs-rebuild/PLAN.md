@@ -1,5 +1,11 @@
 # CCS rebuild: approved plan and execution amendment
 
+## Live Publication Authorised, 6 November 2026
+
+Sean subsequently instructed: “Okay make it all live.” This authorises publishing the reviewed resources app through its existing production project. It supersedes the earlier preview-only/no-push/no-publication boundary for this scoped release. It does not authorise outreach, bookings, purchases, live student campaigns, domain changes, database changes or unrelated sites. Owner sign-in for seanlongden0@gmail.com was separately approved for member-page and download verification. Keep human approval rules and unverified real-tool behaviour explicit.
+
+Production hosting is now verified as the existing Vercel ccs-resources project, production branch main, at https://resources.closingclientssystem.com. The earlier DigitalOcean assumption was not verified and is superseded. Starting production deployment: dpl_DB5Br6MiFPngcJ7rktasqtLZexZM, source 49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a. Do not create another hosting project or change access settings.
+
 ## Current authority, 6 November 2026
 
 ### Full Preview Execution Approval

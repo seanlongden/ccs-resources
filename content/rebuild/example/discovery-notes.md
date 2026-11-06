@@ -1,5 +1,5 @@
 # Completed Discovery Notes
-Pack: 0.2.0-preview. A constructed teaching case, not a real call or member result.
+Pack: 1.0.0. A constructed teaching case, not a real call or member result.
 
 D1. Example Industrial Maintenance sells preventive maintenance and equipment repair to manufacturers in Ohio. Its operations manager attends discovery.
 D2. The exercise assumes capacity for two additional maintenance accounts this quarter and a sales owner able to attend two first meetings per week.

@@ -1,5 +1,5 @@
 # Approved Offer And Terms
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 - Context and owner:
 - Who buys:

@@ -1,5 +1,5 @@
 # Reply Templates
-Pack: 0.2.0-preview. Draft shapes, not permission to send.
+Pack: 1.0.0. Draft shapes, not permission to send.
 Acknowledge / answer the actual question / propose the next useful step.
 Interested:
 Asked for information:

@@ -1,5 +1,5 @@
 # Booking Check
-Pack: 0.2.0-preview. A written plan is not a completed booking test.
+Pack: 1.0.0. A written plan is not a completed booking test.
 
 Host / tool / workspace / event URL:
 Meeting name / length / location:

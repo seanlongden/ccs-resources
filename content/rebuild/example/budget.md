@@ -1,5 +1,5 @@
 # Completed budget example
-Pack: 0.2.0-preview. Illustrative numbers, not a purchase recommendation or quote. Check actual plans, taxes, limits and billing periods before spending.
+Pack: 1.0.0. Illustrative numbers, not a purchase recommendation or quote. Check actual plans, taxes, limits and billing periods before spending.
 
 | Item | Example basis | Monthly cost allocation |
 |---|---|---:|

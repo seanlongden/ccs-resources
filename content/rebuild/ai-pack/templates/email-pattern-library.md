@@ -1,5 +1,5 @@
 # Email Pattern Library
-Pack: 0.2.0-preview. Rewritten from the existing 28-framework library. These are adaptable shapes, not independently verified winning campaigns or proof for your business. The current two-step rules and approved facts govern every use. Start with the three shapes taught in the lesson; do not use all 28 in one campaign.
+Pack: 1.0.0. Rewritten from the existing 28-framework library. These are adaptable shapes, not independently verified winning campaigns or proof for your business. The current two-step rules and approved facts govern every use. Start with the three shapes taught in the lesson; do not use all 28 in one campaign.
 
 ## 1. Plain Connection Offer
 

@@ -1,5 +1,5 @@
 # Buyer Economics Worksheet
-Pack: 0.2.0-preview. Fill known facts. Write UNKNOWN, not zero, when missing.
+Pack: 1.0.0. Fill known facts. Write UNKNOWN, not zero, when missing.
 
 Buyer / source / date:
 Result your service creates:

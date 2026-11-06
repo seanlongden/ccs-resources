@@ -1,5 +1,5 @@
 # Your Agency Or Client Profile
-Pack: 0.2.0-preview. Fill one profile per campaign context.
+Pack: 1.0.0. Fill one profile per campaign context.
 
 - Context: agency-acquisition OR client-delivery
 - Business name and website:

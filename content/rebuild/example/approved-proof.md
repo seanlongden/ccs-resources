@@ -1,5 +1,5 @@
 # Approved Proof
-Pack: 0.2.0-preview. Context: agency-acquisition.
+Pack: 1.0.0. Context: agency-acquisition.
 Approved historical results: NONE.
 Permitted statement: the agency proposes to research accounts, write approved copy and manage a defined cold-email process.
 Forbidden: claiming the synthetic booking, $120,000 scenario or deterministic 50/50 fixture agreement as a real business result.

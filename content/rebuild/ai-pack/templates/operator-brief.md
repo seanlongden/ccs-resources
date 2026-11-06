@@ -1,5 +1,5 @@
 # Inbox/Operator Role Brief And Practical Assessment
-Pack: 0.2.0-preview. Adapt the real working hours, pay and employment arrangements for your situation. Old example wage/time-zone figures are not current recommendations.
+Pack: 1.0.0. Adapt the real working hours, pay and employment arrangements for your situation. Old example wage/time-zone figures are not current recommendations.
 
 ## Role Outcome
 Relevant replies are reviewed accurately, poor fits are held, approved messages use the right thread and actual available meetings are booked under the agreed permissions.

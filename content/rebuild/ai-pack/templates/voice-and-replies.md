@@ -1,5 +1,5 @@
 # Voice And Reply Guide
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 Add 3 to 5 of your actual replies, with private details removed. Explain what you like about each. Record corrections as rules with a date.
 

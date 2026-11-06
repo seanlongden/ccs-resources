@@ -1,5 +1,5 @@
 # Completed Practice Handover
-Pack: 0.2.0-preview. Local demonstration completed. NOT READY FOR REAL STUDENT HANDOVER.
+Pack: 1.0.0. Local demonstration completed. NOT READY FOR REAL STUDENT HANDOVER.
 
 ## What Was Built
 Context: agency-acquisition for Example Maintenance Acquisition Agency.

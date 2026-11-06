@@ -1,5 +1,5 @@
 # Opportunity Definition
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 
 Buyer and service:
 Their sales steps in order:

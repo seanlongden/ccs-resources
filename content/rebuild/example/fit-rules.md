@@ -1,5 +1,5 @@
 # Completed Fit Rules
-Pack: 0.2.0-preview. Version 1. Context: agency-acquisition.
+Pack: 1.0.0. Version 1. Context: agency-acquisition.
 
 GOOD requires company evidence of industrial maintenance services sold to manufacturers, an Ohio service area, and an owner/managing director/sales leader contact. Source URL and evidence text required.
 BAD: staffing-only, recruitment, agencies, consumer-only service, public-procurement-only work or clear geography mismatch.

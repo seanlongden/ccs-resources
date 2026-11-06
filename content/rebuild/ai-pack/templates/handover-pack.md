@@ -1,5 +1,5 @@
 # Student Handover Pack
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 Status: NOT READY until all required evidence is real and reviewed.
 

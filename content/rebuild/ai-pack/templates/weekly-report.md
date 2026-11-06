@@ -1,5 +1,5 @@
 # Weekly Campaign Report
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 Period / context / campaign / data source and fetched time / reporting owner.
 

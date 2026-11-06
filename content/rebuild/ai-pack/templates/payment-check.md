@@ -1,5 +1,5 @@
 # Payment Request Check
-Pack: 0.2.0-preview. Do not create, send or charge by completing this file.
+Pack: 1.0.0. Do not create, send or charge by completing this file.
 
 Offer/agreement version:
 Seller identity:

@@ -1,5 +1,5 @@
 # Locked Email Copy
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 Context / offer version / persona / approved proof / copy version / approval date / approver.
 

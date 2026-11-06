@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Closing Clients System",
-  description: "Closing Clients System — Member Resource Library",
+  description: "Closing Clients System Member Resource Library",
   icons: {
     icon: '/icon.png',
     shortcut: '/icon.png',
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-GB">
       <head>
         {/* Warm up DNS + TLS to Loom before any embedded video iframe
             fires. Cuts ~200-400ms off the first video load. */}

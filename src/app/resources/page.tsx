@@ -158,7 +158,7 @@ export default function ResourcesPage() {
           ) : (
             <div className="text-sm text-gray-500">
               You haven&apos;t opened anything yet. Head to{' '}
-              <Link href="/welcome" className="text-[#0D1F35] font-medium underline">Get Started</Link>{' '}
+              <Link href="/resources/ccs-install/welcome" className="text-[#0D1F35] font-medium underline">Get Started</Link>{' '}
               or use the sidebar to browse.
             </div>
           )}

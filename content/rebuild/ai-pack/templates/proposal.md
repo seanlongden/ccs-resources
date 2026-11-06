@@ -1,5 +1,5 @@
 # Proposal Template
-Pack: 0.2.0-preview. Adapted from CCS S4.
+Pack: 1.0.0. Adapted from CCS S4.
 
 ## Abstract
 We discussed [current situation] and [desired result]. We propose [specific work and opportunity milestone] over [term], for [agreed budget and payment shape].

@@ -1,5 +1,5 @@
 # Proof The AI May Use
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 For each claim record: exact wording, source, date, business, measurement period, result, permission to use, anonymisation required, limitations and approval version.
 

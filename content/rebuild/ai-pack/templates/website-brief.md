@@ -1,5 +1,5 @@
 # Website Brief
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 
 Visitor / how they arrive / next action:
 Approved offer version:

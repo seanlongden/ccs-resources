@@ -1,12 +1,12 @@
 # CCS Rebuild State
 
-Updated 6 November 2026. Status: ACTUAL-APP CURRICULUM PREVIEW READY FOR SEAN'S REVIEW. Real system installation, live acceptance and some technical scope remain incomplete.
+Updated 6 November 2026. Status: LIVE RESOURCES RELEASE AUTHORISED AND BEING VERIFIED. Real Grok/provider operations and fresh-student acceptance remain unverified.
 
 ## Authority And Boundaries
 
 Sean authorised all remaining lessons and assets on this private branch without per-page approval. Preserve the approved Start Here and Add The CCS Instructions To Grok Bot teaching standard. The full eleven-part plan remains in PLAN.md, including original source maps. Read PLAN.md, STATE.md, COVERAGE.md and QA.md when resuming; reread the full plan before each milestone.
 
-No push, merge, publication, production/config/domain/database/credential/campaign/workflow change, original Drive edit, sending, booking, spending or other live action is authorised. No global instructions changed. Project memory, functional app assets and requested screenshots are authorised permanent files; disposable review captures are deleted after review.
+Sean authorised publishing the reviewed resources app through its existing Vercel project and main branch. No domains, access settings, databases, credentials, campaigns, workflows, original Drive documents or unrelated sites may change. No sending, booking or spending is authorised. Owner sign-in for seanlongden0@gmail.com is approved for member-page/download checks. No global instructions changed. Project memory, functional app assets and requested screenshots are authorised permanent files; disposable review captures are deleted after review.
 
 ## Worktree And Baselines
 
@@ -92,4 +92,13 @@ Earlier standalone preview did not meet Sean's actual-app requirement; it is sup
 
 ## Exact Next Action
 
-STOP for Sean's review of the working actual-app preview and local commit. Do not expand scope, push, merge, publish or activate accounts. On resumed feedback, first read these records and inspect the named page. Present changes to live assets before applying; preview-page edits are authorised within the existing rebuild scope. Real installation and remaining decisions must not be silently marked complete.
+Finish the supervised 1.0.0 release build/tests, push the scoped resources update to existing main without forcing or overwriting concurrent work, monitor the existing Vercel production deployment, and verify member pages/downloads using the approved owner login. Do not activate student accounts, routines, campaigns, sends, bookings or paid services. Record the actual live deployment result and remaining limitations.
+
+## Current Release Changes
+
+- Student pack 1.0.0 uses supervised operation, external writes disabled by default and exact owner approval. It is not a claim that every Grok/provider connection is verified.
+- Student pages replace private-preview restrictions with guided practice, approval and actual-account completion checks. Review-status becomes Check Your System Before You Launch.
+- Actual hosting verified: existing Vercel ccs-resources, project prj_LDuc9zgbOgDlYGtitf1qvbMQ9xUx, production branch main and resources.closingclientssystem.com. No hosting, domain or access setting change.
+- Production build initially caught prefer-const in content.ts; fixed. Sandboxed Next IPC failed, authorised build passed. Next13 ignores App Router tracing includes; a post-build script now adds the exact student assets to the App Router traces.
+- Isolated actual production handler test passed for all 97 assets with byte equality. Anonymous and expired sessions are denied. Test key and synthetic identity are local only; production auth is unchanged.
+- Owner sign-in initially blocked by automatic review. Sean explicitly approved the exact owner account; existing production sign-in then succeeded. No outbound message or invitation was sent.

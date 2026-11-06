@@ -1,5 +1,5 @@
 # Operator Assessment
-Pack: 0.2.0-preview. Synthetic tasks only. Agree any paid task before asking a candidate to do it.
+Pack: 1.0.0. Synthetic tasks only. Agree any paid task before asking a candidate to do it.
 
 Task 1: five lead rows with duplicate, suppression, missing domain, good fit and unknown fit. Keep every row accounted for.
 Task 2: interested question, draft an honest answer from the supplied offer.

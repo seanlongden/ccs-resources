@@ -126,7 +126,7 @@ The four old Loom videos and external Canva, Google and Notion assets are not re
 | Offer/copy skills govern sequence, useful outcomes and work ownership | Student content review throughout rebuild | Outcome, work ownership, prerequisites and plain-language checks used throughout. This is student teaching, not a new offer or sales pitch. |
 | Three sections and clear stage ownership | Home, track/category hubs | Eleven Install steps, eight Training lessons and six original Resources categories. Home, hubs and recordings routes reviewed. |
 | All seven teaching elements | Every lesson record | Launch/operating lessons explain result, prerequisites, student/AI/CCS jobs, exact prompt/files, visible check, failure route and next step. Short reference lessons use the relevant subset. Human comprehension review remains open. |
-| One versioned AI pack, canonical 16 skills | ai-pack, ZIP | 0.2.0-preview, sixteen canonical skills, 100 ZIP entries. Files and version byte-checked. Real Grok saving/readback not tested. |
+| One versioned AI pack, canonical 16 skills | ai-pack, ZIP | 1.0.0 supervised, sixteen canonical skills, 100 ZIP entries. Files and version byte-checked. Real Grok saving/readback not tested. |
 | Profile, offer, proof, fit, settings, voice, campaign, handover files | 23 templates and example | 52 editable templates and 25 worked files. Referenced files download correctly. AI creation of a real student workspace remains unverified. |
 | Student and CCS responsibilities | OPERATING-SPEC.md and lessons | Proposed allocation explicit in lessons and operating spec. Named installer, reviewer and support destination still need Sean/Matt confirmation. |
 | Tools, signup, costs | Install start/AI setup, budget, operating spec | Official Grok signup/plan/skill docs and dated public prices incorporated. Existing accounts may be reused. Real entitlements, permissions and checkout not tested. |
@@ -156,3 +156,6 @@ The four old Loom videos and external Canva, Google and Notion assets are not re
 - No automatic send after silence. No real account installation, paid API use or external write was performed.
 - Public support address supplied by Sean failed DNS. Students are directed to their existing CCS channel, not an invented new support service.
 - B3 now has tested local caching, multi-page collection, proposed analysis imports and joins. Automatic browser/paid-model execution is not bundled and requires an agreed supported route. Real performance and usage remain unverified.
+
+## Publication Authority Update
+Sean authorised live publication on 6 November 2026. The current release uses the same source maps and lessons in the existing Vercel app. Preview-only teaching language is replaced with supervised student operation and explicit actual-account completion checks. External writes remain disabled by default. No source map or unresolved real-tool requirement has been dropped.

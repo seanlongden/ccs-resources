@@ -1,5 +1,5 @@
 # Warm Call Script
-Pack: 0.2.0-preview. Use only within your approved contact process.
+Pack: 1.0.0. Use only within your approved contact process.
 
 Actual source of interest:
 Prospect identity and phone source:

@@ -1,5 +1,5 @@
 # Completed Research Exercise
-Pack: 0.2.0-preview. Public context checked 6 November 2026. This is not a live targeting approval.
+Pack: 1.0.0. Public context checked 6 November 2026. This is not a live targeting approval.
 
 ## The Two Audiences
 The agency sells cold-email acquisition to maintenance-company owners. A maintenance company's delivery campaign reaches manufacturing plant or maintenance managers. These contexts need different profiles, proof and calendars.

@@ -1,7 +1,7 @@
 # CCS AI Pack
-Version: 0.2.0-preview
+Version: 1.0.0
 
-This pack gives your AI the CCS method and gives you editable files to check its work. It does not connect accounts or install software by itself. This review edition cannot send, book, buy, upload or enable routines.
+This pack gives your AI the CCS method and gives you editable files to check its work. It does not connect accounts or install software by itself. It starts with external writes disabled. Sending, booking, purchases, uploads and routines need the required owner approval and a checked connection.
 
 ## Follow This Order
 1. Open CCS Install and complete Start Here. Sign in to the Grok Bot app.
@@ -28,6 +28,6 @@ Grok Bots on one account share a computer and files. Separate folders prevent co
 No credentials are included. Keep API keys in the platform's secure connection/vault, never in these files.
 
 ## What Has Been Checked
-Local tests check file contracts, row reconciliation, exact copy, paused-load simulation, reply/booking failures and the example. The website collector has local HTTP-fixture tests. The company cache has local deduplication, scope, resume, changed-evidence and row-join tests. Actual Grok skill installation, connectors, delivery, routines and real calendar booking remain unverified. Read the app's review status before release.
+Local tests check file contracts, row reconciliation, exact copy, paused-load simulation, reply/booking failures and the example. The website collector has local HTTP-fixture tests. The company cache has local deduplication, scope, resume, changed-evidence and row-join tests. Actual Grok skill installation, connectors, delivery, routines and real calendar booking remain unverified. Use the app's Check Your System Before You Launch lesson before real outreach.
 
 All example names, fees and results are illustrative. Reserved .example domains cannot be used for a real campaign.

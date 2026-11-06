@@ -1,7 +1,7 @@
 # Campaign Settings And Permissions
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
-mode: PREVIEW
+mode: DRAFT
 external_writes: DISABLED
 context: UNKNOWN
 client_folder: UNKNOWN
@@ -26,4 +26,4 @@ open_tracking: false
 link_tracking: false
 secret_references: secure names only, never values
 
-Do not change PREVIEW or external_writes without a separately approved release. Future sending needs exact copy, recipient, sender and channel approval. Calendar changes also need approval. No response is not approval.
+Do not enable external writes without explicit owner approval of the exact action and checked account permissions. Sending needs exact copy, recipient, sender and channel approval. Calendar changes also need approval. No response is not approval.

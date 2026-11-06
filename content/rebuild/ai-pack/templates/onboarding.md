@@ -1,5 +1,5 @@
 # Client Onboarding Form And Kickoff
-Pack: 0.2.0-preview. Adapted from the existing 23-question CCS form. No claim of a measured retention gain is included.
+Pack: 1.0.0. Adapted from the existing 23-question CCS form. No claim of a measured retention gain is included.
 
 ## Collect Before Kickoff
 Section 1: Basic Information

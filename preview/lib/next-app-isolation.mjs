@@ -14,14 +14,14 @@ export function routePreviewRequest({ method, host, remoteAddress, pathname }) {
   if (!['GET', 'HEAD'].includes(method)) return { status: 405 };
   if (pathname === '/api/auth') return { status: 200, fixture: PREVIEW_IDENTITY };
   if (pathname === '/api/resources/download') return { asset: true };
-  if (pathname === '/' || pathname === '/welcome' || pathname === '/resources/install/start') {
+  if (pathname === '/' || pathname === '/resources/install/start') {
     return { status: 307, location: '/resources/ccs-install/welcome' };
   }
   if (pathname === '/api/content/page' || pathname === '/api/content/navigation') return { next: true };
   if (pathname.startsWith('/api/') || pathname.startsWith('/admin')) {
     return { status: 403 };
   }
-  if (pathname === '/resources' || pathname.startsWith('/resources/') || pathname.startsWith('/_next/') ||
+  if (pathname === '/welcome' || pathname === '/resources' || pathname.startsWith('/resources/') || pathname.startsWith('/_next/') ||
       ['/icon.png', '/logo.png', '/favicon.ico'].includes(pathname)) return { next: true };
   return { status: 404 };
 }

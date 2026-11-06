@@ -1,5 +1,5 @@
 # Repeatable Lead Recipe
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 Context / approved offer / buyer / source / search URL or saved query / filters / geography / titles / company exclusions / evidence fields / volume cap / date / refresh rule / owner.
 

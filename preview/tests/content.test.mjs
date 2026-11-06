@@ -55,9 +55,9 @@ test('headlines capitalise every ordinary word and copied prompts preserve no-wr
  const reply=pages['ccs-install/reply-test'].content;for(const f of ['voice-samples.md','voice-rules.md','reply-templates.md'])assert(reply.includes(f));
 });
 test('canonical skill names, stage prerequisites and version agree with the download',()=>{
- assert.equal(manifest.version,'0.2.0-preview');assert.equal(manifest.externalWrites,false);assert.equal(manifest.skills.length,16);
+ assert.equal(manifest.version,'1.0.0');assert.equal(manifest.mode,'supervised');assert.equal(manifest.ownerApprovalRequired,true);assert.equal(manifest.externalWrites,false);assert.equal(manifest.skills.length,16);
  for(const name of manifest.skills){const text=fs.readFileSync(path.join(root,'content/rebuild/ai-pack/skills/'+name+'.md'),'utf8');
-  assert(text.includes('name: '+name));assert(text.includes(manifest.version));assert(text.includes('review edition'));assert(text.includes('Agency intake may create'));assert(text.includes('Do not send, book'));
+  assert(text.includes('name: '+name));assert(text.includes(manifest.version));assert(text.includes('supervised CCS installation pack'));assert(text.includes('without the required owner approval'));assert(text.includes('Agency intake may create'));assert(text.includes('Do not send, book'));
  }
  const disk=fs.readdirSync(path.join(root,'content/rebuild/ai-pack/templates')).sort();assert.deepEqual(manifest.templates,disk);
 });

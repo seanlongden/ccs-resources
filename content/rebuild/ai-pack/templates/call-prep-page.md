@@ -1,5 +1,5 @@
 # Before Our Call
-Pack: 0.2.0-preview. Replace brackets with your actual details.
+Pack: 1.0.0. Replace brackets with your actual details.
 
 We will discuss the work you want more of, how you currently win it and whether our service fits.
 Please think about:

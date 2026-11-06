@@ -438,12 +438,12 @@
         "description": "Get the working file for the step you are completing."
       },
       {
-        "title": "Private Preview: What Has Been Checked",
+        "title": "Check Your System Before You Launch",
         "slug": "review-status",
         "fullSlug": "ccs-resources/review-status",
         "type": "page",
         "childCount": 0,
-        "description": "Separate student material, local tests and real account checks."
+        "description": "Check your own files, connections, approvals and test results before allowing real outreach."
       }
     ]
   },

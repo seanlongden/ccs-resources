@@ -1,5 +1,5 @@
 # Simulated weekly report
-Pack: 0.2.0-preview. No emails were sent.
+Pack: 1.0.0. No emails were sent.
 
 Fixture values: 20 total emails, 10 new contacts, 1 interested reply, 1 simulated booking, 20 eligible uncontacted leads, 10 NEW contacts per day. Runway is 2 days, not 1 day (the latter would incorrectly divide by total sends).
 

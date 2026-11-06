@@ -1,5 +1,5 @@
 # Work And Value Worksheet
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 
 | Component | Useful Output | Provider Work | AI Work | Client Work | Why It Helps |
 |---|---|---|---|---|---|

@@ -1,5 +1,5 @@
 # Illustrative profile
-Pack: 0.2.0-preview. Simulated agency, not a CCS member result.
+Pack: 1.0.0. Simulated agency, not a CCS member result.
 
 Context: agency-acquisition
 Business: Example Maintenance Acquisition Agency

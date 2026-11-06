@@ -1,5 +1,5 @@
 # Completed Field Map
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 first_name -> Instantly native firstName -> email subject and greeting.
 email -> native Email -> recipient address.
 domain -> company research -> never substitute for the contact email.

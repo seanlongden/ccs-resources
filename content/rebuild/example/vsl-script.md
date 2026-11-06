@@ -1,5 +1,5 @@
 # Completed Spoken Script Example
-Pack: 0.2.0-preview. Illustrative, not recorded or published.
+Pack: 1.0.0. Illustrative, not recorded or published.
 
 If you run an industrial maintenance company in Ohio and have room for more manufacturing work, this is the process we would discuss with you.
 

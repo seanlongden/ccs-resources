@@ -1,5 +1,5 @@
 # SOP Template With A Completed Example
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 ## Blank Template
 Job and useful output / owner / trigger and time zone / input files and versions / required access / steps / approval boundaries / checks / failure and escalation / evidence / next handoff / last reviewed date.

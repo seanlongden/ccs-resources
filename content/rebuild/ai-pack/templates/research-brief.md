@@ -1,5 +1,5 @@
 # Research Brief
-Pack: 0.2.0-preview
+Pack: 1.0.0
 
 ## Owner-confirmed Facts
 Who buys, who benefits, service, customer value and period, sales cycle, capacity, exclusions.

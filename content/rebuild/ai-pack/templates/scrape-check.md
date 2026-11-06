@@ -1,5 +1,5 @@
 # Website Collection Check
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 
 Input file and source:
 Evidenced domain column:

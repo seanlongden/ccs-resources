@@ -1,4 +1,4 @@
-# Operating Specification, Preview 0.2.0
+# Operating Specification, Supervised Release 1.0.0
 
 ## What is settled
 Sean's three sections are fixed. Core launch is cold email. Agency acquisition and client-delivery campaigns use separate folders, profiles, proof, fit rules, campaigns and calendars. A working campaign comes before operating handover. Resources support both tracks.
@@ -44,3 +44,6 @@ Real handover remains blocked until the actual tools produce a correctly qualifi
 
 ## Still needed for real account release
 Named installer/reviewer/support contact; supported sequencer and plan; actual scoped connection/capability tests; approved operating terms and timing; real source-linked example and approved internal transport test. No publication is included in this task.
+
+## Publication Scope
+Sean approved publishing the student resources on 6 November 2026. This makes the teaching and download available to existing members, not a claim that a student's own system is installed or tested. Students complete the guided setup and obtain approval before real sends, bookings, purchases, uploads or routines. Named implementation/support ownership and Matt's policy review remain recorded decisions.

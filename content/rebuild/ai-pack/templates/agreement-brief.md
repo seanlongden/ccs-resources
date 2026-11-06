@@ -1,5 +1,5 @@
 # Commercial Agreement Brief
-Pack: 0.2.0-preview. Worksheet for professional review, not a legal contract.
+Pack: 1.0.0. Worksheet for professional review, not a legal contract.
 
 Parties and authorised signatories:
 Accepted proposal/version:

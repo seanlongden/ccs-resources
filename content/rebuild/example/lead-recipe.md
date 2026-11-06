@@ -1,5 +1,5 @@
 # Completed Lead Recipe
-Pack: 0.2.0-preview. This is a practice specification, not an exported live list.
+Pack: 1.0.0. This is a practice specification, not an exported live list.
 Context: agency-acquisition.
 Company: industrial maintenance provider serving manufacturing sites in Ohio.
 Search: exact service keywords industrial maintenance, preventive maintenance, millwright; Ohio location/service evidence; owners, managing directors or sales leaders.

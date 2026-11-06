@@ -1,5 +1,5 @@
 # Connection And Access Check
-Pack: 0.2.0-preview. Do not record secret values.
+Pack: 1.0.0. Do not record secret values.
 
 | Tool | Owner/Workspace | Method | Required Read | Future Write | Secure Reference | Safe Test | Result |
 |---|---|---|---|---|---|---|---|

@@ -1,5 +1,5 @@
 # Client Selection Worksheet
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 
 Compare three groups. Give each check YES / NO / UNKNOWN and the evidence.
 Group:

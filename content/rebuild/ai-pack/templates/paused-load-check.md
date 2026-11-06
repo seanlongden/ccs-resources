@@ -1,5 +1,5 @@
 # Paused Load Check
-Pack: 0.2.0-preview.
+Pack: 1.0.0.
 
 Context/client folder:
 Offer/proof/rules/settings versions:

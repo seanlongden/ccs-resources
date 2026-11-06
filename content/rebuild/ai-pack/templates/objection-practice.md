@@ -1,5 +1,5 @@
 # Objection Practice
-Pack: 0.2.0-preview. Role-plays are examples, not verbatim historical calls.
+Pack: 1.0.0. Role-plays are examples, not verbatim historical calls.
 
 For each concern record the actual words, context, question, evidence, answer, permitted terms and next action.
 1. Too expensive: ask whether value, budget, risk or cash timing is the issue.

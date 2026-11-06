@@ -1,5 +1,5 @@
 # Discovery Script And Notes
-Pack: 0.2.0-preview. Adapted from CCS S2.
+Pack: 1.0.0. Adapted from CCS S2.
 
 ## Before The Call
 Read website and proof. Note what they sell, to whom, current sales method and a sourced reason they may need capacity. Do not ask things you can see on their site. Prepare a price range you can justify, not a surprise final number.

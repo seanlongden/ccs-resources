@@ -1,6 +1,6 @@
 {
-  "version": "0.2.0-preview",
-  "mode": "draft-only",
+  "version": "1.0.0",
+  "mode": "supervised",
   "externalWrites": false,
   "skills": [
     "market-research",
@@ -81,5 +81,7 @@
     "message delivery",
     "real calendar booking",
     "fresh student walkthrough"
-  ]
+  ],
+  "ownerApprovalRequired": true,
+  "externalWritesMeaning": "Disabled by default; a checked connection and explicit approval are required for each consequential action."
 }

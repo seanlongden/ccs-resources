@@ -194,3 +194,17 @@ Every row has both verified sizes. Final affected routes were rechecked. No meas
 | /resources/call-recordings | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
 | /resources/call-recordings/weekly-coaching | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
 | /resources/call-recordings/sales-training | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+
+## Student Release, 6 November 2026
+
+Sean authorised publishing all resources, then explicitly approved owner sign-in as seanlongden0@gmail.com. Existing production hosting verified through GitHub and Vercel APIs: Vercel project ccs-resources, main branch, resources.closingclientssystem.com. Starting deployment dpl_DB5Br6MiFPngcJ7rktasqtLZexZM at 49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a. No domains, env variables, access rules or databases changed. The earlier DigitalOcean assumption is superseded.
+
+Pack 1.0.0 is supervised, with external writes disabled by default and exact owner approval required. It does not assert real Grok/provider certification. Practice examples remain simulated; the student system-check page makes the actual-account requirements visible. First-login welcome now follows Install, Resources and Training, with the existing DFY route retained separately.
+
+Production build passed compile, lint, type checks, static generation and tracing. Existing img/Browserslist warnings remain. Initial prefer-const error fixed; sandbox IPC denial resolved through an authorised build. Next13 App Router did not apply tracing includes, so the build now explicitly adds 97 allowed student files and current content/search files to App Router traces. The final build verified every required asset is packaged.
+
+One additional isolated production-handler test passed with all 97 byte-matched assets; anonymous and expired sessions denied; path traversal denied. The session key and synthetic identity were local only. Live owner sign-in succeeded through the unchanged production authentication flow after exact account approval. No transport test, send, invite, campaign activation or purchase occurred.
+
+Publication and live member-page/download checks are in progress. Real Grok/provider integration tests, fresh-student walkthrough, Matt operating-policy review, automatic paid-model/browser adapters and named responsibility decisions remain open.
+
+Final pre-publication checks: all 31 core tests pass with the supervised pack. The extra isolated production-handler check passed for 97 assets. All 18 materially changed student lessons were rechecked at 1440x1000 and 390x844, no measured overflow, and all six overview sheets visually inspected. The revised first-login welcome was inspected at both sizes, with its first card navigating to the approved Start Here lesson. The final campaign-check heading was made literal and its content checks passed again.

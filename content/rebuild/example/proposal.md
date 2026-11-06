@@ -1,5 +1,5 @@
 # Completed Proposal Example
-Pack: 0.2.0-preview. A constructed example with complete illustrative terms, not a live agreement.
+Pack: 1.0.0. A constructed example with complete illustrative terms, not a live agreement.
 
 ## Abstract
 Example Industrial Maintenance wants more suitable manufacturing work and has capacity for two more accounts (D1-D2). We propose a 90-day cold-email engagement to find and qualify needs reviews with Ohio manufacturing decision-makers. The target is ten accepted opportunities, for a $6,000 service fee split at the milestones below (D5-D6).
