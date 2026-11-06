@@ -1,4 +1,4 @@
-# Operating specification, preview 0.1.0
+# Operating Specification, Preview 0.2.0
 
 ## What is settled
 Sean's three sections are fixed. Core launch is cold email. Agency acquisition and client-delivery campaigns use separate folders, profiles, proof, fit rules, campaigns and calendars. A working campaign comes before operating handover. Resources support both tracks.
@@ -31,11 +31,15 @@ This table is a proposed teaching allocation, not a new DFY promise. Do not impl
 - Auto-send after an unanswered card is removed. No sending, booking, external write or paid operation is enabled in the preview pack.
 - LinkedIn stays optional/manual. Conflicting 30/60-day activity windows remain a draft owner-selected setting, not a hidden default.
 
-## Tool and cost specification
-Grok Bot app and eligible entitlement, a supported sequencer, sending inboxes/domains, approved data source, scheduler/calendar and model/crawl tools only where needed. Existing accounts may be reused. Instantly is a candidate, not a tested integration claim. Initial public prices are in PLAN.md part 8; student budget uses dated checkout/bill figures, per-company sample usage and explicit caps. No purchase is authorised.
+## Tool And Cost Specification
+Current public facts were checked 6 November 2026. Grok Bot's Premium plan is $30/month before tax for initial setup; Plus is not Bot entitlement. Super and Ultra are optional higher tiers. Confirm existing/legacy eligibility before buying anything. Instantly Growth is $47/month and Hyper Growth $107/month; its webhook route requires Hyper Growth or above. AI Ark's listed entry is $49/month for 5,000 credits. ScaledMail lists Google inboxes at $3.50/mailbox/month; domain costs and the real checkout must be checked. These are references, not authorisation to buy or proof of connector permissions.
+
+Calendly's 3 November 2026 release makes Scheduling API and standard webhooks available on Free. Free's event/calendar limits and the actual API scopes still require checking. Standard at $10/seat/month billed annually is optional. The worked budget distinguishes optional paid calendar cost from the Free alternative.
+
+The download includes a bounded three-page HTTPS collector, four company workers by default and a local Python SQLite company cache. The cache deduplicates domains, reuses evidence, prepares proposed AI analysis batches, invalidates changed evidence/rules and joins research back to all contacts. It does not implement an automatic paid-model client or browser fallback. Those need a selected supported route, permission and cost cap. Model outputs and all provider integrations remain untested in real accounts.
 
 ## Demonstration and handover
-Local fixture chain: research source-status, profile/offer, 50 synthetic company labels, cleaned/qualified leads, locked copy, simulated paused campaign, draft/approval/booking simulation, weekly report and completed simulated handover. This demonstrates file contracts and safety logic only. It does not demonstrate AI accuracy, real web research, a working Grok skill install, API integration, delivery, customer conversion or profitability.
+Local fixture chain: real provider-language notes kept separate from constructed discovery facts, profile/offer, 50 synthetic company labels, cleaned/qualified leads, locked copy, simulated paused campaign, draft/approval/booking simulation, weekly report and completed simulated handover. This demonstrates file contracts and safety logic only. It does not demonstrate AI accuracy, buyer demand, a working Grok skill install, API integration, delivery, customer conversion or profitability. The local SQLite cache tests use synthetic evidence, not a real model.
 Real handover remains blocked until the actual tools produce a correctly qualified booking with working monitoring and no critical setup failure, reviewed by CCS. One booking is not repeatability.
 
 ## Still needed for real account release

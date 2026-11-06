@@ -1,15 +1,33 @@
-# CCS AI pack, 0.1.0-preview
+# CCS AI Pack
+Version: 0.2.0-preview
 
-Purpose: the shared instructions and working files used by CCS Install and CCS Training. This edition is for review, local examples and drafts. External writes are disabled. It is not an already installed Grok app, a connector bundle or an autonomous campaign service.
+This pack gives your AI the CCS method and gives you editable files to check its work. It does not connect accounts or install software by itself. This review edition cannot send, book, buy, upload or enable routines.
 
-1. Follow the Grok signup and setup lesson in CCS Install.
-2. Download this pack. Keep one folder per context: clients/your-agency-acquisition/ or clients/your-client-delivery/. Do not put credentials in it.
-3. Complete templates/profile.md, offer.md, approved-proof.md, fit-rules.md and settings.md. Leave unknown facts UNKNOWN.
-4. Give Chief the pack, the completed files and AGENTS.md. Ask it to inventory the files and missing inputs before it does any work.
-5. Save each supplied skill by its exact filename/name using the Grok skill process. Confirm it appears and is available to the relevant Bot. Read the saved result back. Uploading a Markdown file alone does not prove installation.
-6. Run one safe, one-time task and inspect its output. Only then consider a routine. In this preview, do not enable schedules, webhooks, messages, bookings, data exports or purchases.
-7. Before any future operational release, CCS must test actual account permissions, paused loading, thread identity, exact approvals, booking conflict handling and recovery.
+## Follow This Order
+1. Open CCS Install and complete Start Here. Sign in to the Grok Bot app.
+2. Extract this ZIP. Open ai-pack. Read README.md.
+3. In the Add The CCS Instructions lesson, attach README.md, AGENTS.md, manifest.json and all 16 files from skills. That is 19 files, within the documented 20-file message limit.
+4. Ask CCS Chief to save the 16 private skills by their exact names. Check the saved list and read one back. Attaching files is not proof they were saved.
+5. Follow Tell The AI About Your Agency. Use templates/profile.md, approved-proof.md and settings.md to create clients/my-agency/. Leave missing facts UNKNOWN.
+6. Research buyers and approve the offer before connecting tools or preparing a campaign. Complete offer.md and fit-rules.md in that same folder.
+7. Follow Install in order through sales materials, leads, copy, reply practice and CCS review. Save each output in the same client folder.
+8. Use Training only after CCS has checked the actual installation and completed your handover.
 
-Files: 16 source-derived skills, shared agent rules, templates and a worked example. The preview tests file contracts and deterministic fixtures. It has not tested these instructions inside a Grok account. Missing platform access is reported rather than invented.
+## Choose The Right Folder
+Agency acquisition: clients/my-agency/. These files help you win clients for your agency.
+Client delivery: clients/client-name/. Create separate files before running cold email for that client. Do not reuse your own buyer, proof, sender or calendar without checking them.
 
-The examples use reserved .example domains and no real recipients. All example fees, conversion rates and results are illustrative. Never use them as your own case study.
+Grok Bots on one account share a computer and files. Separate folders prevent confusion; they do not create security boundaries. Use an appropriately separate account/workspace when access must be isolated.
+
+## What Is Inside
+- skills: 16 full source-derived instructions. Names match manifest.json.
+- templates: editable blank working files plus instructions for preparing profiles and sales assets.
+- example: one filled teaching case, synthetic lead rows and a local simulation report.
+- tools: a bounded three-page public-website collector, CSV parser, command-line runner and Python SQLite company cache. The cache reuses one record per domain, prepares AI review batches and joins proposed results to contacts. It does not call paid models, qualify a contact for sending or bypass blocked websites.
+
+No credentials are included. Keep API keys in the platform's secure connection/vault, never in these files.
+
+## What Has Been Checked
+Local tests check file contracts, row reconciliation, exact copy, paused-load simulation, reply/booking failures and the example. The website collector has local HTTP-fixture tests. The company cache has local deduplication, scope, resume, changed-evidence and row-join tests. Actual Grok skill installation, connectors, delivery, routines and real calendar booking remain unverified. Read the app's review status before release.
+
+All example names, fees and results are illustrative. Reserved .example domains cannot be used for a real campaign.

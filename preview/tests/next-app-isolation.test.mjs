@@ -16,9 +16,11 @@ test('all write methods and live-service routes are denied before Next handles t
     assert.equal(route('/api/auth', { method }).status, 405);
     assert.equal(route('/api/content/page', { method }).status, 405);
   }
-  for (const pathname of ['/api/stripe', '/api/admin', '/admin', '/resources/call-recordings', '/api/recordings']) {
+  for (const pathname of ['/api/stripe', '/api/admin', '/admin', '/api/recordings']) {
     assert.equal(route(pathname).status, 403);
   }
   assert.deepEqual(route('/api/content/page'), { next: true });
   assert.deepEqual(route('/resources/ccs-install/welcome'), { next: true });
+  assert.deepEqual(route('/resources/call-recordings'), { next: true });
+  assert.deepEqual(route('/api/resources/download'), { asset: true });
 });

@@ -11,7 +11,7 @@ with zipfile.ZipFile(BASE / 'ccs-ai-pack.zip', 'w', compression=zipfile.ZIP_DEFL
                 info = zipfile.ZipInfo(str(f.relative_to(BASE)), date_time=(2026, 11, 6, 0, 0, 0))
                 info.compress_type = zipfile.ZIP_DEFLATED
                 pack.writestr(info, f.read_bytes())
-    for name in ['scraper.mjs', 'csv.mjs']:
+    for name in ['scraper.mjs', 'csv.mjs', 'collect-websites.mjs', 'company-cache.py']:
         info = zipfile.ZipInfo('tools/' + name, date_time=(2026, 11, 6, 0, 0, 0))
         info.compress_type = zipfile.ZIP_DEFLATED
         pack.writestr(info, (ROOT / 'preview/lib' / name).read_bytes())

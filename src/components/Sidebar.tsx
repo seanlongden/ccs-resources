@@ -52,7 +52,7 @@ export const SECTION_META: Record<string, {
 }> = {
   'get-started': { group: 'main-modules', icon: Home, order: 0, description: 'How to use this site plus your setup path.' },
   'ccs-install': { group: 'main-modules', icon: Wrench, order: 1, description: 'Get your tools set up. The fastest path to your first campaign.' },
-  'ccs-resources': { group: 'main-modules', icon: BookOpen, order: 2, description: 'Browse the full CCS knowledge base — offer, sales, funnel assets, hiring, ops.' },
+  'ccs-resources': { group: 'main-modules', icon: BookOpen, order: 2, description: 'Find the lessons, examples and templates for each part of your system.' },
   'ccs-training': { group: 'main-modules', icon: GraduationCap, order: 3, description: 'The operator manual for running the system we set up for you.' },
   'call-recordings': { group: 'main-modules', icon: Video, order: 4, description: 'Weekly coaching and sales training recordings.' },
 };
@@ -323,7 +323,7 @@ export function Sidebar({
             </div>
           )}
           <Link
-            href="/welcome"
+            href="/resources/ccs-install/welcome"
             title={collapsed ? 'Get Started' : undefined}
             className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
               isActive('welcome') ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
@@ -351,7 +351,7 @@ export function Sidebar({
                     <Link
                       key={s.slug}
                       href={`/resources/${s.fullSlug || s.slug}`}
-                      title={collapsed ? (isEmpty ? `${s.title} — coming soon` : s.title) : undefined}
+                      title={collapsed ? (isEmpty ? `${s.title}, Coming Soon` : s.title) : undefined}
                       className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
                         active ? 'bg-white/15 text-white' :
                         isEmpty ? 'text-white/40 hover:bg-white/5 hover:text-white/55' :

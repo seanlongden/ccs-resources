@@ -1,5 +1,5 @@
-# Ask CCS for help
-Pack: 0.1.0-preview
+# Ask CCS For Help
+Pack: 0.2.0-preview
 
 - Step and intended output:
 - Campaign context and source versions:

@@ -33,7 +33,7 @@ function headingId(text) {
 function stripMarkdown(md) {
   if (!md) return '';
   return md
-    .replace(/```[\s\S]*?```/g, ' ')          // fenced code blocks
+    .replace(/(?:```|~~~)[\s\S]*?(?:```|~~~)/g, ' ') // fenced code blocks
     .replace(/`([^`]+)`/g, '$1')              // inline code
     .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')    // images
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // links -> link text
@@ -74,7 +74,7 @@ function partitionMarkdownIntoSections(md, pageTitle) {
   const lines = (md || '').split(/\r?\n/);
   let inFence = false;
   for (const line of lines) {
-    if (/^```/.test(line)) {
+    if (/^(?:```|~~~)/.test(line)) {
       inFence = !inFence;
       current.bodyLines.push(line);
       continue;

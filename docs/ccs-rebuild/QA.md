@@ -1,165 +1,196 @@
-# CCS rebuild QA
+# CCS Rebuild QA
 
-Updated 6 November 2026. Approved Start Here integrated and reviewed in the actual app. Remaining lessons, publication and live student handover have not passed.
+Updated 6 November 2026. The actual-app curriculum preview is reviewed and ready for Sean's review. This is not acceptance of a live student installation or completion of every external/technical requirement. Earlier standalone counts are historical and do not verify this app.
 
-## Actual App: Start Here Acceptance
-- Approved copy applied to the existing ccs-install/welcome lesson in pages-103.json, with matching navigation/index title. Other three Install lessons are byte-equivalent as parsed JSON to the prior commit. No next lesson has been added or rewritten.
-- Real Next route, content API, original markdown renderer, Sidebar and LessonView used at http://127.0.0.1:4327/resources/ccs-install/welcome . This supersedes the standalone renderer for reviewing Start Here.
-- Root TypeScript check passed: bundled Node node_modules/typescript/bin/tsc --noEmit --incremental false.
-- Four new tests passed: two harness unit tests and two HTTP integration tests against the running Next app. Checks include exact content/API agreement, fixture identity, updated search, page 200, existing-lesson read, hostile Host rejection, five write methods denied, service routes denied and legacy preview URL redirect.
-- Isolation is implemented in the local harness, not in production auth: development-only; preview branch required; no local environment files; inherited service credentials removed; 127.0.0.1 bind; test identity; only content-read APIs reach Next. Live services and admin/recordings routes are denied. This does not prove real authentication, subscription gating or connector behaviour.
-- Desktop 1440x1000 and phone 390x844 inspected. Read through rendered sections including all six outcomes, student responsibilities, three-section explanation, Grok setup and next step. No measured paragraph/heading overflow. Phone menu open/Escape close passed. Skip link reaches Your Next Step; desktop contents links and sticky rail checked. No browser warning/error logs observed after final changes.
-- Actual sidebar search for Grok returned the new lesson sections. Found missing heading IDs for subsection search targets in the existing renderer; added matching IDs and verified the Download Grok Bot search result reaches its named heading. Added scroll spacing for subsection targets so the mobile header does not cover them.
-- Found and fixed existing phone sidebar squeezing content to 94px, then verified full-width readable content. Added a mobile menu and spacing. Found desktop contents rail stopped sticking due to its scrolling ancestor; corrected and verified rail top 24px after section navigation.
-- Two final screenshots retained: screenshots/start-here-actual-app-desktop.jpg and screenshots/start-here-actual-app-phone.jpg. Earlier screenshots describe the older standalone renderer only.
-- Root npm install --ignore-scripts repaired the baseline lock mismatch on this branch. No root package manifest changes. Initial sandboxed HTTP check was denied local socket access; authorised local checks were then run successfully. No live request was used as a transport test.
-- Final read-only GitHub check still reports main at 49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a and no remote preview branch. Original checkout remains clean at 726c5772acb6b8af120f22ae8ddffa7e8c0ac40f. No externally caused source-baseline changes observed.
+## Labels And Source Scope
 
-## Student Review: Remaining Library Requirements
-- Sean expected a preview of the updated existing CCS resources app. The separate preview server does not meet that requirement. Its local checks remain valid only for that server, not for integration into the actual app.
-- Current titles/headlines do not consistently capitalise every word as requested.
-- Start Here describes administrative outputs without first explaining the complete system and its concrete jobs. A new student is required to infer too much.
-- Start Here asks for an AI task before the later Grok Bot setup step. The prerequisite order needs correction.
-- Review the next draft using B2B Offers and Direct Response Copy for concrete outputs, clear ownership, useful work handled and readable cause-and-effect. Require exact actions, links, inputs, expected results, skip routes and next steps. This review does not substitute for a human student walkthrough.
-- The approved first-page correction has now been applied and checked as described above. The remaining library and next-lesson copy still require approval and implementation. Earlier standalone checks do not establish actual-app acceptance for those lessons.
+- Documented: a source or official guide describes it. Execution is not implied.
+- Simulated: synthetic inputs replace real services.
+- Tested Locally: an executable or browser check passed in the stated preview scope.
+- Unverified: account behaviour, source freshness, external evidence or human judgement remains unchecked.
+- Not Implemented: the broader B3 pipeline is absent, rather than merely untested.
 
-## Meaning of the labels
-- Documented: a source or official product guide says this. Not proof of execution.
-- Simulated: synthetic inputs replace a real system.
-- Tested locally: an executable check passed within its stated scope.
-- Unverified: account behaviour, access, external evidence or human judgement still needs checking.
+All 28 Coaching and 13 DWY documents and 56 main repository lessons were read in full, with source IDs and original/current maps retained. Current Drive names were rechecked through the signed-in browser; the connector returned no files. Earlier-read full texts were reused and revisited by topic. Current Drive revision identity is unverified. Existing external videos/templates are not claimed as verified or reproduced historical proof.
 
-## What passed
-- 23 executable tests passed with bundled Node 24.22.1. Command: `node --test preview/tests/workflow.test.mjs preview/tests/example.test.mjs preview/tests/content.test.mjs preview/tests/scraper.test.mjs preview/tests/http.test.mjs` (using the bundled Node path on Sean's computer).
-- All 28 coaching documents, 13 DWY documents and 56 existing main lessons have explicit destinations. The test checks coverage and source IDs, not full semantic equivalence or Matt's teaching approval.
-- Nine Install steps, eight Training steps, all six resource categories and one consistent worked example exist. There are 53 lesson records in total.
-- All seven teaching elements are present: output, prerequisites, teaching, AI instruction, owner actions, finished example and failure handling.
-- All 65 page/hub routes returned HTTP 200. All 75 legacy source-page aliases returned the expected preview-only redirect. All 55 distinct linked downloads returned nonempty attachment responses.
-- ZIP integrity passed. All canonical AI files byte-match the download: one version, 16 source-derived skills, 23 templates, shared rules, example files and local collector tools. 60 entries in the bundle.
-- The whole synthetic example reconciles 58 raw = 4 rejected + 4 held + 50 clean. Company fixture labels are 30 GOOD, 10 BAD and 10 MAYBE. Thirty pass to a simulated PAUSED campaign.
-- Failure tests cover missing/UNKNOWN inputs, wrong campaign context, missing variables, changed locked copy, unsafe tracking settings, bad/unclear fit, opt-out, missing exact approval, changed thread, unavailable slot, duplicate event after serialised state recovery, expired connection, cost cap and low runway.
-- Explicit UTC offsets, equivalent instants in different zones and repeated DST hours are tested locally. This is not a test of an actual calendar integration.
-- Refill test excludes previously used contacts. CSV quotes, commas, Unicode and embedded line breaks round-trip.
-- Public-page collector tests use a loopback fixture: full, thin, parked, rate-limited, oversized and redirected pages. It keeps TLS validation and does not ship the incomplete source skeleton as working production code. Public-site/Grok/browser fallback compatibility is unverified.
-- Local server denies POST, PUT, PATCH, DELETE and OPTIONS. Non-loopback Host is denied. Auth/DB/admin paths and credential-file downloads are absent. CSP limits connections to self and blocks external frames and forms. No production app code or dotenv file is imported.
+## Final Automated Results
 
-## Actual browser review
-- 65 routes captured at 390 x 844 (phone) and 1440 x 1000 (desktop) in the Codex in-app browser, 130 full-page captures total. DOM checks found zero page-width overflow or clipped paragraph/heading/code text.
-- Full-page overview sheets for all routes were visually inspected; key workspace/lesson sections were also inspected at readable size. This is a layout review, not proof that every sentence is understood by a new student.
-- Corrected the original logo's large transparent margins using CSS display framing, without editing the brand asset.
-- Search for Grok displayed the relevant setup and supporting lessons. Copy instruction byte-matched the displayed prompt and the clipboard was restored. Phone menu opened and closed correctly with Escape.
-- The download-event UI check stalled the browser tool. It is NOT counted as passed. HTTP attachment delivery and archive contents passed independently. No application console error was observed after browser recovery.
-- After the final budget/reading-order corrections, the five affected pages were rechecked at both sizes with zero measured overflow. Six requested review screenshots retained under screenshots/. The other full-page captures and overview sheets are disposable and are deleted after their review and coverage matrix are recorded.
+Command: CCS_APP_HTTP_TEST=1 node --test preview/tests/*.test.mjs, using bundled Node24.22.1 and authorised loopback access.
 
-## Corrections and failures encountered
-1. Root `npm ci` fails at the baseline because package.json and package-lock.json disagree. The default host Node is 18.15 while several existing dependencies need Node20+. Production package/lock remain unchanged. The isolated preview has its own package/lock and uses bundled Node24.22.1.
-2. An initial Host-header test used fetch, which did not send the intended custom Host. Replaced that transport with node:http; real hostile-Host test passed. This was a test defect, not a claim that the application guard passed before it was exercised.
-3. Initial Chrome viewport override did not change actual page dimensions. Those dimensions were not used as phone evidence. Responsive checks were repeated in IAB at verified innerWidth 390 and 1440.
-4. Clipboard restoration initially rejected an empty clipboard item list. The corrected routine restores an empty clipboard with writeText and passed. No original clipboard contents were printed.
-5. Identifying Grok Bot should have started with official product research. That research is now complete enough for signup/plan/app/skill steps. The earlier unidentified-product blocker is superseded. See OPERATING-SPEC.md.
-6. Corrected the buyer lesson handoff so deal economics is read before the selection worksheet.
+31 passed, 0 failed, 0 skipped. 29 concern the current curriculum, local workflow, collector and actual-app harness. Two separate legacy standalone regressions also pass; their old 65-route/75-alias/55-download figures are not actual-app coverage.
 
-## Still unverified or requiring review
-- Actual Grok account installation, saved-skill availability, secure connections, routines/webhooks and real AI output quality.
-- Supported sequencer/plan and its real paused import, identity, thread handling and recovery after an ambiguous external write.
-- Controlled internal email/invitation tests. No copy/recipient approval was given and none was sent.
-- Actual scheduling availability, booking, sequence-stop side effects and calendar conflicts in the selected tools.
-- Real researched campaign case, buyer quotations and company-level triggers. The example distinguishes real public context from synthetic company data. It is not a complete live research approval.
-- Human-labelled real-company AI calibration. 50/50 agreement in synthetic deterministic fixtures is not LLM accuracy evidence.
-- Matt's teaching review of combined lessons, follow-up policy, qualification thresholds, email rules and new profile/sales-asset instructions.
-- Sean/Matt confirmation of CCS-versus-student installer responsibility and real handover reviewer.
-- Fresh-student human walkthrough and proof that the actual installed system works before Training handover.
-- Existing external Canva/Google/Notion/video assets. They remain in original sources but are not reused as verified downloads. Existing live recordings/access are preserved in production code, not accessed via the preview.
-- Current deployed production revision and actual DigitalOcean trigger configuration. No push or remote preview deployment was attempted, so the unverified trigger cannot be activated by this work.
-- Browser download-event verification remains open despite passing HTTP/ZIP checks.
+Root TypeScript: node node_modules/typescript/bin/tsc --noEmit --incremental false, passed.
 
-## Production isolation evidence
-- Local source checkout remains clean on main at 726c5772acb6b8af120f22ae8ddffa7e8c0ac40f. It was already behind current GitHub main by 62 commits; the worktree did not overwrite it.
-- Starting GitHub main and end-of-build read both show 49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a. No externally caused main-source change was observed during the build. This is a source revision, not a proven deployed production SHA.
-- Branch is codex/ccs-resources-preview in a separate worktree, with no upstream. No branch push, merge, deployment, DNS, database, secret, original Drive, campaign or workflow mutation.
-- Only new branch files under AGENTS.md, content/rebuild/, docs/ccs-rebuild/ and preview/. Existing production source/config/content files are unchanged.
-- Loopback preview has no copied credentials and no live accounts. It is private to this computer, not remote hosting or a phone-accessible public URL.
+- Actual Next HTTP checks: 56 lesson pages, 10 section routes, 131 explicit aliases, 86 linked asset responses byte-for-byte equal to canonical files, four search queries, fixture identity and exact content/API agreement.
+- Unknown suffix paths return not-found rather than a fuzzy lesson match. Private files, traversal, symlinks and wrong extensions are denied by asset loading tests.
+- ZIP: 100 entries, valid archive, canonical files/versions byte-matched. Sixteen skills, 52 editable templates, 25 example files, shared root files and four local tools. One of the 31 Node test entries runs five Python cache cases. Browser downloaded the same ZIP successfully.
+- Source test: all97 source IDs have destinations and current lesson attributions, original planned paths retained. This is not proof every teaching decision is correct.
+- Whole example: 58 raw rows = 4 rejected + 4 held + 50 clean. Synthetic 50-company labels = 30 GOOD + 10 BAD + 10 MAYBE. Thirty qualified rows load into a simulated paused campaign. No real import.
+- CSV quotes, commas, Unicode and embedded newlines round-trip without row loss.
+- Failure cases: missing/UNKNOWN inputs, wrong campaign context, absent variables, changed locked copy, unsafe tracking, bad/unclear fit, opt-outs, missing exact approval, changed threads, unavailable slots, duplicate event after serialised recovery, expired access, cost caps and low runway.
+- Timezone checks require UTC offsets and cover equivalent instants and repeated DST hours. Actual calendar behaviour is untested.
+- Refills exclude prior contacts; runway divides remaining eligible new contacts by daily new contacts, not total emails.
+- Public-HTTPS collector uses verified TLS and bounded time/body/text. Fixture-only HTTP tests cover full, thin, parked, rate-limited, oversized and redirect responses. CSV wrapper rejects malformed/oversized input and refuses overwrite. Its runner is limited to 50 rows per batch. A context-specific Python SQLite cache deduplicates companies, reuses research, resumes after restart, invalidates changed evidence/rules and joins proposed analyses to every contact. Five Python cases pass. Automatic browser fallback and paid-model API client are NOT implemented.
+- Five mutating HTTP methods denied; service APIs403; hostile Host denied. No production credentials or live-service calls used.
 
-## Source checks for Grok setup
-Official documentation read 6 November 2026:
+## Actual Browser Review
+
+69 actual-app routes captured and reviewed in full-page overviews at 1440x1000 and 390x844, 138 original captures. After final wording/navigation corrections, 32 routes were rechecked at both sizes,64 additional captures. Two final collection/status pages were rechecked at both sizes, four further captures, for 206 total. Zero measured page-width or paragraph/heading/code overflow. Overview sheets establish layout review, not that every sentence was read at full size or understood by a student. Key setup, example, copy and navigation sections were also inspected at readable size.
+
+Final functional checks:
+- Instruction copy button produced exactly the source prompt. Original clipboard restored without printing its contents.
+- Native browser ZIP download succeeded again after the cache extension and matched the final canonical 100-entry pack byte-for-byte. An earlier download-event wait had stalled and was not counted as passed.
+- Phone drawer opens, Escape closes and restores its trigger. Selecting a lesson closes it.
+- Search for lead runway displays the correct sections. Cross-lesson click opens Training and scrolls its matching heading to about80px below the phone header. An initial failure left that heading below the viewport; a post-mount hash scroll fixed it.
+- Breadcrumb, next lesson and the single-lesson Inbox category card navigate correctly. Single-child redirect was removed so the category can actually be revisited.
+- Desktop contents rail, prompt wrapping, download links, lesson cards and read-only preview identity reviewed.
+
+Requested final screenshots:
+- screenshots/actual-install-desktop.jpg
+- screenshots/actual-instructions-phone.jpg
+- screenshots/actual-worked-example-desktop.jpg
+- screenshots/actual-training-desktop.jpg
+
+Earlier Start Here and standalone screenshot deliverables remain historical, not evidence for the current full rebuild. Disposable captures/contact sheets are removed after recording this route matrix.
+
+## Important Teaching Corrections
+
+- Grok signup/plan choice precedes instruction installation, then agency facts, research/offer and tool connections. Stage prerequisites no longer require a completed offer before the intake that creates it.
+- Six Bots and three separate voice files are explained. Canonical skill names match manifest, prompts and downloads.
+- The example has complete scoped price, milestone, target, minimum and remedy conditions. Its numbers do not pretend to be actual member results.
+- Provider website language is separate from buyer interviews, current triggers and tested demand. No invented student industry proof or copied performance numbers.
+- Calendly Free now supports Scheduling API and standard webhooks per 3 November 2026 release. Account scopes, quotas and event-specific permissions still need testing; Standard is optional.
+- Separate cold sequence, interested-reply reminders, between-call emails and later reconnects. Matt's policy approval is still required.
+- Revenue, first-year customer value, LTV, gross profit and cash timing remain distinct. UNKNOWN never becomes a fabricated margin, GOOD fit or clean health result.
+
+## Failures Encountered And Corrected
+
+1. Baseline npm manifest/lock mismatch and host Node18. Root lock repaired on this branch in the preceding integration; package.json unchanged; bundled Node24 used.
+2. Initial Host test transport did not send the intended header. Replaced with node:http and verified real rejection.
+3. Chrome viewport override did not change dimensions. Repeated responsive review in IAB with measured 390 and 1440 widths.
+4. Phone sidebar squeezed content; mobile drawer/spacing corrected. Desktop rail scrolling ancestor corrected.
+5. Clipboard empty-item restoration failed; corrected to restore empty text where appropriate.
+6. Grok product identification was delayed; official signup/plan/app/skills/routines documentation now used.
+7. Original buyer selection handoff ordered the worksheet before economics; corrected.
+8. Self-alias generated by builder removed. Unsafe suffix matching removed.
+9. Single-child category auto-redirect prevented a useful index/previous route; removed.
+10. Cross-lesson search hash did not scroll after asynchronous rendering; corrected and browser verified.
+11. Browser download-event wait stalled; later native file download passed with exact bytes.
+12. Final sandbox run denied loopback sockets:24tests passed,5infrastructure errors. Authorised local-network rerun passed all 29 at that point, then all 31 after the cache extension. No test failure was reclassified as success without a rerun.
+
+## Remaining Acceptance And Decisions
+
+These are not passed by local fixtures:
+1. Actual Grok private-skill installation/readback, file visibility, six-Bot permissions, routines and real AI output quality.
+2. Selected sequencer/account plan, scoped secure connections, actual paused import/readback, real reply/webhook route, thread recovery and reporting.
+3. Real scheduling availability, booking, sequence-stop and conflict handling. Controlled test copy/recipients/channels require separate approval before any send or invitation.
+4. Real company calibration and current buyer/trigger evidence. Synthetic label agreement is not LLM accuracy.
+5. B3 external extensions: automatic browser fallback and paid-model client are not implemented. The local SQLite cache, multi-page collector, proposed-analysis handoff and contact joins are implemented and fixture-tested; real Grok/model execution and scale/usage measurements remain unverified.
+6. Matt approves commercial teaching, qualification/follow-up/LinkedIn rules and the new profile/sales-asset instructions. Named installer and handover reviewer need confirmation.
+7. Fresh-student human walkthrough and real demonstrated system before Training. No claim of repeatable revenue or profitability.
+8. Real production session/subscription/download route integration and live recording access. The local fixture bypass does not test these.
+9. Current Drive file revisions, original external video/template usability, deployed production SHA and actual DigitalOcean triggers remain unverified.
+10. Supplied support URL fails DNS. Existing CCS channel is the interim help route; no new helpdesk built.
+
+## Production Isolation Evidence
+
+- Separate codex/ccs-resources-preview worktree, no upstream and no push/merge/deployment. Loopback bind 127.0.0.1 only. No public link or mobile-network hosting.
+- Protected checkout clean at 726c5772acb6b8af120f22ae8ddffa7e8c0ac40f; remote main unchanged at 49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a. No remote preview branch. No externally caused main-source change observed.
+- Frozen source chunks 0-21 and 100-102, package manifest and deployment configuration unchanged from the starting preview revision. Three old Install objects unchanged. Production databases, auth, original Drive, credentials, domains, workflows and campaigns untouched.
+- Harness refuses production mode, wrong branch and local env files, strips inherited service environment values, uses a synthetic identity and denies writes/service routes. CSP blocks external connections, forms and frames. This is a local harness, not a system-wide safety interceptor.
+- Actual production deployed SHA/triggers unverified. Nothing was pushed, so those unverified triggers cannot be activated by this work.
+
+## Official Product References Checked
+
+Official sources read 6 November 2026:
 - https://docs.x.ai/grok-bot/get-started
 - https://docs.x.ai/grok-bot/bots
+- https://docs.x.ai/grok-bot/files-and-results
 - https://docs.x.ai/grok-bot/skills-routines-and-automations
 - https://docs.x.ai/grok-bot/approvals-security-and-privacy
 - https://docs.x.ai/grok-bot/vault
 - https://docs.x.ai/x-subscription/grok-bot
+- https://developer.calendly.com/release-notes/2026/11/3
+- https://calendly.com/help/how-to-add-calendly-to-your-website
+- https://help.instantly.ai/en/articles/10273259-instantly-plans-overview
+- https://help.instantly.ai/en/articles/6261906-webhooks
+- https://ai-ark.com/pricing
+- https://www.scaledmail.com/pricing
+- https://docs.stripe.com/payment-links
 
-Sean supplied https://resources.closingclientsystem.com/student-setup-support . Both web fetch and Chrome returned failure to resolve. No guessed replacement domain or new support service was created.
+Stripe documentation connector lookup failed for missing link_id and no CLI was available. Official public documentation was used instead. No Stripe account accessed or changed.
 
+## Per-Route Rendered Coverage
 
-## Per-route rendered coverage
+Every row has both verified sizes. Final affected routes were rechecked. No measured page/text overflow. Two collection/status pages were rechecked once more after adding the cache instructions. Search-anchor interaction fix was subsequently checked on phone and desktop without changing layout/content.
 
-All rows below were captured and inspected in full-page overview sheets at both verified sizes. Final affected routes were rechecked after correction. The overview review does not replace a fresh-student walkthrough.
-
-| Preview route | Desktop | Phone | Text/page overflow |
+| Actual App Route | Desktop | Phone | Text/Page Overflow |
 |---|---|---|---|
-| /resources/ | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/training | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/category/go-to-market-strategy | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/category/funnel | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/category/client-acquisition | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/category/inbox-pipeline-management | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/category/sales | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/category/scaling-hiring | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/example | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install/start | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install/buyers-offer | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install/ai-agents | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install/sales-materials | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install/first-lead-list | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install/write-load-emails | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install/reply-test | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install/launch-review | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/install/handover | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/training/start | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/training/daily-replies | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/training/refill-leads | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/training/new-copy | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/training/load-campaign | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/training/weekly-review | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/training/troubleshooting | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/training/another-client | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/go-to-market/deal-economics | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/go-to-market/client-selection | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/go-to-market/research | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/go-to-market/offer | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/go-to-market/opportunity | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/go-to-market/pricing | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/go-to-market/positioning | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/go-to-market/proof | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/funnel/website | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/funnel/vsl | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/funnel/calendar | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/funnel/payments | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/funnel/agreement | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/setup | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/list-building | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/scraping | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/qualification | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/variables | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/email-copy | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/deliverability | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/linkedin | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/warm-calling | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/client-acquisition/glossary | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/sales/two-call-process | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/sales/discovery | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/sales/between-calls | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/sales/proposal | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/sales/assets | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/sales/objections | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/sales/value-stacking | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/inbox-pipeline/nurturing | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/scaling-hiring/onboarding | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/scaling-hiring/hiring | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/scaling-hiring/operations | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/resources/templates | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/recordings | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
-| /resources/review-status | 1440 x 1000, reviewed | 390 x 844, reviewed | None detected |
+| /resources | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/add-instructions | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/agency-profile | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/buyers-offer | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/connect-tools | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/sales-materials | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/first-lead-list | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/write-load-emails | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/reply-test | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/launch-review | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/handover | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/worked-example | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/go-to-market/deal-economics | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/go-to-market/client-selection | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/go-to-market/research | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/go-to-market/offer | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/go-to-market/opportunity | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/go-to-market/pricing | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/go-to-market/positioning | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/go-to-market/proof | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/funnel/website | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/funnel/vsl | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/funnel/calendar | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/funnel/payments | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/funnel/agreement | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/setup | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/list-building | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/scraping | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/qualification | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/variables | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/email-copy | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/deliverability | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/linkedin | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/warm-calling | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition/glossary | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/sales/two-call-process | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/sales/discovery | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/sales/between-calls | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/sales/proposal | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/sales/assets | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/sales/objections | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/sales/value-stacking | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/inbox-pipeline/nurturing | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/scaling-hiring/onboarding | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/scaling-hiring/hiring | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/scaling-hiring/operations | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-training/start | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-training/daily-replies | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-training/refill-leads | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-training/new-copy | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-training/load-campaign | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-training/weekly-review | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-training/troubleshooting | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-training/another-client | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/templates | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/review-status | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install/welcome | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-install | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/go-to-market | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/funnel | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/client-acquisition | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/inbox-pipeline | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/sales | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-resources/scaling-hiring | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/ccs-training | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/call-recordings | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/call-recordings/weekly-coaching | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |
+| /resources/call-recordings/sales-training | 1440x1000, Reviewed | 390x844, Reviewed | None Detected |

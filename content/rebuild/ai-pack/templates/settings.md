@@ -1,5 +1,5 @@
-# Campaign settings and permissions
-Pack: 0.1.0-preview
+# Campaign Settings And Permissions
+Pack: 0.2.0-preview
 
 mode: PREVIEW
 external_writes: DISABLED

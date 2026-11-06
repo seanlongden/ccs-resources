@@ -116,7 +116,10 @@ export default function CallRecordingsLayout({
         collapsed={sidebarCollapsed}
         onToggleCollapse={toggleSidebar}
       />
-      <main className="flex-1 overflow-y-auto">{children}</main>
+      <main className="flex-1 min-w-0 pt-16 md:pt-0">
+        {'preview' in auth && auth.preview === true && <p className="mx-4 mt-6 rounded-lg border border-slate-200 bg-white p-4 text-sm text-slate-600">Private preview: live recordings are not loaded. Production recordings are unchanged.</p>}
+        {children}
+      </main>
     </div>
   );
 }

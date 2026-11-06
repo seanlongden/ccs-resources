@@ -1,5 +1,5 @@
 # Completed budget example
-Pack: 0.1.0-preview. Illustrative numbers, not a purchase recommendation or quote. Check actual plans, taxes, limits and billing periods before spending.
+Pack: 0.2.0-preview. Illustrative numbers, not a purchase recommendation or quote. Check actual plans, taxes, limits and billing periods before spending.
 
 | Item | Example basis | Monthly cost allocation |
 |---|---|---:|
@@ -13,6 +13,8 @@ Pack: 0.1.0-preview. Illustrative numbers, not a purchase recommendation or quot
 | Total example monthly cost | Includes annual bills divided across 12 months | $296 |
 
 Twenty sending inboxes do not mean twenty active senders at once. The example reserves a second group. Sending limits and readiness still need checking. A separate model/crawl account is not automatically required just because Grok Bot is used.
+
+The $10 calendar allocation is an optional paid-plan example, not a required API cost. Calendly's 3 November 2026 update makes Scheduling API and standard webhooks available on Free, subject to scopes, feature access and rate limits. If Free meets your needs, remove the $120 annual calendar bill: the example allocation becomes $286/month and first-month tool cash becomes $396.
 
 If the calendar and domains are paid annually at the start, first-month cash in this example is $276 of monthly bills plus $240 annual bills = $516. That is different from the $296 monthly cost allocation.
 

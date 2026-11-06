@@ -93,6 +93,7 @@ function dateToIso(value: unknown): string {
 
 export async function getRecordingsFile(): Promise<RecordingsFile> {
   const file = readLocalRecordings();
+  if (!process.env.DATABASE_URL) return file;
   try {
     await ensureSchema();
     const rows = (await sql`

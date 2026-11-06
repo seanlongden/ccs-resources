@@ -1,0 +1,2 @@
+domain,source_url,human_label,human_reason,ai_label,ai_reason,prompt_version,rule_version,agreement,review_action
+company.example,https://company.example/,MAYBE,Illustrative missing evidence,MAYBE,Illustrative missing evidence,v1,v1,yes,HOLD

@@ -1,19 +1,19 @@
-# Inbox/operator role brief and practical assessment
-Pack: 0.1.0-preview. Adapt the real working hours, pay and employment arrangements for your situation. Old example wage/time-zone figures are not current recommendations.
+# Inbox/Operator Role Brief And Practical Assessment
+Pack: 0.2.0-preview. Adapt the real working hours, pay and employment arrangements for your situation. Old example wage/time-zone figures are not current recommendations.
 
-## Role outcome
+## Role Outcome
 Relevant replies are reviewed accurately, poor fits are held, approved messages use the right thread and actual available meetings are booked under the agreed permissions.
 
-## Daily tasks
+## Daily Tasks
 Review scoped inboxes and AI cards; confirm fit and identity; prepare or improve drafts; seek owner approvals; check bookings and opt-outs; record unresolved issues and daily counts. The role may supervise AI rather than type every reply.
 
-## Required skills
+## Required Skills
 Clear written English, judgement about evidence/uncertainty, ability to follow a process, accurate calendar/time-zone work, reliable communication and careful data handling.
 
-## Application questions
+## Application Questions
 Working hours and zone; relevant email support experience; campaign/list/CRM experience; examples of following a documented process; how they handle an uncertain send or missing information.
 
-## Practical assessment (fixtures only)
+## Practical Assessment (Fixtures Only)
 Give three redacted/synthetic threads: GOOD, UNSURE, BAD. Ask for fit reasons, drafts where appropriate, booking checks and escalation. Include an opt-out and an unavailable slot. Do not let applicants contact real prospects.
 
 ## Scorecard

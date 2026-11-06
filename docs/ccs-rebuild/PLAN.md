@@ -2,6 +2,12 @@
 
 ## Current authority, 6 November 2026
 
+### Full Preview Execution Approval
+
+Sean subsequently authorised completing and applying the remaining curriculum and assets on the private preview branch without per-page approval. Use the approved Start Here copy and Add The CCS Instructions To Grok Bot lesson in the chat as teaching benchmarks. Preserve the actual CCS app and its components. The corrected Install order is Start Here, Add Instructions, Tell The AI About Your Agency, Research Buyers And Build Your Offer, Connect Tools, Sales Materials, First Lead List, Write And Load Emails, Reply And Booking Test, Launch Review, Handover. Resources support that path; Training follows demonstrated readiness. This supersedes the earlier next-lesson approval hold and the earlier offer-before-Grok sequencing, without shortening any original requirement or source map below.
+
+Read the project records on recovery and before milestones, update them after meaningful progress, check one complete example before library expansion, inspect every changed page on desktop and phone, and distinguish source documentation, local simulation, actual tests and unverified platform behaviour. Finish with the actual-app preview, local branch/commit, changed files, real test results, screenshots and outstanding decisions. No push, merge, publication, sending, spending or live action is authorised. Approval for live actions remains separate.
+
 Sean approved implementation on codex/ccs-resources-preview only. Every publication/release step below is superseded by a private preview for Sean's review. Do not merge, publish, push until production-trigger isolation is verified, send messages, spend, or write to live services. Original Drive documents, existing checkout, main and production settings remain untouched. External writes are disabled; fixtures are separate from real data. Documented, simulated, locally tested and externally unverified behaviour must stay distinct.
 
 The complete prior eleven-part plan follows verbatim. Its "No resources have been changed" statement describes the planning baseline, not current execution progress. STATE.md records execution. Do not shorten this plan or its source maps.

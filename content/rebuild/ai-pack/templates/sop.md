@@ -1,10 +1,10 @@
-# SOP template with a completed example
-Pack: 0.1.0-preview
+# SOP Template With A Completed Example
+Pack: 0.2.0-preview
 
-## Blank template
+## Blank Template
 Job and useful output / owner / trigger and time zone / input files and versions / required access / steps / approval boundaries / checks / failure and escalation / evidence / next handoff / last reviewed date.
 
-## Completed example: weekly lead runway review
+## Completed Example: Weekly Lead Runway Review
 Output: a dated refill recommendation.
 Owner: Campaign Monitor prepares; agency owner approves paid export or campaign load.
 Trigger: weekly review, in the agreed business time zone.

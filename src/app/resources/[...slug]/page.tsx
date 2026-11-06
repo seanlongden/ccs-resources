@@ -151,11 +151,6 @@ export default function ResourcePage() {
             ? navData.find(s => s.slug === fullSlug)
             : findNavNode(navData as unknown as NavChild[], fullSlug);
           if (found) {
-            const onlyChild = found.children?.length === 1 ? found.children[0] : null;
-            if (onlyChild?.fullSlug) {
-              router.replace(`/resources/${onlyChild.fullSlug}`);
-              return;
-            }
             setSection(found as NavSection);
           } else {
             setError('Section not found');
@@ -173,6 +168,11 @@ export default function ResourcePage() {
             return;
           }
           const pageData = await pageRes.json();
+          const canonical = pageData.fullSlug || pageData.slug;
+          if (canonical && canonical !== fullSlug) {
+            router.replace(`/resources/${canonical}`);
+            return;
+          }
           setPage(pageData);
         } catch (e) {
           console.error('Failed to load page:', e);

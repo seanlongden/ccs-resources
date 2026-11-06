@@ -61,6 +61,38 @@ export default function LessonView({ title, html, eyebrow, subtitle }: Props) {
   const mainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Search can navigate before the lesson's section headings have mounted.
+    // Scroll once the new content exists, including on same-page hash changes.
+    const scrollToSection = () => {
+      let id: string;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); }
+      catch { return; }
+      if (id) document.getElementById(id)?.scrollIntoView({ block: 'start' });
+    };
+    const frame = requestAnimationFrame(scrollToSection);
+    window.addEventListener('hashchange', scrollToSection);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('hashchange', scrollToSection);
+    };
+  }, [html, title]);
+
+  useEffect(() => {
+    const root = mainRef.current;
+    if (!root) return;
+    const handler = async (event: MouseEvent) => {
+      const button = (event.target as Element)?.closest<HTMLButtonElement>('[data-copy-prompt]');
+      if (!button || !root.contains(button)) return;
+      const code = button.parentElement?.querySelector('code');
+      if (!code) return;
+      try { await navigator.clipboard.writeText(code.textContent || ''); button.textContent = 'Copied'; }
+      catch { button.textContent = 'Select And Copy The Text Below'; }
+    };
+    root.addEventListener('click', handler);
+    return () => root.removeEventListener('click', handler);
+  }, [html]);
+
+  useEffect(() => {
     if (sections.length === 0) return;
     const nodes = sections
       .map((s) => document.getElementById(s.id))

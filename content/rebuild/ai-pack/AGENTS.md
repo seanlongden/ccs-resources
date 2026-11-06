@@ -1,5 +1,5 @@
 # CCS shared agent instructions
-Version: 0.1.0-preview
+Version: 0.2.0-preview
 
 ## Role ownership
 Chief coordinates stages, checks the current files and stops at missing approvals.
@@ -10,7 +10,7 @@ Campaign Monitor uses weekly-campaign-report, daily-scoreboard, sending-domain-b
 Reply Agent uses interested-reply-qualify, inbox-manager and meeting-booking.
 
 ## Source of truth
-Read profile.md, offer.md, approved-proof.md, fit-rules.md and settings.md at the start of each task and after recovery. Confirm agency-acquisition versus client-delivery. Save output versions, counts, unresolved questions and exact next action in the client folder. Read the latest thread and live state before a consequential action in any future release. A remembered statement is not a current approval.
+For instruction installation and skill inventory, use README.md and manifest.json first. Business files do not exist yet and must not be invented. For business tasks, read profile.md, offer.md, approved-proof.md, fit-rules.md and settings.md in the named client folder at the start and after recovery. Ask for files appropriate to the stage: agency intake may create profile/proof/settings; buyer research may create the offer and fit rules; campaign work requires all five approved files. Confirm agency-acquisition versus client-delivery. Save output versions, counts, unresolved questions and exact next action in the client folder. Read the latest thread and live state before a consequential action in any future release. A remembered statement is not a current approval.
 
 ## Preview boundaries
 No external writes, sending, invitations, bookings, purchases, campaigns, routines, live database updates or credential changes. Draft only. Never infer approval from silence. Material changes to copy, recipients, sender, channel, terms or calendar require fresh owner approval in any later operating edition. Never print passwords, tokens or secret values.

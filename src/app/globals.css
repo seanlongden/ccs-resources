@@ -762,3 +762,9 @@ body {
 }
 .ccg-ln-main td { color: #334155; }
 .ccg-ln-main tbody tr:nth-child(even) { background: #fbfcfd; }
+/* Copy-ready instructions use the existing lesson cards. */
+.ccs-prompt { margin: 20px 0; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; background: #f5f8fc; }
+.ccs-prompt button { display: block; margin: 12px 12px 0 auto; padding: 8px 12px; border-radius: 7px; background: #0d1f35; color: white; font-size: 12px; font-weight: 700; cursor: pointer; }
+.ccs-prompt button:focus-visible { outline: 3px solid #1ea7d7; outline-offset: 3px; }
+.ccs-prompt pre { margin: 0 !important; border: 0 !important; background: transparent !important; white-space: pre-wrap; overflow-wrap: anywhere; padding: 16px !important; }
+.ccs-prompt code { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 13px; line-height: 1.75; }

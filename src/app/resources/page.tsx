@@ -115,7 +115,16 @@ export default function ResourcesPage() {
           <div className="mb-10">
             <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The System</div>
             <h1 className="text-3xl font-bold text-gray-900">Closing Clients System Resources</h1>
-            <p className="text-gray-500 mt-2 max-w-2xl">Pick up where you left off, or use the sidebar to browse.</p>
+            <p className="text-gray-500 mt-2 max-w-2xl">Start with Install to build your cold email system. Open Resources for detailed help. Use Training after your actual setup has been checked.</p>
+          </div>
+
+          <div className="space-y-3 mb-8">
+            {[
+              ['1', 'CCS Install', 'Build your system in order, starting with Grok Bot and your business information.', '/resources/ccs-install/welcome'],
+              ['2', 'CCS Resources', 'Get the detailed lesson, example or template linked from your current step.', '/resources/ccs-resources'],
+              ['3', 'CCS Training', 'Run daily replies, refill leads and review the system after handover.', '/resources/ccs-training/start'],
+            ].map(([number, title, detail, href]) => <Link key={href} href={href} className="block rounded-xl border border-slate-200 bg-white p-5 hover:border-slate-400"><div className="text-xs font-semibold text-slate-400 mb-1">{number}</div><h2 className="text-lg font-bold text-slate-900">{title}</h2><p className="text-sm text-slate-500 mt-1">{detail}</p></Link>)}
+            <Link href="/resources/ccs-resources/worked-example" className="inline-block text-sm font-semibold text-sky-700 py-3">Follow The Complete Worked Example →</Link>
           </div>
 
           {recents.length > 0 ? (
@@ -124,7 +133,7 @@ export default function ResourcesPage() {
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Recently viewed
+                Recently Viewed
               </div>
               <div className="bg-white border border-gray-200 rounded-xl divide-y divide-gray-100">
                 {recents.map((r) => (

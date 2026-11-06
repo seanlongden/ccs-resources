@@ -1,5 +1,5 @@
-# Field mapping
-Pack: 0.1.0-preview
+# Field Mapping
+Pack: 0.2.0-preview
 
 | Canonical field | Source | Use |
 |---|---|---|

@@ -6,11 +6,15 @@
     "wordCount": 896,
     "review": "full text read",
     "destinations": [
-      "install/start"
+      "ccs-install/welcome",
+      "ccs-training/start"
     ],
     "treatment": "Rewrite welcome",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "install/start"
+    ]
   },
   {
     "id": "C02",
@@ -19,11 +23,16 @@
     "wordCount": 1339,
     "review": "full text read",
     "destinations": [
-      "training/daily-replies"
+      "ccs-training/daily-replies",
+      "ccs-install/reply-test",
+      "ccs-resources/inbox-pipeline/nurturing"
     ],
     "treatment": "Combine daily reply overview",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "training/daily-replies"
+    ]
   },
   {
     "id": "C03",
@@ -32,11 +41,16 @@
     "wordCount": 1444,
     "review": "full text read",
     "destinations": [
-      "install/reply-test"
+      "ccs-install/reply-test",
+      "ccs-resources/inbox-pipeline/nurturing",
+      "ccs-training/daily-replies"
     ],
     "treatment": "Rewrite safe standing instructions",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "install/reply-test"
+    ]
   },
   {
     "id": "C04",
@@ -45,11 +59,17 @@
     "wordCount": 1265,
     "review": "full text read",
     "destinations": [
-      "install/ai-agents"
+      "ccs-install/add-instructions",
+      "ccs-install/connect-tools",
+      "ccs-resources/client-acquisition/setup",
+      "ccs-resources/scaling-hiring/hiring"
     ],
     "treatment": "Combine canonical six agents",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "install/ai-agents"
+    ]
   },
   {
     "id": "C05",
@@ -58,11 +78,17 @@
     "wordCount": 804,
     "review": "full text read",
     "destinations": [
-      "training/weekly-review"
+      "ccs-training/weekly-review",
+      "ccs-install/connect-tools",
+      "ccs-resources/client-acquisition/setup",
+      "ccs-resources/scaling-hiring/operations"
     ],
     "treatment": "Combine routines",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "training/weekly-review"
+    ]
   },
   {
     "id": "C06",
@@ -71,11 +97,17 @@
     "wordCount": 1280,
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/scraping"
+      "ccs-resources/client-acquisition/scraping",
+      "ccs-install/first-lead-list",
+      "ccs-resources/client-acquisition/list-building",
+      "ccs-training/refill-leads"
     ],
     "treatment": "Replace incomplete code skeleton",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Local three-page collector, context-scoped SQLite cache, proposed analysis handoff and row joins fixture-tested. Real Grok, automatic browser fallback and paid-model client not tested; automatic external adapters not bundled.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/scraping"
+    ]
   },
   {
     "id": "C07",
@@ -84,11 +116,20 @@
     "wordCount": 2465,
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/qualification"
+      "ccs-resources/client-acquisition/qualification",
+      "ccs-install/first-lead-list",
+      "ccs-resources/go-to-market/client-selection",
+      "ccs-resources/go-to-market/research",
+      "ccs-resources/client-acquisition/list-building",
+      "ccs-resources/client-acquisition/scraping",
+      "ccs-training/refill-leads"
     ],
     "treatment": "Combine calibrated prompts",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/qualification"
+    ]
   },
   {
     "id": "C08",
@@ -97,11 +138,18 @@
     "wordCount": 1260,
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/variables"
+      "ccs-resources/client-acquisition/variables",
+      "ccs-install/first-lead-list",
+      "ccs-install/write-load-emails",
+      "ccs-resources/client-acquisition/email-copy",
+      "ccs-training/new-copy"
     ],
     "treatment": "Standardise fields",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/variables"
+    ]
   },
   {
     "id": "C09",
@@ -110,11 +158,16 @@
     "wordCount": 1070,
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/email-copy"
+      "ccs-resources/client-acquisition/email-copy",
+      "ccs-install/write-load-emails",
+      "ccs-training/new-copy"
     ],
     "treatment": "Combine current copy rules",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/email-copy"
+    ]
   },
   {
     "id": "C10",
@@ -123,11 +176,20 @@
     "wordCount": 1018,
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/deliverability"
+      "ccs-resources/client-acquisition/deliverability",
+      "ccs-install/connect-tools",
+      "ccs-install/write-load-emails",
+      "ccs-install/launch-review",
+      "ccs-resources/client-acquisition/setup",
+      "ccs-training/load-campaign",
+      "ccs-training/weekly-review"
     ],
     "treatment": "Combine current health process",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/deliverability"
+    ]
   },
   {
     "id": "C11",
@@ -136,11 +198,18 @@
     "wordCount": 736,
     "review": "full text read",
     "destinations": [
-      "install/start"
+      "ccs-install/welcome",
+      "ccs-install/connect-tools",
+      "ccs-resources/client-acquisition/setup",
+      "ccs-resources/scaling-hiring/operations",
+      "ccs-training/weekly-review"
     ],
     "treatment": "Add transparent budget",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "install/start"
+    ]
   },
   {
     "id": "C12",
@@ -149,11 +218,19 @@
     "wordCount": 2761,
     "review": "full text read",
     "destinations": [
-      "training/troubleshooting"
+      "ccs-training/troubleshooting",
+      "ccs-resources/client-acquisition/deliverability",
+      "ccs-resources/client-acquisition/glossary",
+      "ccs-resources/sales/two-call-process",
+      "ccs-resources/sales/objections",
+      "ccs-training/weekly-review"
     ],
     "treatment": "Distribute FAQ",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "training/troubleshooting"
+    ]
   },
   {
     "id": "C13",
@@ -162,11 +239,19 @@
     "wordCount": 1080,
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/client-selection"
+      "ccs-resources/go-to-market/client-selection",
+      "ccs-install/buyers-offer",
+      "ccs-install/first-lead-list",
+      "ccs-resources/go-to-market/deal-economics",
+      "ccs-resources/client-acquisition/qualification",
+      "ccs-resources/sales/discovery"
     ],
     "treatment": "Combine discovery/account value",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/client-selection"
+    ]
   },
   {
     "id": "C14",
@@ -175,11 +260,17 @@
     "wordCount": 575,
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/research"
+      "ccs-resources/go-to-market/research",
+      "ccs-install/buyers-offer",
+      "ccs-install/first-lead-list",
+      "ccs-resources/go-to-market/client-selection"
     ],
     "treatment": "Keep sourced targeting method",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/research"
+    ]
   },
   {
     "id": "C15",
@@ -188,11 +279,14 @@
     "wordCount": 1326,
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/linkedin"
+      "ccs-resources/client-acquisition/linkedin"
     ],
     "treatment": "Optional reconciled lesson",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/linkedin"
+    ]
   },
   {
     "id": "C16",
@@ -201,11 +295,15 @@
     "wordCount": 871,
     "review": "full text read",
     "destinations": [
-      "resources/sales/two-call-process"
+      "ccs-resources/sales/two-call-process",
+      "ccs-resources/sales/objections"
     ],
     "treatment": "Core sales sequence",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/sales/two-call-process"
+    ]
   },
   {
     "id": "C17",
@@ -214,11 +312,17 @@
     "wordCount": 973,
     "review": "full text read",
     "destinations": [
-      "resources/sales/discovery"
+      "ccs-resources/sales/discovery",
+      "ccs-install/sales-materials",
+      "ccs-resources/go-to-market/opportunity",
+      "ccs-resources/funnel/calendar"
     ],
     "treatment": "Editable script",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/sales/discovery"
+    ]
   },
   {
     "id": "C18",
@@ -227,11 +331,16 @@
     "wordCount": 1043,
     "review": "full text read",
     "destinations": [
-      "resources/sales/between-calls"
+      "ccs-resources/sales/between-calls",
+      "ccs-install/sales-materials",
+      "ccs-resources/sales/proposal"
     ],
     "treatment": "Five usable email templates",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/sales/between-calls"
+    ]
   },
   {
     "id": "C19",
@@ -240,11 +349,16 @@
     "wordCount": 995,
     "review": "full text read",
     "destinations": [
-      "resources/sales/proposal"
+      "ccs-resources/sales/proposal",
+      "ccs-install/sales-materials",
+      "ccs-resources/funnel/agreement"
     ],
     "treatment": "Complete proposal and drafting prompt",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/sales/proposal"
+    ]
   },
   {
     "id": "C20",
@@ -253,11 +367,18 @@
     "wordCount": 1074,
     "review": "full text read",
     "destinations": [
-      "resources/sales/assets"
+      "ccs-resources/sales/assets",
+      "ccs-install/sales-materials",
+      "ccs-resources/funnel/website",
+      "ccs-resources/funnel/vsl",
+      "ccs-resources/sales/value-stacking"
     ],
     "treatment": "Clarify assets by stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/sales/assets"
+    ]
   },
   {
     "id": "C21",
@@ -266,11 +387,17 @@
     "wordCount": 833,
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/deal-economics"
+      "ccs-resources/go-to-market/deal-economics",
+      "ccs-install/buyers-offer",
+      "ccs-resources/go-to-market/offer",
+      "ccs-resources/go-to-market/pricing"
     ],
     "treatment": "Keep model ceiling",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/deal-economics"
+    ]
   },
   {
     "id": "C22",
@@ -279,11 +406,17 @@
     "wordCount": 814,
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/offer"
+      "ccs-resources/go-to-market/offer",
+      "ccs-install/buyers-offer",
+      "ccs-resources/go-to-market/deal-economics",
+      "ccs-resources/go-to-market/positioning"
     ],
     "treatment": "Explain buyer outcome",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/offer"
+    ]
   },
   {
     "id": "C23",
@@ -292,11 +425,21 @@
     "wordCount": 819,
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/positioning"
+      "ccs-resources/go-to-market/positioning",
+      "ccs-install/buyers-offer",
+      "ccs-install/sales-materials",
+      "ccs-resources/go-to-market/offer",
+      "ccs-resources/go-to-market/proof",
+      "ccs-resources/funnel/website",
+      "ccs-resources/sales/assets",
+      "ccs-resources/sales/value-stacking"
     ],
     "treatment": "Combine practical examples",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/positioning"
+    ]
   },
   {
     "id": "C24",
@@ -305,11 +448,17 @@
     "wordCount": 767,
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/opportunity"
+      "ccs-resources/go-to-market/opportunity",
+      "ccs-install/buyers-offer",
+      "ccs-resources/go-to-market/offer",
+      "ccs-resources/sales/discovery"
     ],
     "treatment": "Written opportunity definition",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/opportunity"
+    ]
   },
   {
     "id": "C25",
@@ -318,11 +467,25 @@
     "wordCount": 1046,
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/pricing"
+      "ccs-resources/go-to-market/pricing",
+      "ccs-install/buyers-offer",
+      "ccs-resources/go-to-market/deal-economics",
+      "ccs-resources/go-to-market/offer",
+      "ccs-resources/go-to-market/opportunity",
+      "ccs-resources/funnel/payments",
+      "ccs-resources/funnel/agreement",
+      "ccs-resources/client-acquisition/warm-calling",
+      "ccs-resources/sales/proposal",
+      "ccs-resources/sales/objections",
+      "ccs-resources/sales/value-stacking",
+      "ccs-resources/scaling-hiring/hiring"
     ],
     "treatment": "Terms and delivery budget",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/pricing"
+    ]
   },
   {
     "id": "C26",
@@ -331,11 +494,18 @@
     "wordCount": 7978,
     "review": "full text read",
     "destinations": [
-      "training/daily-replies"
+      "ccs-training/daily-replies",
+      "ccs-install/reply-test",
+      "ccs-resources/funnel/calendar",
+      "ccs-resources/inbox-pipeline/nurturing",
+      "ccs-training/troubleshooting"
     ],
     "treatment": "Merge detailed examples, correct unsafe instructions",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "training/daily-replies"
+    ]
   },
   {
     "id": "C27",
@@ -344,11 +514,27 @@
     "wordCount": 2561,
     "review": "full text read",
     "destinations": [
-      "install/start"
+      "ccs-install/welcome",
+      "ccs-install/agency-profile",
+      "ccs-install/buyers-offer",
+      "ccs-install/connect-tools",
+      "ccs-install/first-lead-list",
+      "ccs-install/write-load-emails",
+      "ccs-install/reply-test",
+      "ccs-install/launch-review",
+      "ccs-install/handover",
+      "ccs-resources/worked-example",
+      "ccs-resources/go-to-market/research",
+      "ccs-resources/scaling-hiring/onboarding",
+      "ccs-training/load-campaign",
+      "ccs-training/another-client"
     ],
     "treatment": "Backbone with corrected handoffs",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "install/start"
+    ]
   },
   {
     "id": "C28",
@@ -357,11 +543,14 @@
     "wordCount": 2188,
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/linkedin"
+      "ccs-resources/client-acquisition/linkedin"
     ],
     "treatment": "Optional pack, unresolved rules marked",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/linkedin"
+    ]
   },
   {
     "id": "D00",
@@ -370,11 +559,15 @@
     "wordCount": 722,
     "review": "full text read",
     "destinations": [
-      "training/start"
+      "ccs-training/start",
+      "ccs-install/handover"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "training/start"
+    ]
   },
   {
     "id": "D01",
@@ -383,11 +576,15 @@
     "wordCount": 15808,
     "review": "full text read",
     "destinations": [
-      "install/ai-agents"
+      "ccs-install/add-instructions",
+      "ccs-resources/templates"
     ],
     "treatment": "Rewrite supplied 16 skills into one versioned provider-neutral pack",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "install/ai-agents"
+    ]
   },
   {
     "id": "D02",
@@ -396,11 +593,20 @@
     "wordCount": 1390,
     "review": "full text read",
     "destinations": [
-      "install/ai-agents"
+      "ccs-install/add-instructions",
+      "ccs-install/connect-tools",
+      "ccs-install/launch-review",
+      "ccs-install/handover",
+      "ccs-resources/client-acquisition/setup",
+      "ccs-training/start",
+      "ccs-training/troubleshooting"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "install/ai-agents"
+    ]
   },
   {
     "id": "D03",
@@ -409,11 +615,16 @@
     "wordCount": 437,
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/research"
+      "ccs-resources/go-to-market/research",
+      "ccs-install/buyers-offer",
+      "ccs-resources/go-to-market/offer"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/research"
+    ]
   },
   {
     "id": "D04",
@@ -422,11 +633,17 @@
     "wordCount": 468,
     "review": "full text read",
     "destinations": [
-      "training/refill-leads"
+      "ccs-training/refill-leads",
+      "ccs-install/first-lead-list",
+      "ccs-resources/client-acquisition/list-building",
+      "ccs-resources/client-acquisition/scraping"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "training/refill-leads"
+    ]
   },
   {
     "id": "D05",
@@ -435,11 +652,17 @@
     "wordCount": 395,
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/qualification"
+      "ccs-resources/client-acquisition/qualification",
+      "ccs-install/first-lead-list",
+      "ccs-resources/client-acquisition/list-building",
+      "ccs-training/refill-leads"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/qualification"
+    ]
   },
   {
     "id": "D06",
@@ -448,11 +671,17 @@
     "wordCount": 519,
     "review": "full text read",
     "destinations": [
-      "training/new-copy"
+      "ccs-training/new-copy",
+      "ccs-install/write-load-emails",
+      "ccs-resources/client-acquisition/variables",
+      "ccs-resources/client-acquisition/email-copy"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "training/new-copy"
+    ]
   },
   {
     "id": "D07",
@@ -461,11 +690,19 @@
     "wordCount": 383,
     "review": "full text read",
     "destinations": [
-      "training/load-campaign"
+      "ccs-training/load-campaign",
+      "ccs-install/connect-tools",
+      "ccs-install/write-load-emails",
+      "ccs-install/launch-review",
+      "ccs-resources/client-acquisition/setup",
+      "ccs-resources/client-acquisition/variables"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "training/load-campaign"
+    ]
   },
   {
     "id": "D08",
@@ -474,11 +711,21 @@
     "wordCount": 585,
     "review": "full text read",
     "destinations": [
-      "training/weekly-review"
+      "ccs-training/weekly-review",
+      "ccs-install/connect-tools",
+      "ccs-install/launch-review",
+      "ccs-resources/client-acquisition/setup",
+      "ccs-resources/client-acquisition/deliverability",
+      "ccs-resources/scaling-hiring/operations",
+      "ccs-training/refill-leads",
+      "ccs-training/troubleshooting"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "training/weekly-review"
+    ]
   },
   {
     "id": "D09",
@@ -487,11 +734,17 @@
     "wordCount": 608,
     "review": "full text read",
     "destinations": [
-      "training/daily-replies"
+      "ccs-training/daily-replies",
+      "ccs-install/reply-test",
+      "ccs-resources/inbox-pipeline/nurturing",
+      "ccs-training/troubleshooting"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "training/daily-replies"
+    ]
   },
   {
     "id": "D10",
@@ -500,11 +753,18 @@
     "wordCount": 599,
     "review": "full text read",
     "destinations": [
-      "install/reply-test"
+      "ccs-install/reply-test",
+      "ccs-resources/funnel/calendar",
+      "ccs-resources/inbox-pipeline/nurturing",
+      "ccs-training/daily-replies",
+      "ccs-training/troubleshooting"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "install/reply-test"
+    ]
   },
   {
     "id": "D11",
@@ -513,11 +773,14 @@
     "wordCount": 1624,
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/glossary"
+      "ccs-resources/client-acquisition/glossary"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/glossary"
+    ]
   },
   {
     "id": "D12",
@@ -526,11 +789,21 @@
     "wordCount": 380,
     "review": "full text read",
     "destinations": [
-      "install/handover"
+      "ccs-install/handover",
+      "ccs-install/agency-profile",
+      "ccs-install/sales-materials",
+      "ccs-resources/worked-example",
+      "ccs-resources/scaling-hiring/onboarding",
+      "ccs-training/start",
+      "ccs-training/another-client",
+      "ccs-resources/templates"
     ],
     "treatment": "Combine or rewrite for its stage",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a",
+    "originalPlannedDestinations": [
+      "install/handover"
+    ]
   },
   {
     "id": "R-set-up/cold-traffic-offer",
@@ -538,11 +811,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/offer"
+      "ccs-resources/go-to-market/offer"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/offer"
+    ]
   },
   {
     "id": "R-cold-email/cold-traffic-offer-check",
@@ -550,11 +826,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/offer"
+      "ccs-resources/go-to-market/offer"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/offer"
+    ]
   },
   {
     "id": "R-offers-guarantees-case-studies/offers",
@@ -562,11 +841,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/offer"
+      "ccs-resources/go-to-market/offer"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/offer"
+    ]
   },
   {
     "id": "R-set-up/map-out-icp",
@@ -574,11 +856,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/client-selection"
+      "ccs-resources/go-to-market/client-selection"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/client-selection"
+    ]
   },
   {
     "id": "R-sales/qualifying-prospects",
@@ -586,11 +871,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/client-selection"
+      "ccs-resources/go-to-market/client-selection",
+      "ccs-resources/client-acquisition/qualification"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/client-selection"
+    ]
   },
   {
     "id": "R-set-up/service-model-pricing",
@@ -598,11 +887,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/pricing"
+      "ccs-resources/go-to-market/pricing",
+      "ccs-resources/go-to-market/deal-economics"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/pricing"
+    ]
   },
   {
     "id": "R-offers-guarantees-case-studies/guarantees",
@@ -610,11 +903,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/pricing"
+      "ccs-resources/go-to-market/pricing"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/pricing"
+    ]
   },
   {
     "id": "R-sales/sales-positioning",
@@ -622,11 +918,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/positioning"
+      "ccs-resources/go-to-market/positioning"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/positioning"
+    ]
   },
   {
     "id": "R-offers-guarantees-case-studies/strategy-value-props",
@@ -634,11 +933,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/positioning"
+      "ccs-resources/go-to-market/positioning"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/positioning"
+    ]
   },
   {
     "id": "R-set-up/website-landing-page",
@@ -646,11 +948,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/funnel/website"
+      "ccs-resources/funnel/website",
+      "ccs-install/sales-materials"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/funnel/website"
+    ]
   },
   {
     "id": "R-set-up/create-vsl",
@@ -658,11 +964,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/funnel/vsl"
+      "ccs-resources/funnel/vsl",
+      "ccs-install/sales-materials"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/funnel/vsl"
+    ]
   },
   {
     "id": "R-set-up/get-calendly",
@@ -670,11 +980,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/funnel/calendar"
+      "ccs-resources/funnel/calendar"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/funnel/calendar"
+    ]
   },
   {
     "id": "R-set-up/set-up-payments",
@@ -682,11 +995,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/funnel/payments"
+      "ccs-resources/funnel/payments"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/funnel/payments"
+    ]
   },
   {
     "id": "R-set-up/create-agreement",
@@ -694,11 +1010,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/funnel/agreement"
+      "ccs-resources/funnel/agreement"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/funnel/agreement"
+    ]
   },
   {
     "id": "R-offers-guarantees-case-studies/case-studies",
@@ -706,11 +1025,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/proof"
+      "ccs-resources/go-to-market/proof"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/proof"
+    ]
   },
   {
     "id": "R-offers-guarantees-case-studies/collecting-testimonials",
@@ -718,11 +1040,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/proof"
+      "ccs-resources/go-to-market/proof"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/proof"
+    ]
   },
   {
     "id": "R-offers-guarantees-case-studies/no-case-studies",
@@ -730,11 +1055,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/proof"
+      "ccs-resources/go-to-market/proof"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/proof"
+    ]
   },
   {
     "id": "R-operations-scaling/case-study-interview",
@@ -742,11 +1070,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/go-to-market/proof"
+      "ccs-resources/go-to-market/proof"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/go-to-market/proof"
+    ]
   },
   {
     "id": "R-cold-email/cold-email-setup",
@@ -754,11 +1085,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/setup"
+      "ccs-resources/client-acquisition/setup",
+      "ccs-install/connect-tools"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/setup"
+    ]
   },
   {
     "id": "R-cold-email/campaign-setup",
@@ -766,11 +1101,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/setup"
+      "ccs-resources/client-acquisition/setup",
+      "ccs-install/write-load-emails"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/setup"
+    ]
   },
   {
     "id": "R-cold-email/list-building",
@@ -778,11 +1117,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/list-building"
+      "ccs-resources/client-acquisition/list-building"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/list-building"
+    ]
   },
   {
     "id": "R-cold-email/writing-emails",
@@ -790,11 +1132,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/email-copy"
+      "ccs-resources/client-acquisition/email-copy",
+      "ccs-install/write-load-emails"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/email-copy"
+    ]
   },
   {
     "id": "R-cold-email/presenting-offer",
@@ -802,11 +1148,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/email-copy"
+      "ccs-resources/client-acquisition/email-copy"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/email-copy"
+    ]
   },
   {
     "id": "R-cold-email/manage-deliverability",
@@ -814,11 +1163,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/deliverability"
+      "ccs-resources/client-acquisition/deliverability"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/deliverability"
+    ]
   },
   {
     "id": "R-key-resources/deliverability-updates",
@@ -826,11 +1178,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/deliverability"
+      "ccs-resources/client-acquisition/deliverability"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/deliverability"
+    ]
   },
   {
     "id": "R-cold-email/campaign-faqs",
@@ -838,11 +1193,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/deliverability"
+      "ccs-resources/client-acquisition/deliverability"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/deliverability"
+    ]
   },
   {
     "id": "R-cold-email/running-campaigns",
@@ -850,11 +1208,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "training/weekly-review"
+      "ccs-training/weekly-review",
+      "ccs-resources/client-acquisition/deliverability"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "training/weekly-review"
+    ]
   },
   {
     "id": "R-cold-email/reply-management",
@@ -862,11 +1224,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "training/daily-replies"
+      "ccs-training/daily-replies",
+      "ccs-resources/inbox-pipeline/nurturing"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "training/daily-replies"
+    ]
   },
   {
     "id": "R-cold-email/lead-nurturing",
@@ -874,11 +1240,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/inbox-pipeline/nurturing"
+      "ccs-resources/inbox-pipeline/nurturing"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/inbox-pipeline/nurturing"
+    ]
   },
   {
     "id": "R-cold-email/warm-calling",
@@ -886,11 +1255,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/client-acquisition/warm-calling"
+      "ccs-resources/client-acquisition/warm-calling"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/client-acquisition/warm-calling"
+    ]
   },
   {
     "id": "R-sales/sales-mindset",
@@ -898,11 +1270,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/two-call-process"
+      "ccs-resources/sales/two-call-process"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/two-call-process"
+    ]
   },
   {
     "id": "R-sales/set-the-frame",
@@ -910,11 +1285,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/two-call-process"
+      "ccs-resources/sales/two-call-process"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/two-call-process"
+    ]
   },
   {
     "id": "R-sales/call-prep",
@@ -922,11 +1300,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/two-call-process"
+      "ccs-resources/sales/two-call-process"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/two-call-process"
+    ]
   },
   {
     "id": "R-sales/sales-process",
@@ -934,11 +1315,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/two-call-process"
+      "ccs-resources/sales/two-call-process"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/two-call-process"
+    ]
   },
   {
     "id": "R-sales/sales-call-strategies",
@@ -946,11 +1330,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/two-call-process"
+      "ccs-resources/sales/two-call-process",
+      "ccs-resources/sales/objections"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/two-call-process"
+    ]
   },
   {
     "id": "R-sales/effective-closing",
@@ -958,11 +1346,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/two-call-process"
+      "ccs-resources/sales/two-call-process",
+      "ccs-resources/sales/objections"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/two-call-process"
+    ]
   },
   {
     "id": "R-sales/sales-assets",
@@ -970,11 +1362,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/assets"
+      "ccs-resources/sales/assets",
+      "ccs-install/sales-materials"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/assets"
+    ]
   },
   {
     "id": "R-sales/lead-magnets",
@@ -982,11 +1378,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/assets"
+      "ccs-resources/sales/assets"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/assets"
+    ]
   },
   {
     "id": "R-sales/pre-sell-guide",
@@ -994,11 +1393,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/assets"
+      "ccs-resources/sales/assets",
+      "ccs-resources/sales/between-calls"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/assets"
+    ]
   },
   {
     "id": "R-sales/call-show-up",
@@ -1006,11 +1409,16 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/assets"
+      "ccs-resources/sales/assets",
+      "ccs-resources/funnel/calendar",
+      "ccs-resources/sales/between-calls"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/assets"
+    ]
   },
   {
     "id": "R-sales/value-stacking",
@@ -1018,11 +1426,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/value-stacking"
+      "ccs-resources/sales/value-stacking"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/value-stacking"
+    ]
   },
   {
     "id": "R-sales/upselling",
@@ -1030,11 +1441,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/sales/value-stacking"
+      "ccs-resources/sales/value-stacking"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/sales/value-stacking"
+    ]
   },
   {
     "id": "R-onboarding/onboarding-workflow",
@@ -1042,11 +1456,15 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/onboarding"
+      "ccs-resources/scaling-hiring/onboarding",
+      "ccs-training/another-client"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/onboarding"
+    ]
   },
   {
     "id": "R-onboarding/onboarding-calls",
@@ -1054,11 +1472,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/onboarding"
+      "ccs-resources/scaling-hiring/onboarding"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/onboarding"
+    ]
   },
   {
     "id": "R-onboarding/client-onboarding-form",
@@ -1066,11 +1487,16 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/onboarding"
+      "ccs-resources/scaling-hiring/onboarding",
+      "ccs-install/agency-profile",
+      "ccs-training/another-client"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/onboarding"
+    ]
   },
   {
     "id": "R-hiring-team/hiring-general",
@@ -1078,11 +1504,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/hiring"
+      "ccs-resources/scaling-hiring/hiring"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/hiring"
+    ]
   },
   {
     "id": "R-hiring-team/key-roles",
@@ -1090,11 +1519,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/hiring"
+      "ccs-resources/scaling-hiring/hiring"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/hiring"
+    ]
   },
   {
     "id": "R-hiring-team/hiring-inbox-manager",
@@ -1102,11 +1534,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/hiring"
+      "ccs-resources/scaling-hiring/hiring"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/hiring"
+    ]
   },
   {
     "id": "R-hiring-team/hiring-gtm",
@@ -1114,11 +1549,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/hiring"
+      "ccs-resources/scaling-hiring/hiring"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/hiring"
+    ]
   },
   {
     "id": "R-hiring-team/application-process",
@@ -1126,11 +1564,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/hiring"
+      "ccs-resources/scaling-hiring/hiring"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/hiring"
+    ]
   },
   {
     "id": "R-hiring-team/employee-onboarding",
@@ -1138,11 +1579,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/hiring"
+      "ccs-resources/scaling-hiring/hiring"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/hiring"
+    ]
   },
   {
     "id": "R-hiring-team/social-hiring-funnels",
@@ -1150,11 +1594,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/hiring"
+      "ccs-resources/scaling-hiring/hiring"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/hiring"
+    ]
   },
   {
     "id": "R-operations-scaling/ops-strategy",
@@ -1162,11 +1609,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/operations"
+      "ccs-resources/scaling-hiring/operations"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/operations"
+    ]
   },
   {
     "id": "R-operations-scaling/creating-sops",
@@ -1174,11 +1624,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/operations"
+      "ccs-resources/scaling-hiring/operations"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/operations"
+    ]
   },
   {
     "id": "R-operations-scaling/vertical-horizontal-scaling",
@@ -1186,11 +1639,14 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/scaling-hiring/operations"
+      "ccs-resources/scaling-hiring/operations"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/scaling-hiring/operations"
+    ]
   },
   {
     "id": "R-key-resources/templates-downloads",
@@ -1198,10 +1654,13 @@
     "sourceType": "existing-lesson",
     "review": "full text read",
     "destinations": [
-      "resources/templates"
+      "ccs-resources/templates"
     ],
     "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
-    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
-    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+    "verification": "Actual-app destination and content checks are recorded in QA.md. Source-based instruction is distinct from local simulation and unverified real-account operation.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a",
+    "originalPlannedDestinations": [
+      "resources/templates"
+    ]
   }
 ]

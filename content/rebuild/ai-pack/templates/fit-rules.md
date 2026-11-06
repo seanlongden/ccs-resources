@@ -1,5 +1,5 @@
-# Company and contact fit rules
-Pack: 0.1.0-preview
+# Company And Contact Fit Rules
+Pack: 0.2.0-preview
 
 - Context:
 - Company must sell:

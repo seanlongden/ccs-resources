@@ -1,7 +1,7 @@
-# Client onboarding form and kickoff
-Pack: 0.1.0-preview. Adapted from the existing 23-question CCS form. No claim of a measured retention gain is included.
+# Client Onboarding Form And Kickoff
+Pack: 0.2.0-preview. Adapted from the existing 23-question CCS form. No claim of a measured retention gain is included.
 
-## Collect before kickoff
+## Collect Before Kickoff
 Section 1: Basic Information
 
 1. Email address
@@ -110,8 +110,8 @@ Section 17: Success Definition
 
 **23.** If you could get one thing out of your working relationship with us that would make it a smashing success, what would that be exactly?
 
-## Additional system inputs
+## Additional System Inputs
 Confirmed customer revenue value and period; gross profit only if known; sales cycle; accepted opportunity milestone; calendar owner/event/duration/time zone; capacity; sender identity; secret connection references; current exclusions/suppression; approval owner; cost cap; agreed scope and payment terms.
 
-## Kickoff agenda
+## Kickoff Agenda
 Confirm the completed answers and unknowns. Walk the sales process and opportunity acceptance. Show scope and responsibilities. Agree the research/list/copy review points, contact rules and next action. Use secure account authorisation instead of collecting passwords in the form. Then create the separate client profile, offer, proof, fit rules and settings files. Ask for approval before any live configuration or campaign.

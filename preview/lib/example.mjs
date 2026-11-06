@@ -2,10 +2,11 @@ import * as w from './workflow.mjs';
 export function runExample() {
   const profile = { context: 'agency-acquisition', service: 'cold email', buyer: 'industrial maintenance company owner', owner: 'Illustrative agency owner' };
   w.assertContext(profile, 'agency-acquisition');
-  const rules = { required: ['industrial', 'maintenance'], excluded: ['staffing', 'public procurement'] };
+  const rules = { required: ['industrial', 'maintenance', 'ohio'], excluded: ['staffing', 'public procurement'] };
   const base = Array.from({ length: 50 }, (_, i) => ({
     first_name: `Owner${i + 1}`, email: `owner${i + 1}@company${i + 1}.example`, domain: `company${i + 1}.example`, title: 'Managing Director', mail_route: i % 2 ? 'google' : 'microsoft',
-    website_text: i < 30 ? 'Industrial maintenance services for manufacturers' : i < 40 ? 'Staffing and recruiting services' : '', scrape_status: i < 40 ? 'ok' : 'failed', human_label: i < 30 ? 'GOOD' : i < 40 ? 'BAD' : 'MAYBE', evidence_source: 'Synthetic fixture, not a real company website'
+    location: 'Ohio', customer_revenue_year_one: 60000, sales_cycle_days: 45, spare_accounts: 2,
+    website_text: i < 30 ? 'Industrial maintenance services for manufacturers in Ohio' : i < 40 ? 'Staffing and recruiting services' : '', scrape_status: i < 40 ? 'ok' : 'failed', human_label: i < 30 ? 'GOOD' : i < 40 ? 'BAD' : 'MAYBE', evidence_source: 'Synthetic fixture, not a real company website'
   }));
   const raw = [...base, base[0], { ...base[0], email: '' }, { ...base[0], email: 'owner@gmail.com' }, { ...base[0], email: 'suppressed@suppressed.example' }, { ...base[0], email: 'missing@missing.example', domain: '' }, { ...base[0], email: 'seg@seg.example', mail_route: 'seg' }, { ...base[0], email: 'unknown@unknown.example', mail_route: 'unknown' }, { ...base[0], email: 'name@name.example', first_name: '' }];
   const cleaned = w.cleanLeads(raw, ['suppressed@suppressed.example']);

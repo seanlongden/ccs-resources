@@ -5,6 +5,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { PREVIEW_PORT, routePreviewRequest } from './lib/next-app-isolation.mjs';
+import { readResourceAsset } from '../src/lib/resource-assets.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.chdir(root);
@@ -41,6 +42,12 @@ const server = createServer(async (req, res) => {
     remoteAddress: req.socket.remoteAddress, pathname: url.pathname,
   });
   if (route.location) { res.writeHead(route.status, { Location: route.location }).end(); return; }
+  if (route.asset) {
+    const asset = readResourceAsset(root, url.searchParams.get('file'));
+    if (!asset) { res.writeHead(404).end('File Not Found.'); return; }
+    res.writeHead(200, { 'Content-Type': asset.type, 'Content-Disposition': `attachment; filename="${asset.filename}"`, 'X-Content-Type-Options': 'nosniff' });
+    res.end(req.method === 'HEAD' ? undefined : asset.bytes); return;
+  }
   if (route.fixture) {
     res.writeHead(route.status, { 'Content-Type': 'application/json' });
     res.end(req.method === 'HEAD' ? undefined : JSON.stringify(route.fixture));

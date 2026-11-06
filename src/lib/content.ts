@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import MiniSearch from 'minisearch';
+import rebuildAliases from '../../content/rebuild/actual-aliases.json';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
@@ -95,6 +96,9 @@ export function getPageIndex(): PageIndexEntry[] {
 }
 
 export function getPage(slug: string): PageData | null {
+  const aliases = rebuildAliases as Record<string, string>;
+  const canonical = aliases[slug];
+  if (canonical && canonical !== slug) return getPage(canonical);
   if (pageCache.has(slug)) {
     return pageCache.get(slug) || null;
   }
@@ -103,26 +107,16 @@ export function getPage(slug: string): PageData | null {
   let entry = index.find(e => e.slug === slug);
 
   if (!entry) {
-    const notionIdPattern = /^(.+)-([a-f0-9]{32})$/;
-    entry = index.find(e => {
-      const match = e.slug.match(notionIdPattern);
-      if (match) return match[1] === slug;
-      return false;
-    });
-  }
-
-  if (!entry) {
-    const slugParts = slug.split('/');
-    if (slugParts.length > 1) {
-      const lastPart = slugParts[slugParts.length - 1];
-      entry = index.find(e => e.slug.endsWith('/' + lastPart) || e.slug === lastPart);
-    }
-  }
-
-  if (!entry) {
-    const partialMatch = index.find(e => e.slug.endsWith(slug) || slug.endsWith(e.slug));
-    if (!partialMatch) return null;
-    return getPage(partialMatch.slug);
+    const findSection = (items: NavItem[]): NavItem | undefined => {
+      for (const item of items) {
+        if ((item.fullSlug || item.slug) === slug && item.children?.length) return item;
+        const nested = item.children ? findSection(item.children) : undefined;
+        if (nested) return nested;
+      }
+      return undefined;
+    };
+    const section = findSection(getNavigation());
+    return section ? { title: section.title, slug, fullSlug: slug, content: '', isSection: true, children: section.children } : null;
   }
 
   try {
@@ -277,8 +271,5 @@ export function searchPages(query: string, limit = 20): SearchHit[] {
 }
 
 export function getPageByFullSlug(fullSlug: string): PageData | null {
-  const index = getPageIndex();
-  const entry = index.find(e => e.slug === fullSlug);
-  if (!entry) return null;
-  return getPage(entry.slug);
+  return getPage(fullSlug);
 }

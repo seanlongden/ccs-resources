@@ -1,6 +1,6 @@
 // Local contract test harness. No AI, network, paid export, email or calendar calls.
 import { createHash } from 'node:crypto';
-export const version = '0.1.0-preview';
+export const version = '0.2.0-preview';
 export const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export function requireFields(value, fields) {
   const missing = fields.filter(k => value[k] === undefined || value[k] === null || value[k] === '' || value[k] === 'UNKNOWN');

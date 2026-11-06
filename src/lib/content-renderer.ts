@@ -72,6 +72,9 @@ const markedInstance = new Marked({
   gfm: true,
   breaks: false,
   renderer: {
+    code({ text, lang }: { text: string; lang?: string }) {
+      return `<div class="ccs-prompt"><button type="button" data-copy-prompt aria-label="Copy AI Instructions">Copy Instructions</button><pre><code${lang ? ` class="language-${escapeAttr(lang)}"` : ''}>${escapeAttr(text)}</code></pre></div>`;
+    },
     heading({ text, depth }: { text: string; depth: number }) {
       const stepMatch = text.match(/^Step\s+(\d+):\s*(.*)/i);
       if (stepMatch && depth === 2) {
