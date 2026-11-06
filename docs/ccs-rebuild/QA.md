@@ -218,3 +218,13 @@ Actual signed-in browser checks passed for Start Here, next lesson, eight-lesson
 The live ZIP, CSV worksheet and Markdown example downloaded through the real member session and exactly matched the release files. ZIP: 133572 bytes, 100 entries, manifest 1.0.0 supervised, SHA256 ef02437178bdf40ce1f65ea2d14dccb8173324d03ad5cd2573d6fa70ca05b835. Anonymous live ZIP request returned 401. Test downloads were deleted.
 
 Final live screenshots retained: screenshots/live-resources-desktop.jpg and screenshots/live-resources-phone.jpg. Remaining real Grok/provider setup, human calibration, Matt policy review, fresh-student walkthrough and automatic paid-model/browser integration requirements remain open. Publication does not mark them tested or activate student campaigns. Final verification-only records are local, so no redundant production rollout is triggered.
+
+## Mobile Follow-Up, 6 November 2026
+
+Reviewed 70 actual routes at measured 390x844, including 56 lessons, ten hubs, resources home, first-login welcome and three recording routes. Full-page images reviewed using top/middle/end overview sheets, with representative sections inspected at readable size. Additional checks: ten representative routes at 320x740, nine each at 768x1024, 1024x900 and 1440x1000. No measured page or heading/paragraph/list overflow outside the intended table scrollers.
+
+Browser interactions passed: section-menu selection closes and scrolls to about88px; search result closes drawer and scrolls to matching heading; opening the phone menu after desktop collapse restores full navigation/search; close/Escape restores trigger and body scrolling; keyboard focus wraps inside drawer; table ArrowRight moves only its scroll region; copy matches the entire prompt and original clipboard restored. Menu focuses Close rather than search to avoid automatically opening a phone keyboard.
+
+TypeScript, lint, production build and 97-asset tracing passed. Existing image/Browserslist warnings remain. Missing Stripe key warnings were isolated-local only. Twelve existing content/actual-app/isolation tests passed on an authorised loopback rerun; the initial sandbox EPERM was not counted as success. Direct renderer checks passed for linked list items, emphasis, nested content and accessible table wrapper.
+
+Corrections during review: list-item renderer was showing raw Markdown links, fixed using the installed Marked parser; global background transitions caused transient dark page flashes, limited to interactive controls. Two initial contents-menu locators matched no DOM element, then native summary selector succeeded and the actual anchor/scroll was verified. Production update verification pending.

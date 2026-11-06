@@ -58,9 +58,11 @@ export default function LessonView({ title, html, eyebrow, subtitle }: Props) {
   const { preambleHtml, sections } = useMemo(() => splitBySections(html), [html]);
 
   const [activeId, setActiveId] = useState<string>(() => sections[0]?.id ?? '');
+  const [contentsOpen, setContentsOpen] = useState(false);
   const mainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setContentsOpen(false);
     // Search can navigate before the lesson's section headings have mounted.
     // Scroll once the new content exists, including on same-page hash changes.
     const scrollToSection = () => {
@@ -121,6 +123,19 @@ export default function LessonView({ title, html, eyebrow, subtitle }: Props) {
         <h1 className="ccg-ln-title">{title}</h1>
         {subtitle && <p className="ccg-ln-subtitle">{subtitle}</p>}
       </header>
+
+      {hasRail && (
+        <details className="ccs-mobile-contents" open={contentsOpen} onToggle={event => setContentsOpen(event.currentTarget.open)}>
+          <summary>Jump To Section <span aria-hidden="true">⌄</span></summary>
+          <nav aria-label="Lesson Sections">
+            {sections.map(section => (
+              <a key={section.id} href={`#${section.id}`} onClick={() => setContentsOpen(false)}>
+                {section.title}
+              </a>
+            ))}
+          </nav>
+        </details>
+      )}
 
       <div className="ccg-ln-layout">
         <div className="ccg-ln-main" ref={mainRef}>

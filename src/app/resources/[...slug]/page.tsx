@@ -240,7 +240,7 @@ export default function ResourcePage() {
       />
 
       <main className="flex-1 min-w-0">
-        <div className="mx-auto max-w-5xl px-4 md:px-8 pt-20 md:pt-8 pb-12">
+        <div className="ccs-resource-shell mx-auto max-w-5xl">
           {/* Breadcrumb — Home + ancestor chain + current title.
               Home icon anchors to the current top-level section (CCS Training,
               CCS Install, etc.) rather than the /resources hub, so "back" lands
@@ -252,7 +252,7 @@ export default function ResourcePage() {
             const homeHref = topAncestor ? `/resources/${topAncestor.fullSlug}` : '/resources';
             const homeLabel = topAncestor ? topAncestor.title : 'Resources';
             return (
-          <nav className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 mb-8" aria-label="Breadcrumb">
+          <nav className="ccs-breadcrumb flex flex-wrap items-center gap-1.5 text-sm text-slate-500 min-w-0 mb-6" aria-label="Breadcrumb">
             <Link href={homeHref} className="flex items-center gap-1 hover:text-slate-900">
               <Home className="w-3.5 h-3.5" strokeWidth={1.75} />
               <span className="truncate max-w-[180px]">{homeLabel}</span>
@@ -267,8 +267,8 @@ export default function ResourcePage() {
             ))}
             {currentTitle && (
               <>
-                <ChevronRight className="w-3.5 h-3.5 text-slate-300" strokeWidth={1.75} />
-                <span className="text-slate-900 font-medium truncate max-w-[280px]">{currentTitle}</span>
+                <ChevronRight className="hidden sm:block w-3.5 h-3.5 text-slate-300" strokeWidth={1.75} />
+                <span className="hidden sm:block text-slate-900 font-medium truncate max-w-[280px]">{currentTitle}</span>
               </>
             )}
           </nav>
@@ -299,7 +299,7 @@ export default function ResourcePage() {
 
           {/* Ancestor-based Prev/Next (only on content pages, not section landings) */}
           {page && !error && !page.hideSiblingNavigation && (siblings.prev || siblings.next) && (
-            <nav className="mt-12 pt-6 border-t border-slate-200 grid grid-cols-2 gap-3">
+            <nav aria-label="Lesson Navigation" className="ccs-lesson-navigation mt-8 pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {siblings.prev ? (
                 <Link
                   href={`/resources/${siblings.prev.fullSlug}`}
@@ -308,10 +308,10 @@ export default function ResourcePage() {
                   <ArrowLeft className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" strokeWidth={1.75} />
                   <div className="min-w-0">
                     <div className="text-[10px] tracking-wider text-slate-400 uppercase">Previous</div>
-                    <div className="text-sm font-medium text-slate-900 truncate">{siblings.prev.title}</div>
+                    <div className="text-base sm:text-sm font-medium text-slate-900">{siblings.prev.title}</div>
                   </div>
                 </Link>
-              ) : <div />}
+              ) : <div className="hidden sm:block" />}
               {siblings.next ? (
                 <Link
                   href={`/resources/${siblings.next.fullSlug}`}
@@ -319,11 +319,11 @@ export default function ResourcePage() {
                 >
                   <div className="min-w-0">
                     <div className="text-[10px] tracking-wider text-slate-400 uppercase">Next</div>
-                    <div className="text-sm font-medium text-slate-900 truncate">{siblings.next.title}</div>
+                    <div className="text-base sm:text-sm font-medium text-slate-900">{siblings.next.title}</div>
                   </div>
                   <ArrowRight className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" strokeWidth={1.75} />
                 </Link>
-              ) : <div />}
+              ) : <div className="hidden sm:block" />}
             </nav>
           )}
         </div>
@@ -337,13 +337,12 @@ function SectionLanding({ section }: { section: NavSection }) {
     <article>
       <header className="border-b border-slate-200" style={{ paddingBottom: '22px', marginBottom: '24px' }}>
         <h1
-          className="text-slate-900 m-0"
-          style={{ fontSize: '32px', fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: '10px' }}
+          className="ccs-section-title text-slate-900 m-0"
         >
           {section.title}
         </h1>
         {section.description && (
-          <p className="text-slate-500 m-0" style={{ fontSize: '14px', maxWidth: '580px' }}>
+          <p className="ccs-section-description text-slate-500 m-0">
             {section.description}
           </p>
         )}
@@ -422,29 +421,27 @@ function NumberedCardList({ items }: { items: NavChild[] }) {
           <Link
             key={item.fullSlug || item.slug}
             href={`/resources/${item.fullSlug || item.slug}`}
-            className="group grid items-center bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] hover:-translate-y-px transition-all no-underline"
-            style={{ gridTemplateColumns: '56px 1fr auto', gap: '18px', padding: '16px 22px 16px 18px' }}
+            className="ccs-lesson-card group grid items-center bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] hover:-translate-y-px transition-all no-underline"
           >
             <div
-              className="text-center border-r border-slate-200 py-1.5 text-slate-400"
+              className="ccs-lesson-card-number text-center border-r border-slate-200 py-1.5 text-slate-400"
               style={{ fontFamily: "'SF Mono', Monaco, Menlo, monospace", fontSize: '13px', fontWeight: 800, letterSpacing: '0.04em' }}
             >
               {num}
             </div>
             <div className="min-w-0">
               <h3
-                className="text-slate-900 m-0"
-                style={{ fontSize: '15px', fontWeight: 700, marginBottom: item.description ? '3px' : 0 }}
+                className="ccs-lesson-card-title text-slate-900 m-0"
               >
                 {item.title}
               </h3>
               {item.description && (
-                <p className="text-slate-500 m-0" style={{ fontSize: '12.5px', lineHeight: 1.5 }}>
+                <p className="ccs-lesson-card-description text-slate-500 m-0">
                   {item.description}
                 </p>
               )}
             </div>
-            <div className="flex items-center gap-3">
+            <div className="ccs-lesson-card-meta flex items-center gap-3">
               {isSection && (
                 <span
                   className="text-blue-700 bg-blue-50 rounded-full shrink-0 whitespace-nowrap"

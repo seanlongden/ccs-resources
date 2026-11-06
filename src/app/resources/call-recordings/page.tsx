@@ -7,7 +7,7 @@ export default async function CallRecordingsHubPage() {
   const file = await getRecordingsFile();
 
   return (
-    <div className="mx-auto max-w-5xl px-8 pt-8 pb-12">
+    <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-6 lg:pt-8 pb-12">
       <header className="mb-8 space-y-2">
         <h1 className="text-3xl font-bold text-slate-900">Call Recordings</h1>
         <p className="text-sm text-slate-600">

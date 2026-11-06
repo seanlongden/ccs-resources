@@ -1,6 +1,6 @@
 # CCS Rebuild State
 
-Updated 6 November 2026. Status: STUDENT RESOURCES PUBLISHED AND LIVE MEMBER CHECKS PASSED. Real student Grok/provider installations and the remaining acceptance decisions are not marked complete.
+Updated 6 November 2026. Status: STUDENT RESOURCES LIVE. MOBILE IMPROVEMENT RELEASE IN FINAL CHECKS. Real student Grok/provider installations and the remaining acceptance decisions are not marked complete.
 
 ## Current Authority
 
@@ -70,3 +70,15 @@ Release build found prefer-const, fixed. Next13 ignored App Router output-file i
 ## Exact Next Action
 
 The requested resources publication is complete. Stop for Sean. Do not send student announcements or activate any external automation. On further feedback, inspect the actual live page and these records first. Any real account installation, messaging, booking or spending requires its own specific authorisation and the appropriate checks.
+
+## Mobile Layout Follow-Up, 6 November 2026
+
+Sean requested mobile optimisation of the published resources. Working on the same preview branch, preserving all lesson source text, downloads, AI instructions and source maps. Production main was rechecked at 99a55d6 before changes.
+
+Shared mobile layout now has a branded 64px header, a full navigation drawer independent of desktop collapse, 44px menu targets, scroll locking, Escape/focus restoration and keyboard containment. Sidebar begins at 1024px; the desktop contents rail begins at 1280px, leaving room on tablets. Lessons have a phone section menu, 16px body text, narrower nested padding and wrapped titles. Numbered lesson cards use the available width. Previous/next links stack with complete titles. Long prompts scroll locally and still copy their complete text. Tables scroll in a labelled focusable region without widening the page.
+
+Browser review found Markdown links and emphasis in list items were not rendered by the existing custom renderer. Fixed by parsing the supplied list tokens, preserving the original source. Removed background transitions on non-interactive containers that briefly flashed dark on navigation.
+
+70 actual app routes checked at 390px, with full-page captures and visual overview review. Ten representative routes checked at 320px and nine each at 768, 1024 and 1440px. No measured page or main-text horizontal overflow. Contents jump, search navigation/anchor, drawer after desktop collapse, Escape, focus trap, table keyboard scroll and exact full-text copying checked. Production build, type check, lint and asset tracing passed. Twelve existing content/isolation/actual-app tests passed after the initial sandbox blocked loopback sockets. Renderer checks passed for list links, emphasis, nested items and table regions. Build retains existing image/Browserslist and isolated-local missing-Stripe-key warnings.
+
+Next: finish the final rendered checks, publish only the scoped mobile update through the existing authorised app project, verify the live result and clean disposable captures. Real Grok/provider acceptance remains unchanged and open.

@@ -162,3 +162,6 @@ Sean authorised live publication on 6 November 2026. The current release uses th
 
 ## Live Verification Result
 The student resource release is published at https://resources.closingclientssystem.com/resources, source 99a55d6, deployment dpl_7grYK4dUnXQBR38cEmBSUzhKeFGo. Owner access, actual ZIP/CSV/Markdown downloads, search/copy, responsive welcome/navigation and existing recordings were checked live. No source or real-tool requirement was removed; integration and human acceptance limits remain in STATE.md/QA.md.
+
+## Mobile Follow-Up
+All original source maps, lesson content and pack files retained. Shared mobile components cover Install, Resources, Training, welcome, home and recordings. See STATE.md and QA.md for the actual route/width and interaction checks. This is a presentation/renderer update, not new Grok or provider integration evidence.

@@ -111,7 +111,7 @@ export default function ResourcesPage() {
       />
 
       <div className="flex-1 min-w-0">
-        <main className="px-4 md:px-8 pt-20 md:pt-12 pb-12 max-w-3xl">
+        <main className="ccs-resource-shell ccs-resource-home max-w-3xl">
           <div className="mb-10">
             <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The System</div>
             <h1 className="text-3xl font-bold text-gray-900">Closing Clients System Resources</h1>
@@ -146,7 +146,7 @@ export default function ResourcesPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                     <div className="flex-1 min-w-0">
-                      <div className="text-sm font-medium text-gray-900 truncate">{r.title}</div>
+                      <div className="text-base sm:text-sm font-medium text-gray-900">{r.title}</div>
                     </div>
                     <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

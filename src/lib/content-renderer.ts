@@ -1,4 +1,4 @@
-import { Marked } from 'marked';
+import { Marked, type Tokens } from 'marked';
 
 interface NavLink {
   label: string;
@@ -73,7 +73,7 @@ const markedInstance = new Marked({
   breaks: false,
   renderer: {
     code({ text, lang }: { text: string; lang?: string }) {
-      return `<div class="ccs-prompt"><button type="button" data-copy-prompt aria-label="Copy AI Instructions">Copy Instructions</button><pre><code${lang ? ` class="language-${escapeAttr(lang)}"` : ''}>${escapeAttr(text)}</code></pre></div>`;
+      return `<div class="ccs-prompt"><button type="button" data-copy-prompt aria-label="Copy AI Instructions">Copy Instructions</button><pre tabindex="0" aria-label="Copy-Ready Instructions"><code${lang ? ` class="language-${escapeAttr(lang)}"` : ''}>${escapeAttr(text)}</code></pre></div>`;
     },
     heading({ text, depth }: { text: string; depth: number }) {
       const stepMatch = text.match(/^Step\s+(\d+):\s*(.*)/i);
@@ -104,7 +104,8 @@ const markedInstance = new Marked({
       return `<a href="${safeHref}"${attrs}${title ? ` title="${escapeAttr(title)}"` : ''} class="ccg-link">${text}${externalIcon}</a>`;
     },
 
-    listitem({ text, checked }: { text: string; checked?: boolean }) {
+    listitem({ tokens, checked }: Tokens.ListItem) {
+      const text = this.parser.parse(tokens);
       if (checked === true) {
         return `<li class="ccg-checklist-item ccg-checked"><span class="ccg-checkbox ccg-checkbox-checked"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/><rect x="3" y="3" width="14" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span><span>${text}</span></li>`;
       }
@@ -130,6 +131,9 @@ const markedInstance = new Marked({
 });
 
 function postprocess(html: string): string {
+  // Keep comparison columns readable without making the whole phone page scroll.
+  html = html.replace(/<table\b[\s\S]*?<\/table>/g, table =>
+    `<div class="ccs-table-container"><p class="ccs-table-hint">Swipe The Table To See All Columns →</p><div class="ccg-table-wrap" role="region" aria-label="Scrollable Table" tabindex="0">${table}</div></div>`);
   html = html.replace(/(<p>)?\s*%%LOOM_EMBED:([a-zA-Z0-9]+)%%\s*(<\/p>)?/g, (_match, _p1, videoId: string) => {
     const id = escapeAttr(videoId);
     // Direct iframe — the facade pattern relied on Loom's thumbnail CDN

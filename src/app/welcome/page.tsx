@@ -105,7 +105,7 @@ export default function WelcomePage() {
       />
 
       <div className="flex-1 min-w-0">
-        <main className="px-4 md:px-8 pt-20 md:pt-12 pb-12 max-w-4xl">
+        <main className="ccs-resource-shell ccs-resource-home max-w-4xl">
           <div className="mb-8">
             <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">Start Here</div>
             <h1 className="text-3xl font-bold text-gray-900">Welcome To Closing Clients System</h1>

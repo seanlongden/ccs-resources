@@ -133,6 +133,12 @@ export function Sidebar({
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
+  const mobileSearchRef = useRef<HTMLInputElement>(null);
+  const sidebarRef = useRef<HTMLElement>(null);
+  const closeMobileNavigation = useCallback(() => {
+    setMobileOpen(false);
+    mobileToggleRef.current?.focus();
+  }, []);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
   const performSearch = useCallback(async (query: string) => {
@@ -167,15 +173,37 @@ export function Sidebar({
 
   useEffect(() => {
     if (!mobileOpen) return;
-    const closeOnEscape = (event: KeyboardEvent) => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    // Opening the menu must not summon the phone keyboard before search is wanted.
+    sidebarRef.current?.querySelector<HTMLButtonElement>('[aria-label="Close Navigation"]')?.focus({ preventScroll: true });
+    const handleKeyboard = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setMobileOpen(false);
-        mobileToggleRef.current?.focus();
+        event.preventDefault();
+        closeMobileNavigation();
+      }
+      if (event.key === 'Tab') {
+        const controls = Array.from(sidebarRef.current?.querySelectorAll<HTMLElement>('a[href], button, input') || [])
+          .filter(element => element.getClientRects().length > 0);
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault(); last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault(); first?.focus();
+        }
       }
     };
-    document.addEventListener('keydown', closeOnEscape);
-    return () => document.removeEventListener('keydown', closeOnEscape);
-  }, [mobileOpen]);
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const onResize = () => { if (desktop.matches) setMobileOpen(false); };
+    desktop.addEventListener('change', onResize);
+    document.addEventListener('keydown', handleKeyboard);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      desktop.removeEventListener('change', onResize);
+      document.removeEventListener('keydown', handleKeyboard);
+    };
+  }, [mobileOpen, closeMobileNavigation]);
 
   useEffect(() => {
     if (!searchOpen) return;
@@ -204,32 +232,44 @@ export function Sidebar({
     return activeSlug === fullSlug || activeSlug.startsWith(fullSlug + '/');
   }
 
-  const widthClass = collapsed ? 'w-16' : 'w-72';
+  const sidebarCompact = collapsed && !mobileOpen;
+  const widthClass = sidebarCompact ? 'lg:w-16' : 'lg:w-72';
 
   return (
     <>
-    <div aria-hidden="true" className="md:hidden fixed top-0 inset-x-0 z-30 h-14 border-b border-slate-200 bg-slate-50/95" />
-    <button
-      ref={mobileToggleRef}
-      type="button"
-      aria-label={mobileOpen ? 'Close Navigation' : 'Open Navigation'}
-      aria-expanded={mobileOpen}
-      aria-controls="ccs-sidebar"
-      onClick={() => setMobileOpen(open => !open)}
-      className={`md:hidden fixed top-3 ${mobileOpen ? 'right-3' : 'left-4'} z-[60] inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm`}
-    >
-      {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-      {mobileOpen ? 'Close' : 'Menu'}
-    </button>
-    {mobileOpen && <button type="button" aria-label="Close Navigation Overlay" onClick={() => setMobileOpen(false)} className="md:hidden fixed inset-0 z-40 bg-slate-950/40" />}
+    <header className="ccs-mobile-header lg:hidden">
+      <Link href="/resources" className="flex min-w-0 items-center gap-2.5 font-semibold text-slate-900">
+        <img src="/icon.png" alt="" className="h-8 w-8 object-contain" />
+        <span>CCS Resources</span>
+      </Link>
+      <button
+        ref={mobileToggleRef}
+        type="button"
+        aria-label="Open Navigation"
+        aria-expanded={mobileOpen}
+        aria-controls="ccs-sidebar"
+        onClick={() => setMobileOpen(true)}
+        className="inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-900"
+      >
+        <Menu className="h-4 w-4" /> Menu
+      </button>
+    </header>
+    {mobileOpen && <button type="button" aria-label="Close Navigation Overlay" tabIndex={-1} onClick={closeMobileNavigation} className="lg:hidden fixed inset-0 z-40 bg-slate-950/40" />}
     <aside
+      ref={sidebarRef}
       id="ccs-sidebar"
+      role={mobileOpen ? 'dialog' : undefined}
+      aria-modal={mobileOpen ? true : undefined}
+      aria-label="Resource Navigation"
       onClickCapture={event => { if ((event.target as Element).closest('a')) setMobileOpen(false); }}
-      className={`${widthClass} bg-[#0D1F35] text-white border-r border-black/20 ${mobileOpen ? 'flex fixed z-50' : 'hidden'} md:flex md:sticky md:z-auto shrink-0 flex-col h-screen top-0 left-0 transition-[width] duration-150`}
+      className={`ccs-sidebar ${widthClass} bg-[#0D1F35] text-white border-r border-black/20 ${mobileOpen ? 'flex fixed z-50' : 'hidden'} lg:flex lg:sticky lg:z-auto shrink-0 flex-col top-0 left-0 transition-[width] duration-150`}
     >
+      <button type="button" aria-label="Close Navigation" onClick={closeMobileNavigation} className="lg:hidden absolute right-3 top-3 inline-flex h-11 w-11 items-center justify-center rounded-lg text-white hover:bg-white/10">
+        <X className="h-5 w-5" />
+      </button>
       {/* Brand + collapse toggle */}
-      <div className="px-3 pt-4 pb-3 border-b border-white/10 flex items-center justify-between">
-        {!collapsed ? (
+      <div className="px-3 pt-4 pb-3 border-b border-white/10 flex items-center justify-between pr-16 lg:pr-3">
+        {!sidebarCompact ? (
           <Link href="/resources" className="flex items-center gap-2.5 min-w-0 flex-1 px-2">
             <img src="/icon.png" alt="Closing Clients System" className="w-8 h-8 object-contain shrink-0" />
             <div className="min-w-0">
@@ -244,31 +284,32 @@ export function Sidebar({
         )}
         <button
           onClick={onToggleCollapse}
-          aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-          className={`p-1.5 rounded-md text-white/50 hover:text-white hover:bg-white/10 shrink-0 ${collapsed ? 'absolute -right-3 top-5 bg-[#0D1F35] border border-white/10 shadow' : ''}`}
+          aria-label={sidebarCompact ? 'Expand sidebar' : 'Collapse sidebar'}
+          className={`hidden lg:block p-1.5 rounded-md text-white/50 hover:text-white hover:bg-white/10 shrink-0 ${sidebarCompact ? 'absolute -right-3 top-5 bg-[#0D1F35] border border-white/10 shadow' : ''}`}
         >
-          {collapsed ? <ChevronsRight className="w-4 h-4" /> : <ChevronsLeft className="w-4 h-4" />}
+          {sidebarCompact ? <ChevronsRight className="w-4 h-4" /> : <ChevronsLeft className="w-4 h-4" />}
         </button>
       </div>
 
       {/* Library search (only visible when sidebar expanded). */}
-      {!collapsed && (
+      {!sidebarCompact && (
         <div ref={searchContainerRef} className="relative px-3 pt-3 pb-1">
           <Search className="absolute left-[22px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50" strokeWidth={1.75} />
           <input
-            type="text"
+            ref={mobileSearchRef}
+            type="search"
             value={searchQuery}
             onChange={(e) => { setSearchQuery(e.target.value); setSearchOpen(true); }}
             onFocus={() => setSearchOpen(true)}
             placeholder="Search resources..."
             aria-label="Search resources"
-            className="w-full pl-8 pr-8 py-1.5 text-xs bg-white/5 border border-white/10 rounded-md text-white placeholder-white/40 focus:outline-none focus:bg-white/10 focus:border-white/25"
+            className="w-full pl-8 pr-10 py-3 text-base lg:py-1.5 lg:text-xs bg-white/5 border border-white/10 rounded-md text-white placeholder-white/40 focus:outline-none focus:bg-white/10 focus:border-white/25"
           />
           {searchQuery && (
             <button
               onClick={() => { setSearchQuery(''); setSearchResults([]); }}
               aria-label="Clear search"
-              className="absolute right-[18px] top-1/2 -translate-y-1/2 p-0.5 text-white/40 hover:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 lg:p-0.5 lg:right-[18px] text-white/40 hover:text-white"
             >
               <X className="w-3.5 h-3.5" strokeWidth={1.75} />
             </button>
@@ -292,13 +333,13 @@ export function Sidebar({
                       >
                         <FileText className="w-3.5 h-3.5 text-slate-400 mt-0.5 shrink-0" strokeWidth={1.5} />
                         <div className="min-w-0 flex-1">
-                          <div className="text-xs font-medium text-slate-900 truncate">{r.heading}</div>
-                          <div className="text-[10px] text-slate-500 truncate">
+                          <div className="text-sm lg:text-xs font-medium text-slate-900">{r.heading}</div>
+                          <div className="text-xs lg:text-[10px] text-slate-500">
                             {r.breadcrumb.join(' › ')}
                           </div>
                           {r.snippet && (
                             <div
-                              className="text-[10px] text-slate-600 mt-1 line-clamp-3 leading-snug ccg-search-snippet"
+                              className="text-xs lg:text-[10px] text-slate-600 mt-1 line-clamp-3 leading-snug ccg-search-snippet"
                               dangerouslySetInnerHTML={{ __html: r.snippet }}
                             />
                           )}
@@ -314,30 +355,30 @@ export function Sidebar({
       )}
 
       {/* Nav groups */}
-      <nav className={`flex-1 overflow-y-auto py-4 ${collapsed ? 'px-2 space-y-2' : 'px-3 space-y-5'}`}>
+      <nav className={`flex-1 overflow-y-auto py-4 ${sidebarCompact ? 'px-2 space-y-2' : 'px-3 space-y-5'}`}>
         {/* Start Here — standalone at the top, above the Resources group. */}
         <div>
-          {!collapsed && (
+          {!sidebarCompact && (
             <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
               Start Here
             </div>
           )}
           <Link
             href="/resources/ccs-install/welcome"
-            title={collapsed ? 'Get Started' : undefined}
-            className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
-              isActive('welcome') ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
+            title={sidebarCompact ? 'Get Started' : undefined}
+            className={`flex items-center gap-2.5 ${sidebarCompact ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
+              isActive('ccs-install/welcome') ? 'bg-white/15 text-white' : 'text-white/85 hover:bg-white/10 hover:text-white'
             }`}
           >
-            <Home className={`w-4 h-4 ${isActive('welcome') ? 'text-white' : 'text-white/60'} shrink-0`} strokeWidth={1.75} />
-            {!collapsed && <span className="truncate flex-1">Get Started</span>}
+            <Home className={`w-4 h-4 ${isActive('ccs-install/welcome') ? 'text-white' : 'text-white/60'} shrink-0`} strokeWidth={1.75} />
+            {!sidebarCompact && <span className="truncate flex-1">Get Started</span>}
           </Link>
         </div>
 
         {(['main-modules'] as GroupKey[]).map((g) => (
           newGrouped[g].length > 0 && (
             <div key={g}>
-              {!collapsed && (
+              {!sidebarCompact && (
                 <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
                   {GROUP_LABELS[g]}
                 </div>
@@ -351,8 +392,8 @@ export function Sidebar({
                     <Link
                       key={s.slug}
                       href={`/resources/${s.fullSlug || s.slug}`}
-                      title={collapsed ? (isEmpty ? `${s.title}, Coming Soon` : s.title) : undefined}
-                      className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
+                      title={sidebarCompact ? (isEmpty ? `${s.title}, Coming Soon` : s.title) : undefined}
+                      className={`flex items-center gap-2.5 ${sidebarCompact ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md ${
                         active ? 'bg-white/15 text-white' :
                         isEmpty ? 'text-white/40 hover:bg-white/5 hover:text-white/55' :
                         'text-white/85 hover:bg-white/10 hover:text-white'
@@ -361,7 +402,7 @@ export function Sidebar({
                       <Icon className={`w-4 h-4 shrink-0 ${
                         active ? 'text-white' : isEmpty ? 'text-white/30' : 'text-white/60'
                       }`} strokeWidth={1.75} />
-                      {!collapsed && (
+                      {!sidebarCompact && (
                         <>
                           <span className="truncate flex-1">{s.title}</span>
                           {isEmpty && (
@@ -381,7 +422,7 @@ export function Sidebar({
 
         {/* Tools: external CCS Tools hub. */}
         <div>
-          {!collapsed && (
+          {!sidebarCompact && (
             <div className="px-2 mb-1.5 text-[11px] font-semibold tracking-wider text-white/40 uppercase">
               Tools
             </div>
@@ -390,11 +431,11 @@ export function Sidebar({
             href="https://tools.closingclientssystem.com"
             target="_blank"
             rel="noopener noreferrer"
-            title={collapsed ? 'CCS Tools' : undefined}
-            className={`flex items-center gap-2.5 ${collapsed ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md text-white/85 hover:bg-white/10 hover:text-white`}
+            title={sidebarCompact ? 'CCS Tools' : undefined}
+            className={`flex items-center gap-2.5 ${sidebarCompact ? 'justify-center px-2' : 'px-2'} py-1.5 text-sm rounded-md text-white/85 hover:bg-white/10 hover:text-white`}
           >
             <Wrench className="w-4 h-4 text-white/60 shrink-0" strokeWidth={1.75} />
-            {!collapsed && (
+            {!sidebarCompact && (
               <>
                 <span className="truncate flex-1">CCS Tools</span>
                 <ExternalLink className="w-3 h-3 text-white/40 shrink-0" strokeWidth={2} />
@@ -406,7 +447,7 @@ export function Sidebar({
 
       {/* User + Logout */}
       <div className="border-t border-white/10 px-3 py-3 space-y-2">
-        {!collapsed && (
+        {!sidebarCompact && (
           <div className="px-1">
             <div className="text-xs font-medium text-white/85 truncate">{auth.email}</div>
             <div className="mt-0.5">
@@ -425,11 +466,11 @@ export function Sidebar({
         )}
         <button
           onClick={onLogout}
-          title={collapsed ? 'Logout' : undefined}
-          className={`w-full flex items-center gap-2 py-1.5 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-md ${collapsed ? 'justify-center px-2' : 'px-2'}`}
+          title={sidebarCompact ? 'Logout' : undefined}
+          className={`w-full flex items-center gap-2 py-1.5 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-md ${sidebarCompact ? 'justify-center px-2' : 'px-2'}`}
         >
           <LogOut className="w-4 h-4" strokeWidth={1.75} />
-          {!collapsed && <span>Logout</span>}
+          {!sidebarCompact && <span>Logout</span>}
         </button>
       </div>
     </aside>

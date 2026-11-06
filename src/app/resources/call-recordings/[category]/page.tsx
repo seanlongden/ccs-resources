@@ -20,7 +20,7 @@ export default async function CallRecordingsCategoryPage({ params }: Props) {
   if (!cat) notFound();
 
   return (
-    <div className="mx-auto max-w-6xl px-8 pt-8 pb-12">
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-6 lg:pt-8 pb-12">
       <nav className="mb-4 text-xs text-slate-500">
         <Link href="/resources/call-recordings" className="hover:underline">
           Call Recordings
