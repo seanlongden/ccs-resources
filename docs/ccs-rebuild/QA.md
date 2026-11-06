@@ -208,3 +208,13 @@ One additional isolated production-handler test passed with all 97 byte-matched 
 Publication and live member-page/download checks are in progress. Real Grok/provider integration tests, fresh-student walkthrough, Matt operating-policy review, automatic paid-model/browser adapters and named responsibility decisions remain open.
 
 Final pre-publication checks: all 31 core tests pass with the supervised pack. The extra isolated production-handler check passed for 97 assets. All 18 materially changed student lessons were rechecked at 1440x1000 and 390x844, no measured overflow, and all six overview sheets visually inspected. The revised first-login welcome was inspected at both sizes, with its first card navigating to the approved Start Here lesson. The final campaign-check heading was made literal and its content checks passed again.
+
+## Live Publication And Member Verification Completed
+
+Release 99a55d6e9bef28a09b4867a64d709c7688076b80 was fast-forwarded to existing main. Vercel deployment dpl_7grYK4dUnXQBR38cEmBSUzhKeFGo reached READY/PROMOTED and retained resources.closingclientssystem.com. No domain, hosting-project, access-setting, credential, workflow or campaign configuration changed. No direct database edit was made; normal owner sign-in used the existing application flow.
+
+Actual signed-in browser checks passed for Start Here, next lesson, eight-lesson Training navigation, section search/scroll, exact prompt copy, first-login welcome and phone Menu/Escape. Desktop 1440x1000 and phone 390x844 were measured. A multi-tab viewport attempt remained 1280px and was excluded, then corrected. Live recordings hub shows 32 Weekly Coaching recordings and 0 Sales Training, with no record edits.
+
+The live ZIP, CSV worksheet and Markdown example downloaded through the real member session and exactly matched the release files. ZIP: 133572 bytes, 100 entries, manifest 1.0.0 supervised, SHA256 ef02437178bdf40ce1f65ea2d14dccb8173324d03ad5cd2573d6fa70ca05b835. Anonymous live ZIP request returned 401. Test downloads were deleted.
+
+Final live screenshots retained: screenshots/live-resources-desktop.jpg and screenshots/live-resources-phone.jpg. Remaining real Grok/provider setup, human calibration, Matt policy review, fresh-student walkthrough and automatic paid-model/browser integration requirements remain open. Publication does not mark them tested or activate student campaigns. Final verification-only records are local, so no redundant production rollout is triggered.

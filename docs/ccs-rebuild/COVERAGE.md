@@ -159,3 +159,6 @@ The four old Loom videos and external Canva, Google and Notion assets are not re
 
 ## Publication Authority Update
 Sean authorised live publication on 6 November 2026. The current release uses the same source maps and lessons in the existing Vercel app. Preview-only teaching language is replaced with supervised student operation and explicit actual-account completion checks. External writes remain disabled by default. No source map or unresolved real-tool requirement has been dropped.
+
+## Live Verification Result
+The student resource release is published at https://resources.closingclientssystem.com/resources, source 99a55d6, deployment dpl_7grYK4dUnXQBR38cEmBSUzhKeFGo. Owner access, actual ZIP/CSV/Markdown downloads, search/copy, responsive welcome/navigation and existing recordings were checked live. No source or real-tool requirement was removed; integration and human acceptance limits remain in STATE.md/QA.md.

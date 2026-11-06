@@ -1,104 +1,72 @@
 # CCS Rebuild State
 
-Updated 6 November 2026. Status: LIVE RESOURCES RELEASE AUTHORISED AND BEING VERIFIED. Real Grok/provider operations and fresh-student acceptance remain unverified.
+Updated 6 November 2026. Status: STUDENT RESOURCES PUBLISHED AND LIVE MEMBER CHECKS PASSED. Real student Grok/provider installations and the remaining acceptance decisions are not marked complete.
 
-## Authority And Boundaries
+## Current Authority
 
-Sean authorised all remaining lessons and assets on this private branch without per-page approval. Preserve the approved Start Here and Add The CCS Instructions To Grok Bot teaching standard. The full eleven-part plan remains in PLAN.md, including original source maps. Read PLAN.md, STATE.md, COVERAGE.md and QA.md when resuming; reread the full plan before each milestone.
+Sean authorised the full preview rebuild, then instructed “Okay make it all live.” Publishing the scoped resources app through its existing production project is authorised. Sean separately approved owner sign-in as seanlongden0@gmail.com for member-page and download checks. This does not approve outreach, invitations, bookings, purchases, student campaign activation, domain/access changes, direct database edits, credential changes or unrelated sites.
 
-Sean authorised publishing the reviewed resources app through its existing Vercel project and main branch. No domains, access settings, databases, credentials, campaigns, workflows, original Drive documents or unrelated sites may change. No sending, booking or spending is authorised. Owner sign-in for seanlongden0@gmail.com is approved for member-page/download checks. No global instructions changed. Project memory, functional app assets and requested screenshots are authorised permanent files; disposable review captures are deleted after review.
+Read PLAN.md, STATE.md, COVERAGE.md and QA.md when resuming. The full original eleven-part plan and original source maps remain in PLAN.md. Later approval amendments supersede preview-only publication holds. Do not change global instructions or original Drive/source libraries.
 
-## Worktree And Baselines
+## Live Deployment
 
-- Worktree: /Users/seanlongden/Projects/ccs-resources-preview.
-- Branch: codex/ccs-resources-preview, no upstream.
-- This run started at 19783fa36cbc4413f12ea490a5b16e814fddd33d. Final local commit is the Git commit containing this record; no remote branch was created.
-- Protected original checkout: /Users/seanlongden/Projects/ccg-resources, clean main at 726c5772acb6b8af120f22ae8ddffa7e8c0ac40f. It was already 62 commits behind remote main. No credential files copied.
-- Remote main at start and final read: 49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a. No external main-source change observed. Actual deployed SHA and DigitalOcean triggers remain unverified.
-- Existing production content chunks 0-21, 100-102 and deployment configuration remain unchanged. Existing preview work preserved. Only approved welcome changed as a parsed object in chunk 103; other old Install objects remain unchanged.
+- Live member site: https://resources.closingclientssystem.com/resources
+- Start Here: https://resources.closingclientssystem.com/resources/ccs-install/welcome
+- Existing host: Vercel ccs-resources, project prj_LDuc9zgbOgDlYGtitf1qvbMQ9xUx, team team_1OrPxJp05a1wpuFP2pyhkr7q, production branch main.
+- Published code: 99a55d6e9bef28a09b4867a64d709c7688076b80.
+- Verified deployment: dpl_7grYK4dUnXQBR38cEmBSUzhKeFGo, READY and PROMOTED, ccs-resources-fcnijsz0q-closing-clients.vercel.app. Existing resources domain aliases remained unchanged.
+- Previous production: 49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a, dpl_DB5Br6MiFPngcJ7rktasqtLZexZM. Main was fast-forwarded normally, without force. No concurrent main changes were overwritten.
+- Earlier DigitalOcean assumption was incorrect and unverified. Vercel hosting, production branch and deployment identity are now verified through its API and actual live member pages.
+- Worktree: /Users/seanlongden/Projects/ccs-resources-preview, branch codex/ccs-resources-preview. Verification-only records/screenshots following 99a55d6 are local notes, not unpublished student app changes. No second deployment is needed for them.
+- Original checkout /Users/seanlongden/Projects/ccg-resources remains on clean local main at 726c5772acb6b8af120f22ae8ddffa7e8c0ac40f. Its working files were not changed. Shared origin/main now tracks the authorised published release.
 
-## Working Preview
+## What Students Now Have
 
-http://127.0.0.1:4327/resources/ccs-install/welcome
+- 11 guided Install steps, 35 supporting Resources, 8 Training lessons and a full worked example, plus Check Your System Before You Launch.
+- Original six Resource categories, original recordings routes, normal member authentication and student-page components.
+- Pack 1.0.0: 16 full source-derived skills, 52 editable templates, 25 worked files and 4 collector/cache/CSV tools. ZIP has 100 entries.
+- Supervised operation: external writes disabled by default; exact owner approval and checked connections before consequential actions. This is instruction, not a technical interceptor.
+- Guided manual research/AI operation available. Automatic paid-model client and automatic browser fallback are not included.
+- First-login welcome follows Install, Resources and Training. The old placeholder video was removed, and the existing DFY link retained separately.
+- Existing source chunks and original Drive documents preserved. Source map accounts for all 28 Coaching, 13 DWY and 56 main repository lessons. Current Drive revision identity remains unverified.
 
-Run with Node24: node preview/next-app.mjs. This is the actual Next resources app, Sidebar, content route, renderer and LessonView. The old standalone renderer at 4326 is retained as legacy source and is not the review application.
+## Actual Checks Completed
 
-The harness requires this branch, development mode, no local env files and loopback only. It clears inherited service credentials, uses student@preview.invalid, denies write methods and live-service APIs, and blocks external browser connections/forms/frames. It does not verify production authentication or subscriptions. Production auth logic is unchanged; the new asset route uses the existing session gate. No remote preview or phone-accessible hosting was deployed.
+- Production build passed compile, lint, type checks, static generation and asset tracing. Existing image/Browserslist warnings remain. Missing live Stripe key warnings occurred only in the isolated local build; no production env values were changed.
+- All 31 core curriculum/workflow/collector/actual-app checks passed. One additional isolated production-handler test passed: 97 byte-matched assets, anonymous/stale sessions denied and traversal denied. Local test key/identity were never used on production.
+- Actual-app HTTP checks covered 56 lessons, 10 sections, 131 aliases, 86 referenced assets and four searches. Source/file checks and 100-entry ZIP agreement passed.
+- Original 69 routes inspected at desktop/phone. All 18 release-edited lessons inspected again at 1440x1000 and 390x844, plus the revised first-login welcome at both sizes. No measured overflow. Full-page overviews and key readable views inspected.
+- Live owner sign-in succeeded through existing authentication. Published Start Here and next lesson render correctly. Training hub has eight lessons. No Coming Soon state remains for Training.
+- Live ZIP downloaded through the signed-in page: 133572 bytes, version1.0.0, supervised, 100 valid entries, exact canonical byte equality. SHA256 ef02437178bdf40ce1f65ea2d14dccb8173324d03ad5cd2573d6fa70ca05b835.
+- Live budget.csv template and budget.md worked example downloaded and byte-matched. Test copies removed. Anonymous live ZIP request returned401.
+- Live search opens the correct section and scrolls its heading to about80px. Live prompt copy exactly matches displayed text; clipboard restored without exposing its content.
+- Live phone welcome and Menu/Escape checked at verified390x844; desktop resources home checked at1440x1000. The initial multi-tab viewport attempt stayed1280px and was not counted; the temporary local tab was closed and actual390px review passed.
+- Live recordings hub still shows32Weekly Coaching recordings and0Sales Training. No recording data was edited.
+- Final live screenshots: screenshots/live-resources-desktop.jpg and screenshots/live-resources-phone.jpg. Disposable review captures and browser test downloads removed after verification.
 
-## Current Build
+## Preserved Decisions
 
-- 55 student pages: 11 Install, 35 supporting Resources, 8 Training and 1 full worked example. One additional private review-status page. 56 indexed lesson pages total.
-- Six original Resource categories, three main tracks, worked example and asset library. Recordings hub/categories render with an explicit local-data notice.
-- 16 full source-derived skills, version 0.2.0-preview. 52 editable templates, 25 worked files and 4 collector/cache/CSV tools. ZIP has 100 entries.
-- 97 sources mapped individually, original plan destinations retained. 131 explicit old-route aliases. No ambiguous suffix/fuzzy resolution.
-- Actual-app copy buttons, authenticated asset handler, search headings/anchors, mobile drawer and breadcrumb/next/category navigation.
-- Frozen original lesson sources remain preserved. New curriculum lives in pages-104.json. build-curriculum.mjs regenerates nav/index/aliases/current source paths. Search index is generated locally and ignored by Git.
-- Root dependency lock was repaired in the prior Start Here integration commit. package.json unchanged. Node24 used; host Node18 is insufficient.
+Use plain British English, title case in titles/headlines and no generated em dashes. Explain outcomes, exact steps, AI/student/CCS work, files, checks, errors and next action. Keep agency acquisition separate from each client's cold-email delivery. No SEO/paid-ad fulfilment promise added.
 
-## Phase Status
+Two cold steps, same-thread bump, tracking off, stop on reply and paused load. Interested-reply reminders are a separate proposed policy requiring campaign confirmation. No approval from silence. Revenue, LTV, profit and cash timing remain distinct. The worked case and label fixtures remain illustrative, not member results, demand proof or real AI accuracy.
 
-| Phase | Preview Result | Open Acceptance Condition |
-|---|---|---|
-| 1 Operating Specification | Written, product/cost facts updated and conflicts reconciled for review | Named work owners, supported stack, policy and handover approval |
-| 2 Whole Example | Consistent filled example and deterministic workflow/failure tests | Real Grok, provider, calendar and AI calibration checks; real browser/paid-model route |
-| 3 Student Material | Full curriculum and usable assets applied in actual app | Matt teaching review and fresh-student walkthrough |
-| 4 Private Preview | Actual app, search/copy/download/navigation working locally | Real authentication/permission integration remains untested |
-| 5 Student Review | 69 routes at desktop/phone, affected pages rechecked, failures fixed | Human comprehension and real operational walkthrough |
-| 6 Review Handover | Local commit, preview, screenshots and records | Sean's review only; no publication authorised |
+## Remaining Acceptance And Decisions
 
-## Actual Checks
+1. Confirm CCS/student setup split, named setup helper and handover reviewer. Existing CCS support/coaching channel is used; no invented helpdesk.
+2. Test actual Grok saved skills/readback, Bot/file access, secure tool connections, paused real imports, reply/webhook route, routines, booking/sequence-stop and provider reports in a permitted test setup.
+3. Obtain separate exact copy, sender, recipient, channel and calendar approval before any controlled message/invitation test. No such send or booking occurred in this task.
+4. Matt's operating-policy/commercial-method review, qualification thresholds, reminder timing and optional LinkedIn settings remain open.
+5. Real-company human-labelled AI calibration, current buyer/trigger evidence and a fresh-student walkthrough remain open. Provider language notes and synthetic tests do not satisfy them.
+6. Automatic paid-model and browser adapters are not built. The included multi-page collector, SQLite cache, proposed-analysis import and contact joins are locally tested, not real-account performance claims.
+7. Real system demonstration is required before a student's Training handover. One booking is not proof of repeatable profitability.
+8. Live owner access and downloads are checked, but no individual student's paid subscription or allowlist identity was impersonated. Existing external videos/templates not reused as verified assets remain unverified.
 
-31 executable tests passed, zero failed/skipped. 29 cover current curriculum, workflow, collector and actual-app harness; 2 are separate legacy standalone regressions. Root TypeScript passed. Actual-app HTTP audit: 56 lesson pages, 10 section routes, 131 aliases, 86 byte-matched assets and four searches. All 69 rendered routes reviewed at 1440x1000 and 390x844, 32 affected routes rechecked at both sizes, followed by the two final collection/status page revisions at both sizes. No measured page/text overflow. Exact clipboard copy and browser ZIP download verified; search click now scrolls to its section, phone Menu/Escape, next/breadcrumb and single-lesson category clicks passed. QA.md records scope and limits.
+## Corrected Failures
 
-## Teaching Decisions And Corrections
+Standalone preview did not meet the actual-app requirement, corrected. Phone sidebar squeezing, sticky rail, missing heading IDs, asynchronous search scrolling, single-child category redirect and self-alias issues fixed. Earlier download-event wait stalled; native download subsequently passed. Clipboard empty restoration fixed. Sandboxed sockets failed and authorised local checks passed.
 
-- Titles/headlines capitalise every word, including And/The/To. Plain British English, no generated student-copy em dashes.
-- Explain the system and useful result, then exact actions, files, prompts, checks, failure route and next step. Preserve meaningful source detail in the skills and templates.
-- Grok is researched from official docs, not an unidentified-product blocker. Current account execution and entitlements remain unverified.
-- Stage-aware prerequisites allow intake before offer/fit files exist. All six Bots and the three voice files read by reply skills are explained.
-- Agency acquisition and each client's cold-email delivery use separate profiles, senders, calendars, proof and settings. No SEO/paid-ad delivery promise added.
-- Two cold steps, same-thread bump, tracking off, stop on reply and paused load. Interested-reply draft reminders are separate, proposed 24h/+1day/+2days pending Matt approval. Silence never authorises action.
-- Broad research screening differs from final discovery/proposal thresholds. Unknown buyer economics, website status and email health stay unknown.
-- Revenue/LTV/profit/cash timing separate. Worked terms distinguish 10-opportunity target, 5-opportunity payment milestone and 1-opportunity minimum remedy. These are illustrative, not historical results or live terms.
-- Real public language notes are provider wording, not ten buyer interviews or proof of demand. Synthetic labels are not real AI accuracy.
-- New-contact runway excludes follow-up sends. MX is not outbound IP. No near-time substitution or company-domain-only booking identity.
-- LinkedIn optional/manual. Source 30/60-day activity-window conflict exposed as a proposed owner setting.
-- Calendly's 3 November release now permits Scheduling API and standard webhooks on Free; actual scope/limits must be checked. Paid Standard is optional. Earlier paid-plan-only assumption corrected.
-
-## Outstanding Decisions And Untested Requirements
-
-1. Confirm CCS/student installation split and named handover reviewer; confirm the real student support destination. Supplied student-setup-support address failed DNS; use existing CCS channel meanwhile.
-2. Select the supported real tool/account stack and permissions. Verify Grok saved skills/readback, secure connections, paused provider imports, reply/webhook receiving route, routines and real reports.
-3. Matt approves the commercial teaching, qualification thresholds, reminder timing, optional LinkedIn settings and profile/sales-asset instructions.
-4. Run real-company human-labelled AI calibration and current buyer/trigger research. Public provider wording and synthetic fixtures do not satisfy these.
-5. Obtain exact copy/recipient/channel approval for controlled transport tests. No send/invite/booking test was authorised or performed.
-6. B3 core tools now include a context-scoped SQLite company cache, a three-page collector, source fingerprints, proposed AI analysis import and row-preserving joins. Five Python cache cases and multi-page fixture tests pass. Automatic paid-model calls and browser fallbacks are not implemented; those await a confirmed supported route, permission and spending cap. Do not call those integrations tested.
-7. Fresh student/human teaching walkthrough and demonstrated real system before Training handover. One booked meeting is not repeatable profitability.
-8. Real production auth/subscription/download integration and live recording access are untested. Original external templates/videos were not reused as verified assets.
-9. Deployed production SHA and actual deployment triggers remain unverified. No push allowed under the current instruction.
-
-## Failure And Recovery Record
-
-Earlier standalone preview did not meet Sean's actual-app requirement; it is superseded. Initial phone sidebar squeezed the lesson and desktop contents rail lost sticky behaviour; both corrected. Earlier search lacked heading IDs; current cross-lesson search also needed a post-mount section scroll, now corrected and browser verified. Single-child category auto-redirect created an unhelpful previous-link loop, removed. Self-alias was removed. Clipboard empty restoration fixed. An earlier download-event wait stalled; actual native download later succeeded and byte-matched the ZIP. Sandbox denied local sockets during final tests; authorised loopback rerun passed all 29 at that point, then all 31 after the cache extension. No live account was used to resolve these failures.
-
-## Changed-File Summary
-
-- Curriculum: content/pages-104.json, approved welcome link/metadata in pages-103.json, navigation, page index and explicit aliases. Frozen source chunks remain unchanged.
-- Student assets: all sixteen skill boundaries, editable templates, full worked files, source map and versioned download in content/rebuild/.
-- App: actual resources home/lesson routing, explicit alias resolution, prompt copy, matching search anchors, mobile navigation, session-gated downloads, whitelisted asset loader and local recordings fallback.
-- Local tooling: curriculum/pack builders, read-only actual-app harness, CSV/website collector and local SQLite research cache. No live-service adapter is claimed tested.
-- Checks: curriculum, actual-app HTTP, file boundaries, collector/cache, worked chain and workflow failure tests. Production auth and service credentials are not bypassed by published code.
-- Recovery and review: scoped AGENTS.md, unchanged full original plan plus approval amendment, STATE/COVERAGE/QA/OPERATING-SPEC and four final actual-app screenshots.
+Release build found prefer-const, fixed. Next13 ignored App Router output-file includes; scripts/trace-resource-assets.mjs now packages the exact assets after next build. The actual production ZIP, CSV and Markdown downloads confirm the deployed route works. Automatic review initially blocked owner sign-in; exact account approval was obtained before retrying.
 
 ## Exact Next Action
 
-Finish the supervised 1.0.0 release build/tests, push the scoped resources update to existing main without forcing or overwriting concurrent work, monitor the existing Vercel production deployment, and verify member pages/downloads using the approved owner login. Do not activate student accounts, routines, campaigns, sends, bookings or paid services. Record the actual live deployment result and remaining limitations.
-
-## Current Release Changes
-
-- Student pack 1.0.0 uses supervised operation, external writes disabled by default and exact owner approval. It is not a claim that every Grok/provider connection is verified.
-- Student pages replace private-preview restrictions with guided practice, approval and actual-account completion checks. Review-status becomes Check Your System Before You Launch.
-- Actual hosting verified: existing Vercel ccs-resources, project prj_LDuc9zgbOgDlYGtitf1qvbMQ9xUx, production branch main and resources.closingclientssystem.com. No hosting, domain or access setting change.
-- Production build initially caught prefer-const in content.ts; fixed. Sandboxed Next IPC failed, authorised build passed. Next13 ignores App Router tracing includes; a post-build script now adds the exact student assets to the App Router traces.
-- Isolated actual production handler test passed for all 97 assets with byte equality. Anonymous and expired sessions are denied. Test key and synthetic identity are local only; production auth is unchanged.
-- Owner sign-in initially blocked by automatic review. Sean explicitly approved the exact owner account; existing production sign-in then succeeded. No outbound message or invitation was sent.
+The requested resources publication is complete. Stop for Sean. Do not send student announcements or activate any external automation. On further feedback, inspect the actual live page and these records first. Any real account installation, messaging, booking or spending requires its own specific authorisation and the appropriate checks.
