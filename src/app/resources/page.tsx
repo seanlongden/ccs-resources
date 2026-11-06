@@ -111,7 +111,7 @@ export default function ResourcesPage() {
       />
 
       <div className="flex-1 min-w-0">
-        <main className="px-8 py-12 max-w-3xl">
+        <main className="px-4 md:px-8 pt-20 md:pt-12 pb-12 max-w-3xl">
           <div className="mb-10">
             <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-2">The System</div>
             <h1 className="text-3xl font-bold text-gray-900">Closing Clients System Resources</h1>

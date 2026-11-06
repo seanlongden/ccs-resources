@@ -81,7 +81,9 @@ const markedInstance = new Marked({
             <h2 class="ccg-step-title">${stepMatch[2]}</h2>
           </div>`;
       }
-      return `<h${depth}>${text}</h${depth}>`;
+      const id = text.replace(/<[^>]*>/g, '').toLowerCase()
+        .replace(/[^\w\s-]/g, '').trim().replace(/\s+/g, '-').slice(0, 80);
+      return `<h${depth} id="${escapeAttr(id)}">${text}</h${depth}>`;
     },
 
     link({ href, title, text }: { href: string; title?: string | null; text: string }) {

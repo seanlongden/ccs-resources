@@ -114,6 +114,10 @@ The four old Loom videos and external Canva/Google/Notion assets are not reused 
 
 | Requirement | Destination | Actual result |
 |---|---|---|
+| Updated existing CCS app, using its student page components | Existing Next resources app on preview branch | Approved Start Here integrated and reviewed through real route/API/Sidebar/LessonView; remaining drafts not integrated |
+| Every word capitalised in titles/headlines | Navigation, hubs, lessons and shared labels | Approved Start Here and its title/index/nav updated; remaining library still requires revision |
+| Literal student walkthrough with prerequisites in order | Start Here, Grok setup, then remaining Install steps | Start Here now explains outcomes and Grok setup before any business AI task; next lesson proposed in chat, not applied |
+| Offer/copy skills govern sequence, useful outcomes and work ownership | Student content review throughout rebuild | Latest correction recorded in STATE.md; first rewritten page to be presented in chat before application |
 | Three sections and clear stage ownership | Home, track/category hubs | 9 Install / 8 Training / 6 resource categories; HTTP and both sizes checked |
 | All seven teaching elements | Every lesson record | Schema and rendering checks pass; comprehension needs human walkthrough |
 | One versioned AI pack, canonical 16 skills | ai-pack, ZIP | Names/files/version checked, ZIP byte-matches canonical files; Grok install not tested |
@@ -135,6 +139,10 @@ The four old Loom videos and external Canva/Google/Notion assets are not reused 
 | Fresh student and teaching review | QA.md | Pending human reviewer; never marked complete |
 | Production isolation/baselines | STATE.md, QA.md | Original checkout and main source unchanged; no push; actual remote deployment triggers/deployed SHA unknown |
 | Private preview and local commit | README, final handover | Loopback review only; no merging or publication |
+
+## Approved Page Override
+
+The approved chat copy now supersedes the earlier install/start draft for C01/C27 welcome and launch orientation. Canonical applied destination: content/pages-103.json, ccs-install/welcome. C11 cost-detail material and the budget assets remain preserved for the later tools/cost step; the approved welcome only recommends the initial Grok plan. The new lesson does not silently remove those requirements from PLAN.md. Three other normal Install lessons remain unchanged. The next proposed lesson uses D01/D02/C04 and official Grok documentation, and is held for approval in chat.
 
 ## Corrections incorporated
 

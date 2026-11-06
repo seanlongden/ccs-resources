@@ -115,7 +115,7 @@ export default function LessonView({ title, html, eyebrow, subtitle }: Props) {
         {hasRail && (
           <aside className="ccg-ln-rail">
             <div className="ccg-ln-rail-section">
-              <div className="ccg-ln-rail-label">On this page</div>
+              <div className="ccg-ln-rail-label">On This Page</div>
               <nav className="ccg-ln-rail-nav">
                 {sections.map((s) => (
                   <a

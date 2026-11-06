@@ -12,6 +12,7 @@
 # next.js
 /.next/
 /out/
+/content/search-index.json
 
 # production
 /build

@@ -1,6 +1,27 @@
 # CCS rebuild QA
 
-Updated 6 November 2026. Review candidate only. No publication or live student handover has passed.
+Updated 6 November 2026. Approved Start Here integrated and reviewed in the actual app. Remaining lessons, publication and live student handover have not passed.
+
+## Actual App: Start Here Acceptance
+- Approved copy applied to the existing ccs-install/welcome lesson in pages-103.json, with matching navigation/index title. Other three Install lessons are byte-equivalent as parsed JSON to the prior commit. No next lesson has been added or rewritten.
+- Real Next route, content API, original markdown renderer, Sidebar and LessonView used at http://127.0.0.1:4327/resources/ccs-install/welcome . This supersedes the standalone renderer for reviewing Start Here.
+- Root TypeScript check passed: bundled Node node_modules/typescript/bin/tsc --noEmit --incremental false.
+- Four new tests passed: two harness unit tests and two HTTP integration tests against the running Next app. Checks include exact content/API agreement, fixture identity, updated search, page 200, existing-lesson read, hostile Host rejection, five write methods denied, service routes denied and legacy preview URL redirect.
+- Isolation is implemented in the local harness, not in production auth: development-only; preview branch required; no local environment files; inherited service credentials removed; 127.0.0.1 bind; test identity; only content-read APIs reach Next. Live services and admin/recordings routes are denied. This does not prove real authentication, subscription gating or connector behaviour.
+- Desktop 1440x1000 and phone 390x844 inspected. Read through rendered sections including all six outcomes, student responsibilities, three-section explanation, Grok setup and next step. No measured paragraph/heading overflow. Phone menu open/Escape close passed. Skip link reaches Your Next Step; desktop contents links and sticky rail checked. No browser warning/error logs observed after final changes.
+- Actual sidebar search for Grok returned the new lesson sections. Found missing heading IDs for subsection search targets in the existing renderer; added matching IDs and verified the Download Grok Bot search result reaches its named heading. Added scroll spacing for subsection targets so the mobile header does not cover them.
+- Found and fixed existing phone sidebar squeezing content to 94px, then verified full-width readable content. Added a mobile menu and spacing. Found desktop contents rail stopped sticking due to its scrolling ancestor; corrected and verified rail top 24px after section navigation.
+- Two final screenshots retained: screenshots/start-here-actual-app-desktop.jpg and screenshots/start-here-actual-app-phone.jpg. Earlier screenshots describe the older standalone renderer only.
+- Root npm install --ignore-scripts repaired the baseline lock mismatch on this branch. No root package manifest changes. Initial sandboxed HTTP check was denied local socket access; authorised local checks were then run successfully. No live request was used as a transport test.
+- Final read-only GitHub check still reports main at 49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a and no remote preview branch. Original checkout remains clean at 726c5772acb6b8af120f22ae8ddffa7e8c0ac40f. No externally caused source-baseline changes observed.
+
+## Student Review: Remaining Library Requirements
+- Sean expected a preview of the updated existing CCS resources app. The separate preview server does not meet that requirement. Its local checks remain valid only for that server, not for integration into the actual app.
+- Current titles/headlines do not consistently capitalise every word as requested.
+- Start Here describes administrative outputs without first explaining the complete system and its concrete jobs. A new student is required to infer too much.
+- Start Here asks for an AI task before the later Grok Bot setup step. The prerequisite order needs correction.
+- Review the next draft using B2B Offers and Direct Response Copy for concrete outputs, clear ownership, useful work handled and readable cause-and-effect. Require exact actions, links, inputs, expected results, skip routes and next steps. This review does not substitute for a human student walkthrough.
+- The approved first-page correction has now been applied and checked as described above. The remaining library and next-lesson copy still require approval and implementation. Earlier standalone checks do not establish actual-app acceptance for those lessons.
 
 ## Meaning of the labels
 - Documented: a source or official product guide says this. Not proof of execution.

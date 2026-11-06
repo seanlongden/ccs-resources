@@ -7,7 +7,7 @@ import {
   Home, Settings, Mail, Send, Handshake, TrendingUp,
   ChevronsLeft, ChevronsRight,
   LogOut, FileText, Folder, ExternalLink, Wrench,
-  Search, X, Loader2,
+  Search, X, Loader2, Menu,
   GraduationCap, BookOpen, Video,
   type LucideIcon,
 } from 'lucide-react';
@@ -131,6 +131,8 @@ export function Sidebar({
   const [searchResults, setSearchResults] = useState<SidebarSearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
   const performSearch = useCallback(async (query: string) => {
@@ -160,7 +162,20 @@ export function Sidebar({
     setSearchQuery('');
     setSearchResults([]);
     setSearchOpen(false);
+    setMobileOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileOpen(false);
+        mobileToggleRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, [mobileOpen]);
 
   useEffect(() => {
     if (!searchOpen) return;
@@ -178,6 +193,7 @@ export function Sidebar({
     setSearchQuery('');
     setSearchResults([]);
     setSearchOpen(false);
+    setMobileOpen(false);
     router.push(`/resources/${pageSlug}${anchor ? '#' + anchor : ''}`);
   }, [router]);
 
@@ -191,7 +207,26 @@ export function Sidebar({
   const widthClass = collapsed ? 'w-16' : 'w-72';
 
   return (
-    <aside className={`${widthClass} bg-[#0D1F35] text-white border-r border-black/20 flex flex-col h-screen sticky top-0 transition-[width] duration-150`}>
+    <>
+    <div aria-hidden="true" className="md:hidden fixed top-0 inset-x-0 z-30 h-14 border-b border-slate-200 bg-slate-50/95" />
+    <button
+      ref={mobileToggleRef}
+      type="button"
+      aria-label={mobileOpen ? 'Close Navigation' : 'Open Navigation'}
+      aria-expanded={mobileOpen}
+      aria-controls="ccs-sidebar"
+      onClick={() => setMobileOpen(open => !open)}
+      className={`md:hidden fixed top-3 ${mobileOpen ? 'right-3' : 'left-4'} z-[60] inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm`}
+    >
+      {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+      {mobileOpen ? 'Close' : 'Menu'}
+    </button>
+    {mobileOpen && <button type="button" aria-label="Close Navigation Overlay" onClick={() => setMobileOpen(false)} className="md:hidden fixed inset-0 z-40 bg-slate-950/40" />}
+    <aside
+      id="ccs-sidebar"
+      onClickCapture={event => { if ((event.target as Element).closest('a')) setMobileOpen(false); }}
+      className={`${widthClass} bg-[#0D1F35] text-white border-r border-black/20 ${mobileOpen ? 'flex fixed z-50' : 'hidden'} md:flex md:sticky md:z-auto shrink-0 flex-col h-screen top-0 left-0 transition-[width] duration-150`}
+    >
       {/* Brand + collapse toggle */}
       <div className="px-3 pt-4 pb-3 border-b border-white/10 flex items-center justify-between">
         {!collapsed ? (
@@ -398,6 +433,7 @@ export function Sidebar({
         </button>
       </div>
     </aside>
+    </>
   );
 }
 

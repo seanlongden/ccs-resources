@@ -450,6 +450,12 @@ body {
 .ccg-ln-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; margin-bottom: 8px; }
 .ccg-ln-subtitle { font-size: 17px; color: #334155; margin: 8px 0 0; font-weight: 500; line-height: 1.4; }
 .ccg-ln-title { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin: 0; line-height: 1.15; color: #0f172a; }
+@media (max-width: 767px) {
+  .ccg-ln-hero { padding: 22px 20px; }
+  .ccg-ln-title { font-size: 26px; line-height: 1.2; }
+  .ccg-ln .ccg-ln-section-card { padding: 22px 20px; }
+  .ccg-ln .ccg-ln-rail { display: none; }
+}
 
 .ccg-ln-layout { display: grid; grid-template-columns: 1fr 240px; gap: 36px; }
 @media (max-width: 980px) { .ccg-ln-layout { grid-template-columns: 1fr; gap: 24px; } }
@@ -482,6 +488,7 @@ body {
 .ccg-ln-main h2:first-child, .ccg-ln-main h1:first-child { margin-top: 4px; }
 .ccg-ln-main h3 {
   font-size: 17px;
+  scroll-margin-top: 80px;
   font-weight: 700;
   color: #0f172a;
   margin: 44px 0 12px;

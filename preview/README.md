@@ -1,30 +1,17 @@
-# CCS private resource preview
+# Private CCS App Preview
 
-This is a separate review application. It reads the new curriculum under content/rebuild and the existing public logo. It does not import the production Next app, auth, Stripe, Google Sheets, Neon database or admin code. It reads no dotenv files. The server binds 127.0.0.1 only, rejects non-loopback Host values and exposes GET/HEAD only. Browser CSP blocks external connections, frames and forms.
-
-Use Node 20 or newer (the local reviewed runtime was bundled Node 24.22.1).
+Run from the `codex/ccs-resources-preview` worktree:
 
 ```sh
-cd /Users/seanlongden/Projects/ccs-resources-preview/preview
-npm ci --ignore-scripts
-npm start
+node preview/next-app.mjs
 ```
 
-Open http://127.0.0.1:4326/resources . This is local to Sean's computer. It is not hosted publicly and cannot be opened from a phone on a different device.
+Use Node 20 or newer. Install the root app dependencies first with `npm ci --ignore-scripts`. The root lockfile has been repaired on this branch to match the existing package manifest.
 
-Tests, from this preview directory:
+Open http://127.0.0.1:4327/resources/ccs-install/welcome . This runs the real Next app, original content loader, Sidebar and LessonView. Only the approved Start Here lesson has been rewritten in the normal content pipeline. Other lessons retain their existing content and still await review.
 
-```sh
-node --test tests/*.test.mjs
-```
+The harness refuses production mode, a different branch and local environment files. It removes inherited service credentials, binds loopback only, provides a synthetic student identity outside the production auth code, denies write methods and denies all service APIs except read-only content endpoints. Live auth, Stripe, databases and recordings are not used. It does not test real student authentication or platform connections.
 
-Rebuild the example and downloadable pack from the repository root:
+The older `server.mjs` is the earlier standalone draft renderer on port 4326. It is not the actual app preview and should not be used for reviewing this integration.
 
-```sh
-node preview/build-example.mjs
-python3 preview/build-pack.py
-```
-
-The production root dependency lock was already out of sync at the source baseline. The preview uses a separate package/lock and does not repair or change production dependencies.
-
-This branch is not configured for deployment. No push was made because actual DigitalOcean triggers were not verified. Do not deploy it or merge it as a live release without the outstanding account, teaching, access and human walkthrough checks in docs/ccs-rebuild/QA.md.
+No push, merge or deployment is part of this preview. The proposed next lesson is held in the chat for Sean's approval.

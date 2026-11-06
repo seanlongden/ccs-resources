@@ -23,6 +23,7 @@ interface PageData {
   fullSlug: string;
   content: string;
   isSection?: boolean;
+  hideSiblingNavigation?: boolean;
   children?: { title: string; fullSlug: string }[];
   gating?: GatingInfo;
 }
@@ -238,8 +239,8 @@ export default function ResourcePage() {
         onToggleCollapse={toggleSidebar}
       />
 
-      <main className="flex-1 overflow-y-auto">
-        <div className="mx-auto max-w-5xl px-8 pt-8 pb-12">
+      <main className="flex-1 min-w-0">
+        <div className="mx-auto max-w-5xl px-4 md:px-8 pt-20 md:pt-8 pb-12">
           {/* Breadcrumb — Home + ancestor chain + current title.
               Home icon anchors to the current top-level section (CCS Training,
               CCS Install, etc.) rather than the /resources hub, so "back" lands
@@ -297,7 +298,7 @@ export default function ResourcePage() {
           )}
 
           {/* Ancestor-based Prev/Next (only on content pages, not section landings) */}
-          {page && !error && (siblings.prev || siblings.next) && (
+          {page && !error && !page.hideSiblingNavigation && (siblings.prev || siblings.next) && (
             <nav className="mt-12 pt-6 border-t border-slate-200 grid grid-cols-2 gap-3">
               {siblings.prev ? (
                 <Link

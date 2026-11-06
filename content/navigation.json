@@ -5,12 +5,12 @@
     "description": "Get your tools set up. The fastest path to your first campaign.",
     "children": [
       {
-        "title": "Welcome to CCS Install",
+        "title": "Start Here: Build Your AI Cold Email System",
         "slug": "welcome",
         "fullSlug": "ccs-install/welcome",
         "type": "page",
         "childCount": 0,
-        "description": "Start here. What you'll set up in the next hour and why."
+        "description": "What you will build, what the AI does and how to get Grok Bot ready."
       },
       {
         "title": "Get Instantly + Your Inboxes",
