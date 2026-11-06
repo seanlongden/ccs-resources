@@ -1,0 +1,1207 @@
+[
+  {
+    "id": "C01",
+    "source": "CCS Coaching/CCS System 00 · Start Here.docx",
+    "sourceType": "coaching",
+    "wordCount": 896,
+    "review": "full text read",
+    "destinations": [
+      "install/start"
+    ],
+    "treatment": "Rewrite welcome",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C02",
+    "source": "CCS Coaching/CCS System A1 · The AI Inbox Manager_ How It Works.docx",
+    "sourceType": "coaching",
+    "wordCount": 1339,
+    "review": "full text read",
+    "destinations": [
+      "training/daily-replies"
+    ],
+    "treatment": "Combine daily reply overview",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C03",
+    "source": "CCS Coaching/CCS System A2 · The AI Inbox Manager_ Setup and Standing Instructions.docx",
+    "sourceType": "coaching",
+    "wordCount": 1444,
+    "review": "full text read",
+    "destinations": [
+      "install/reply-test"
+    ],
+    "treatment": "Rewrite safe standing instructions",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C04",
+    "source": "CCS Coaching/CCS System B1 · The Agent Crew_ Who Does What and How Work Moves.docx",
+    "sourceType": "coaching",
+    "wordCount": 1265,
+    "review": "full text read",
+    "destinations": [
+      "install/ai-agents"
+    ],
+    "treatment": "Combine canonical six agents",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C05",
+    "source": "CCS Coaching/CCS System B2 · Routines_ What Runs, When, and Who Owns It.docx",
+    "sourceType": "coaching",
+    "wordCount": 804,
+    "review": "full text read",
+    "destinations": [
+      "training/weekly-review"
+    ],
+    "treatment": "Combine routines",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C06",
+    "source": "CCS Coaching/CCS System B3 · Scraping and Enrichment at Scale.docx",
+    "sourceType": "coaching",
+    "wordCount": 1280,
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/scraping"
+    ],
+    "treatment": "Replace incomplete code skeleton",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C07",
+    "source": "CCS Coaching/CCS System B4 · Prompt Templates_ Research, Score and Qualify.docx",
+    "sourceType": "coaching",
+    "wordCount": 2465,
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/qualification"
+    ],
+    "treatment": "Combine calibrated prompts",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C08",
+    "source": "CCS Coaching/CCS System B5 · Variable Templates_ Triggers, Openers and Spintax.docx",
+    "sourceType": "coaching",
+    "wordCount": 1260,
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/variables"
+    ],
+    "treatment": "Standardise fields",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C09",
+    "source": "CCS Coaching/CCS System B6 · The Copy System_ Two Steps, Two Shapes, Many Variants.docx",
+    "sourceType": "coaching",
+    "wordCount": 1070,
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/email-copy"
+    ],
+    "treatment": "Combine current copy rules",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C10",
+    "source": "CCS Coaching/CCS System B7 · Deliverability, Inbox Health and Campaign Monitoring.docx",
+    "sourceType": "coaching",
+    "wordCount": 1018,
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/deliverability"
+    ],
+    "treatment": "Combine current health process",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C11",
+    "source": "CCS Coaching/CCS System B8 · Costs and Output_ What the System Spends and Produces.docx",
+    "sourceType": "coaching",
+    "wordCount": 736,
+    "review": "full text read",
+    "destinations": [
+      "install/start"
+    ],
+    "treatment": "Add transparent budget",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C12",
+    "source": "CCS Coaching/CCS System F1 · Group Call FAQ_ What Members Ask Most.docx",
+    "sourceType": "coaching",
+    "wordCount": 2761,
+    "review": "full text read",
+    "destinations": [
+      "training/troubleshooting"
+    ],
+    "treatment": "Distribute FAQ",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C13",
+    "source": "CCS Coaching/CCS System G1 · Who Can Pay_ The Account Value Test.docx",
+    "sourceType": "coaching",
+    "wordCount": 1080,
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/client-selection"
+    ],
+    "treatment": "Combine discovery/account value",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C14",
+    "source": "CCS Coaching/CCS System G2 · Trigger-Led Targeting.docx",
+    "sourceType": "coaching",
+    "wordCount": 575,
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/research"
+    ],
+    "treatment": "Keep sourced targeting method",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C15",
+    "source": "CCS Coaching/CCS System L1 · LinkedIn by Hand_ Reaching the Active Few.docx",
+    "sourceType": "coaching",
+    "wordCount": 1326,
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/linkedin"
+    ],
+    "treatment": "Optional reconciled lesson",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C16",
+    "source": "CCS Coaching/CCS System S1 · The Two-Call Flow.docx",
+    "sourceType": "coaching",
+    "wordCount": 871,
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/two-call-process"
+    ],
+    "treatment": "Core sales sequence",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C17",
+    "source": "CCS Coaching/CCS System S2 · The Discovery Script.docx",
+    "sourceType": "coaching",
+    "wordCount": 973,
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/discovery"
+    ],
+    "treatment": "Editable script",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C18",
+    "source": "CCS Coaching/CCS System S3 · Between the Calls_ Sending the Scope by Email.docx",
+    "sourceType": "coaching",
+    "wordCount": 1043,
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/between-calls"
+    ],
+    "treatment": "Five usable email templates",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C19",
+    "source": "CCS Coaching/CCS System S4 · Building the Proposal.docx",
+    "sourceType": "coaching",
+    "wordCount": 995,
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/proposal"
+    ],
+    "treatment": "Complete proposal and drafting prompt",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C20",
+    "source": "CCS Coaching/CCS System S5 · Sales Assets_ Decks That Sell Between Calls.docx",
+    "sourceType": "coaching",
+    "wordCount": 1074,
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/assets"
+    ],
+    "treatment": "Clarify assets by stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C21",
+    "source": "CCS Coaching/CCS System T1 · The Pay-Per-Call Ceiling.docx",
+    "sourceType": "coaching",
+    "wordCount": 833,
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/deal-economics"
+    ],
+    "treatment": "Keep model ceiling",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C22",
+    "source": "CCS Coaching/CCS System T2 · The Conversation Broker Model.docx",
+    "sourceType": "coaching",
+    "wordCount": 814,
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/offer"
+    ],
+    "treatment": "Explain buyer outcome",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C23",
+    "source": "CCS Coaching/CCS System T3 · Positioning Like a Firm.docx",
+    "sourceType": "coaching",
+    "wordCount": 819,
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/positioning"
+    ],
+    "treatment": "Combine practical examples",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C24",
+    "source": "CCS Coaching/CCS System T4 · Selling Qualified Opportunities.docx",
+    "sourceType": "coaching",
+    "wordCount": 767,
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/opportunity"
+    ],
+    "treatment": "Written opportunity definition",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C25",
+    "source": "CCS Coaching/CCS System T5 · Pricing the Upfront Engagement.docx",
+    "sourceType": "coaching",
+    "wordCount": 1046,
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/pricing"
+    ],
+    "treatment": "Terms and delivery budget",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C26",
+    "source": "CCS Coaching/CCS System · Grok Bot Inbox Manager System.docx",
+    "sourceType": "coaching",
+    "wordCount": 7978,
+    "review": "full text read",
+    "destinations": [
+      "training/daily-replies"
+    ],
+    "treatment": "Merge detailed examples, correct unsafe instructions",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C27",
+    "source": "CCS Coaching/CCS System · Launch Runbook.docx",
+    "sourceType": "coaching",
+    "wordCount": 2561,
+    "review": "full text read",
+    "destinations": [
+      "install/start"
+    ],
+    "treatment": "Backbone with corrected handoffs",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "C28",
+    "source": "CCS Coaching/LinkedIn Skills Pack.docx",
+    "sourceType": "coaching",
+    "wordCount": 2188,
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/linkedin"
+    ],
+    "treatment": "Optional pack, unresolved rules marked",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1V37z64Qu3RwU3bpIuAgL1e_5wzMwplpP"
+  },
+  {
+    "id": "D00",
+    "source": "CCS DWY/CCS DWY 00 · Start Here.docx",
+    "sourceType": "dwy",
+    "wordCount": 722,
+    "review": "full text read",
+    "destinations": [
+      "training/start"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D01",
+    "source": "CCS DWY/CCS DWY 01 · Skills Pack (install these first).docx",
+    "sourceType": "dwy",
+    "wordCount": 15808,
+    "review": "full text read",
+    "destinations": [
+      "install/ai-agents"
+    ],
+    "treatment": "Rewrite supplied 16 skills into one versioned provider-neutral pack",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D02",
+    "source": "CCS DWY/CCS DWY 02 · Agents.docx",
+    "sourceType": "dwy",
+    "wordCount": 1390,
+    "review": "full text read",
+    "destinations": [
+      "install/ai-agents"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D03",
+    "source": "CCS DWY/CCS DWY 03 · Research and Offer Angles.docx",
+    "sourceType": "dwy",
+    "wordCount": 437,
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/research"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D04",
+    "source": "CCS DWY/CCS DWY 04 · List Building.docx",
+    "sourceType": "dwy",
+    "wordCount": 468,
+    "review": "full text read",
+    "destinations": [
+      "training/refill-leads"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D05",
+    "source": "CCS DWY/CCS DWY 05 · Scoring and Qualifying Leads.docx",
+    "sourceType": "dwy",
+    "wordCount": 395,
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/qualification"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D06",
+    "source": "CCS DWY/CCS DWY 06 · Copywriting.docx",
+    "sourceType": "dwy",
+    "wordCount": 519,
+    "review": "full text read",
+    "destinations": [
+      "training/new-copy"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D07",
+    "source": "CCS DWY/CCS DWY 07 · Uploading to the Sequencer.docx",
+    "sourceType": "dwy",
+    "wordCount": 383,
+    "review": "full text read",
+    "destinations": [
+      "training/load-campaign"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D08",
+    "source": "CCS DWY/CCS DWY 08 · Campaign Monitoring and Deliverability.docx",
+    "sourceType": "dwy",
+    "wordCount": 585,
+    "review": "full text read",
+    "destinations": [
+      "training/weekly-review"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D09",
+    "source": "CCS DWY/CCS DWY 09 · Inbox Management.docx",
+    "sourceType": "dwy",
+    "wordCount": 608,
+    "review": "full text read",
+    "destinations": [
+      "training/daily-replies"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D10",
+    "source": "CCS DWY/CCS DWY 10 · Booking Meetings.docx",
+    "sourceType": "dwy",
+    "wordCount": 599,
+    "review": "full text read",
+    "destinations": [
+      "install/reply-test"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D11",
+    "source": "CCS DWY/CCS DWY · Cold Email Basics and Glossary.docx",
+    "sourceType": "dwy",
+    "wordCount": 1624,
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/glossary"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "D12",
+    "source": "CCS DWY/CCS DWY · Handover Pack (Template).docx",
+    "sourceType": "dwy",
+    "wordCount": 380,
+    "review": "full text read",
+    "destinations": [
+      "install/handover"
+    ],
+    "treatment": "Combine or rewrite for its stage",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "folder": "https://drive.google.com/drive/folders/1KxKNiDF70X7U5HgXHa2gkNTdBJwlDy5a"
+  },
+  {
+    "id": "R-set-up/cold-traffic-offer",
+    "source": "set-up/cold-traffic-offer",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/offer"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/cold-traffic-offer-check",
+    "source": "cold-email/cold-traffic-offer-check",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/offer"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-offers-guarantees-case-studies/offers",
+    "source": "offers-guarantees-case-studies/offers",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/offer"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-set-up/map-out-icp",
+    "source": "set-up/map-out-icp",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/client-selection"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/qualifying-prospects",
+    "source": "sales/qualifying-prospects",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/client-selection"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-set-up/service-model-pricing",
+    "source": "set-up/service-model-pricing",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/pricing"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-offers-guarantees-case-studies/guarantees",
+    "source": "offers-guarantees-case-studies/guarantees",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/pricing"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/sales-positioning",
+    "source": "sales/sales-positioning",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/positioning"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-offers-guarantees-case-studies/strategy-value-props",
+    "source": "offers-guarantees-case-studies/strategy-value-props",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/positioning"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-set-up/website-landing-page",
+    "source": "set-up/website-landing-page",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/funnel/website"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-set-up/create-vsl",
+    "source": "set-up/create-vsl",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/funnel/vsl"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-set-up/get-calendly",
+    "source": "set-up/get-calendly",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/funnel/calendar"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-set-up/set-up-payments",
+    "source": "set-up/set-up-payments",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/funnel/payments"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-set-up/create-agreement",
+    "source": "set-up/create-agreement",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/funnel/agreement"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-offers-guarantees-case-studies/case-studies",
+    "source": "offers-guarantees-case-studies/case-studies",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/proof"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-offers-guarantees-case-studies/collecting-testimonials",
+    "source": "offers-guarantees-case-studies/collecting-testimonials",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/proof"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-offers-guarantees-case-studies/no-case-studies",
+    "source": "offers-guarantees-case-studies/no-case-studies",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/proof"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-operations-scaling/case-study-interview",
+    "source": "operations-scaling/case-study-interview",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/go-to-market/proof"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/cold-email-setup",
+    "source": "cold-email/cold-email-setup",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/setup"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/campaign-setup",
+    "source": "cold-email/campaign-setup",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/setup"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/list-building",
+    "source": "cold-email/list-building",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/list-building"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/writing-emails",
+    "source": "cold-email/writing-emails",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/email-copy"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/presenting-offer",
+    "source": "cold-email/presenting-offer",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/email-copy"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/manage-deliverability",
+    "source": "cold-email/manage-deliverability",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/deliverability"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-key-resources/deliverability-updates",
+    "source": "key-resources/deliverability-updates",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/deliverability"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/campaign-faqs",
+    "source": "cold-email/campaign-faqs",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/deliverability"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/running-campaigns",
+    "source": "cold-email/running-campaigns",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "training/weekly-review"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/reply-management",
+    "source": "cold-email/reply-management",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "training/daily-replies"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/lead-nurturing",
+    "source": "cold-email/lead-nurturing",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/inbox-pipeline/nurturing"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-cold-email/warm-calling",
+    "source": "cold-email/warm-calling",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/client-acquisition/warm-calling"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/sales-mindset",
+    "source": "sales/sales-mindset",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/two-call-process"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/set-the-frame",
+    "source": "sales/set-the-frame",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/two-call-process"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/call-prep",
+    "source": "sales/call-prep",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/two-call-process"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/sales-process",
+    "source": "sales/sales-process",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/two-call-process"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/sales-call-strategies",
+    "source": "sales/sales-call-strategies",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/two-call-process"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/effective-closing",
+    "source": "sales/effective-closing",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/two-call-process"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/sales-assets",
+    "source": "sales/sales-assets",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/assets"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/lead-magnets",
+    "source": "sales/lead-magnets",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/assets"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/pre-sell-guide",
+    "source": "sales/pre-sell-guide",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/assets"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/call-show-up",
+    "source": "sales/call-show-up",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/assets"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/value-stacking",
+    "source": "sales/value-stacking",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/value-stacking"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-sales/upselling",
+    "source": "sales/upselling",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/sales/value-stacking"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-onboarding/onboarding-workflow",
+    "source": "onboarding/onboarding-workflow",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/onboarding"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-onboarding/onboarding-calls",
+    "source": "onboarding/onboarding-calls",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/onboarding"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-onboarding/client-onboarding-form",
+    "source": "onboarding/client-onboarding-form",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/onboarding"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-hiring-team/hiring-general",
+    "source": "hiring-team/hiring-general",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/hiring"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-hiring-team/key-roles",
+    "source": "hiring-team/key-roles",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/hiring"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-hiring-team/hiring-inbox-manager",
+    "source": "hiring-team/hiring-inbox-manager",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/hiring"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-hiring-team/hiring-gtm",
+    "source": "hiring-team/hiring-gtm",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/hiring"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-hiring-team/application-process",
+    "source": "hiring-team/application-process",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/hiring"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-hiring-team/employee-onboarding",
+    "source": "hiring-team/employee-onboarding",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/hiring"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-hiring-team/social-hiring-funnels",
+    "source": "hiring-team/social-hiring-funnels",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/hiring"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-operations-scaling/ops-strategy",
+    "source": "operations-scaling/ops-strategy",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/operations"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-operations-scaling/creating-sops",
+    "source": "operations-scaling/creating-sops",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/operations"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-operations-scaling/vertical-horizontal-scaling",
+    "source": "operations-scaling/vertical-horizontal-scaling",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/scaling-hiring/operations"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  },
+  {
+    "id": "R-key-resources/templates-downloads",
+    "source": "key-resources/templates-downloads",
+    "sourceType": "existing-lesson",
+    "review": "full text read",
+    "destinations": [
+      "resources/templates"
+    ],
+    "treatment": "Preserve useful teaching; combine and correct per PLAN.md part 6",
+    "verification": "Destination and source ID checked; draft lesson/assets rendered locally; Matt/Sean content approval and real tool tests pending.",
+    "sourceRevision": "49cb29c5ac02eb001e3f3ed5c9c912aaa935ee7a"
+  }
+]

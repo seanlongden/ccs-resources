@@ -1,0 +1,11 @@
+item,frequency,quantity,unit_cost,currency,source_and_date,owner,approved_cap,actual_cost
+Grok Bot entitlement,monthly,1,,USD,,student,,
+Sequencer,monthly,1,,USD,,student,,
+Sending inboxes,monthly,,,USD,,student,,
+Domains first registration,annual,,,USD,,student,,
+Domains renewal,annual,,,USD,,student,,
+Data export,per_run,,,USD,,student,,
+Research scoring,per_company,,,USD,,student,,
+Calendar,monthly,1,,USD,,student,,
+Operator or caller,monthly,,,USD,,student,,
+Reserve capacity,monthly,,,USD,,student,,

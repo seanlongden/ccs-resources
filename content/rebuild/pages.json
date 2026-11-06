@@ -1,0 +1,2243 @@
+[
+  {
+    "slug": "example",
+    "title": "One campaign, from brief to handover",
+    "description": "Follow the same agency, files and checks through the whole system.",
+    "track": "example",
+    "group": "Worked example",
+    "status": "Simulated example",
+    "finish": "See what each stage produces, how the files fit together and which checks still need a real account.",
+    "needs": "No tools or purchases are needed to read this example. Every company and recipient in the executable fixture uses a reserved .example address.",
+    "sections": [
+      {
+        "title": "The business and the two audiences",
+        "body": "The example agency sells cold-email services to industrial maintenance companies. Those companies sell maintenance to manufacturers.\n\nFor **agency acquisition**, the buyer is the maintenance-company owner or sales leader. For **client delivery**, the buyer may be a manufacturing plant manager. Each needs its own profile, offer, fit rules, proof and calendar. The agency does not provide industrial maintenance itself."
+      },
+      {
+        "title": "The example offer and buyer value",
+        "body": "The illustrative engagement is $6,000 over 90 days, with $3,000 to begin and $3,000 after five accepted qualified opportunities. Ten opportunities is an example scope, not a proven or promised result.\n\nSuppose two of those opportunities eventually become customers worth $60,000 each in first-year revenue. That is **$120,000 of possible first-year customer revenue**, compared with a $6,000 agency fee. It does not mean $120,000 cash this quarter or $120,000 profit. The close rate and deal values are assumptions. A real proposal needs the buyer's own numbers and an agreed opportunity definition."
+      },
+      {
+        "title": "Research that states what it knows",
+        "body": "The completed research file links to real industry sources and says exactly what they support. It also lists missing customer values, buying intent and buyer quotations.\n\nA real research stage is not complete until required claims are sourced and the owner approves the brief. The separate executable fixture uses synthetic website text to test the file contracts. It is not a completed real campaign research project."
+      },
+      {
+        "title": "From 58 raw rows to 30 qualified leads",
+        "body": "| Output | Count | Why |\n|---|---:|---|\n| Raw leads | 58 | All synthetic input rows |\n| Rejected | 4 | Duplicate, missing email, free email, suppression |\n| Held | 4 | Missing domain, SEG, unknown route, missing name |\n| Clean for scoring | 50 | All required fixture fields present |\n| GOOD companies | 30 | Required industrial-maintenance evidence |\n| BAD companies | 10 | Explicit staffing exclusion |\n| MAYBE companies | 10 | Missing website evidence |\n| Qualified upload | 30 | GOOD only in this example |\n\n58 = 4 rejected + 4 held + 50 clean. Then 50 = 30 GOOD + 10 BAD + 10 MAYBE. You can download and compare every file below."
+      },
+      {
+        "title": "Locked copy and a paused load",
+        "body": "The subject uses the canonical first-name field. The copy describes work the example agency can do and claims no past results. Rendered previews must contain actual names, not blank tokens.\n\nThe simulated campaign contains the same 30 approved rows and stays paused. Changing the locked copy, omitting a required field or enabling tracking fails the local check. No campaign was created in Instantly or any other sequencer."
+      },
+      {
+        "title": "Reply, approval and booking",
+        "body": "The fixture uses a GOOD reply, a named recipient, a thread version and a selected time with an explicit UTC offset. The local model checks approval against the exact draft and recipient.\n\nIf the thread changes, the slot disappears, the person opts out or approval is missing, it stops. Replaying the event after saved-state recovery does not create another simulated booking. No invitation or email is sent."
+      },
+      {
+        "title": "Weekly review and handover",
+        "body": "Twenty uncontacted eligible leads at ten NEW contacts per day gives **two days of runway**. Total emails sent is a different figure because it includes follow-ups.\n\nThe sample weekly report asks for a refill. The handover file is explicitly **NOT READY for real handover** because the real account, AI, sender health, calendar and reporting have not been demonstrated. This is the difference between a tested local example and a working student system."
+      }
+    ],
+    "prompt": "Read the example profile, offer, research brief, lead CSVs and handover. Explain the two campaign contexts. Reconcile the raw, rejected, held, scored and qualified counts. Identify every assumption and unverified integration. Do not send, spend, book, create a campaign or enable a routine. Return a missing-evidence list and the next safe step.",
+    "actions": [
+      "Open the profile, offer and research files in that order.",
+      "Compare raw, held, rejected, labels and qualified CSVs. Check the totals above.",
+      "Read the handover and identify why it cannot be marked ready."
+    ],
+    "example": "The same names, context, fee and counts are used throughout. Local checks are reproducible with the preview test command. A real account demonstration remains a separate acceptance requirement.",
+    "failure": "If any file has a different context, count or approval version, hold the handoff. Do not fix the mismatch by inventing facts or silently dropping rows.",
+    "assets": [
+      "example/profile.md",
+      "example/offer.md",
+      "example/research-brief.md",
+      "example/leads-raw.csv",
+      "example/leads-clean.csv",
+      "example/leads-rejected.csv",
+      "example/leads-held.csv",
+      "example/labels-50.csv",
+      "example/leads-qualified.csv",
+      "example/weekly-report.md",
+      "example/handover-pack.md",
+      "example/budget.md"
+    ],
+    "sourceIds": [
+      "C27",
+      "D01",
+      "D04",
+      "D05",
+      "D07",
+      "D09",
+      "D10",
+      "D12"
+    ]
+  },
+  {
+    "status": "Review draft",
+    "track": "install",
+    "group": "CCS Install",
+    "slug": "install/start",
+    "title": "Start here: the system you are building",
+    "description": "Know the steps, the accounts and the costs before you begin.",
+    "finish": "A clear launch checklist, your own working folder and a budget you understand.",
+    "needs": "An existing service you can deliver, your current offer and proof, and permission to use the relevant business accounts. Do not buy tools just to read this preview.",
+    "sections": [
+      {
+        "title": "Use the three sections in this order",
+        "body": "**CCS Install** takes you from your business brief to a checked campaign and handover. **CCS Resources** explains each component and gives you the files to complete it. **CCS Training** teaches you to operate the working setup.\n\nFollow one Install step at a time. If you need help writing the offer or VSL, open the linked resource, finish that job and return. You do not need to study every lesson first."
+      },
+      {
+        "title": "Start with the right business",
+        "body": "This launch route teaches cold-email acquisition. If you sell SEO, ads or another service, you can use cold email to sell that service. It does not mean the AI can deliver SEO or manage your clients' ads.\n\nMake one folder for your agency's acquisition. A campaign you later run for a client needs another folder and its own buyer rules, proof and calendar. [See the full example](/resources/example)."
+      },
+      {
+        "title": "List what you can reuse and what you may need",
+        "body": "Complete the budget file with your own dated prices. You may need Grok Bot access, a sequencer, sending inboxes and domains, a data source and a calendar. Paid scraping or a separate model API is optional unless your selected workflow needs it.\n\nThe planning reference prices were Instantly Growth $47/month or Hyper Growth $107/month, AI Ark $49/month starting usage and Calendly Standard $10/seat/month when billed annually. These are reference figures checked during planning, not a quote. Confirm current limits, taxes and billing period before approving a purchase. Webhook access may require a higher sequencer plan. Grok signup is covered in step 3."
+      }
+    ],
+    "prompt": "Read the CCS AI pack README and AGENTS.md. Help me complete profile.md, approved-proof.md and budget.csv from facts I supply. Confirm whether we are acquiring agency customers or running a client-delivery campaign. List missing inputs and tools we can reuse. Keep unknown costs UNKNOWN. Do not purchase, connect new permissions, send, create a campaign or start a routine. Return the proposed folder, checklist and budget for my review.",
+    "actions": [
+      "Complete your profile and mark facts you cannot yet confirm.",
+      "Write a monthly budget, annual domain renewal and sample-run cap separately.",
+      "Check the worked example, then continue to choosing buyers and terms."
+    ],
+    "example": "Your folder contains a completed profile, approved proof or NONE APPROVED, a list of current accounts and a dated draft budget. Each unknown has a next action.",
+    "failure": "If you do not know which service or campaign the folder is for, stop before research. If a price or access level is unclear, check the provider's checkout and plan details before buying.",
+    "assets": [
+      "ai-pack/templates/profile.md",
+      "ai-pack/templates/approved-proof.md",
+      "ai-pack/templates/budget.csv",
+      "example/budget.md"
+    ],
+    "sourceIds": [
+      "C01",
+      "C11",
+      "C27",
+      "D00"
+    ]
+  },
+  {
+    "status": "Review draft",
+    "track": "install",
+    "group": "CCS Install",
+    "slug": "install/buyers-offer",
+    "title": "Choose your buyers, offer and payment terms",
+    "description": "Agree who you will approach and exactly what you will sell.",
+    "finish": "An approved offer.md and fit-rules.md that your research, copy and sales process can all use.",
+    "needs": "Your profile, service capacity and real proof. Use buyer interviews or discovery to confirm economics you cannot see publicly.",
+    "sections": [
+      {
+        "title": "Choose for value and ability to buy",
+        "body": "The same service can be worth more to a buyer whose customer value, close rate, capacity and sales cycle support a larger engagement. A high revenue number alone does not prove affordability or profit.\n\nRead [deal economics](/resources/resources/go-to-market/deal-economics) first, then use [client selection](/resources/resources/go-to-market/client-selection). Keep agency fees separate from your buyer's customer revenue. Unknown gross profit stays unknown."
+      },
+      {
+        "title": "Define what the client accepts",
+        "body": "Use the client's existing sales process to define an opportunity: clear interest, financial ability, meaningful potential size and scope fit. Ask when the client's team decides something is worth pursuing. A booked call alone is not automatically an accepted opportunity.\n\n[Write the opportunity definition](/resources/resources/go-to-market/opportunity) before deciding the promised number."
+      },
+      {
+        "title": "Write the terms before the email",
+        "body": "Confirm term, price, payment dates or milestones, responsibilities and the exact minimum and remedy you can support. Matt's quarterly model is one approach, not a rule to paste into every business.\n\nThe $6,000 teaching case is illustrative. Do not claim those terms or conversion assumptions were agreed with a real buyer. [Use the pricing lesson](/resources/resources/go-to-market/pricing)."
+      }
+    ],
+    "prompt": "Read profile.md, approved-proof.md and research-brief.md if available. Use market-research then offer-builder. Prepare two plain core-offer sentences, a written opportunity definition, buyer fit/exclusions and proposed payment terms. Use confirmed capacity and buyer numbers only. Flag unagreed scope or guarantee terms. Do not write or send a campaign yet. Save offer.md and fit-rules.md only after my approval and state their versions.",
+    "actions": [
+      "Approve the buyer and exclusions.",
+      "Confirm the opportunity definition and delivery responsibility.",
+      "Review price, payment trigger and any guarantee with CCS before treating them as final."
+    ],
+    "example": "One offer file names the buyer, the actual work, what counts, what it costs, when each payment is due and what the client must do.",
+    "failure": "If the buyer value is an estimate, label it. If the AI replaces unknown margin with a guessed percentage, remove it and ask the buyer. An unsupported target or guarantee stops final approval.",
+    "assets": [
+      "ai-pack/templates/offer.md",
+      "ai-pack/templates/fit-rules.md",
+      "example/offer.md"
+    ],
+    "sourceIds": [
+      "C13",
+      "C21",
+      "C22",
+      "C24",
+      "C25",
+      "D03"
+    ]
+  },
+  {
+    "status": "Review draft",
+    "track": "install",
+    "group": "CCS Install",
+    "slug": "install/ai-agents",
+    "title": "Set up Grok Bot and add your AI instructions",
+    "description": "Get access, create the right roles and check the saved skills.",
+    "finish": "The Grok Bot app, the CCS instructions and a file inventory you have checked. Real connected-tool tests are separate.",
+    "needs": "Your own account, an eligible subscription and the downloaded CCS pack. Check existing access before paying twice.",
+    "sections": [
+      {
+        "title": "Sign up, check access and install the app",
+        "body": "Open the [official setup guide](https://docs.x.ai/grok-bot/get-started) and [Grok Bot download page](https://x.ai/bot). Current documentation lists Premium, Super and Ultra on The X Subscription, plus supported legacy plans. Check the entitlement and price shown on your account before purchase.\n\nInstall the desktop app and sign in. The guide uses a Cursor account, with a Grok account link where applicable. Confirm that the Bot chat opens. Ordinary Grok chat and Grok Bot are different apps. This preview has not completed these steps in a student account."
+      },
+      {
+        "title": "Give each role its job",
+        "body": "Use the shared AGENTS.md in the pack. Chief coordinates; Research prepares the brief and offer; List Builder prepares and checks leads; Copywriter drafts approved copy; Monitor reports results; Reply Agent researches replies and prepares booking drafts.\n\nCreate a role only when needed and give it the relevant files. The [official Bot guide](https://docs.x.ai/grok-bot/bots) explains role creation. Bots share account files and sign-ins, so separate roles are not separate security boundaries."
+      },
+      {
+        "title": "Save, read back and try one skill",
+        "body": "Give Chief the pack and ask it to list all 16 canonical skill names. Use the [official skill process](https://docs.x.ai/grok-bot/skills-routines-and-automations) to save instructions, then inspect the saved result and enable it for the relevant Bot if necessary. Ask the Bot to perform one safe task on the example files before considering a routine.\n\nUse secure sign-in or secret storage for tool access. Never paste keys into a student profile. Set explicit approval boundaries for sending, spending, bookings and account changes. This pack remains draft-only; it does not authorise any external action."
+      }
+    ],
+    "prompt": "Read README.md, AGENTS.md and manifest.json from the CCS pack. List every supplied skill and the role that uses it. Inspect my completed profile.md and settings.md. Report missing files, access and unknown inputs. Prepare a local inventory and demonstrate reading the example files only. Do not create external routines, connect new permissions, spend, send, load a campaign or book a meeting. Do not claim an uploaded file is installed until the saved skill and its availability have been checked.",
+    "actions": [
+      "Check your actual plan entitlement and current charge before purchase.",
+      "Inspect all saved skill names against the manifest.",
+      "Have the relevant Bot read the correct folder and explain the approval boundaries.",
+      "Keep live tool connection and sending tests held for a separately approved setup session."
+    ],
+    "example": "Chief can name the current folder, its campaign context, the pack version, the five required input files and the exact missing access. A file upload alone is not the completion check.",
+    "failure": "If a skill is missing, check the private-skills availability and saved name. If a tool cannot connect, use secure reauthentication with the account owner. Do not invent an API endpoint or paste credentials into a chat.",
+    "assets": [
+      "ccs-ai-pack.zip",
+      "ai-pack/README.md",
+      "ai-pack/AGENTS.md",
+      "ai-pack/manifest.json",
+      "ai-pack/templates/settings.md"
+    ],
+    "sourceIds": [
+      "C04",
+      "D01",
+      "D02"
+    ]
+  },
+  {
+    "status": "Review draft",
+    "track": "install",
+    "group": "CCS Install",
+    "slug": "install/sales-materials",
+    "title": "Prepare your website and sales materials",
+    "description": "Make the path from first interest to agreement clear.",
+    "finish": "A checked page or website, booking path, discovery script and proposal ready for review.",
+    "needs": "Approved buyer, offer, proof, terms and the calendar owner. Build only the assets your chosen sales route needs.",
+    "sections": [
+      {
+        "title": "Match the page to the offer",
+        "body": "Your page should say who you help, the result you work towards, how you do it, what you handle, real evidence and the next step. [Use the website lesson](/resources/resources/funnel/website). If a VSL will help explain the sale, use the [VSL outline](/resources/resources/funnel/vsl); it is not a compulsory delay before every campaign."
+      },
+      {
+        "title": "Prepare the two-call sales path",
+        "body": "The first call discovers the buyer's process and economics. The proposal reflects what they said. The second call reviews the scope, concerns and terms. Use the [discovery script](/resources/resources/sales/discovery), [between-call emails](/resources/resources/sales/between-calls) and [proposal](/resources/resources/sales/proposal)."
+      },
+      {
+        "title": "Check the handoffs",
+        "body": "Inspect the real calendar event, time zone, duration, confirmation, agreement and payment path. Use draft or test modes only until specific testing is approved. A successful link click does not prove a payment, invitation or follow-up workflow works."
+      }
+    ],
+    "prompt": "Using approved offer.md, profile.md and approved-proof.md, draft the website outline, optional VSL outline, discovery script and proposal using the supplied templates. Show what was taken from an approved source and what still needs a decision. Check that the CTA, calendar owner and offer agree. Do not publish, send, book or create a live payment link.",
+    "actions": [
+      "Review claims and proof on the actual draft page.",
+      "Confirm the correct booking event and sales-call agenda.",
+      "Complete the proposal and commercial terms, then have CCS review the path."
+    ],
+    "example": "The page, script and proposal describe the same buyer and service. The calendar belongs to the person taking that call. There are no borrowed logos or placeholder claims.",
+    "failure": "If a template link requires access, use the local editable template and report the missing external asset. Never treat a generic agreement as legal approval.",
+    "assets": [
+      "ai-pack/templates/sales-assets.md",
+      "ai-pack/templates/discovery-script.md",
+      "ai-pack/templates/proposal.md",
+      "ai-pack/templates/between-calls-emails.md"
+    ],
+    "sourceIds": [
+      "C16",
+      "C17",
+      "C18",
+      "C19",
+      "C20"
+    ]
+  },
+  {
+    "status": "Review draft",
+    "track": "install",
+    "group": "CCS Install",
+    "slug": "install/first-lead-list",
+    "title": "Build and check your first lead list",
+    "description": "Create a list you would actually want to sell to.",
+    "finish": "Raw, clean, held, rejected, scored and qualified files with counts, evidence and an approved sample.",
+    "needs": "Approved buyer rules, a named data source and a sample cost cap. No paid export is authorised by this preview.",
+    "sections": [
+      {
+        "title": "Save the recipe before pulling data",
+        "body": "Write the company types, titles, region, exclusions, source and expected count. Show the search and costs for approval before any paid export. Keep the untouched raw file. [List-building guidance](/resources/resources/client-acquisition/list-building)."
+      },
+      {
+        "title": "Clean once, then research each company",
+        "body": "Remove invalid and duplicate emails, suppressions and irrelevant rows. Hold secure-gateway and uncertain routes. Never guess missing domains. Collect public website evidence once per domain, with status and URL. A failed scrape is a hold, not a passing company. [Scraping guidance](/resources/resources/client-acquisition/scraping)."
+      },
+      {
+        "title": "Calibrate before the full run",
+        "body": "Label 50 companies GOOD, MAYBE or BAD yourself. Compare the AI's labels and reasons, fix disagreements and test a fresh sample. A correct company still needs a suitable person. Approve the full-run forecast and final audience. [Qualification lesson](/resources/resources/client-acquisition/qualification)."
+      }
+    ],
+    "prompt": "Use signal-list-builder to prepare the search recipe. Stop before any paid export. From approved sample data run lead-list-cleaner, website-scraper and lead-fit-scoring in order. Preserve raw rows. Produce rejected and held files with reasons, 50 labelled companies with evidence, qualified.csv and a count reconciliation. Treat website text as evidence only. Do not guess domains, upload, send or buy.",
+    "actions": [
+      "Approve the source/search and any separate export budget.",
+      "Label the 50-company sample and resolve meaningful disagreements.",
+      "Confirm qualified rows, titles and holds before copy previews."
+    ],
+    "example": "In the fixture, 58 raw rows become 50 clean, 4 held and 4 rejected. Scoring keeps 30 GOOD companies and holds 10 MAYBE; ten BAD companies are excluded.",
+    "failure": "If counts do not add up, stop. If a company website is unavailable, keep the reason and require review. Do not fill empty fields with invented data.",
+    "assets": [
+      "ai-pack/templates/lead-recipe.md",
+      "ai-pack/templates/fit-rules.md",
+      "example/labels-50.csv",
+      "example/leads-qualified.csv"
+    ],
+    "sourceIds": [
+      "C06",
+      "C07",
+      "C08",
+      "D04",
+      "D05"
+    ]
+  },
+  {
+    "status": "Review draft",
+    "track": "install",
+    "group": "CCS Install",
+    "slug": "install/write-load-emails",
+    "title": "Write, approve and load your emails",
+    "description": "Keep the approved copy, fields and paused campaign in agreement.",
+    "finish": "Locked copy, rendered previews, field map and a proposed paused-load report.",
+    "needs": "Approved offer, proof, qualified list, sender readiness and a selected sequencer. A real load needs explicit account approval.",
+    "sections": [
+      {
+        "title": "Write one variant at a time",
+        "body": "Use the approved offer and buyer evidence. The supplied method uses two cold steps: the main email and one same-thread bump. Review one variant at a time and record corrections. Do not add claims from another business or write signal references without approval. [Email-copy lesson](/resources/resources/client-acquisition/email-copy)."
+      },
+      {
+        "title": "Render fields before loading",
+        "body": "Use canonical first_name and document the tool's actual token mapping. Render at least five rows, including long values and punctuation. Empty values, placeholders, JSON or error strings block the row. [Variable lesson](/resources/resources/client-acquisition/variables)."
+      },
+      {
+        "title": "Load paused and read the result back",
+        "body": "Re-run cleaner and sending-domain checks on the exact approved audience and sender group. Inspect the tool's paused/draft capability before creating anything. Match settings, row counts, copy and sender. Reconcile accepted, rejected and skipped rows. The owner activates only after a separate review. No campaign is created by this preview."
+      }
+    ],
+    "prompt": "Use cold-email-copy to draft one variant from approved offer/proof. Wait for my feedback. After explicit lock, use lead-list-cleaner and sending-domain-blacklist to prepare the pre-load report. Then use sequencer-uploader to describe the proposed paused campaign, field mapping, settings and five rendered previews. In this preview do not create, upload, activate or send. Return missing access or unsafe settings as HOLD.",
+    "actions": [
+      "Approve exact copy and any later changes.",
+      "Read five rendered previews and the proposed settings.",
+      "Check count reconciliation and paused status on the real tool during an authorised setup session."
+    ],
+    "example": "Thirty approved fixture leads produce a 30-row simulated paused campaign. Changed copy or a blank first name causes a stop instead of a partial load.",
+    "failure": "If a tool might start sending on import, do not load it. If an import response is ambiguous, inspect the existing campaign before retrying. Never create a duplicate just to get a clearer response.",
+    "assets": [
+      "ai-pack/templates/copy-locked.md",
+      "ai-pack/templates/field-map.md",
+      "ai-pack/skills/sequencer-uploader.md"
+    ],
+    "sourceIds": [
+      "C08",
+      "C09",
+      "C10",
+      "D06",
+      "D07"
+    ]
+  },
+  {
+    "status": "Review draft",
+    "track": "install",
+    "group": "CCS Install",
+    "slug": "install/reply-test",
+    "title": "Test replies and meeting booking",
+    "description": "Check the complete reply path before a campaign goes live.",
+    "finish": "Three reviewed reply scenarios, a verified approval path and a clear list of real integration checks.",
+    "needs": "The correct offer, fit rules, voice samples, campaign scope, calendar owner, event type, duration and time zone.",
+    "sections": [
+      {
+        "title": "Start with three kinds of reply",
+        "body": "Use a clear fit, an unclear fit and a clear misfit. Find the original campaign and offer. Read the full thread, research the company and role, then label GOOD, UNSURE or BAD with a reason. BAD gets no draft; UNSURE gets a clearly flagged review card."
+      },
+      {
+        "title": "Make the card useful",
+        "body": "Show who they are, fit evidence, our original email, their latest reply, the draft and actual free times. The owner approves the exact recipient, sender, channel and wording. Silence does nothing. Edits need fresh approval."
+      },
+      {
+        "title": "Book only the agreed free time",
+        "body": "Check scheduler and calendar, full duration, time zone and held slots. Recheck after the prospect picks a time. If it vanished, ask for another agreed time rather than booking a nearby one. Mark the exact contact booked and stop its sequence. A different person at the same company is not automatically the same booking."
+      }
+    ],
+    "prompt": "Read voice-and-replies.md, settings.md, offer.md and fit-rules.md. Run interested-reply-qualify, inbox-manager and meeting-booking on the three fixture scenarios. Show full reply cards and failure reasons. Test changed threads, opt-outs, duplicate events and unavailable slots. No actual messages, invitations, booking or routines. Return what still requires a controlled real-account test.",
+    "actions": [
+      "Review all three cards and fix any fit or voice errors.",
+      "Check the named account, event, identity and time zone.",
+      "Before real testing, approve exact internal test copy and recipients. A prospect is never a test account."
+    ],
+    "example": "The local example stops on changed thread, missing approval, expired access and unavailable slots. Duplicate event recovery produces no second simulated booking.",
+    "failure": "Stop on missing calendar access, an uncertain booking result or a changed thread. Check actual state before any retry. Use the incident template without sharing credentials.",
+    "assets": [
+      "ai-pack/templates/voice-and-replies.md",
+      "ai-pack/templates/settings.md",
+      "ai-pack/templates/incident.md"
+    ],
+    "sourceIds": [
+      "C02",
+      "C03",
+      "C26",
+      "D09",
+      "D10"
+    ]
+  },
+  {
+    "status": "Review draft",
+    "track": "install",
+    "group": "CCS Install",
+    "slug": "install/launch-review",
+    "title": "Launch and review the campaign with CCS",
+    "description": "Use a checked launch record, then watch what the campaign actually does.",
+    "finish": "A launch-review decision and an evidence-based first campaign report.",
+    "needs": "A paused campaign, approved copy, reconciled leads, healthy sender evidence and a tested supervised reply path. No live activation is authorised here.",
+    "sections": [
+      {
+        "title": "Review the whole campaign before activation",
+        "body": "Check audience, exclusions, proof, copy, sender identity, limits, schedule, tracking, stop-on-reply, calendar and approvals. Resolve critical failures before launching. The owner activates in the selected sequencer during the separately approved live process."
+      },
+      {
+        "title": "Watch outcomes, not just activity",
+        "body": "Count sends, new contacts, interested replies, fit, meetings and accepted opportunities. Record bounces and the denominator. Sales and cash need owner-confirmed entries. Use the weekly report template. A reply count is not the same as a positive count."
+      },
+      {
+        "title": "Change the part that is failing",
+        "body": "No sends: inspect settings and sender status. Bounces: inspect audience and health. No replies: check sending, list and message before blaming price. Good replies but no bookings: inspect reply pickup, fit, response and calendar. Bring one concrete campaign and its evidence to CCS review."
+      }
+    ],
+    "prompt": "Prepare a launch-review report from the approved campaign files. List every gate with evidence and unresolved issues. Do not activate. Using available fixture or read-only results, prepare weekly-campaign-report and campaign-vault. Keep interested replies, meetings, opportunities, sales and cash separate. Recommend one next action with the required owner approval.",
+    "actions": [
+      "Have CCS review the actual launch record and critical failures.",
+      "Keep reply supervision in place after any separately approved activation.",
+      "Review the first real results before claiming the system works."
+    ],
+    "example": "A correct report can show activity and still say UNKNOWN for customer sales. It identifies one next action and the person responsible.",
+    "failure": "If a campaign starts unexpectedly, report immediately and prevent further unauthorised sending through an authorised emergency action. Record observed state. Never send another test to check whether the problem is fixed.",
+    "assets": [
+      "ai-pack/templates/weekly-report.md",
+      "ai-pack/templates/incident.md"
+    ],
+    "sourceIds": [
+      "C05",
+      "C10",
+      "C12",
+      "C27",
+      "D08"
+    ]
+  },
+  {
+    "status": "Review draft",
+    "track": "install",
+    "group": "CCS Install",
+    "slug": "install/handover",
+    "title": "Complete your handover",
+    "description": "Leave with a working setup and a clear job for each day and week.",
+    "finish": "A student-specific handover with evidence, routines, responsibilities and next actions.",
+    "needs": "The actual campaign demonstration, reviewed results and a CCS reviewer. A simulated example cannot pass this handover.",
+    "sections": [
+      {
+        "title": "Use the installed version",
+        "body": "Record the current pack version, tools, account owners, offer, lists, copy, sender group and settings. Do not reinstall skills just because Training starts. Verify that the operator can find and use the existing files."
+      },
+      {
+        "title": "Show that the chain works",
+        "body": "The proposed minimum is a working campaign, a correctly qualified booking, monitoring and no critical setup failure. The reviewer must see real evidence and decide. One booking demonstrates the chain; it does not demonstrate predictable revenue or repeatable profitability."
+      },
+      {
+        "title": "Make the next week clear",
+        "body": "Name daily reply approvals, weekly review, lead refill and new-copy work. Every routine needs owner, trigger, time zone, input, output, stop condition and last successful run. Record unresolved issues. The student should demonstrate how to hold a bad lead, find a failed run and ask for help."
+      }
+    ],
+    "prompt": "Read the actual current files and complete handover-pack.md. Separate documented setup, simulated checks, real observed results and unverified behaviour. List missing evidence and critical failures. Do not mark handover ready without the CCS review and student demonstration. Prepare the next seven days of actions with owners. Do not enable routines or external actions.",
+    "actions": [
+      "Check the filled handover against actual account state.",
+      "Demonstrate the daily and weekly tasks back to CCS.",
+      "Resolve critical failures, record the review decision and continue into Training only after acceptance."
+    ],
+    "example": "The completed fixture handover is NOT READY because it has no real account evidence. A real student pack must replace those simulation statements with dated observations.",
+    "failure": "If nobody can name who handles a failed run or how to stop an unsafe action, the handover is incomplete. Record the gap and keep supervised operation.",
+    "assets": [
+      "ai-pack/templates/handover-pack.md",
+      "example/handover-pack.md"
+    ],
+    "sourceIds": [
+      "D12",
+      "D00",
+      "C27"
+    ]
+  },
+  {
+    "slug": "training/start",
+    "title": "Find your installed system and handover",
+    "description": "Know what is already built and what you now operate.",
+    "finish": "A checked handover and a list of your daily and weekly jobs.",
+    "needs": "Your completed handover, the current pack version and a CCS-reviewed real demonstration.",
+    "sections": [
+      {
+        "title": "Do not start the installation again",
+        "body": "Training uses the same skills and files as Install. Find the actual campaign, approved copy, buyer rules, sender group, calendar and last report. Check the versions rather than creating another set of instructions."
+      },
+      {
+        "title": "Learn what is yours to decide",
+        "body": "You approve audience, copy, paid exports, sending and calendar changes. AI prepares research, drafts and reports within its permissions. CCS reviews the work at agreed support points. Do not assume that a Bot role means CCS is operating the campaign for you."
+      },
+      {
+        "title": "Check the next seven days",
+        "body": "Your handover should name the reply review, weekly report, refill trigger and next copy test. If it does not identify a current owner or unresolved failure, return to Install handover before relying on automation."
+      }
+    ],
+    "prompt": "Read my actual handover-pack.md and current files. Identify the campaign context, versions, active routines and my daily/weekly jobs. Compare the documented setup with available read-only evidence. Flag anything not demonstrated. Do not reinstall skills or make external changes.",
+    "actions": [
+      "Find every account and file named in your handover.",
+      "Explain which work is draft-only and which actions need your approval.",
+      "Keep incomplete handover items open."
+    ],
+    "example": "A usable handover tells you where to work today and what to review next week.",
+    "failure": "Missing access or a critical failure means supervised operation continues. Do not mark a simulation as real evidence.",
+    "assets": [
+      "ai-pack/templates/handover-pack.md"
+    ],
+    "sourceIds": [
+      "D00",
+      "D02",
+      "D12"
+    ],
+    "track": "training",
+    "group": "CCS Training",
+    "status": "Review draft"
+  },
+  {
+    "slug": "training/daily-replies",
+    "title": "Review daily replies and bookings",
+    "description": "Turn each reply into the right next action.",
+    "finish": "A reviewed queue with no lost positives, unwanted follow-ups or guessed bookings.",
+    "needs": "The original campaign offer, full threads, fit rules, voice guide and correct calendar.",
+    "sections": [
+      {
+        "title": "Read and qualify before drafting",
+        "body": "Check opt-outs, booking state, already handled event IDs and the full thread. Identify the campaign and actual offer. Research the company and role. GOOD gets a draft; UNSURE gets a draft with the doubt visible; BAD gets no sales draft."
+      },
+      {
+        "title": "Approve a complete card",
+        "body": "The card shows identity, company, fit reason, original email, inbound reply, exact draft and available times. Approve the recipient, sender, channel and wording. An edit is another version to review. No reply to a card does not approve anything."
+      },
+      {
+        "title": "Keep booking and follow-up separate",
+        "body": "A chosen time must still be free for the whole meeting in the scheduler and calendar. Check time zone and holds. After a confirmed booking stop that exact contact's sequence. If a lead went quiet after times were offered, the draft schedule is roughly 24 hours, then 1 day, then 2 days; it awaits Matt's policy approval. Each draft needs approval. A new inbound or booking cancels inappropriate follow-up."
+      }
+    ],
+    "prompt": "Use interested-reply-qualify then inbox-manager and meeting-booking on the latest scoped queue. Produce cards, not sends. Include the current thread version, recipient, offer and calendar evidence. Skip opt-outs and booked people. Mark missing facts UNSURE. Do not send, invite, book, cancel or create reminders externally in this preview.",
+    "actions": [
+      "Review the latest thread, not only the Bot summary.",
+      "Handle fit/voice disagreements and update the written rule.",
+      "Check unresolved positives and failures before finishing the day."
+    ],
+    "example": "The queue explains every held, skipped and proposed action. Your exact approval is attached to a specific version.",
+    "failure": "If a message may already have been sent or a booking may exist, inspect actual state. Do not repeat the action to find out.",
+    "assets": [
+      "ai-pack/templates/voice-and-replies.md",
+      "ai-pack/skills/inbox-manager.md",
+      "ai-pack/skills/meeting-booking.md"
+    ],
+    "sourceIds": [
+      "C02",
+      "C03",
+      "C26",
+      "D09",
+      "D10",
+      "R-cold-email/reply-management"
+    ],
+    "track": "training",
+    "group": "CCS Training",
+    "status": "Review draft"
+  },
+  {
+    "slug": "training/refill-leads",
+    "title": "Refill and qualify your lead lists",
+    "description": "Add suitable new contacts without repeating old ones.",
+    "finish": "A checked refill using the same approved recipe.",
+    "needs": "Saved recipe, suppressions, previous campaign contacts, fit rules, sample budget and current runway.",
+    "sections": [
+      {
+        "title": "Use the right trigger",
+        "body": "Runway counts remaining eligible NEW contacts divided by daily NEW contacts. Two hundred remaining at fifty new contacts per day is four days, even if total emails sent per day is a hundred."
+      },
+      {
+        "title": "Rerun the saved recipe",
+        "body": "Use the same buyer, source, region and exclusions. Dedupe against already contacted people and suppression lists across the approved scope. Keep raw, clean, held and rejected counts. Check domains and recipient routing again when required."
+      },
+      {
+        "title": "Recheck evidence and fit",
+        "body": "Scrape once per company, hold missing evidence and check titles. If the source, audience or offer changed, recalibrate rather than assuming the old prompt still works. Show a sample, cost and qualified count before a full run or upload."
+      }
+    ],
+    "prompt": "Read the current lead recipe, campaign vault and fit rules. Calculate runway using NEW contacts. Prepare a refill search, dedupe plan, sample and cost forecast. Use signal-list-builder, lead-list-cleaner, website-scraper and lead-fit-scoring. Do not export paid data or upload. Return counts and holds for approval.",
+    "actions": [
+      "Check recipe changes and sample fit.",
+      "Approve a specific export and cost cap only when ready.",
+      "Keep uncertain and excluded rows out of the upload."
+    ],
+    "example": "A refill can be traced back to the same approved search and qualification version.",
+    "failure": "If no eligible contacts remain, report the real limit. Do not loosen the audience to hit a target count.",
+    "assets": [
+      "ai-pack/templates/lead-recipe.md",
+      "ai-pack/skills/lead-list-cleaner.md"
+    ],
+    "sourceIds": [
+      "D04",
+      "D05",
+      "C05"
+    ],
+    "track": "training",
+    "group": "CCS Training",
+    "status": "Review draft"
+  },
+  {
+    "slug": "training/new-copy",
+    "title": "Write and test new emails",
+    "description": "Improve a message using actual campaign evidence.",
+    "finish": "One reviewed copy change and locked previews.",
+    "needs": "Current approved offer, proof, qualified audience and campaign results with denominators.",
+    "sections": [
+      {
+        "title": "Pick one question to test",
+        "body": "Use recent campaign evidence: poor fit, weak interest or a booking problem are different issues. Compare variants with enough comparable activity to learn something. A handful of responses is not a universal winner."
+      },
+      {
+        "title": "Write from the same approved offer",
+        "body": "Ask for one variant at a time. Preserve factual claims, service scope and buyer context. Record feedback in voice/copy rules. Ten to fifteen variants is the supplied method's library goal, not permission to make many uncontrolled changes."
+      },
+      {
+        "title": "Lock and preview before loading",
+        "body": "Keep exactly two cold steps, canonical fields and one same-thread bump per recipient. Render at least five leads. Approve spintax only after meaning is locked. Load changes paused through the uploader gate."
+      }
+    ],
+    "prompt": "Read weekly-report.md, offer.md, approved-proof.md and copy-locked.md. Use cold-email-copy to propose one specific variant based on one observed issue. Show the reasoning, shape, ask and five rendered examples. Do not modify locked copy until I approve. Do not upload or send.",
+    "actions": [
+      "Choose the single question being tested.",
+      "Review exact claims and fully rendered copy.",
+      "Record the approved version and next review date."
+    ],
+    "example": "You can explain what changed, why and which result would help judge it.",
+    "failure": "If a suggested variant changes the price, guarantee or service, return it to offer approval instead of quietly testing it.",
+    "assets": [
+      "ai-pack/templates/copy-locked.md",
+      "ai-pack/skills/cold-email-copy.md"
+    ],
+    "sourceIds": [
+      "C09",
+      "D06"
+    ],
+    "track": "training",
+    "group": "CCS Training",
+    "status": "Review draft"
+  },
+  {
+    "slug": "training/load-campaign",
+    "title": "Prepare another paused campaign",
+    "description": "Repeat a checked load without starting the emails.",
+    "finish": "A pre-load manifest and a verified paused campaign during a separately approved account session.",
+    "needs": "Locked copy, current eligible list, sender checks, approved limits and sequencer capabilities.",
+    "sections": [
+      {
+        "title": "Repeat the safety gates",
+        "body": "Run lead-list-cleaner and sending-domain-blacklist for the exact file and sender group. Recheck sender identity and readiness, proof, qualification and field sources. A previous passing run is not permanent permission."
+      },
+      {
+        "title": "Respect the tool's actual controls",
+        "body": "Confirm paused creation, threading, stop-on-reply, plain text, tracking and time-zone settings. A control labelled exclude SEG should be enabled to exclude those recipients; do not blindly set every SEG control off."
+      },
+      {
+        "title": "Reconcile after a load",
+        "body": "Attempted rows must equal accepted plus rejected plus skipped. Inspect rendered previews and re-read final status. A timed-out response requires inspection of the existing campaign and contacts before any retry."
+      }
+    ],
+    "prompt": "Use sequencer-uploader to prepare a pre-load manifest and five rendered previews from the exact approved files. Include cleaner and sending-domain reports, counts, field map, settings and missing capabilities. Preview mode prohibits creation, uploads and activation. Return HOLD on any failed gate.",
+    "actions": [
+      "Approve the concrete load scope before any later external action.",
+      "Check final fetched paused status and counts.",
+      "Activate manually only after a separate launch review."
+    ],
+    "example": "One campaign, one reconciled audience and one known approved copy version.",
+    "failure": "A tool that cannot safely load paused is unsupported for this path until a safe method is established.",
+    "assets": [
+      "ai-pack/skills/sequencer-uploader.md",
+      "ai-pack/templates/field-map.md"
+    ],
+    "sourceIds": [
+      "D07"
+    ],
+    "track": "training",
+    "group": "CCS Training",
+    "status": "Review draft"
+  },
+  {
+    "slug": "training/weekly-review",
+    "title": "Review results and email health each week",
+    "description": "Know what happened and what to change next.",
+    "finish": "A dated report with evidence, problems and one next action.",
+    "needs": "Read-only campaign results, sender inventory, recipient counts, current recipe and owner-confirmed sales.",
+    "sections": [
+      {
+        "title": "Measure each step separately",
+        "body": "Track new contacts, total sends, human replies, interested replies, fit, bookings, attendance, opportunities, sales and collected cash. Do not substitute all replies for interested replies. If a metric is unavailable, mark it UNKNOWN."
+      },
+      {
+        "title": "Inspect health without pretending certainty",
+        "body": "Review sender connection, bounces, reply trends and blocklists. A refused DNS lookup is UNKNOWN. MX addresses do not establish the outbound IP. Source guidance about 95% warm-up scores or 1% reply trends is a review signal, not universal proof a mailbox is safe or dead."
+      },
+      {
+        "title": "Choose the next action",
+        "body": "Low runway: prepare a refill. Poor fit: inspect rules/list. Strong interest but weak bookings: inspect reply handling and availability. A drop across senders: inspect health before rewriting everything. Record the proposed change, owner and approval. Archive current evidence in campaign-vault."
+      }
+    ],
+    "prompt": "Run weekly-campaign-report, daily-scoreboard, sending-domain-blacklist and campaign-vault using current scoped data. Calculate runway from NEW contacts. Report unavailable metrics as UNKNOWN. Separate human replies from interest and sales from cash. Recommend one next action. Do not pause mailboxes, change limits, purchase, post to Slack or send.",
+    "actions": [
+      "Check metric definitions and denominators.",
+      "Confirm any sales/cash figures yourself.",
+      "Approve changes individually and bring a concrete problem to CCS."
+    ],
+    "example": "The fixture report shows two days of runway, one simulated booking and UNKNOWN sales. It makes no delivery-health claim.",
+    "failure": "An expired connector or incomplete health check stops the affected conclusion. Report source/time/failure instead of reusing stale numbers.",
+    "assets": [
+      "ai-pack/templates/weekly-report.md",
+      "ai-pack/skills/weekly-campaign-report.md",
+      "example/weekly-report.md"
+    ],
+    "sourceIds": [
+      "C05",
+      "C10",
+      "C11",
+      "D08",
+      "R-cold-email/running-campaigns"
+    ],
+    "track": "training",
+    "group": "CCS Training",
+    "status": "Review draft"
+  },
+  {
+    "slug": "training/troubleshooting",
+    "title": "Fix problems and ask for help",
+    "description": "Find the broken step without causing another problem.",
+    "finish": "A useful incident report and a safe next action.",
+    "needs": "The step, exact error, time, current files and last successful action. Remove secrets from evidence.",
+    "sections": [
+      {
+        "title": "No output or missing access",
+        "body": "Check whether the file exists, the correct folder is open and the connection is current. Reauthenticate securely with the account owner. A permission error is not a reason to broaden access or invent data."
+      },
+      {
+        "title": "Wrong list or missing website",
+        "body": "Hold the row, preserve its source and failure status and inspect a sample. Do not use a guessed company description. Counts must still reconcile."
+      },
+      {
+        "title": "Reply or booking uncertainty",
+        "body": "Refresh the full thread and actual calendar/sequence state. Preserve event ID and version. Do not retry a send or booking automatically after a timeout. Opt-outs and accepted bookings stop inappropriate follow-ups."
+      },
+      {
+        "title": "Make help easy to give",
+        "body": "Use the incident template: intended result, observed error, last success, redacted evidence, current hold/paused state and the decision needed. Use the existing CCS channel. The preview does not create a new support service."
+      }
+    ],
+    "prompt": "Inspect the incident and current files read-only. Identify the last confirmed good step, the exact failure and what remains uncertain. Produce a redacted incident report and proposed recovery. Do not retry any send, upload, booking or paid operation; do not change permissions or credentials.",
+    "actions": [
+      "Record the exact error and time.",
+      "Check whether an external action already happened.",
+      "Keep the affected step held until the state is understood."
+    ],
+    "example": "A reviewer can identify the failing job and next action without asking you to repeat the entire story.",
+    "failure": "Never paste API keys, passwords or an unredacted prospect list into support. Use a minimal redacted example.",
+    "assets": [
+      "ai-pack/templates/incident.md"
+    ],
+    "sourceIds": [
+      "C12",
+      "C26"
+    ],
+    "track": "training",
+    "group": "CCS Training",
+    "status": "Review draft"
+  },
+  {
+    "slug": "training/another-client",
+    "title": "Repeat the process for another client",
+    "description": "Reuse the method while keeping each client's business separate.",
+    "finish": "A new client folder and a scoped checklist.",
+    "needs": "A service you can actually deliver for that client, permission, agreed scope and their own account owners.",
+    "sections": [
+      {
+        "title": "Copy the structure, not the assumptions",
+        "body": "Reuse the approved skill versions and blank templates. Replace buyer, value, proof, exclusions, sender and calendar with that client's facts. Do not reuse the agency's own acquisition persona for delivery."
+      },
+      {
+        "title": "Confirm the delivery boundary",
+        "body": "This system teaches cold-email operation. It does not automatically fulfil SEO, ads, engineering or another specialist service. Record which tasks AI, an operator, your agency and the client actually handle."
+      },
+      {
+        "title": "Run the checks again",
+        "body": "Research the new market, agree the opportunity, label a fresh company sample, review new copy and test the reply/calendar handoffs. Existing permission for one client does not grant permission for another."
+      }
+    ],
+    "prompt": "Create a draft checklist for a separate client-delivery context using blank profile, offer, fit-rules, proof and settings templates. Identify every value that must change. Do not copy private data, credentials, claims or permissions from another client. No external actions.",
+    "actions": [
+      "Approve the new client's scope and responsibility split.",
+      "Recheck each account and calendar owner.",
+      "Use Install for the new launch, then return to Training after a real handover."
+    ],
+    "example": "Your agency acquires maintenance firms; a maintenance client reaches plant managers. The files and approvals remain separate.",
+    "failure": "If the service requires work you cannot deliver, resolve that scope before promising it. An AI instruction does not supply missing expertise.",
+    "assets": [
+      "ai-pack/templates/profile.md",
+      "ai-pack/templates/settings.md"
+    ],
+    "sourceIds": [
+      "D12",
+      "C04"
+    ],
+    "track": "training",
+    "group": "CCS Training",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/go-to-market/deal-economics",
+    "title": "Why some buyers can pay more",
+    "description": "Compare the value of the same work for different buyers.",
+    "finish": "A clear revenue comparison using the buyer's real numbers.",
+    "needs": "The value of a new customer, its time period, the buyer's close rate and your proposed fee. Missing figures stay unknown.",
+    "sections": [
+      {
+        "title": "Start with what the buyer gains",
+        "body": "A service is not worth the same amount to every business. Compare how many extra customers it can help a buyer win and what those customers spend. Higher customer value can matter, but so can a stronger close rate or more usable volume. A high-ticket market is not automatically a good client."
+      },
+      {
+        "title": "Use one plain calculation",
+        "body": "Illustrative example: ten accepted opportunities × 20% eventual close rate = two expected customers. Two × $60,000 first-year customer revenue = $120,000 first-year revenue. A $6,000 agency fee is one twentieth of that revenue.\n\nThis is a conditional revenue comparison. It is not guaranteed, not buyer profit and not cash this month. The sales cycle affects when a sale happens; the customer's payment pattern affects when cash arrives."
+      },
+      {
+        "title": "Then test whether the engagement works",
+        "body": "Check capacity, customer acquisition costs and delivery effort. Ask for gross profit only if the buyer knows it. Do not invent a margin. Use the buyer's actual process to decide which opportunity milestone you can influence. Your own fee must also fund your service, tools and help."
+      }
+    ],
+    "prompt": "From the buyer's stated customer revenue value and period, close rate, opportunity volume and agency fee, show the calculation in plain steps. Label all assumptions. Keep revenue, profit, contract value and cash separate. Do not infer margin or a 30-day sales cycle. Return unanswered discovery questions.",
+    "actions": [
+      "Use the buyer's figures and a clearly named period.",
+      "Read the result aloud without calling revenue profit.",
+      "Check sales timing and capacity before using it in a proposal."
+    ],
+    "example": "Ten opportunities, two eventual sales, $120,000 first-year revenue and $6,000 fee is a conditional example, not a reported CCS result.",
+    "failure": "If close rate or value is unknown, show the missing input. Do not output an authoritative ROI multiple from guessed numbers.",
+    "assets": [
+      "ai-pack/templates/offer.md",
+      "example/offer.md"
+    ],
+    "sourceIds": [
+      "C21",
+      "C25",
+      "C13"
+    ],
+    "track": "resources",
+    "group": "Go-To-Market Strategy",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/go-to-market/client-selection",
+    "title": "Choose buyers who can support a larger engagement",
+    "description": "Check value, sales cycle, capacity and access to the buyer.",
+    "finish": "Written selection rules and discovery questions, rather than a random niche list.",
+    "needs": "Your service, fee range, delivery capacity and evidence of the business you may approach.",
+    "sections": [
+      {
+        "title": "Check seven things",
+        "body": "Account value; actual gross profit if known; sales cycle; strong delivery; spare or expanding capacity; a buyer you can identify; an appropriate industry. A company's headcount alone is weak evidence. A small financial firm can manage a large book of business."
+      },
+      {
+        "title": "Use screening to decide what to investigate",
+        "body": "Matt's G1 uses a broad research screen and a tighter quarterly-sales preference. The scoring stage may allow up to 120 days; discovery prefers under 60 days. Neither gives the AI permission to invent a company's sales cycle. Confirm it on the call.\n\nThe source scorecard suggests a full engagement at six or seven passes, a pilot/milestone at four or five and passing at three or fewer. These are judgement aids, not measured universal rules."
+      },
+      {
+        "title": "Respect the documented exclusions",
+        "body": "For this taught quarterly model, Matt discourages staffing/recruiting, agency buyers and public-procurement-led work, and warns about hidden buyers and very long cycles. These are his context-specific targeting choices. They do not mean every business in a broad category is objectively unsuitable.\n\nDo not claim eight proven industries or student outcomes without the actual supporting evidence. The current sources supply examples such as engineering, equipment businesses and asset-backed finance, each needing its own buying-process checks."
+      }
+    ],
+    "prompt": "Use profile.md and the account-value checks to propose fit-rules.md. Separate observed facts from research estimates and questions for discovery. Record company and contact rules, exclusions, evidence for GOOD, MAYBE holds and final proposal checks. Do not invent industry results or customer profit.",
+    "actions": [
+      "Approve rules for the actual service you sell.",
+      "Use public evidence for screening and discovery for private numbers.",
+      "Do not use the scorecard as an unrelated worksheet before explaining buyer value."
+    ],
+    "example": "A maintenance business might look suitable on its website, while capacity and sales cycle remain discovery questions. It is not automatically a GOOD paying client.",
+    "failure": "If the buyer cannot be identified, the cycle is too long or delivery needs fixing, change the approach or decline. Do not solve a list problem with copy.",
+    "assets": [
+      "ai-pack/templates/fit-rules.md",
+      "ai-pack/templates/discovery-script.md"
+    ],
+    "sourceIds": [
+      "C13",
+      "R-set-up/map-out-icp",
+      "R-sales/qualifying-prospects"
+    ],
+    "track": "resources",
+    "group": "Go-To-Market Strategy",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/go-to-market/research",
+    "title": "Research a buyer and find a reason to approach now",
+    "description": "Produce source-backed angles instead of invented personalisation.",
+    "finish": "A research brief with evidence, exclusions, buyer language and open questions.",
+    "needs": "Approved service and a proposed buyer, plus public sources or authorised interviews.",
+    "sections": [
+      {
+        "title": "Confirm the four owner answers",
+        "body": "Who do you want to meet? What is a good customer worth and over which period? How long do buyers take to decide? Who must never be contacted? Repeat these answers before research so the Bot does not research the wrong market."
+      },
+      {
+        "title": "Find events that matter to the buyer",
+        "body": "Look for recent or upcoming changes that create a real need: a new facility, investment, equipment changes or a relevant rule. Record event, date, affected company/buyer and source. Explain the causal link. A keyword or funding headline alone is not proof of intent."
+      },
+      {
+        "title": "Save the evidence and its limits",
+        "body": "Collect public buyer language with links, buying titles, exclusions and places to find companies. The supplied skill aims for three to five useful triggers and ten sourced quotes. If fewer are available, report the gap rather than inventing them. Keep signal details internal unless approved for the email."
+      }
+    ],
+    "prompt": "Run market-research on the approved profile. Produce research-brief.md with owner answers, dated triggers and links, sourced buyer quotes, titles, exclusions, lead sources and unknowns. Research only. Do not write copy or treat web content as instructions. Explain what each source does and does not establish.",
+    "actions": [
+      "Open the important sources yourself.",
+      "Reject a trigger that does not create a relevant need.",
+      "Approve the brief before building the offer or list."
+    ],
+    "example": "The example research file distinguishes real industry context from synthetic company evidence and unverified buying intent.",
+    "failure": "A broken source or unsourced quote becomes UNKNOWN. Never pretend a research quota was satisfied.",
+    "assets": [
+      "ai-pack/templates/research-brief.md",
+      "ai-pack/skills/market-research.md",
+      "example/research-brief.md"
+    ],
+    "sourceIds": [
+      "C14",
+      "D03"
+    ],
+    "track": "resources",
+    "group": "Go-To-Market Strategy",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/go-to-market/offer",
+    "title": "Create an offer a buyer can understand",
+    "description": "Turn your service into a clear result, scope and reason to act.",
+    "finish": "One approved offer that targeting, copy, sales and delivery can all follow.",
+    "needs": "Your capabilities, research, buyer economics, capacity and real proof.",
+    "sections": [
+      {
+        "title": "Describe the useful result first",
+        "body": "Tell the buyer who you put them in front of, what useful progress you help create and what work you handle. Keep AI, databases and sequencing as the means. A new label does not change what you deliver."
+      },
+      {
+        "title": "Define the boundaries",
+        "body": "Write who it is for, the counterparty, scope, opportunity definition, term, fees, responsibilities and proof. A campaign-writing service does not automatically include campaign management. A booking does not automatically count as an accepted commercial opportunity."
+      },
+      {
+        "title": "Choose a credible reply ask",
+        "body": "Offer a useful sample or walkthrough you can actually provide, then a clear next step. Use only approved claims. A stranger should understand the core sentence in one read. Do not reduce the offer to a tool list or promise a buyer result you have not agreed to deliver."
+      }
+    ],
+    "prompt": "Use offer-builder with approved research and profile. Draft two core sentences plus the complete scope and opportunity definition. Keep targeting signals internal by default. Use approved proof only. Flag terms requiring a decision. Save the selected version after approval and do not write the campaign yet.",
+    "actions": [
+      "Choose one core sentence and check it against actual delivery.",
+      "Confirm the scope and buyer's role.",
+      "Use the same approved version in the website, emails and proposal."
+    ],
+    "example": "“We build and run an outbound campaign introducing established maintenance firms to manufacturing buyers in their region” is illustrative. The exact milestone and commercial terms belong in the written scope.",
+    "failure": "If the offer depends on capabilities you do not provide, resolve the service before improving its wording.",
+    "assets": [
+      "ai-pack/templates/offer.md",
+      "ai-pack/skills/offer-builder.md"
+    ],
+    "sourceIds": [
+      "C22",
+      "C21",
+      "D03",
+      "R-set-up/cold-traffic-offer",
+      "R-cold-email/cold-traffic-offer-check",
+      "R-offers-guarantees-case-studies/offers"
+    ],
+    "track": "resources",
+    "group": "Go-To-Market Strategy",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/go-to-market/opportunity",
+    "title": "Define the opportunity you will be paid to deliver",
+    "description": "Agree what counts before disputes begin.",
+    "finish": "A written acceptance definition in the client's own language.",
+    "needs": "The client's sales-process steps, decision-maker and actual service boundary.",
+    "sections": [
+      {
+        "title": "Find the valuable step",
+        "body": "Walk from first interest through discovery, review, proposal and sale. Matt's model anchors to a step the client already values and you can influence, often after the first meeting and before final close. The correct step differs by business."
+      },
+      {
+        "title": "Write all four conditions",
+        "body": "Clear interest; financial ability; meaningful potential size; inside service/geography scope. State how each is evidenced and who accepts it. If the client calls the step a pilot, pursuit or packet, use their language and define it."
+      },
+      {
+        "title": "Set a conservative quantity and a clear remedy",
+        "body": "Source examples include a pilot started for SaaS, a loan packet for a lender or a qualified engineering pursuit. These are teaching examples, not verified results for your service. Set volume from capacity and evidence. Write how duplicates, no-shows, misfits and disputes are handled."
+      }
+    ],
+    "prompt": "Use discovery notes to map the buyer's process. Propose the earliest valuable milestone our actual service can influence. Write clear-interest, financial-ability, value and scope conditions, evidence, acceptance owner and dispute rule. Do not invent a quantity or treat every call as an accepted opportunity.",
+    "actions": [
+      "Ask the client what they already track.",
+      "Confirm the definition in the proposal and agreement.",
+      "Get approval before counting an event toward a payment milestone."
+    ],
+    "example": "A plant-manager conversation becomes accepted only when it meets the written conditions and agreed process, not simply because a calendar invite exists.",
+    "failure": "If the definition requires you to control the client's final close, choose a supportable milestone or change the engagement.",
+    "assets": [
+      "ai-pack/templates/offer.md",
+      "ai-pack/templates/proposal.md"
+    ],
+    "sourceIds": [
+      "C24"
+    ],
+    "track": "resources",
+    "group": "Go-To-Market Strategy",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/go-to-market/pricing",
+    "title": "Set the price, payments and delivery budget",
+    "description": "Collect enough to do the agreed work properly.",
+    "finish": "Terms with a price, payment triggers, costs and a specific approved remedy.",
+    "needs": "Buyer economics, your actual delivery work, costs, term and capacity.",
+    "sections": [
+      {
+        "title": "Price with three comparisons",
+        "body": "Use the buyer's expected value, known gross profit where available and the realistic alternative of an internal hire. Also cost your own data, infrastructure, research, copy, reply work and operator time. Revenue value does not tell you what price someone will agree to."
+      },
+      {
+        "title": "Choose the payment structure deliberately",
+        "body": "Matt teaches half-upfront quarterly fees, engagement plus performance, milestone billing, pilots and seasonal/annual arrangements. Use the one that matches the buyer's process and your work. Performance terms need attribution, evidence, calculation, payment timing and a clear end date."
+      },
+      {
+        "title": "Write the minimum and remedy exactly",
+        "body": "His examples include a one-opportunity minimum with a 45-to-60-day sending period and a defined refund remedy. These are source examples, not your automatic terms or CCS programme guarantees. Confirm clock start, participation, what counts and the remedy in writing.\n\nA backstop caller is separately costed delivery support, not a guarantee that any phone campaign succeeds. A warm SDR calls interested leads and is a different role."
+      }
+    ],
+    "prompt": "Read confirmed buyer economics, scope and dated budget. Compare quarterly, milestone and engagement-plus-performance terms. Show price, payment triggers, attribution, responsibilities and the exact proposed guarantee clock/remedy. Mark unagreed terms. Do not change commercial terms or create a payment link.",
+    "actions": [
+      "Check costs against the work you promise.",
+      "Agree a structure and one clear payment trigger per instalment.",
+      "Get the commercial/legal review needed before final use."
+    ],
+    "example": "The teaching example's second $3,000 is triggered by five accepted opportunities. It is not a monthly retainer and not an automatic invoice authorised by this preview.",
+    "failure": "If costs or capacity cannot support the minimum, resolve delivery and terms. Do not borrow an impressive guarantee from another offer.",
+    "assets": [
+      "ai-pack/templates/budget.csv",
+      "ai-pack/templates/offer.md",
+      "example/budget.md"
+    ],
+    "sourceIds": [
+      "C25",
+      "C11",
+      "R-set-up/service-model-pricing",
+      "R-offers-guarantees-case-studies/guarantees"
+    ],
+    "track": "resources",
+    "group": "Go-To-Market Strategy",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/go-to-market/positioning",
+    "title": "Explain why this buyer should choose your firm",
+    "description": "Make your work and its value concrete.",
+    "finish": "A short positioning statement, page outline and evidence-backed sales explanation.",
+    "needs": "Approved buyer, offer, real work allocation and proof.",
+    "sections": [
+      {
+        "title": "Speak to the buyer's commercial job",
+        "body": "A maintenance firm wants suitable manufacturing work, not a lesson on your email software. State the useful outcome, the counterparty and how the engagement works."
+      },
+      {
+        "title": "Show the work you take over",
+        "body": "Research, selection, data preparation, writing, campaign operation, reply handling and reporting only where you actually perform them. Explain the useful thing produced and what remains for the buyer. Do not call advice a DFY build."
+      },
+      {
+        "title": "Make the firm credible",
+        "body": "Use genuine identity, appropriate website, consistent sender and professional materials. A firm name and design do not substitute for evidence. If proof is limited, demonstrate the process or a sample, with its limits clearly stated."
+      }
+    ],
+    "prompt": "Read approved profile, offer, proof and responsibilities. Write a plain positioning paragraph: who buys, useful result, actual work handled, buyer's role and evidence. Remove unsupported results and abstract labels. Draft only; do not publish.",
+    "actions": [
+      "Check that every claimed task has an owner.",
+      "Use consistent wording across page, email and proposal.",
+      "Remove proof that belongs to somebody else."
+    ],
+    "example": "The agency may use AI to research and prepare work, while the owner still takes sales calls. That division should be clear.",
+    "failure": "If the statement remains weak after removing a clever name, improve the actual commercial explanation or scope, not just the adjective.",
+    "assets": [
+      "ai-pack/templates/sales-assets.md"
+    ],
+    "sourceIds": [
+      "C23",
+      "C20",
+      "R-sales/sales-positioning",
+      "R-offers-guarantees-case-studies/strategy-value-props"
+    ],
+    "track": "resources",
+    "group": "Go-To-Market Strategy",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/go-to-market/proof",
+    "title": "Build proof from work you can actually show",
+    "description": "Use genuine evidence without inventing a case study.",
+    "finish": "An approved-proof file and one usable case-study outline.",
+    "needs": "Real permission, records, dates, baseline and outcome. No result means no result claim.",
+    "sections": [
+      {
+        "title": "Record the full case",
+        "body": "Who was involved, what problem they had, what you changed, when, what happened and what the evidence supports. Separate bookings, contracts and collected cash. Explain any other factors or limits."
+      },
+      {
+        "title": "Ask useful interview questions",
+        "body": "What was happening before? Why did you act? What exactly changed? What can we verify? Over which period? What surprised you? What would you tell someone in the same situation? Get permission for the wording, name, screenshots and publication."
+      },
+      {
+        "title": "If you have no result yet",
+        "body": "Show a real sample, relevant work history or a clearly labelled process demonstration. A hypothetical model or another firm's outcome is not your testimonial. Use proof after the problem and mechanism it supports, not as a random logo wall."
+      }
+    ],
+    "prompt": "Turn authorised case notes into a factual case study with baseline, intervention, period, observed result, evidence and limits. Quote only supplied words. Produce an approval checklist and update approved-proof.md after permission. Do not invent results or publish.",
+    "actions": [
+      "Verify the underlying records and exact metric.",
+      "Get use/anonymisation permission.",
+      "Approve the final wording and keep source references."
+    ],
+    "example": "A real booked meeting can support a booking claim. It cannot by itself support a revenue or profitability claim.",
+    "failure": "Missing evidence or permission holds the claim. Use a process sample instead of silently filling the gap.",
+    "assets": [
+      "ai-pack/templates/approved-proof.md"
+    ],
+    "sourceIds": [
+      "R-offers-guarantees-case-studies/case-studies",
+      "R-offers-guarantees-case-studies/collecting-testimonials",
+      "R-offers-guarantees-case-studies/no-case-studies",
+      "R-operations-scaling/case-study-interview"
+    ],
+    "track": "resources",
+    "group": "Go-To-Market Strategy",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/funnel/website",
+    "title": "Build a page that supports the sales call",
+    "description": "Make the offer and next step clear on desktop and phone.",
+    "finish": "A page draft and a checked path from interest to application or booking.",
+    "needs": "Approved buyer, offer, actual proof, CTA and account owner.",
+    "sections": [
+      {
+        "title": "Put the argument in a useful order",
+        "body": "Start with who it is for and what they want. Explain the problem, how your work addresses it, what you actually handle and the evidence. Then show who it suits and the next action. A visitor should not need to know your internal tool names."
+      },
+      {
+        "title": "Use one clear next action",
+        "body": "Decide whether they apply first or book directly. If an application is required, test the complete route so someone cannot bypass it accidentally. Show exactly what happens after the click and which business the call is with."
+      },
+      {
+        "title": "Check the actual page",
+        "body": "Inspect headline wrapping, readable body text, VSL alignment, buttons, form fields and validation at desktop and phone widths. Check destination, mobile tap targets and the thank-you state. A draft placeholder is not a working video. No live forms are submitted by this preview."
+      }
+    ],
+    "prompt": "Draft a page from approved profile, offer and proof. Show headline, explanation, work handled, evidence, fit and CTA. Identify every missing asset and destination. Do not invent testimonials, publish or submit forms. Return a desktop/phone review checklist.",
+    "actions": [
+      "Approve claims, CTA and form requirements.",
+      "View the rendered page and follow the test path without live submission.",
+      "Replace placeholder media only with an actual approved asset."
+    ],
+    "example": "A lead who clicks Apply reaches the intended application, then the correct booking step and confirmation.",
+    "failure": "If form submissions, tracking or booking are untested, record that limitation. Do not call the funnel working because the button looks right.",
+    "assets": [
+      "ai-pack/templates/sales-assets.md"
+    ],
+    "sourceIds": [
+      "R-set-up/website-landing-page"
+    ],
+    "track": "resources",
+    "group": "Funnel",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/funnel/vsl",
+    "title": "Create your VSL from the approved offer",
+    "description": "Explain the business case with proof and a clear next step.",
+    "finish": "A script outline, evidence list and recording checklist.",
+    "needs": "Approved offer, buyer pains, actual mechanism, proof and next action.",
+    "sections": [
+      {
+        "title": "Build the argument before slides",
+        "body": "Who is this for? What problem are they experiencing? Why does the current approach cause it? What changes under your service? What work do you handle and what remains for them? Why should they believe it? End with the appropriate application or booking action."
+      },
+      {
+        "title": "Demonstrate instead of listing tools",
+        "body": "Use a relevant before/after example, an actual asset and a clear workflow. Financial examples must distinguish client revenue from agency fees, profit and collected cash. Do not imply an assumed sales cycle or present a forecast as a member result."
+      },
+      {
+        "title": "Prepare the recording",
+        "body": "Write the spoken explanation in plain language. Keep each slide's job clear, with readable type and useful spacing. Put detailed working into the demonstration rather than cramming text onto slides. Check any calculator hyperlink and its actual destination. Test video playback and captions after recording."
+      }
+    ],
+    "prompt": "Using the approved offer and source evidence, draft a VSL outline and spoken script. Make the buyer's problem, mechanism, actual work allocation, proof and CTA clear. Mark each claim with its source or as illustrative. Do not invent proof, guarantees or new services. Draft only.",
+    "actions": [
+      "Review the argument as someone with no prior context.",
+      "Verify all numbers and actual deliverables.",
+      "Inspect rendered slides and recording before publishing."
+    ],
+    "example": "The video can show one agency's economics, change the buyer/deal and recalculate. A future-revenue comparison stays a future-revenue comparison.",
+    "failure": "If a slide needs a spoken explanation just to understand its headline, simplify it. Missing proof remains a visible drafting issue.",
+    "assets": [
+      "ai-pack/templates/sales-assets.md",
+      "ai-pack/templates/approved-proof.md"
+    ],
+    "sourceIds": [
+      "R-set-up/create-vsl"
+    ],
+    "track": "resources",
+    "group": "Funnel",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/funnel/calendar",
+    "title": "Set up the right calendar and pre-call path",
+    "description": "Prevent wrong-person bookings and time-zone mistakes.",
+    "finish": "A booking configuration and pre-call checklist ready for a controlled test.",
+    "needs": "Calendar owner, event type, duration, availability, buffers, time zone and qualification rules.",
+    "sections": [
+      {
+        "title": "Write the configuration first",
+        "body": "Name who takes the call, which offer it is for, required fields, available hours, meeting length, notice period and buffers. Confirm whether application approval is required before booking. A public link is not proof that the qualification step exists."
+      },
+      {
+        "title": "Prepare the pre-call and thank-you pages",
+        "body": "Say what the call covers, who should attend, what to bring and how to reschedule. Confirm date, time zone and meeting location. Do not promise the call is accepted if a review is still required."
+      },
+      {
+        "title": "Test the full path safely",
+        "body": "Inspect calendar and scheduler availability, confirmations and cancellation handling in a controlled session. An actual test invitation is a send and needs approval for the named recipient. The preview simulates booking only."
+      }
+    ],
+    "prompt": "Prepare the calendar settings and pre-call page from the approved sales process. Check identity, event type, duration, zone, buffers and qualification. Show the proposed path and gaps. Do not book, send invitations or change calendar settings.",
+    "actions": [
+      "Verify the event belongs to the correct person and offer.",
+      "Check availability in scheduler and calendar.",
+      "Approve any future internal test invitation separately."
+    ],
+    "example": "A lead in another time zone sees an unambiguous time and the correct meeting link.",
+    "failure": "If the calendar connection is missing or a slot conflicts, stop rather than substituting a nearby time.",
+    "assets": [
+      "ai-pack/templates/settings.md",
+      "ai-pack/skills/meeting-booking.md"
+    ],
+    "sourceIds": [
+      "R-set-up/get-calendly"
+    ],
+    "track": "resources",
+    "group": "Funnel",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/funnel/payments",
+    "title": "Match payments to the agreed terms",
+    "description": "Make the amount, schedule and stopping point explicit.",
+    "finish": "A payment specification ready for account-owner review.",
+    "needs": "Agreed price/currency/tax treatment, buyer, instalment count, milestones and authorised payment provider.",
+    "sections": [
+      {
+        "title": "Specify the whole deal",
+        "body": "Record total, first charge, later amounts, timing, number of charges and when they stop. A $1,000 fortnightly instalment is not automatically a perpetual subscription. Milestone billing is different from a date-based instalment."
+      },
+      {
+        "title": "Make the checkout agree",
+        "body": "The product name, amount, tax handling, currency, receipt and agreement must match. Do not assume buyer country or tax liability from an email address. Have the responsible owner/accountant resolve uncertain tax treatment."
+      },
+      {
+        "title": "Verify without a live charge",
+        "body": "Use the provider's test mode and controlled test identities only when approved. Inspect the actual saved checkout. Do not create or modify live products, payout splits or payment links as part of this resource preview."
+      }
+    ],
+    "prompt": "Turn approved commercial terms into a payment specification: total, currency, taxes, first charge, later timing or milestone, instalment count, end condition, refunds and receipt text. Flag missing facts. Do not create products, links, subscriptions or charges.",
+    "actions": [
+      "Check the specification against the agreement.",
+      "Have the payment/account owner review the actual saved setup.",
+      "Keep test and live modes separate."
+    ],
+    "example": "A 12-payment plan should stop after its agreed total. The resource explains the requirement rather than silently creating a live subscription.",
+    "failure": "If checkout says incomplete or differs from the agreement, do not send it to a buyer. Inspect the actual saved configuration first.",
+    "assets": [
+      "ai-pack/templates/offer.md"
+    ],
+    "sourceIds": [
+      "R-set-up/set-up-payments"
+    ],
+    "track": "resources",
+    "group": "Funnel",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/funnel/agreement",
+    "title": "Put scope, fees and responsibilities in writing",
+    "description": "Keep the agreement consistent with what was sold.",
+    "finish": "A complete agreement brief for legal review and final approval.",
+    "needs": "Agreed parties, scope, opportunity definition, dates, price, payments and remedy.",
+    "sections": [
+      {
+        "title": "Include the operational terms",
+        "body": "Name parties, start date, term, actual work, opportunity acceptance, exclusions, responsibilities, fees, milestone triggers, guarantee clock/remedy, confidentiality, termination and dispute handling. Performance fees also need attribution and evidence."
+      },
+      {
+        "title": "Use the approved deal as the source",
+        "body": "A proposal may still be a working draft. The agreement must reflect what both parties actually accepted. Resolve any mismatch before signature. Do not introduce new scope or a stronger guarantee because a template contains it."
+      },
+      {
+        "title": "Obtain appropriate review",
+        "body": "The local file is a drafting brief, not a lawyer-approved agreement. The original library referred to PandaDoc/PDF templates without a confirmed usable asset. Those references are held; they are not presented as verified downloads here."
+      }
+    ],
+    "prompt": "Prepare an agreement brief from the approved proposal and terms. Identify every party, scope item, responsibility, payment trigger, date, guarantee/remedy and unresolved point. Do not invent legal terms, sign, send or create a live contract.",
+    "actions": [
+      "Compare every number and milestone with the approved proposal.",
+      "Resolve legal/tax issues with the appropriate adviser.",
+      "Inspect the final document before it is sent for signature."
+    ],
+    "example": "A payment becomes due when the exact agreed milestone is met, with a written acceptance method.",
+    "failure": "A missing term is not permission for AI to invent one. Return the draft for a decision.",
+    "assets": [
+      "ai-pack/templates/proposal.md",
+      "ai-pack/templates/offer.md"
+    ],
+    "sourceIds": [
+      "R-set-up/create-agreement"
+    ],
+    "track": "resources",
+    "group": "Funnel",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/setup",
+    "title": "Prepare sending accounts and campaign settings",
+    "description": "Know what must be checked before sending.",
+    "finish": "A dated sender-readiness checklist and proposed campaign configuration.",
+    "needs": "Approved account owner, domain/inbox provider, sequencer, sender identity and limits.",
+    "sections": [
+      {
+        "title": "Separate account setup from sending permission",
+        "body": "Use legitimate business details and provider terms. Set up domain authentication according to the actual provider instructions. Keep credentials in secure storage. New permissions, purchases and DNS changes are outside this preview."
+      },
+      {
+        "title": "Use a supported sending configuration",
+        "body": "Matt's source method uses two mailbox groups rotated weekly, a two-week warm-up standard and gradual volume increases. These are source recommendations, not proof any mailbox is ready. Check your provider's limits, authentication, connection and actual health. Do not infer readiness from age alone."
+      },
+      {
+        "title": "Check the campaign controls",
+        "body": "Plain text, two cold steps, approved delay, same-thread bump, stop-on-reply, correct recipient time zone, tracking off, checked sender group and paused load. Confirm what each control actually means in the selected tool. Exclude SEG leads in the final audience even if there is no native toggle."
+      }
+    ],
+    "prompt": "Using settings.md and the selected tool's current documentation, prepare a sender-readiness and campaign-settings report. Mark unsupported controls and missing evidence. Do not alter DNS, buy inboxes, change limits, create a campaign or send.",
+    "actions": [
+      "Approve sender identity, limits and schedule.",
+      "Check authentication and actual connection evidence.",
+      "Keep the campaign paused until all launch gates pass."
+    ],
+    "example": "A healthy-looking warm-up score is one signal. It does not replace authentication, blocklist and real transport checks.",
+    "failure": "Missing or contradictory provider settings block the load. Do not invent a universal configuration.",
+    "assets": [
+      "ai-pack/templates/settings.md",
+      "ai-pack/skills/sequencer-uploader.md"
+    ],
+    "sourceIds": [
+      "C10",
+      "R-cold-email/cold-email-setup",
+      "R-cold-email/campaign-setup"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/list-building",
+    "title": "Build a repeatable list, not a one-off export",
+    "description": "Save the filters, evidence and count checks for the next refill.",
+    "finish": "A lead recipe and a clean, scoped audience.",
+    "needs": "Buyer rules, a named source, exclusions and approved budget.",
+    "sections": [
+      {
+        "title": "Find accounts and then the right people",
+        "body": "Use company type, location, service evidence and relevant signals. Then choose buying titles or useful referral titles. Broad lists and tight signal-led lists serve different purposes; record which you are building."
+      },
+      {
+        "title": "Keep provenance and the raw file",
+        "body": "Record source, date, search/filter recipe, cost, count and usage permission. Never guess domains or emails. Save untouched raw data, clean output, holds and rejections. Dedupe against campaigns within the approved scope and honour suppressions."
+      },
+      {
+        "title": "Plan the next refill",
+        "body": "A saved search or exact query lets the next operator reproduce the list. Use current source availability and a sample before scale. The qualified count may be smaller than the export; it should be smaller if the export includes poor fits."
+      }
+    ],
+    "prompt": "Use signal-list-builder to prepare a source-backed recipe and sample. Show expected volume, cost and exclusions before a paid export. From approved data, run lead-list-cleaner and produce clean, held and rejected files with counts and reasons. No export, upload or sending in preview.",
+    "actions": [
+      "Inspect companies and roles in the sample.",
+      "Approve the source and any later paid pull.",
+      "Reconcile every removed or held row."
+    ],
+    "example": "The example's 58 input rows do not become 58 sends. Four are rejected, four held and only 30 eventually qualify.",
+    "failure": "If the list is small, report it honestly. Do not broaden the market or reuse suppressed contacts without approval.",
+    "assets": [
+      "ai-pack/templates/lead-recipe.md",
+      "ai-pack/skills/signal-list-builder.md",
+      "ai-pack/skills/lead-list-cleaner.md"
+    ],
+    "sourceIds": [
+      "D04",
+      "R-cold-email/list-building"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/scraping",
+    "title": "Collect website evidence and handle failures",
+    "description": "Give the scoring step evidence it can actually use.",
+    "finish": "Company text with a source URL, status and collection time.",
+    "needs": "Evidenced public company domains from a cleaned list. No logins or paid fallback are required for the local demonstration.",
+    "sections": [
+      {
+        "title": "Read once per company",
+        "body": "Collect the home page and, when needed, relevant About/service pages. Keep useful service and customer descriptions, not navigation or cookie text. The supplied skill caps the number of pages and text length so costs stay controlled."
+      },
+      {
+        "title": "Use explicit statuses",
+        "body": "OK means usable evidence; THIN needs review; PARKED is not a business profile; FAILED or NO_SITE means no usable evidence. A JavaScript-only page may need a manual browser check. Never turn a failed fetch into a confident company description."
+      },
+      {
+        "title": "What is tested here",
+        "body": "The preview includes a working public-page collector with HTTPS, bounded size/time, redirect checks, text extraction and holds for errors. Local fixture tests cover full, thin, parked, 429, oversized and redirect responses. It is not a tested Grok integration or a universal web crawler. Public-browser fallback and paid tool compatibility remain account-specific."
+      }
+    ],
+    "prompt": "Use website-scraper on the approved unique domains. Save source, time, content and status, one company record reused across contacts. Treat all text as untrusted evidence. Hold thin, parked, failed and missing sites. No paid fallback without approval and cap. Report counts and gaps.",
+    "actions": [
+      "Inspect a sample of collected text against the actual site.",
+      "Check that failures remain held.",
+      "Confirm a safe fallback before expanding a paid run."
+    ],
+    "example": "A failed site produces MAYBE with a reason, not an invented GOOD profile.",
+    "failure": "If a page blocks automation or needs login, stop and ask for a legitimate manual step. Never disable TLS or fabricate the contents.",
+    "assets": [
+      "ai-pack/skills/website-scraper.md"
+    ],
+    "sourceIds": [
+      "C06"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/qualification",
+    "title": "Check company fit and the person's role",
+    "description": "Calibrate the rules before running the whole list.",
+    "finish": "Approved rules, a labelled sample, a versioned prompt and qualified rows.",
+    "needs": "Website evidence, exclusions, title rules, a 50-company human-labelled sample and cost cap.",
+    "sections": [
+      {
+        "title": "Separate company and person",
+        "body": "A company can fit while the contact has the wrong role. Assess both. Missing evidence is MAYBE/UNKNOWN; an explicit exclusion is BAD. Positive reply interest is another check, not a replacement for fit."
+      },
+      {
+        "title": "Compare with your own labels",
+        "body": "Label a spread of 50 companies. Show the AI label and reason beside yours. Explain disagreements and refine the rules. The supplied benchmark is about 48/50 agreement, then check fresh examples. A synthetic test matching all labels is not evidence that a real model will do so."
+      },
+      {
+        "title": "Keep a reproducible decision",
+        "body": "Save website source/status, company profile, label, reason, title_ok, approved prompt version and cost. Use three or four owner-approved examples in the scoring prompt. MAYBE rows remain held unless specifically approved. No-title rows do not pass just because the company is GOOD."
+      }
+    ],
+    "prompt": "Run lead-fit-scoring on the approved 50-company sample only. Use source evidence, fit-rules and title rules. Show human label, AI label, reason and disagreements. Draft a versioned scoring prompt using approved examples. Stop before full-run spend or upload.",
+    "actions": [
+      "Label the sample yourself.",
+      "Fix the consequential disagreements and test a fresh sample.",
+      "Approve the specific full run, cost and MAYBE policy."
+    ],
+    "example": "The fixture has 30 GOOD, 10 BAD and 10 MAYBE. Its deterministic rule test is separate from real AI calibration.",
+    "failure": "Missing input must be requested. Never lower a threshold silently to get more rows.",
+    "assets": [
+      "ai-pack/templates/fit-rules.md",
+      "ai-pack/skills/lead-fit-scoring.md",
+      "example/labels-50.csv"
+    ],
+    "sourceIds": [
+      "C07",
+      "D05"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/variables",
+    "title": "Map fields and keep research out of the email",
+    "description": "Prevent blank names, broken tokens and accidental signal claims.",
+    "finish": "A field map and rendered examples with no unresolved variables.",
+    "needs": "Approved copy and qualified source rows.",
+    "sections": [
+      {
+        "title": "Use one canonical field name",
+        "body": "The pack uses first_name. Sequencers may use another built-in token, so document the exact mapping and render the subject. Do not paste {{firstName}} into a tool just because an older lesson uses it."
+      },
+      {
+        "title": "Separate internal evidence from allowed copy",
+        "body": "A hiring signal, buyer trigger or source URL may help choose a prospect without belonging in the email. Add it only when that specific copy use is approved. Each personalised line needs evidence and must not overstate what it proves."
+      },
+      {
+        "title": "Reject corrupt values",
+        "body": "Hold blank fields, JSON fragments, error messages, awkward newlines and unresolved placeholders. Test long names, punctuation and different personas. Do not use a generic fallback that changes the promise or makes an unsupported claim."
+      }
+    ],
+    "prompt": "Use enrichment-variables with approved fit rules and examples. Document every field's source and permitted use. Produce field-map.md and five rendered previews. Hold missing or invalid fields. Do not add company-name personalisation, signal references or spintax without approval.",
+    "actions": [
+      "Check five real rendered rows before any later load.",
+      "Approve each field that appears in the email.",
+      "Keep the source evidence and internal research separate."
+    ],
+    "example": "A subject renders to Alex, not {{first_name}} or a blank. The lead's research remains internal unless approved.",
+    "failure": "A missing token stops the row. It is not permission to invent a name or company fact.",
+    "assets": [
+      "ai-pack/templates/field-map.md",
+      "ai-pack/skills/enrichment-variables.md"
+    ],
+    "sourceIds": [
+      "C08"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/email-copy",
+    "title": "Write cold emails from the approved offer",
+    "description": "Use the actual buyer, evidence and reply ask.",
+    "finish": "Locked step-one variants and a one-line same-thread bump.",
+    "needs": "Approved offer, proof, persona, evidence and required variables.",
+    "sections": [
+      {
+        "title": "Write one clear useful message",
+        "body": "Start with the actual offer and a reason the buyer could care. The supplied pack includes the three-ideas and stealth-question shapes plus additional frameworks. Use the full skill file for the detailed method and examples. Do not present framework anecdotes or famous-company results as your own proof."
+      },
+      {
+        "title": "Review and lock one variant at a time",
+        "body": "Name the shape and closer, show the complete email and wait for feedback. Save corrections. The source library aims for ten to fifteen approved step-one variants, with exactly two cold sequence steps. A small review can start with one variant; do not invent variety just to meet a quota."
+      },
+      {
+        "title": "Keep meaning fixed when formatting",
+        "body": "Subject is canonical first_name, mapped to the tool. Email two is one line in the original thread. Add spintax only after wording is locked and the tool syntax is verified. No unsupported results, borrowed names or unapproved signal references. Render before loading."
+      }
+    ],
+    "prompt": "Run cold-email-copy on approved offer.md, profile, proof and research. Draft variant 1 only, name its shape and closer and show five rendered examples. Wait for feedback. Lock only after approval. Keep exactly two cold steps and do not upload or send.",
+    "actions": [
+      "Judge the message as the actual buyer.",
+      "Verify claims and the thing offered in the reply ask.",
+      "Approve the final version and keep later changes reviewable."
+    ],
+    "example": "The example copy offers to show a target list and opportunity definition. It makes no invented case-study claim.",
+    "failure": "If the offer itself is unclear, return to the offer file. More copy variants will not fix an undefined service.",
+    "assets": [
+      "ai-pack/skills/cold-email-copy.md",
+      "ai-pack/templates/copy-locked.md"
+    ],
+    "sourceIds": [
+      "C09",
+      "D06",
+      "R-cold-email/writing-emails",
+      "R-cold-email/presenting-offer"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/deliverability",
+    "title": "Check sender health and useful campaign signals",
+    "description": "Detect problems without guessing what the reports mean.",
+    "finish": "A health report with checked, listed and unknown results.",
+    "needs": "Exact sender inventory, tool access, dated results and approved review settings.",
+    "sections": [
+      {
+        "title": "Use several kinds of evidence",
+        "body": "Check connection/authentication, bounces, sends, human replies and per-domain trends. Source warm-up and reply-rate thresholds are review heuristics, not universal guarantees. Investigate before changing infrastructure or blaming the offer."
+      },
+      {
+        "title": "Treat DNS limitations honestly",
+        "body": "A blocklist can refuse your resolver. Mark that UNKNOWN, not clean. Confirm the IP you test is an actual outbound sending IP; an MX IP may only receive mail. Keep domain listings separate from IP listings. The full supplied skill explains technical handling."
+      },
+      {
+        "title": "Recommend a response, do not silently change the account",
+        "body": "A listed sender, bounce spike or sudden loss of replies should produce a specific recommendation with evidence. Pausing, rotating, retiring or changing volume needs approval. Do not use open-rate reporting as the main decision measure when tracking is disabled."
+      }
+    ],
+    "prompt": "Run sending-domain-blacklist and weekly-campaign-report for the approved sender group. Record source/time, complete inventory, domain/IP distinction, unknown checks and trends. Recommend action with evidence. Do not change DNS, pause mailboxes, raise limits or send tests.",
+    "actions": [
+      "Check the exact sender group and reporting period.",
+      "Resolve unknown mandatory checks before a later load.",
+      "Approve infrastructure changes separately."
+    ],
+    "example": "A refused lookup says UNKNOWN and blocks a claim that all checks are clean.",
+    "failure": "If the connector fails, report it. Do not reuse last week's result as if it were current.",
+    "assets": [
+      "ai-pack/skills/sending-domain-blacklist.md",
+      "ai-pack/templates/weekly-report.md"
+    ],
+    "sourceIds": [
+      "C10",
+      "D08",
+      "R-cold-email/manage-deliverability",
+      "R-key-resources/deliverability-updates",
+      "R-cold-email/campaign-faqs"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/linkedin",
+    "title": "Optional: use LinkedIn by hand",
+    "description": "Follow up on relevant people without automated account activity.",
+    "finish": "A manual prospect-review and message-draft process.",
+    "needs": "Approved offer, relevant person, permitted public information and owner-selected activity window.",
+    "sections": [
+      {
+        "title": "Keep this outside the required launch",
+        "body": "The core path is email. LinkedIn can support relevant follow-up or account research after that path works. Do not buy another tool or delay launch just because an optional channel exists."
+      },
+      {
+        "title": "Use AI off-platform",
+        "body": "Research and draft where permitted, then review and act manually. The supplied L1 and skills pack disagree on 30 versus 60 days for activity screening. Choose a written window for the actual campaign; do not disguise it as a proven rule."
+      },
+      {
+        "title": "Keep the same offer and context",
+        "body": "An email lead moved to LinkedIn should not receive a contradictory pitch. Track prior contact and opt-outs. Reaching another person at the same account requires its own relevance and approval. Do not automate clicks, invites or messages from this preview."
+      }
+    ],
+    "prompt": "Prepare an optional LinkedIn research and draft checklist using approved profile, offer and exclusions. Flag the unresolved activity window and role rules. No platform login, scraping, connection request, posting or sending. Return drafts only.",
+    "actions": [
+      "Choose the activity window and relevant roles.",
+      "Review every proposed message in context.",
+      "Perform any later platform action manually within the account's rules."
+    ],
+    "example": "A draft can refer to an approved prior interaction without inventing familiarity.",
+    "failure": "If access or policy is unclear, keep the step manual and optional. Never bypass a platform block.",
+    "assets": [],
+    "sourceIds": [
+      "C15",
+      "C28"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/warm-calling",
+    "title": "Optional: distinguish a warm caller from a backstop",
+    "description": "Give each calling role a clear purpose and budget.",
+    "finish": "A role brief and escalation rule.",
+    "needs": "Actual service scope, approved phone-contact policy, quotes and clear ownership.",
+    "sections": [
+      {
+        "title": "Warm caller or SDR",
+        "body": "This person follows up interested email leads and helps convert real interest into booked meetings. The source describes an ongoing role, often base pay plus a booking fee. It is not a replacement for processing replies correctly."
+      },
+      {
+        "title": "Delivery backstop caller",
+        "body": "This is separately budgeted support if a channel underperforms against an agreed engagement. Obtain real quotes and a deliverable definition before including it. A caller does not make success universal or remove your delivery risk."
+      },
+      {
+        "title": "Write the handoff",
+        "body": "Give the caller the original offer, thread context, fit rules, permitted claims, contact rules and booking process. Keep opt-outs, exact identity and results visible. This preview does not call anyone or place a person."
+      }
+    ],
+    "prompt": "Draft separate warm-SDR and delivery-backstop role briefs from the approved scope. Include tasks, input, permitted claims, booking definition, reporting and budget assumptions. Do not recruit, contact leads or promise a hire.",
+    "actions": [
+      "Confirm the role needed.",
+      "Use actual quotes and costs.",
+      "Review phone-contact rules and scripts before any live use."
+    ],
+    "example": "A warm caller handles a known interested lead; a backstop is a separate costed delivery route.",
+    "failure": "Do not treat a generic caller promise as proof that the engagement can be delivered.",
+    "assets": [],
+    "sourceIds": [
+      "C25",
+      "R-cold-email/warm-calling"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/client-acquisition/glossary",
+    "title": "Cold-email terms in plain words",
+    "description": "Keep the measurements and workflow stages distinct.",
+    "finish": "Definitions you can use when reading a report or asking for help.",
+    "needs": "No prerequisite. Return to the glossary when a term is unfamiliar.",
+    "sections": [
+      {
+        "title": "People and files",
+        "body": "ICP: the type of company and person you want to reach. Lead: a person/company record. Qualified: passes the written rules. Raw list: untouched export. Held: cannot proceed until reviewed. Suppression: a person/domain excluded from contact. SEG: a security filter in front of a recipient's mailbox."
+      },
+      {
+        "title": "Campaign and reply",
+        "body": "Sequencer: tool that sends the approved email sequence. Variant: a different approved version of a step. Bump: follow-up in the same thread. Interested: a reply showing relevant interest, not every human reply. Booking: calendar event. Opportunity: the commercial milestone defined with the client."
+      },
+      {
+        "title": "Numbers and evidence",
+        "body": "LTV: customer revenue over their whole relationship, unless a different definition is explicitly stated. ACV: annual contract value. Gross profit: revenue minus direct delivery costs. Cash collected: money actually received. Lead runway: eligible new contacts remaining divided by daily NEW contacts. UNKNOWN: the data was not available or verified."
+      }
+    ],
+    "prompt": "Explain an unfamiliar report using these definitions. Identify the metric, source, denominator and period. Do not replace an unavailable metric with a different one or infer profit from revenue.",
+    "actions": [
+      "Ask which metric is actually meant.",
+      "Check the period and denominator.",
+      "Return to the relevant operating step."
+    ],
+    "example": "Twenty sends may include ten first emails and ten bumps, so daily sends and new contacts are not interchangeable.",
+    "failure": "If a report uses a term differently, name the difference before comparing results.",
+    "assets": [],
+    "sourceIds": [
+      "D11"
+    ],
+    "track": "resources",
+    "group": "Client Acquisition",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/sales/two-call-process",
+    "title": "Use the two-call sales process",
+    "description": "Discover the business first, then review a specific scope.",
+    "finish": "A sales path with a purpose and output for each stage.",
+    "needs": "A relevant prospect, approved offer, price range and discovery preparation.",
+    "sections": [
+      {
+        "title": "Call one: understand and define",
+        "body": "Prepare from the actual business, then let the prospect explain their goals and process. Walk from first interest to sale. Confirm value, sales cycle, capacity, decision-makers and the milestone they consider a real opportunity. Do not give a long technical tour or ask questions you could have researched."
+      },
+      {
+        "title": "Between calls: write a forwardable scope",
+        "body": "Send continuity on the same thread, then a short proposal reflecting their words. Give one clear feedback request and the review date. The internal champion should be able to forward it without retelling your pitch."
+      },
+      {
+        "title": "Call two: decide on the actual deal",
+        "body": "Restate the goal and agreed scope, ask which concerns remain, work through the opportunity definition and terms and identify the decision. Agree a next step and owner. Do not pretend every buyer needs identical pressure or a scripted close. [Use discovery](/resources/resources/sales/discovery), [between-call emails](/resources/resources/sales/between-calls), [proposal](/resources/resources/sales/proposal) and [objection examples](/resources/resources/sales/objections)."
+      }
+    ],
+    "prompt": "Build a two-call plan from the approved offer and prospect notes. Specify the goal, questions, output and next action for discovery, between-call work and review. Use only agreed numbers. Prepare drafts, not sends.",
+    "actions": [
+      "Complete preparation and discovery notes.",
+      "Confirm proposal review with the right people.",
+      "Record what was agreed before agreement/payment."
+    ],
+    "example": "The proposal review begins with the buyer's actual questions because they received a clear scope beforehand.",
+    "failure": "If call one did not establish the business process, do not fill the proposal with assumptions. Ask for the missing facts.",
+    "assets": [
+      "ai-pack/templates/discovery-script.md",
+      "ai-pack/templates/between-calls-emails.md",
+      "ai-pack/templates/proposal.md"
+    ],
+    "sourceIds": [
+      "C16",
+      "R-sales/sales-mindset",
+      "R-sales/set-the-frame",
+      "R-sales/call-prep",
+      "R-sales/sales-process",
+      "R-sales/sales-call-strategies",
+      "R-sales/effective-closing"
+    ],
+    "track": "resources",
+    "group": "Sales",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/sales/discovery",
+    "title": "Run discovery with the supplied script",
+    "description": "Find the commercial gap and the client's definition of value.",
+    "finish": "Completed discovery notes that can produce a real proposal.",
+    "needs": "Website preparation, approved range, service boundaries and permission for any recording.",
+    "sections": [
+      {
+        "title": "Open briefly and let them speak",
+        "body": "Acknowledge one researched fact, ask what they are focused on and what they want over the next 90 days. The point is to understand their business, not perform expertise you do not have."
+      },
+      {
+        "title": "Walk the process instead of skipping to price",
+        "body": "Ask what happens after initial interest, who speaks with the buyer, what makes it worth pursuing, when a proposal/pilot happens, how many convert and how long that takes. Write the sequence in their words. Confirm capacity and decision-makers."
+      },
+      {
+        "title": "Close with approach, range and review",
+        "body": "Explain the proposed route in a few sentences. State the real range and payment shape you are considering. Arrange a review with relevant people and say when the scope will arrive. The downloadable script contains the full question bank and notes fields."
+      }
+    ],
+    "prompt": "Read the discovery script and prospect's public facts. Prepare five to seven relevant questions, a process map and the known range. After the call extract exact statements, numbers and concerns with transcript references. Mark missing facts. Do not invent answers or send a proposal.",
+    "actions": [
+      "Practise the opening, then use the process questions naturally.",
+      "Record exact values with their period, not just a dollar amount.",
+      "Approve the completed notes before drafting the proposal."
+    ],
+    "example": "First interest → needs discussion → site review → scoped quotation could be a maintenance buyer's path. Confirm it, do not assume it.",
+    "failure": "If you do not understand an industry term, ask the buyer. Do not hide the uncertainty behind an AI summary.",
+    "assets": [
+      "ai-pack/templates/discovery-script.md"
+    ],
+    "sourceIds": [
+      "C17"
+    ],
+    "track": "resources",
+    "group": "Sales",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/sales/between-calls",
+    "title": "Use the five between-call emails",
+    "description": "Keep a proposal moving with one clear request.",
+    "finish": "A continuity email, proposal email and appropriate follow-up drafts.",
+    "needs": "Completed discovery notes, real review date and a draft proposal.",
+    "sections": [
+      {
+        "title": "Keep the context together",
+        "body": "Use the same sales thread from continuity through revisions, agreement and invoice. The source recommends prompt continuity after discovery and a proposal within a day or two. Those are preparation targets, not permission to send."
+      },
+      {
+        "title": "Ask for one useful thing",
+        "body": "Name the person, requested review, location, date and what it unlocks. “Looks good” is weaker than specific confirmation or a concern. Ask what decision-makers will question first and answer it in writing."
+      },
+      {
+        "title": "Use the template that matches the stage",
+        "body": "The file contains continuity, proposal delivery, pre-review, terms-agreed and stalled-decision templates. Replace every placeholder and verify dates, attachment, links and actual agreement. A changed price or recipient needs another review."
+      }
+    ],
+    "prompt": "Use discovery notes, proposal and the five between-call templates to draft only the email appropriate to the current stage. One ask, one owner, one date. Keep actual terms and thread identity. Show missing facts and do not send.",
+    "actions": [
+      "Choose the current sales stage.",
+      "Review exact copy, recipients, links and dates.",
+      "Approve any future send separately."
+    ],
+    "example": "After discovery, the buyer receives a scoped question to answer before the review, not a random sequence of generic follow-ups.",
+    "failure": "If the prospect changed the scope, update the proposal first. Do not keep sending an old automated sequence.",
+    "assets": [
+      "ai-pack/templates/between-calls-emails.md"
+    ],
+    "sourceIds": [
+      "C18"
+    ],
+    "track": "resources",
+    "group": "Sales",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/sales/proposal",
+    "title": "Build the proposal from discovery",
+    "description": "Show understanding, work handled and agreed terms.",
+    "finish": "A concise proposal and a forwardable decision-maker note.",
+    "needs": "Approved discovery notes, scope, price range, proof and responsibilities.",
+    "sections": [
+      {
+        "title": "Lead with the buyer's situation",
+        "body": "Write a two-to-three-sentence abstract: what you discussed, what they want and what you propose. Use their actual language. A partner who missed the call should understand the basic deal from this."
+      },
+      {
+        "title": "Explain how the work gets done",
+        "body": "Show targeting, sources, lists, messaging, qualification and ongoing work where included. Give an honest market estimate and conservative conversion reasoning only when sourced. Describe the opportunity definition, what the client must do and what you cannot control."
+      },
+      {
+        "title": "Make the commercial decision clear",
+        "body": "State budget, payment trigger, term, minimum and remedy as agreed. Close with review, start process and a short note for other decision-makers. The editable template contains every section and the extraction instruction. Final agreement follows accepted terms."
+      }
+    ],
+    "prompt": "Read discovery notes and approved offer/proof. Extract exact goals, process, numbers, concerns, decision-makers and quoted range with references. Draft proposal.md in its supplied structure. Mark anything not agreed. Never invent fees, case studies, market sizes or conversion rates. Do not send.",
+    "actions": [
+      "Check the draft against the actual call.",
+      "Resolve every missing commercial fact.",
+      "Review the abstract and decision-maker note as someone who missed the call."
+    ],
+    "example": "The maintenance proposal explains what an accepted pursuit means and when the second payment is earned, rather than hiding behind a long deck.",
+    "failure": "If the AI cannot trace a number to the call or approved standard term, remove it or mark it pending.",
+    "assets": [
+      "ai-pack/templates/proposal.md",
+      "ai-pack/templates/discovery-script.md",
+      "example/discovery-notes.md",
+      "example/proposal.md",
+      "ai-pack/templates/sales-assets-instruction.md"
+    ],
+    "sourceIds": [
+      "C19"
+    ],
+    "track": "resources",
+    "group": "Sales",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/sales/assets",
+    "title": "Use the right asset at the right sales stage",
+    "description": "Answer the buyer's next question without sending everything.",
+    "finish": "A small asset set matched to discovery, review and kickoff.",
+    "needs": "Approved offer, buyer concerns, proof and actual sales path.",
+    "sections": [
+      {
+        "title": "Before the call",
+        "body": "A pre-call page explains agenda, attendees, preparation and how to reschedule. A relevant sample or short VSL can help a buyer understand the service. Do not force every asset on every prospect."
+      },
+      {
+        "title": "Between discovery and decision",
+        "body": "Use a short system overview, evidence matched to the concern, the actual proposal and a forwardable note. A lead magnet should solve a useful small job itself, not just advertise that you know the answer."
+      },
+      {
+        "title": "After acceptance",
+        "body": "The agreement, invoice and kickoff information should agree on scope and responsibilities. The asset template gives a stage-by-stage checklist. External Canva/Notion assets from the old library remain preserved in source but are not labelled verified here."
+      }
+    ],
+    "prompt": "Map the approved buyer questions to the minimum useful assets. Draft a pre-call page, system overview and decision-maker note using the supplied file. Show source-backed proof and missing assets. Do not invent testimonials or publish.",
+    "actions": [
+      "Ask what the buyer needs to decide next.",
+      "Send only a reviewed, appropriate asset after separate approval.",
+      "Verify actual access before sharing a link."
+    ],
+    "example": "A proposal addresses their scope; a process deck explains how the work happens. They do different jobs.",
+    "failure": "If an external template is unavailable, use the local outline and report the access gap instead of promising a download that does not exist.",
+    "assets": [
+      "ai-pack/templates/sales-assets.md"
+    ],
+    "sourceIds": [
+      "C20",
+      "R-sales/sales-assets",
+      "R-sales/lead-magnets",
+      "R-sales/pre-sell-guide",
+      "R-sales/call-show-up"
+    ],
+    "track": "resources",
+    "group": "Sales",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/sales/objections",
+    "title": "Handle objections by finding the real concern",
+    "description": "Use example dialogue and a decision process, not reflexive discounts.",
+    "finish": "A practice response for the buyer's actual concern.",
+    "needs": "The accepted scope, real value/cost evidence and authority over any proposed terms.",
+    "sections": [
+      {
+        "title": "Clarify before answering",
+        "body": "Ask which part makes the buyer uncertain: value, ability to deliver, timing, budget, cash flow or internal approval. Restate it and check you understood. A concern about delivery is not fixed by splitting the payment."
+      },
+      {
+        "title": "Practice example: price and terms",
+        "body": "Example dialogue demonstrating the source method, not a verbatim sales-call transcript:\n\nBuyer: “That is more than we planned.”\n\nAgency: “Is the concern the total budget, or paying it before you see the work?”\n\nBuyer: “Mostly the upfront part.”\n\nAgency: “If the scope makes sense, we can look at a payment split tied to the agreed work. Which timing would fit your budget?”\n\nAny revised split must still fund delivery and be approved. Do not automatically discount or invent a guarantee."
+      },
+      {
+        "title": "Practice example: could do it internally",
+        "body": "Buyer: “We could buy these tools ourselves.”\n\nAgency: “You could. The engagement covers the buyer research, list checks, copy testing, reply work and reporting we agreed to run. Which part would your team want to own, and what would that take away from?”\n\nUse only tasks you actually perform. Explain the real trade-off in work and coordination, not secret access or assumed incompetence."
+      },
+      {
+        "title": "Get a clear next action",
+        "body": "Source T5 offers possible changes to amount, split, fee credit, minimum and remedy. These are options requiring commercial judgement, not an automatic ladder to concede everything. If the buyer is unsuitable or the terms do not work, decline respectfully."
+      }
+    ],
+    "prompt": "Using the actual objection, discovery notes and approved terms, identify the likely concern and draft one clarifying question and a grounded response. Separate value concerns from payment timing. Do not invent proof, discount, guarantee or change terms. Label practice dialogue as an example, not an actual transcript.",
+    "actions": [
+      "Name the concern in the buyer's words.",
+      "Check whether your response actually addresses it.",
+      "Review and approve any commercial change."
+    ],
+    "example": "A payment split can address timing after the buyer accepts the value. It does not establish value by itself.",
+    "failure": "If the promise cannot be delivered or believed from the evidence, fix that issue rather than pressuring the buyer.",
+    "assets": [
+      "ai-pack/templates/proposal.md"
+    ],
+    "sourceIds": [
+      "C25"
+    ],
+    "track": "resources",
+    "group": "Sales",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/sales/value-stacking",
+    "title": "Explain what all the work adds up to",
+    "description": "Make the useful business change visible without inventing bonuses.",
+    "finish": "A clear explanation of outcome, mechanism and responsibility.",
+    "needs": "Approved scope and buyer problem, not a wish list.",
+    "sections": [
+      {
+        "title": "Connect each component to a job",
+        "body": "Research chooses a relevant buyer; qualification removes poor fits; copy creates useful interest; reply handling turns interest into a next step; reporting shows what to fix. Describe the finished work and what the buyer no longer has to coordinate."
+      },
+      {
+        "title": "Keep the desired state credible",
+        "body": "More valuable deals can create margin for delivery help. Standard scope and processes can reduce owner dependence. These are causal possibilities with conditions, not universal measured results."
+      },
+      {
+        "title": "Upsell only a useful next job",
+        "body": "Offer additional work when the current result creates a real need and you can deliver it. State extra scope, owner, price and timing separately. Do not disguise necessary core delivery as a surprise add-on."
+      }
+    ],
+    "prompt": "Turn the approved scope into a plain explanation of business value, actual provider work, output, buyer job and limitations. Do not add services, bonuses, invented cost comparisons or historical results.",
+    "actions": [
+      "Check each component exists in the scope.",
+      "Explain its commercial use.",
+      "Separate optional additional work from the core engagement."
+    ],
+    "example": "A maintained reply process is valuable because relevant replies are reviewed and progressed, not because its name contains AI.",
+    "failure": "If an outcome relies on the buyer's closing or service quality, name that dependency.",
+    "assets": [
+      "ai-pack/templates/sales-assets.md"
+    ],
+    "sourceIds": [
+      "R-sales/value-stacking",
+      "R-sales/upselling"
+    ],
+    "track": "resources",
+    "group": "Sales",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/inbox-pipeline/nurturing",
+    "title": "Keep long-term nurture separate from booking follow-ups",
+    "description": "Respect timing, intent and the original offer.",
+    "finish": "A dated review plan for leads who are not ready now.",
+    "needs": "Full thread, permission/contact status, actual request and campaign context.",
+    "sections": [
+      {
+        "title": "Use the reply workflow first",
+        "body": "Interested replies, questions, referrals, opt-outs and bookings belong in the daily reply process. Short follow-ups after offering times are part of booking. Do not enrol the same person in a separate nurture path without checking the current thread and permissions."
+      },
+      {
+        "title": "Record a specific future reason",
+        "body": "If someone says later, record when and why. A dated reminder is different from a new automated sequence. Send only useful, relevant material aligned with what they asked about and the original service."
+      },
+      {
+        "title": "Stop when the situation changes",
+        "body": "A reply, booking, opt-out or changed offer cancels inappropriate scheduled follow-up. Check the latest state before any future message. This preview drafts reminders only; it does not create live workflows."
+      }
+    ],
+    "prompt": "Review the full lead thread and campaign context. Distinguish active booking follow-up from a later nurture request. Draft a dated plan with reason, useful asset and approval boundary. Do not enrol, schedule or send.",
+    "actions": [
+      "Confirm the actual requested timing.",
+      "Check contact status before a future send.",
+      "Keep the follow-up queue and nurture plan from overlapping."
+    ],
+    "example": "A lead asking to revisit next quarter should not keep getting this week's proposed meeting slots.",
+    "failure": "If permission or intent is unclear, hold the action and ask the owner.",
+    "assets": [
+      "ai-pack/templates/voice-and-replies.md"
+    ],
+    "sourceIds": [
+      "R-cold-email/lead-nurturing"
+    ],
+    "track": "resources",
+    "group": "Inbox & Pipeline Management",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/scaling-hiring/onboarding",
+    "title": "Onboard a client with the complete form and kickoff",
+    "description": "Collect the facts your agents and operator actually need.",
+    "finish": "An approved profile, offer, proof, fit rules and settings for the client.",
+    "needs": "The accepted service scope, authorised client contact and secure access process.",
+    "sections": [
+      {
+        "title": "Collect useful detail once",
+        "body": "The downloadable form preserves the existing 23-question structure: business, target market, technologies, ideal clients, exclusions, keywords, service, buyer questions, pains, proof, guarantee, useful assets, differentiation, current/target meetings, capacity and success definition."
+      },
+      {
+        "title": "Add the system inputs",
+        "body": "Confirm customer value and period, actual sales cycle, opportunity milestone, calendar owner/event/duration/time zone, sender identity, spend caps and approval owner. Passwords and API keys do not belong in the form."
+      },
+      {
+        "title": "Use kickoff to resolve gaps",
+        "body": "Walk through answers, delivery boundaries and acceptance. Agree research, list and copy review points. Create the five client files from the form with source references. Unknowns remain visible. End with owner, deliverable and next date, not a vague promise to start."
+      }
+    ],
+    "prompt": "Use onboarding.md and client-profile-instruction.md to extract the five working files from the client's actual answers and approved scope. Cite the supplied answer for each fact. Flag missing capacity, economics, permissions or responsibility. Do not create accounts or campaigns.",
+    "actions": [
+      "Review the completed form and key unknowns.",
+      "Confirm calendar, opportunity definition and scope at kickoff.",
+      "Approve the extracted files before research."
+    ],
+    "example": "A completed form becomes usable agent inputs rather than a document nobody reads again.",
+    "failure": "If the client response conflicts with what was sold, resolve the scope before launching.",
+    "assets": [
+      "ai-pack/templates/onboarding.md",
+      "ai-pack/templates/client-profile-instruction.md"
+    ],
+    "sourceIds": [
+      "R-onboarding/onboarding-workflow",
+      "R-onboarding/onboarding-calls",
+      "R-onboarding/client-onboarding-form"
+    ],
+    "track": "resources",
+    "group": "Scaling & Hiring",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/scaling-hiring/hiring",
+    "title": "Train or hire the person who supervises the work",
+    "description": "Define the job before asking someone to run the system.",
+    "finish": "A role brief, practical assessment and supervised handover plan.",
+    "needs": "A documented process, clear work volume, real budget and a named manager.",
+    "sections": [
+      {
+        "title": "Choose the missing job",
+        "body": "An inbox operator checks fit/cards, approvals and bookings. A GTM operator may prepare lists, campaigns and reports. A CSM handles the agreed client communication and escalations. AI can perform parts of those jobs, but someone still owns quality and exceptions."
+      },
+      {
+        "title": "Use a practical assessment",
+        "body": "Give each candidate the same synthetic reply/list task and score fit judgement, writing, evidence use, identity/time-zone accuracy and escalation. Do not let applicants contact prospects or use real credentials. The supplied role brief includes the questions and assessment."
+      },
+      {
+        "title": "Onboard with supervision",
+        "body": "Start with narrow access and a known queue. Demonstrate, let them repeat, inspect errors and clarify when to escalate. Set working hours, cover, reporting and approval boundaries explicitly. The original wage and time-zone examples were illustrative and should not become current defaults. A recruiting resource does not mean CCS guarantees a placed employee."
+      }
+    ],
+    "prompt": "Draft a scoped operator brief and fixture-only assessment using operator-brief.md. Map tasks to AI, operator, owner and CCS. Use actual hours and budget when supplied, otherwise flag them. Do not recruit, send messages, hire or grant access.",
+    "actions": [
+      "Name the actual work and success standard.",
+      "Use the same practical rubric for candidates.",
+      "Supervise before expanding responsibility."
+    ],
+    "example": "The operator can correctly hold a misfit reply and an unavailable slot without asking for every routine decision.",
+    "failure": "If the job depends on undocumented owner knowledge, improve the process before calling the role ready.",
+    "assets": [
+      "ai-pack/templates/operator-brief.md",
+      "ai-pack/templates/handover-pack.md"
+    ],
+    "sourceIds": [
+      "R-hiring-team/hiring-general",
+      "R-hiring-team/key-roles",
+      "R-hiring-team/hiring-inbox-manager",
+      "R-hiring-team/hiring-gtm",
+      "R-hiring-team/application-process",
+      "R-hiring-team/employee-onboarding",
+      "R-hiring-team/social-hiring-funnels"
+    ],
+    "track": "resources",
+    "group": "Scaling & Hiring",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/scaling-hiring/operations",
+    "title": "Use SOPs and a weekly operating review",
+    "description": "Reduce repeated decisions without hiding exceptions.",
+    "finish": "One complete SOP and a weekly decision record.",
+    "needs": "Current process, owner, inputs, outputs and real exceptions.",
+    "sections": [
+      {
+        "title": "Document a job someone can finish",
+        "body": "State result, trigger, owner, input files, access, steps, approvals, checks, failures and handoff. A video can help but should not hide changing settings or escalation rules. The local template includes a complete runway-review example."
+      },
+      {
+        "title": "Review capacity, economics and quality separately",
+        "body": "More customers can raise revenue and still reduce profit or overwhelm delivery. Review actual fees, direct costs, capacity, client acceptance and owner time. Compare more work for current clients with more clients only after the delivery process is stable."
+      },
+      {
+        "title": "Change one observed bottleneck",
+        "body": "Inspect campaign evidence, client feedback and operating errors. Assign a specific correction and next review date. Do not replace strategy repeatedly without diagnosing whether the issue is audience, message, sending, replies, sales or delivery."
+      }
+    ],
+    "prompt": "Using actual workflow notes, draft one SOP with result, owner, trigger, files, steps, approval boundaries, checks and failure handling. Prepare a weekly operating review that separates revenue, profit, capacity and owner dependence. No live changes.",
+    "actions": [
+      "Have another operator follow the SOP on a safe example.",
+      "Record the hidden steps they needed.",
+      "Correct it and agree who maintains it."
+    ],
+    "example": "The completed SOP calculates runway from new contacts and names the next owner rather than automatically buying more leads.",
+    "failure": "If the operator needs verbal rescue, the SOP is not complete. Add the missing decision or escalation.",
+    "assets": [
+      "ai-pack/templates/sop.md",
+      "ai-pack/templates/weekly-report.md"
+    ],
+    "sourceIds": [
+      "R-operations-scaling/ops-strategy",
+      "R-operations-scaling/creating-sops",
+      "R-operations-scaling/vertical-horizontal-scaling"
+    ],
+    "track": "resources",
+    "group": "Scaling & Hiring",
+    "status": "Review draft"
+  },
+  {
+    "slug": "resources/templates",
+    "title": "All templates and the AI pack",
+    "description": "Get the file you need, with its purpose and version.",
+    "track": "resources",
+    "group": "Templates and AI pack",
+    "status": "Review draft",
+    "finish": "The exact versioned files used by Install, Resources and Training.",
+    "needs": "Choose a lesson first if you do not know which file you need. This is an index of the same assets, not another course.",
+    "sections": [
+      {
+        "title": "Start with the full pack",
+        "body": "The ZIP contains shared agent rules, all 16 source-derived skills, working-file templates and the completed example. Install and Training refer to version 0.1.0-preview. The pack is for review and drafts, with external writes disabled. Downloading it does not install Grok skills or connect accounts."
+      },
+      {
+        "title": "Use the blank templates for your own business",
+        "body": "Complete profile, offer, proof, fit rules and settings first. Research and campaign files come next. Discovery, between-call emails, proposal, onboarding, operator brief and SOPs support the relevant jobs. Read the file's completion check and keep unknown facts visible."
+      },
+      {
+        "title": "Compare with the completed example",
+        "body": "The example uses consistent fictional company records on reserved .example domains, illustrative fees and a clearly marked local simulation. It is not a CCS member case study. The completed proposal traces facts to discovery exercise notes and leaves unagreed terms pending."
+      }
+    ],
+    "prompt": "Inventory the supplied pack by manifest version. Explain which file is needed for my current step and which inputs I must supply. Do not start a new workflow, duplicate the whole course or assume the example is my business. No external actions.",
+    "actions": [
+      "Use the asset linked from your current lesson.",
+      "Edit a copy for the correct client context.",
+      "Check version and completion criteria before handing it to the next role."
+    ],
+    "example": "There is one proposal template used from both the sales lesson and the Install sales-material step. It is not a different proposal hiding in each track.",
+    "failure": "If an asset link fails, report the exact filename and step. Do not use a similarly named file from another client.",
+    "assets": [
+      "ccs-ai-pack.zip",
+      "ai-pack/README.md",
+      "ai-pack/AGENTS.md",
+      "ai-pack/templates/profile.md",
+      "ai-pack/templates/offer.md",
+      "ai-pack/templates/approved-proof.md",
+      "ai-pack/templates/fit-rules.md",
+      "ai-pack/templates/settings.md",
+      "ai-pack/templates/research-brief.md",
+      "ai-pack/templates/lead-recipe.md",
+      "ai-pack/templates/field-map.md",
+      "ai-pack/templates/copy-locked.md",
+      "ai-pack/templates/voice-and-replies.md",
+      "ai-pack/templates/handover-pack.md",
+      "ai-pack/templates/discovery-script.md",
+      "ai-pack/templates/between-calls-emails.md",
+      "ai-pack/templates/proposal.md",
+      "ai-pack/templates/sales-assets.md",
+      "ai-pack/templates/weekly-report.md",
+      "ai-pack/templates/budget.csv",
+      "ai-pack/templates/incident.md",
+      "ai-pack/templates/onboarding.md",
+      "ai-pack/templates/operator-brief.md",
+      "ai-pack/templates/sop.md",
+      "ai-pack/templates/client-profile-instruction.md",
+      "ai-pack/templates/sales-assets-instruction.md",
+      "example/discovery-notes.md",
+      "example/proposal.md",
+      "example/copy-locked.md",
+      "example/handover-pack.md",
+      "example/budget.md"
+    ],
+    "sourceIds": [
+      "D01",
+      "D12",
+      "R-key-resources/templates-downloads"
+    ]
+  }
+]
